@@ -1,0 +1,17 @@
+# HomeAssistant의 테마 설정은 원칙적으로 기본 테마인 frontend로 표현되며, 사용자가 로그인 후에 변경이 가능함
+# 다만, 이러한 방식은 cookie handling 방식으로, 새로운 디바이스에서 동일 ID로 로그인을 하더라도 기본테마인 frontend로 되돌아가버리는 이슈가 있음
+# 이를, HomeAssistant가 시작(재기동)될 시에 강제로 테마를 적용하는 방식을 자동화(Automation)에 적용하면, 모든 사용자에게 동일한 테마 환경을 제공할 수 있음
+# 테마(theme)에 대한 내용은 configuration.yaml에서 적용이 우선되어야 하며, 사용할 테마이름을 아래에 명시하면 됨 (예시에서는 Google Dark Theme 를 적용하였음)
+# 2021.04.09. ceo@tabspace.kr
+
+alias: '테마 자동 적용'
+description: ''
+trigger:
+  - platform: homeassistant
+    event: start
+condition: []
+action:
+  - service: frontend.set_theme
+    data:
+      name: Google Dark Theme
+mode: single
