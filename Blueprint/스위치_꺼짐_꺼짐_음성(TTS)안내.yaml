@@ -1,0 +1,35 @@
+blueprint:
+  name: '스위치 꺼짐 음성안내'
+  description: '선택된 스위치가 꺼질 경우 TTS 음성으로 안내'
+  domain: automation
+  input:
+    target_switch:
+      name: '스위치'
+      description: '알림을 표시할 스위치를 선택해주세요.'
+      selector:
+        entity:
+          domain: switch
+    target_speker:
+      name: '스피커'
+      description: '재생할 스피커를 선택해주세요.'
+      selector:
+        target:
+          entity:
+            domain: media_player
+    announcement_message:
+      name: 'TTS 알림 문구'
+      description: '스위치가 꺼졌을 때 스피커로 출력할 TTS 메시지를 입력해주세요.'
+
+mode: single
+
+trigger:
+  platform: state
+  entity_id: !input 'target_switch'
+  from: 'on'
+  to: 'off'
+
+action:
+- service: tts.google_translate_say
+  data:
+    message: !input 'announcement_message'
+    target: !input 'target_speker'
