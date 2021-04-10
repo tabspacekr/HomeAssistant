@@ -1,5 +1,6 @@
 # HomeAssistant의 Blueprint기능을 활용한, TTS음성안내
 # google home mini 스피커에서 테스트 완료
+# 2021.04.10. ceo@tabspace.kr
 
 blueprint:
   name: '스위치 켜짐 음성안내'
