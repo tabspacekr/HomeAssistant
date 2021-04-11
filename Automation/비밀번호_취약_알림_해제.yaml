@@ -2,7 +2,11 @@
 
 # 동작방식
 # - HomeAssistant는 취약한 비밀번호에 대해, ‘haveibeenpwed.com', ‘pwnedpasswords.com'를 통해 조회한다.
-# - 조회된 결과는 하단 Notification에서 영구 알림(persistent_notification) 형태로 알려주게 된다. 
+# - 조회된 결과는 하단 Notification에서 영구 알림(persistent_notification) 형태로 알려주게 된다. 메시지 형식은 아래와 같다.
+#
+## Insecure secrets in core_mosquitto
+## The add-on core_mosquitto uses secrets which are detected as not secure, see https://www.home-assistant.io/more-info/pwned-passwords for more information.
+#
 # - 메시지를 수동으로 직접 클릭하여 해제(dismiss)하는 방법이 번거로워, 알림이 생성되는 서비스가 호출될 시에, 자동화 기능을 통해
 # - supervisor_issue_pwned 값이 notification_id에 존재하는 경우, 해당 notification_id를 영구 알림 해제(dismiss) 한다. 
 # 2021.04.08. ceo@tabspace.kr
