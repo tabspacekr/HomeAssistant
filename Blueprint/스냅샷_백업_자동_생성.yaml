@@ -1,0 +1,48 @@
+# 매일 특정 시간에 HomeAssistant의 스냅샷 백업을 생성하고, 생성이 완료되면 공식 모바일 앱으로 push 알림 수행
+# 2021.04.11. ceo@tabspace.kr
+blueprint:
+  name: 스냅샷 백업 자동 생성
+  description: 전체 스냅샷을 매일 지정된 시간에 생성
+  domain: automation
+  input:
+    trigger_time:
+      name: 스냅샷 생성 시간
+      description: 매일 스냅샷을 생성할 시간을 선택해주세요.
+      selector:
+        time: {}
+    send_notification:
+      name: 스냅샷 생성 완료 알림 발송 유무
+      description: 스냅샷 생성이 완료된 후에 알림을 모바일 디바이스로 발송 유/무를 선택해주세요.
+      selector:
+        boolean: {}
+      default: false
+    notify_device:
+      name: 알림이 수신될 모바일 디바이스 선택
+      description: 스냅샷 생성이 완료된 후에, 알림을 수신할 공식 HomeAssistant 앱이 동작하는 모바일 디바이스를 선택해주세요.
+      selector:
+        device:
+          integration: mobile_app
+      default: ''
+mode: single
+max_exceeded: silent
+variables:
+  backup_filename: 스냅샷 자동 백업 {{ now().strftime('%F') }}
+  send_notification: !input 'send_notification'
+  notify_device: !input 'notify_device'
+  notification_title: 일일 스냅샷 자동 백업완료
+  notification_message: 전체 스냅샷 백업이 {{ now().strftime('%F') }}에 완료되었습니다. 
+trigger:
+- platform: time
+  at: !input 'trigger_time'
+action:
+- service: hassio.snapshot_full
+  data:
+    name: '{{ backup_filename }}'
+- choose:
+  - conditions: '{{ send_notification }}'
+    sequence:
+    - device_id: !input 'notify_device'
+      domain: mobile_app
+      type: notify
+      title: '{{ notification_title }}'
+      message: '{{ notification_message }}'
