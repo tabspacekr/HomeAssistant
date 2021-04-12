@@ -1,0 +1,51 @@
+# 모션 센서의 동작감지가 발생한다면, 조명을 자동으로 켜는 블루프린트
+# Zigbee2mqtt에서 entity가 light로 인식되지 않는 경우, switch로 변경 필요
+# 2021.04.12. ceo@tabspace.kr
+blueprint:
+  name: 모션 센서 조명 켜기
+  description: 모션 센서에서 동작이 감지될 때, 선택한 조명을 자동으로 켭니다.
+  domain: automation
+  input:
+    motion_entity:
+      name: 모션 센서
+      selector:
+        entity:
+          domain: binary_sensor
+          device_class: motion
+    light_target:
+      name: 조명
+      selector:
+        target:
+          entity:
+            domain: light
+    no_motion_wait:
+      name: 대기 시간
+      description: 모션 감지로 조명이 켜진 이후, 몇 초 뒤에 조명을 끌까요?
+      default: 120
+      selector:
+        number:
+          min: 0
+          max: 3600
+          unit_of_measurement: 초
+
+# 모션감지시에 조명을 켠 후, 위에서 지정한 대기 시간 이후에 스크립트를 재실행하여 조명을 다시 끔
+mode: restart
+max_exceeded: silent
+
+trigger:
+  platform: state
+  entity_id: !input motion_entity
+  from: "off"
+  to: "on"
+
+action:
+  - service: light.turn_on
+    target: !input light_target
+  - wait_for_trigger:
+      platform: state
+      entity_id: !input motion_entity
+      from: "on"
+      to: "off"
+  - delay: !input no_motion_wait
+  - service: light.turn_off
+    target: !input light_target
