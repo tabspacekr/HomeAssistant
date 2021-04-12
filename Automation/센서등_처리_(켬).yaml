@@ -1,0 +1,17 @@
+# 모션센서가 감지될때에, 특정 스위치를 켜서 센서등과 같은 기능을 수행하도록 함
+# 2021.04.12. ceo@tabspace.kr
+alias: 센서등 처리 (켬)
+description: ''
+trigger:
+  - type: motion
+    platform: device
+    device_id: 8c124b5b866397218f92643ca021940a
+    entity_id: binary_sensor.syaomigamjisenseo_occupancy
+    domain: binary_sensor
+condition: []
+action:
+  - type: turn_on
+    device_id: 4f44b5da66df2a282375562c3a989045
+    entity_id: switch.rilrei_10a
+    domain: switch
+mode: single
