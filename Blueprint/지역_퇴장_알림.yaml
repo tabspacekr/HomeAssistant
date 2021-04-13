@@ -1,0 +1,41 @@
+# HomeAssistant에서 지정한 특정 지역에 퇴장시에, 모바일디바이스로 알림을 발송
+# 2021.04.13. ceo@tabspace.kr
+
+blueprint:
+  name: 지역 퇴장 알림
+  description: 설정한 지역에 사용자가 퇴장하는 경우, 모바일 디바이스로 알람을 보냅니다.
+  domain: automation
+  input:
+    person_entity:
+      name: Person
+      selector:
+        entity:
+          domain: person
+    zone_entity:
+      name: Zone
+      selector:
+        entity:
+          domain: zone
+    notify_device:
+      name: 알람을 수신 디바이스
+      description: 알람을 수신할 공식 HomeAssistant 앱을 선택해 주세요.
+      selector:
+        device:
+          integration: mobile_app
+trigger:
+  platform: state
+  entity_id: !input 'person_entity'
+variables:
+  zone_entity: !input 'zone_entity'
+  zone_state: '{{ states[zone_entity].name }}'
+  person_entity: !input 'person_entity'
+  person_name: '{{ states[person_entity].name }}'
+condition:
+  condition: template
+  value_template: '{{ trigger.from_state.state == zone_state and trigger.to_state.state
+    != zone_state }}'
+action:
+  domain: mobile_app
+  type: notify
+  device_id: !input 'notify_device'
+  message: '{{ person_name }}님이 {{ zone_state }}에서 퇴장하였습니다.'
