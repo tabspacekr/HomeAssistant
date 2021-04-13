@@ -1,0 +1,92 @@
+# 모션 감지시에 카메라 스냅샷을 공식 HomeAssistant 앱으로 발송
+# 2021.04.13. ceo@tabspace.kr
+blueprint:
+  name: 모션 감지시 카메라 스냅샷 메시지 발송
+  description: 모션이 감지될때에 카메라의 정지 화상을 캡춰하여 HomeAssistant 앱으로 발송합니다.
+  domain: automation
+  input:
+    motion_sensor:
+      name: 모션센서
+      description: 스냅샷을 생성할때 감지할 모션센서를 선택해주세요.
+      selector:
+          entity:
+            domain: binary_sensor
+            device_class: motion
+
+    camera:
+      name: 카메라
+      description: 스냅샷을 생성할 카메라를 선택해주세요.
+      selector:
+        entity:
+          domain: camera
+
+    notify_device:
+      name: 알림 휴대폰 대상
+      description: 알림을 수신할 휴대폰을 선택해주세요. (공식 HomeAssistant 앱이 설치되어 있어야 합니다.)
+      selector:
+        device:
+          integration: mobile_app
+
+    is_ios:
+      name: Apple iOS 유무
+      description: 만약, 알림을 수신할 휴대폰이 Apple iOS를 사용하고 있는경우 체크해주세요. (기본값은 Google Android 입니다.)
+      selector:
+        boolean:
+      default: false
+
+    notification_title:
+      name: 알림 제목 (옵션)
+      description: '기본값은 "움직임이 감지되었습니다!!" 입니다.'
+      default: "움직임이 감지되었습니다!!"
+
+    notification_message:
+      name: 알림 내용 (옵션)
+      description: '기본값은 "{{ motion_sensor_name }} 이(가) 움직임을 감지하였습니다!!" 입니다.'
+      default: "{{ motion_sensor_name }} 이(가) 움직임을 감지하였습니다!!"
+      
+    delay:
+      name: 지연 시간 (옵션)
+      description: 카메라의 스냅샷을 찍을 지연 시간을 선택하여 주세요.
+      default: ""
+      selector:
+        number:
+            min: 0
+            max: 60
+            unit_of_measurement: 초
+            mode: slider
+
+trigger:
+  platform: state
+  entity_id: !input motion_sensor
+  from: "off"
+  to: "on"
+
+variables:
+  motion_sensor: !input motion_sensor
+  motion_sensor_name: "{{ states[motion_sensor].name }}"
+  camera: !input camera
+  notify_device: !input notify_device
+  is_ios: !input is_ios
+  notification_title: !input notification_title
+  notification_message: !input notification_message
+  delay: !input delay
+  snapshot_create_file_path: "/config/www/tmp/snapshot_{{ states[camera].object_id }}.jpg"
+  snapshot_access_file_path: "{{ snapshot_create_file_path | replace('/config/www','/local') }}"
+
+action:
+  - delay: "{{ delay }}"
+
+  - service: camera.snapshot
+    entity_id: !input camera
+    data:
+      filename: "{{ snapshot_create_file_path }}"
+
+  - device_id: !input notify_device
+    domain: mobile_app
+    type: notify
+    title: "{{ notification_title }}"
+    message: "{{ notification_message }}"
+    data: >
+      {% set android_data = {"image": "%s"} | format(snapshot_access_file_path) %}
+      {% set ios_data = {"attachment": {"url": "%s", "content_type": "JPEG"}} | format(snapshot_access_file_path) %}
+      {{ ios_data if is_ios else android_data }}
