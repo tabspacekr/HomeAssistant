@@ -70,7 +70,9 @@ variables:
   notification_title: !input notification_title
   notification_message: !input notification_message
   delay: !input delay
+  #임시경로에 스냅샷을 생성
   snapshot_create_file_path: "/config/www/tmp/snapshot_{{ states[camera].object_id }}.jpg"
+  #임시경로에 생성한 스냅샷을 외부에서 접근하기 위해 접근 경로 변경 처리
   snapshot_access_file_path: "{{ snapshot_create_file_path | replace('/config/www','/local') }}"
 
 action:
@@ -86,7 +88,4 @@ action:
     type: notify
     title: "{{ notification_title }}"
     message: "{{ notification_message }}"
-    data: >
-      {% set android_data = {"image": "%s"} | format(snapshot_access_file_path) %}
-      {% set ios_data = {"attachment": {"url": "%s", "content_type": "JPEG"}} | format(snapshot_access_file_path) %}
-      {{ ios_data if is_ios else android_data }}
+    data: {% set android_data = {"image": "%s"} | format(snapshot_access_file_path) %} {% set ios_data = {"attachment": {"url": "%s", "content_type": "JPEG"}} | format(snapshot_access_file_path) %} {{ ios_data if is_ios else android_data }}
