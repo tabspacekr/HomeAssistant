@@ -88,4 +88,7 @@ action:
     type: notify
     title: "{{ notification_title }}"
     message: "{{ notification_message }}"
-    data: {% set android_data = {"image": "%s"} | format(snapshot_access_file_path) %} {% set ios_data = {"attachment": {"url": "%s", "content_type": "JPEG"}} | format(snapshot_access_file_path) %} {{ ios_data if is_ios else android_data }}
+    data: >
+      {% set android_data = {"image": "%s"} | format(snapshot_access_file_path) %} 
+      {% set ios_data = {"attachment": {"url": "%s", "content_type": "JPEG"}} | format(snapshot_access_file_path) %} 
+      {{ ios_data if is_ios else android_data }}
