@@ -2,7 +2,7 @@
 # Zigbee2mqtt에서 entity가 switch로 인식되지 않는 경우, light로 변경 필요
 # 2021.04.14. ceo@tabspace.kr
 blueprint:
-  name: 모션 센서 조명 켜기
+  name: 모션 센서 조명 켜기 (스위치 버전)
   description: 모션 센서에서 동작이 감지될 때, 선택한 조명을 자동으로 켭니다.
   domain: automation
   input:
