@@ -27,6 +27,15 @@
         device: iptv
         command: b64:JgCYAAABIpQTExQQExMUEBMTFBESExQ1EzcUNBM3FDUTNxQ0EzcSERESFDUTEhUQExITERE2EhERNhUQEzcUNRM2FDUTEhQ1EwAFHAABJEkRAAxEAAEFlBESEhARExERERISEBESEjURNhI1ETYSNRE2EjUQNxIQETcSNBE3ETURNhI1ETYSNRESEhARExIQERISEBETEhARAA0F
 
+301_ir_send_iptv_volume_mute:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.301_remote
+      data:
+        device: iptv
+        command: b64:JgCYAAABFZQTExQQExMUEBMTFBATExM2EzcVMxM3FDUTNxU0EzYUERM3FQ8TNxUQExISERE2FRASExM2EhMTNhI3FDUTEhM2EwAFHgABFkoTAAxFAAEFkxATEhEUERUQFBITERMTEzUTNxQ1EzcVNBM2FjMTNxQREzYVNBM3FDUTNhU0EzcUNRMTEhITExMRExMVDxQSExISAA0F
+
 301_ir_send_iptv_channel_up:
   sequence:
     - service: remote.send_command
