@@ -1,0 +1,262 @@
+#IR Remote Control - Learning
+
+learn_iptv_power:
+  sequence:
+    - service: remote.learn_command
+      target:
+        entity_id: remote.301
+      data:
+        device: iptv
+        command: power
+
+learn_iptv_volume_up:
+  sequence:
+    - service: remote.learn_command
+      target:
+        entity_id: remote.301
+      data:
+        device: iptv
+        command: volume_up
+
+learn_iptv_volume_down:
+  sequence:
+    - service: remote.learn_command
+      target:
+        entity_id: remote.301
+      data:
+        device: iptv
+        command: volume_down
+
+learn_iptv_channel_up:
+  sequence:
+    - service: remote.learn_command
+      target:
+        entity_id: remote.301
+      data:
+        device: iptv
+        command: channel_up
+
+learn_iptv_channel_down:
+  sequence:
+    - service: remote.learn_command
+      target:
+        entity_id: remote.301
+      data:
+        device: iptv
+        command: channel_down
+
+learn_iptv_nagivation_left:
+  sequence:
+    - service: remote.learn_command
+      target:
+        entity_id: remote.301
+      data:
+        device: iptv
+        command: nagivation_left
+
+learn_iptv_nagivation_right:
+  sequence:
+    - service: remote.learn_command
+      target:
+        entity_id: remote.301
+      data:
+        device: iptv
+        command: nagivation_right
+
+learn_iptv_nagivation_up:
+  sequence:
+    - service: remote.learn_command
+      target:
+        entity_id: remote.301
+      data:
+        device: iptv
+        command: nagivation_up
+
+learn_iptv_nagivation_down:
+  sequence:
+    - service: remote.learn_command
+      target:
+        entity_id: remote.301
+      data:
+        device: iptv
+        command: nagivation_down
+
+learn_iptv_nagivation_ok:
+  sequence:
+    - service: remote.learn_command
+      target:
+        entity_id: remote.301
+      data:
+        device: iptv
+        command: nagivation_ok
+
+learn_iptv_navigation_back:
+  sequence:
+    - service: remote.learn_command
+      target:
+        entity_id: remote.301
+      data:
+        device: iptv
+        command: navigation_back
+
+learn_iptv_navigation_exit:
+  sequence:
+    - service: remote.learn_command
+      target:
+        entity_id: remote.301
+      data:
+        device: iptv
+        command: navigation_exit
+
+learn_iptv_home:
+  sequence:
+    - service: remote.learn_command
+      target:
+        entity_id: remote.301
+      data:
+        device: iptv
+        command: home
+
+learn_iptv_menu:
+  sequence:
+    - service: remote.learn_command
+      target:
+        entity_id: remote.301
+      data:
+        device: iptv
+        command: menu
+
+learn_iptv_epg:
+  sequence:
+    - service: remote.learn_command
+      target:
+        entity_id: remote.301
+      data:
+        device: iptv
+        command: epg
+
+learn_iptv_number_0:
+  sequence:
+    - service: remote.learn_command
+      target:
+        entity_id: remote.301
+      data:
+        device: iptv
+        command: number_0
+
+learn_iptv_number_1:
+  sequence:
+    - service: remote.learn_command
+      target:
+        entity_id: remote.301
+      data:
+        device: iptv
+        command: number_1
+
+learn_iptv_number_2:
+  sequence:
+    - service: remote.learn_command
+      target:
+        entity_id: remote.301
+      data:
+        device: iptv
+        command: number_2
+
+learn_iptv_number_3:
+  sequence:
+    - service: remote.learn_command
+      target:
+        entity_id: remote.301
+      data:
+        device: iptv
+        command: number_3
+
+learn_iptv_number_4:
+  sequence:
+    - service: remote.learn_command
+      target:
+        entity_id: remote.301
+      data:
+        device: iptv
+        command: number_4
+
+learn_iptv_number_5:
+  sequence:
+    - service: remote.learn_command
+      target:
+        entity_id: remote.301
+      data:
+        device: iptv
+        command: number_5
+
+learn_iptv_number_6:
+  sequence:
+    - service: remote.learn_command
+      target:
+        entity_id: remote.301
+      data:
+        device: iptv
+        command: number_6
+
+learn_iptv_number_7:
+  sequence:
+    - service: remote.learn_command
+      target:
+        entity_id: remote.301
+      data:
+        device: iptv
+        command: number_7
+
+learn_iptv_number_8:
+  sequence:
+    - service: remote.learn_command
+      target:
+        entity_id: remote.301
+      data:
+        device: iptv
+        command: number_8
+
+learn_iptv_number_9:
+  sequence:
+    - service: remote.learn_command
+      target:
+        entity_id: remote.301
+      data:
+        device: iptv
+        command: number_9
+
+learn_iptv_number_0:
+  sequence:
+    - service: remote.learn_command
+      target:
+        entity_id: remote.301
+      data:
+        device: iptv
+        command: number_0
+
+learn_iptv_number_star:
+  sequence:
+    - service: remote.learn_command
+      target:
+        entity_id: remote.301
+      data:
+        device: iptv
+        command: number_star
+
+learn_iptv_number_sharp:
+  sequence:
+    - service: remote.learn_command
+      target:
+        entity_id: remote.301
+      data:
+        device: iptv
+        command: number_sharp
+
+learn_iptv_entire_menu:
+  sequence:
+    - service: remote.learn_command
+      target:
+        entity_id: remote.301
+      data:
+        device: iptv
+        command: entire_menu
