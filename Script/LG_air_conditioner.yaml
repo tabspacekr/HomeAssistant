@@ -1,0 +1,67 @@
+#IR Remote Control - Learning
+learn_301_airconditioner_power:
+  sequence:
+    - service: remote.learn_command
+      target:
+        entity_id: remote.301
+      data:
+        device: airconditioner
+        command: power
+learn_301_airconditioner_poweroff:
+  sequence:
+    - service: remote.learn_command
+      target:
+        entity_id: remote.301
+      data:
+        device: airconditioner
+        command: poweroff
+learn_301_airconditioner_up:
+  sequence:
+    - service: remote.learn_command
+      target:
+        entity_id: remote.301
+      data:
+        device: airconditioner
+        command: up
+learn_301_airconditioner_down:
+  sequence:
+    - service: remote.learn_command
+      target:
+        entity_id: remote.301
+      data:
+        device: airconditioner
+        command: down
+
+#IR Remote Control - Sending
+301_airconditioner_power:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.301
+      data:
+        device: airconditioner
+        command: power
+301_airconditioner_poweroff:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.301
+      data:
+        device: airconditioner
+        command: poweroff
+301_airconditioner_up:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.301
+      data:
+        device: airconditioner
+        command: up
+301_airconditioner_down:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.301
+      data:
+        device: airconditioner
+        command: down
