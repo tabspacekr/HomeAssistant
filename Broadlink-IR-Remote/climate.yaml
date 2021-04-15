@@ -1,3 +1,14 @@
+
+# HomeAssistant의 Configuration.yaml에 아래가 선언되어 있다고 가정함
+
+# smartir:
+# climate: !include climate.yaml
+
+# smartir은 custom component로 broadlink ir remote custom component 호출을 위함
+# https://github.com/smartHomeHub/SmartIR 참고
+
+# 2021.04.15. ceo@tabspace.kr
+
 - platform: smartir
   name: 301_ac
   unique_id: 301_ac
