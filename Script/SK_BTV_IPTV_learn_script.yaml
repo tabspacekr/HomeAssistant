@@ -26,6 +26,15 @@ learn_iptv_volume_down:
       data:
         device: iptv
         command: volume_down
+        
+learn_iptv_volume_mute:
+  sequence:
+    - service: remote.learn_command
+      target:
+        entity_id: remote.301_remote
+      data:
+        device: iptv
+        command: volume_mute
 
 learn_iptv_channel_up:
   sequence:
