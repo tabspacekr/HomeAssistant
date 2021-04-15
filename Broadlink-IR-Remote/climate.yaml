@@ -1,0 +1,8 @@
+- platform: smartir
+  name: 301_ac
+  unique_id: 301_ac
+  # 디바이스 코드는 https://github.com/smartHomeHub/SmartIR/blob/master/docs/CLIMATE.md#available-codes-for-climate-devices 에서 확인
+  device_code: 1062
+  controller_data: remote.301_remote
+  temperature_sensor: sensor.301_temperature_temperature
+  humidity_sensor: sensor.301_temperature_humidity
