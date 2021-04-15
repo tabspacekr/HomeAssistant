@@ -225,15 +225,6 @@ learn_iptv_number_9:
         device: iptv
         command: number_9
 
-learn_iptv_number_0:
-  sequence:
-    - service: remote.learn_command
-      target:
-        entity_id: remote.301
-      data:
-        device: iptv
-        command: number_0
-
 learn_iptv_number_star:
   sequence:
     - service: remote.learn_command
