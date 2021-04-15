@@ -1,0 +1,253 @@
+#IR Remote Control - Sending Base64
+
+301_ir_send_iptv_power:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.301_remote
+      data:
+        device: iptv
+        command: b64:JgCUABMTFBEUExQSExMVERMTFTUUNxU1FDYVNRQ3FTQUNxUQFDcVERMTFBEUExUQFBMVEBQSFDYUNxU0FDcVNBQ3FTUUAAUdAAE0SRQADEYAATKUExMVERMTFBEUExMSFBIUNhQ3FTQUNxU1EzcUNhQ2FREUNhU1FDcVNBQ3FDYTNxU1FBIVERMTFRETExUQFBMVEBQADQU=
+
+301_ir_send_iptv_volume_up:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.301_remote
+      data:
+        device: iptv
+        command: b64:JgCYAAABJ5QTEhMSExMUEBMTFBATExM2EzYVNBM3FDUTNxI0EzcUERM3FDQTExQQERISERM2FBETEhQREjcUNRM2FDUTEhQ1EwAFGwABG0oTAAxDAAEjkhMTExETEhQREBMSEBMSFDUSNxY1FTYVNhU3FDYVNxUREzcVNhU2FDQTNxQ1EzYUNRMSExEVExQSExIVEhQTFhEUAA0F
+
+301_ir_send_iptv_volume_down:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.301_remote
+      data:
+        device: iptv
+        command: b64:JgCYAAABIpQTExQQExMUEBMTFBESExQ1EzcUNBM3FDUTNxQ0EzcSERESFDUTEhUQExITERE2EhERNhUQEzcUNRM2FDUTEhQ1EwAFHAABJEkRAAxEAAEFlBESEhARExERERISEBESEjURNhI1ETYSNRE2EjUQNxIQETcSNBE3ETURNhI1ETYSNRESEhARExIQERISEBETEhARAA0F
+
+301_ir_send_iptv_channel_up:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.301_remote
+      data:
+        device: iptv
+        command: b64:JgCYAAABMpMUExQRFBMVEBQTFRAUExU1FDYVNRY3FzUWNxc0FjcVERMTFBITExQRFBMVEBQ3FRAUNxU0FDcVNRM3FTUUEhQ2FAAFHQABM0kUAAxEAAFKkhYTFRIWExUSFxIVEhYTGTUYNxk0GDcXNRQ3GTUYNxcSGDcZNRc3GTUYNxY2FjYXNRYTFxEXEhUSFhMXERYSFxEXAA0F
+
+301_ir_send_iptv_channel_down:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.301_remote
+      data:
+        device: iptv
+        command: b64:JgCYAAABJZQTExgMExMTERMTFBETEhQ1EjcSNBE3EjURNhI1ETYTEBE2ExAREhIREBMSEBE3EREREhI1ETYSNRE2EjUREhI1EQAFHAABBkkRAAxFAAEFkhESEhEQExERERISEBETETURNhI1ETYSNRE3FDUTNhUQEzcUNRM2EzYTNxQ1EzcUNBMTFBETEhQRExIVEBETExETAA0F
+
+301_ir_send_iptv_nagivation_left:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.301_remote
+      data:
+        device: iptv
+        command: b64:JgCYAAABNZIUExURFBIUEhQSFBIUExQ1FDcWNBQ3FTUUNhY0FDcVERM3FTUUExU0FBMUERQ3FRAUExUQFDcVERQ2FTUUExM2FAAFHwABT0kUAAxEAAE0kxQTFBIUEhQSFBIWEhcSFzUUNhY2FjcXNRY3FzUXNhcRFjcVNhc2FzUWNxc1FjcXNRcSFhEUExQRFhMXEBYTFxEWAA0F
+
+301_ir_send_iptv_nagivation_right:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.301_remote
+      data:
+        device: iptv
+        command: b64:JgCYAAABTZQXEhcRFhIWEhYTFxIUExY2FzYVNBQ3FjUXNhc1EzcXERcSFRIXNhc1FxIVEhY3FhIVNxc1FhMWERQ3FzUWEhc1FgAFHgABSEkWAAxEAAFMkxYSFhEUExQRFxIWERYTFjUWNxY2FjYXNRc2FjUXNhcQFjcXNRY2FzUXNhY1FDcWNhYSFhEWExcQFhMWERcSFxAWAA0F
+
+301_ir_send_iptv_nagivation_up:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.301_remote
+      data:
+        device: iptv
+        command: b64:JgCYAAABNpMUExUQFBMVERQTFBEUExQ2FDcVNRQ3FTUUNhY0FTYVERQ3FREUEhU1FRIVERQ3FRETExQ2FDgUERQ3FTQVEhQ2FAAFHQABOUgUAAxFAAE4khUSFBIUExQRFBMUEhQSFTUUNxU1FDcUNhQ3FTUUNxURFDYVNRU2FjQUNxU1FDcVNRQTFBIUEhQSFBMUERQTFREUAA0F
+
+301_ir_send_iptv_nagivation_down:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.301_remote
+      data:
+        device: iptv
+        command: b64:JgCYAAABN5MUExURFBIUEhQTFBIUEhU2FDcWNRY3FzUWNhY2FDYXERYSFjYWEhY2FhMVEhQ3FhAWNxYSFTcXERU3FzUWEhc1FgAFHQABUUkWAAxGAAFSkhYSFhEXEhcQFxIVEhYTFTUYNxk0FzYWNRY3FzUYNxkQGDcZNRc3GTUYNxk1FzcZNRgTGRAYExkQGBMXERYTFhEXAA0F
+
+301_ir_send_iptv_nagivation_ok:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.301_remote
+      data:
+        device: iptv
+        command: b64:JgCYAAABIpMTExQQFBIUERMTFBATExQ1ETYUNRM3FDUTNhI1EzcUERMSFDUTNxQQExMUERI3FBETNxQQEhMSNBE3EjUTEhQ1EwAFHgABGkkTAAxDAAEjkxMSExAREhMREBMSEBMSFDUTNhQ0FDYUNRU2FjUWNhURFTcUNhU3FDUUNxY1FTcSNhITFREWEhQSFhIUEhUSFRIVAA0F
+
+301_ir_send_iptv_navigation_back:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.301_remote
+      data:
+        device: iptv
+        command: b64:JgCYAAABJZMTExQQExMUERMSFBETEhQ1EzcSNRM2FTQTNxQ1EzcUERESEjURNxM1ExMUEBM3FBATNxIQERISERE2EjUTEhM1EQAFHQABJEkTAAxFAAEFkxATEhASExQRERIWERQTFTYUNxM1EzcRNRU3FTYTNhUSFTcVNRY2FDYTNxY1FDcWNRUSFRIVEhUSFBMWERQTFREWAA0F
+
+301_ir_send_iptv_navigation_exit:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.301_remote
+      data:
+        device: iptv
+        command: b64:JgCYAAABOJMVEhURFBMVERUSFBIWEhU1FDcUNhQ3FTUVNhU1FTYUEhQTFBEUNxYQFTYVNhQSFREVNhQ2FBMUNhQTFREVNhU1FAAFHgABOkgVAAxFAAFRkhcSFhEXERQSFBIUEhMTFTQUNxU1FjYXNRY2FTUWNxcQFzYWNRc2FzUWNhc1FzYWNRcSFhEWExUSFhMWERcSFRIWAA0F
+
+301_ir_send_iptv_home:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.301_remote
+      data:
+        device: iptv
+        command: b64:JgDgAAABNZQUEhYQFBMUEhQSFBIUExQ2FDcVNBU2FjQUNxU1FTYVERQSFDYUExURFBIUEhQTFREUNhURFDcVNRQ3FTUUNxU1FAAFGwABOEoUAAxCAAE3kxQTFREUEhYQFRIYEBcSFzYWNxg0FzcWNhc2FzYXNhcRFjcXNRc3FjcVNxg1FjcYNBcSFxIWExYSFxIXERYTGBAXAAUbAAFYlBYTFhIWExcRFxIYEBcSGDUWNxY2FzcXNRY3FzUYNxYRFxMXNBYTFzUWNxY2FxIYEBc3FhIWNxcRFhMYEBc3FjYWAA0F
+
+301_ir_send_iptv_menu:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.301_remote
+      data:
+        device: iptv
+        command: b64:JgCYAAABM5MUEhQSFBIVERQSFREUEhU1FDcVNRQ3FDUUOBQ1FDcVEBQ3FBITNxURFDYWNBQTFBEUExU1ExMUNhQSFBIUNxU0FQAFHQABNUkUAAxGAAE1khQTFRAUExQRFBMVEBQTFTUUNhU1FDcVNRM3FTUUNxUQFDcVNRQ2FjQVNhU1FDYWNBQTFRAUExUQFBMVEBQTFBITAA0F
+
+301_ir_send_iptv_epg:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.301_remote
+      data:
+        device: iptv
+        command: b64:JgCYAAABKpMREhQRExIUERMSFBETExM1EzcUNRM3EjQRNxI1EzYVEBM3FBETNhQ1ExMUNBM3EhATExQ0ExMUEBM3FBATExM1EwAFHgABJEoTAAxFAAEFkxATEhAREhIRExIUERISFDUTNxQ1EzYUNRM3FDUTNhUQEzcUNRM2FDUTNxQ1EzYVNBMTFBATExQRExIUERMSFBETAA0F
+
+301_ir_send_iptv_number_0:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.301_remote
+      data:
+        device: iptv
+        command: b64:JgCYAAABJpMTEhQRExIUERMSFBETExQ0FDYUNRE3FDQTNxM2EDcUERMSFBETEhQRExIUNRMSFBETNhQ1EzcUNBM3ExISNxQ1EwAFHQABBUkRAAxFAAEalBESEhAREhIRERISEBETETUTNxQ0FTcWNRQ3FjUUNxYRFDcVNhU3FTUVNxU1FTcVNhITFBEQExYQFhIUEhYSFBIVAA0F
+
+301_ir_send_iptv_number_1:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.301_remote
+      data:
+        device: iptv
+        command: b64:JgCYAAABHJQTEhMSExIUERMTFBATExQ1EzYSNRM3FDUTNhQ1EzcUEBM3FBATExMRERISNRMSFBESExQ1EzYVNBM3FBATNxQ1EwAFHgABI0oTAAxFAAEjkxMSFBETExQSFRIWERUSFjUVNxU1EzYTNRY2FTUWNhYQFTcWNRQ3FTYVNhc0FjYVNhQTFBIVExQSFhEVEhUSFBETAA0F
+
+301_ir_send_iptv_number_2:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.301_remote
+      data:
+        device: iptv
+        command: b64:JgCYAAABU5EUExYSFRMWEhYSFhIWEhY2FzYWNhY3FTYXNhc1FjYXERYSFjYXERYSFhIWNhQSFBIVNxYSFTcXNRY2FxEWNhY2FgAFHgABUEkXAAxGAAFPlBUSFxEXEhcQFhMVEhgSGTUXOBk0FjcZNRg3GTUXNxkRGDcZNBg3GTQYNxY1FjcXNRcSFRIWExcRFhIWERYSFhEXAA0F
+
+301_ir_send_iptv_number_3:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.301_remote
+      data:
+        device: iptv
+        command: b64:JgCYAAABKJMSEhMQExMTERMTFBETEhU0EzcUNRE2EjYTNxQ0EjYSERE2ETYREhMQERISNRESEhEQExIQETcSNBE3EhATNxQ0EwAFHQABCEoTAAxDAAEFkxATEhAREhIREBMSEBESEjURNhI1ETcVNRU3FTUUNxYRFDcVNhU2FjQWNhU2EjcSNRUSFRIVEhUSFRIVERYSFBIVAA0F
+
+301_ir_send_iptv_number_4:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.301_remote
+      data:
+        device: iptv
+        command: b64:JgCUABQTFREUEhYQFRIVEBQTFDYUNhQ2FDcUNhQ3FTUUNhYQFBIUEhQ3FRAUExU1FBIVERQ2FDYUEhU1FDcVEBQ3FTQUAAUeAAExSxQADEUAATGTFBMVEBQSFBIUEhQRFBMUNRQ3FDUUNxU1EzcVNRQ2FRETNxU1FDYVNRQ2FTUUNxU0FBMTEhQSFBITExUQFBMVEBQADQU=
+
+301_ir_send_iptv_number_5:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.301_remote
+      data:
+        device: iptv
+        command: b64:JgCYAAABFpIUEhQRExIUERMSFRATExQ0FDYVNBM3FDUTNhU0EzcUEBM3FBESNxMQERMSNBMTFBATExQ0ExMUNRI3FBETNhQ1EwAFHQABI0kTAAxEAAEOkxMSFBESExQQExIUERUSFTYVNxQ2FjYUNRU2FTYVNhUSFTYUNBM3FDUTNxQ0FDYUNRMTFBATExQQExMUERMSExITAA0F
+
+301_ir_send_iptv_number_6:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.301_remote
+      data:
+        device: iptv
+        command: b64:JgCYAAABNJQUEhQSFBMUERQTFBEUExU1FDYVNRQ3FTUUNhU1FDcVERMTFTUUNhURFBIUNhQSFRETNxURFBIVNRQ2FREUNhU1FAAFHgABMkkUAAxEAAE0khQSFRETExQRFBMUERQSFDYUNhU1FDcUNRQ3FTQUNxUQFDcVNBQ3FTUTNxQ2FDYVNRQSFRETExQRFBMVEBQSFREUAA0F
+
+301_ir_send_iptv_number_7:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.301_remote
+      data:
+        device: iptv
+        command: b64:JgCYAAABTpQWExURFBMUEhQTFBIUExQ2FDcWNBQ3FTUUNxU1FDcVERQ3FDYUNxQSFRIUNhQTFBIUExQSFBMVNRQ3FREVNhU1FAAFHgABOUkUAAxEAAFYlBYTFREYEhcRFhMXERgTGTQYNxk1GDcZNBg3GTUYNxkQGDcZNRc2FjYXNhg0FzYVNhcRFhIXEhYSFhIWEhYTFhIWAA0F
+
+301_ir_send_iptv_number_8:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.301_remote
+      data:
+        device: iptv
+        command: b64:JgCYAAABJJMVExQSFRIVEhQTFBIVEhU2FDcVNhQ3FjUUNxY1FDcUEBMSFhAVExQ2FRIWNRUSFREVNxQ2EzcWEBU3FREVNhY1FQAFHgABOkoTAAxFAAEnkxMTFBATExQQExMUERITFDQTNxM1EzYUNRI3FDQTNxMREzYUNRM2FDUSNxQ0EzcUNBMSFBESExMREhMUEBMSFBESAA0F
+
+301_ir_send_iptv_number_9:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.301_remote
+      data:
+        device: iptv
+        command: b64:JgCYAAABJZQTEhQRExITEhESEhEREhI1EjcUNRM2FTQTNxE1EzcUEBM3ExITEhQ1ExIUNRMTExETEhQ1EzcUEBM3FBATNxQ1EwAFHAABGEsTAAxCAAEFkhETEBISExMQExMUEBMSFDUTNxQ0FDYUNRM3FDUTNhQREzcUNBQ2FDUTNxQ1EzYUNhITERETExQQExMUEBMTFBETAA0F
+
+301_ir_send_iptv_number_star:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.301_remote
+      data:
+        device: iptv
+        command: b64:JgCYAAABJpIRExIRExMUEBMTFBATExQ1EzYUNhI3FDUTNxQ1EzYUERESEjUTEhU0ExMUNRMSFBERNhMQEzcUERM2FRATNxQ1EwAFHgABJ0oTAAxGAAEnkhMTFBETEhQRExIUERMSFTQTNxI1EzcUNBM3EjQSNxQREjcSNBE3EzQTNxQ1EzcUNBMTFBETEhQRExIUERMSFRATAA0F
+
+301_ir_send_iptv_number_sharp:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.301_remote
+      data:
+        device: iptv
+        command: b64:JgCYAAABJpMSExQRExIUERMSFRATExQ0EzcSNRM3FDUSNxQ1EzcTERM3EzUTExM1ExMUNRMSFBESExQQEzcUERM2FBETNhI1EwAFHQABJEkSAAxCAAEHkhESEhARExERERISEBESEjURNhI1ETYVNBM3FDUTNxQQEzcUNRM3FDQUNhQ1EzYVNBMTFBETEhQRExIVEBMSFBETAA0F
+
+301_ir_send_iptv_entire_menu:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.301_remote
+      data:
+        device: iptv
+        command: b64:JgCYAAABNZIUExQRFBMUEhMTFREUEhQ2FDcVNBQ3FDYUNxM2FTYVERM3FTUUNxUQFBMTEhQ2FhAWExUSFhMVNhc2FzUWExU2FgAFHQABUUkUAAxFAAFRkhcSFRIWExgRFxMYERYSFTYYNxk1FzcZNRg3GTUYNxgRGDcZNRc3GTYXNxk1FzcZNRUSFhIVExYSFhMUERcSFhEWAA0F
