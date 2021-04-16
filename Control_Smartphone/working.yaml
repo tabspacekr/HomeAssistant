@@ -1,7 +1,8 @@
 kiosk_mode:
-  hide_sidebar: true
-  hide_header: true
-  ignore_mobile_settings: true
+  non_admin_settings:
+    hide_header: true
+    hide_sidebar: true
+    ignore_mobile_settings: true
 views:
   - title: 301태블릿
     panel: true
@@ -269,7 +270,11 @@ views:
                     square: false
               - type: thermostat
                 entity: climate.301_ac
-                name: '원하시는 온도 설정 후 전원버튼 옆 모드를 선택해주세요.(큰숫자: 현재온도, 작은숫자: 설정온도)'
+                name: ' '
+              - type: markdown
+                content: |-
+                  <center>원하시는 온도를 설정 후 모드를 선택해주세요.<br>
+                  (모드순서: 자동, 난방, 냉방, 제습, 송풍, 전원OFF)<br>
           - title: 요청 (Call)
             type: vertical-stack
             cards:
@@ -1043,5 +1048,4 @@ views:
             title: 타올요청
             state_color: true
             show_header_toggle: false
-
 title: TabSpace
