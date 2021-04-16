@@ -300,9 +300,6 @@ views:
                         entity: input_boolean.301_towel
                         name: 타월 (Towel)
                         icon: 'hass:car-defrost-rear'
-                  - type: media-control
-                    entity: media_player.301
-                    theme: Google Dark Theme
                   - title: 모닝콜 (Alarm)
                     type: vertical-stack
                     cards:
