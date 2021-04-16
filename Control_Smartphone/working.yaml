@@ -1,8 +1,11 @@
 kiosk_mode:
-  non_admin_settings:
-    hide_header: true
-    hide_sidebar: true
-    ignore_mobile_settings: true
+  user_settings:
+    - users:
+        - s301
+        - s302
+      kiosk: true
+      ignore_entity_settings: true
+      ignore_mobile_settings: true
 views:
   - title: 301태블릿
     panel: true
