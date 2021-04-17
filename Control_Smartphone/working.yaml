@@ -77,6 +77,26 @@ views:
                         name: 도어센서
                         show_state: true
                     square: true
+                  - type: grid
+                    cards:
+                      - type: button
+                        tap_action:
+                          action: toggle
+                        entity: switch.301_toilet
+                        hold_action:
+                          action: none
+                        name: 시네마 (Cinema)
+                        icon: 'hass:youtube'
+                      - type: button
+                        tap_action:
+                          action: toggle
+                        entity: switch.301_toilet
+                        name: 굿모닝 (Morning)
+                      - type: button
+                        tap_action:
+                          action: toggle
+                        entity: switch.301_toilet
+                        name: 굿나잇 (Sleep)
           - type: vertical-stack
             cards:
               - title: 스마트 TV (With STB)
