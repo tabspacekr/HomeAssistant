@@ -89,7 +89,7 @@ views:
                         hold_action:
                           action: none
                         name: 시네마 (Cinema)
-                        icon: 'hass:youtube'
+                        icon: 'hass:television-ambient-light'
                       - type: button
                         tap_action:
                           action: toggle
@@ -458,6 +458,31 @@ views:
                         name: 도어센서
                         show_state: true
                     square: true
+                  - type: vertical-stack
+                    cards: []
+                    title: 씬 스위치 (Scene)
+                  - type: grid
+                    cards:
+                      - type: button
+                        tap_action:
+                          action: toggle
+                        entity: switch.301_toilet
+                        hold_action:
+                          action: none
+                        name: 시네마 (Cinema)
+                        icon: 'hass:television-ambient-light'
+                      - type: button
+                        tap_action:
+                          action: toggle
+                        entity: switch.301_toilet
+                        name: 굿모닝 (Morning)
+                        icon: 'hass:weather-sunny'
+                      - type: button
+                        tap_action:
+                          action: toggle
+                        entity: switch.301_toilet
+                        name: 굿나잇 (Sleep)
+                        icon: 'hass:weather-night'
   - title: 301TV
     path: 301s-tv
     visible:
