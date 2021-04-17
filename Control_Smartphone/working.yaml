@@ -316,18 +316,44 @@ views:
                         icon: 'hass:coffee'
                         tap_action:
                           action: toggle
+                        show_state: true
                       - type: button
                         tap_action:
                           action: toggle
                         entity: input_boolean.301_clean
                         name: 청소 (Clean)
                         icon: 'hass:spray'
+                        show_state: true
                       - type: button
                         tap_action:
                           action: toggle
                         entity: input_boolean.301_towel
                         name: 타월 (Towel)
                         icon: 'hass:car-defrost-rear'
+                        show_state: true
+                      - type: button
+                        tap_action:
+                          action: toggle
+                        entity: switch.302_light_l1
+                        name: 연장 (Extend Stay)
+                        icon: 'hass:timeline-plus-outline'
+                        hold_action:
+                          action: none
+                        show_state: true
+                      - type: button
+                        tap_action:
+                          action: toggle
+                        entity: switch.302_light_l2
+                        name: 방해금지 (DND)
+                        icon: 'hass:cancel'
+                        show_state: true
+                      - type: button
+                        tap_action:
+                          action: toggle
+                        entity: switch.302_light_l3
+                        name: 비상 (SOS)
+                        show_state: true
+                        icon: 'hass:car-brake-alert'
                   - title: 모닝콜 (Alarm)
                     type: vertical-stack
                     cards:
