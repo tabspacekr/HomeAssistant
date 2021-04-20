@@ -339,7 +339,7 @@ views:
                       - type: button
                         tap_action:
                           action: toggle
-                        entity: switch.302_light_l1
+                        entity: input_boolean.301_extend
                         name: 연장 (Extend Stay)
                         icon: 'hass:timeline-plus-outline'
                         hold_action:
@@ -348,14 +348,14 @@ views:
                       - type: button
                         tap_action:
                           action: toggle
-                        entity: switch.302_light_l2
+                        entity: input_boolean.301_dnd
                         name: 방해금지 (DND)
                         icon: 'hass:cancel'
                         show_state: true
                       - type: button
                         tap_action:
                           action: toggle
-                        entity: switch.302_light_l3
+                        entity: input_boolean.301_sos
                         name: 비상 (SOS)
                         show_state: true
                         icon: 'hass:car-brake-alert'
@@ -1081,6 +1081,29 @@ views:
                     entity: input_boolean.301_towel
                     name: 타월 (Towel)
                     icon: 'hass:car-defrost-rear'
+                  - type: button
+                    tap_action:
+                      action: toggle
+                    entity: input_boolean.301_extend
+                    name: 연장 (Extend Stay)
+                    icon: 'hass:timeline-plus-outline'
+                    hold_action:
+                      action: none
+                    show_state: true
+                  - type: button
+                    tap_action:
+                      action: toggle
+                    entity: input_boolean.301_dnd
+                    name: 방해금지 (DND)
+                    icon: 'hass:cancel'
+                    show_state: true
+                  - type: button
+                    tap_action:
+                      action: toggle
+                    entity: input_boolean.301_sos
+                    name: 비상 (SOS)
+                    show_state: true
+                    icon: 'hass:car-brake-alert'
               - title: 모닝콜 (Alarm)
                 type: vertical-stack
                 cards:
