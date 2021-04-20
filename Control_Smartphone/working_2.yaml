@@ -3,6 +3,8 @@ kiosk_mode:
     - users:
         - s301
         - s302
+        - t301
+        - t302
       kiosk: true
       ignore_entity_settings: true
       ignore_mobile_settings: true
@@ -10,8 +12,8 @@ views:
   - title: 301태블릿
     panel: true
     visible:
-      - user: 20464167669e40dc85bb211061f8612b
       - user: 4b136012118449bfb89e162f96f9dcf7
+      - user: 05fabc2a318c47a59b5b5d3257e582ea
     path: '301'
     badges: []
     cards:
@@ -136,8 +138,9 @@ views:
                         entity: input_boolean.301_all_off
                         icon: 'mdi:lightbulb-group-outline'
                         name: 전체 (Room All)
-                        icon_height: 100px
                         show_state: false
+                        hold_action:
+                          action: none
                     square: false
                     columns: 1
                   - type: grid
@@ -1309,7 +1312,7 @@ views:
               - entity: input_boolean.303_water
             title: 음료요청
             state_color: true
-            show_header_toggle: false
+            show_header_toggle: true
           - type: entities
             entities:
               - entity: input_boolean.301_clean
@@ -1317,7 +1320,7 @@ views:
               - entity: input_boolean.303_clean
             title: 청소요청
             state_color: true
-            show_header_toggle: false
+            show_header_toggle: true
           - type: entities
             entities:
               - entity: input_boolean.301_towel
@@ -1325,5 +1328,27 @@ views:
               - entity: input_boolean.303_towel
             title: 타올요청
             state_color: true
-            show_header_toggle: false
+            show_header_toggle: true
+          - type: entities
+            entities:
+              - entity: input_boolean.301_sos
+              - entity: input_boolean.302_sos
+              - entity: input_boolean.303_sos
+            state_color: true
+            title: 도움요청
+            show_header_toggle: true
+          - type: entities
+            entities:
+              - entity: input_boolean.301_extend
+              - entity: input_boolean.302_extend
+              - entity: input_boolean.303_extend
+            title: 연장요청
+            state_color: true
+          - type: entities
+            entities:
+              - entity: input_boolean.301_dnd
+              - entity: input_boolean.302_dnd
+              - entity: input_boolean.303_dnd
+            title: 방해금지
+            state_color: true
 title: TabSpace
