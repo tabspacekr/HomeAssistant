@@ -1,11 +1,16 @@
+# 아래 목록에 있는 일반사용자는 상단헤더메뉴와 좌측메뉴가 노출되지 않아도 되므로, 키오스크 모드 설정
+# 목록에 있지 않은 사용자는 해당사항이 없기 때문에, 관리자는 정상적으로 설정(구성) 화면에 진입할 수 있음
 kiosk_mode:
   user_settings:
     - users:
+        # 여기에 해당 사용자를 전부 언급하면됨
         - s301
         - s302
       kiosk: true
       ignore_entity_settings: true
       ignore_mobile_settings: true
+# 태블릿뷰 시작
+# 태블릿뷰 화면에서는 8~10인치 태블릿 UI에 적절한 화면이 표시.
 views:
   - title: 301태블릿
     panel: true
