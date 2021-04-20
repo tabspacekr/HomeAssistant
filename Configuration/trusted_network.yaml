@@ -1,0 +1,23 @@
+# configuration.yaml 에 내용 
+homeassistant:
+  auth_providers:
+    - type: trusted_networks
+      # 참고 : https://www.home-assistant.io/docs/authentication/providers/#trusted-networks
+      trusted_networks:
+        #- 192.168.0.0/24
+        - 127.0.0.1
+      # 태블릿 접속시에, IP를 고정하여 이곳에 ID를 명시하면됨.
+      trusted_users:
+        192.168.0.100: t301
+      allow_bypass_login: true
+#        - 192.168.0.100/24
+#        - 192.168.1.0/24
+#        - 192.168.2.0/24
+#        - 192.168.3.0/24
+#        - 192.168.41.0/24
+#        - 192.168.42.0/24
+#        - 192.168.99.0/24
+
+#        - ::1
+
+#    - type: homeassistant
