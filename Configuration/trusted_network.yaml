@@ -1,5 +1,8 @@
+# configuration.yaml에서 수정
 homeassistant:
+  # 자동로그인 처리 부분
   auth_providers:
+    - type: homeassistant # 이게 없으면 ID/PW 로그인을 지원하지 않음
     - type: trusted_networks
       # 참고 : https://www.home-assistant.io/docs/authentication/providers/#trusted-networks
       trusted_networks:
@@ -11,10 +14,3 @@ homeassistant:
         # 참고 : https://community.home-assistant.io/t/proper-syntax-for-trusted-users-configuration/213876/2
         192.168.0.100: 05fabc2a318c47a59b5b5d3257e582ea
       allow_bypass_login: true
-#        - 192.168.0.100/24
-#        - 192.168.1.0/24
-#        - 192.168.2.0/24
-#        - 192.168.3.0/24
-#        - 192.168.41.0/24
-#        - 192.168.42.0/24
-#        - 192.168.99.0/24
