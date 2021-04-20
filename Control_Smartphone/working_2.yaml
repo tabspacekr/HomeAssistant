@@ -25,12 +25,10 @@ views:
                 cards:
                   - type: vertical-stack
                     cards: []
-                  - type: vertical-stack
-                    cards: []
-                    title: 일기 예보 (Weather Forecast)
+                    title: 날씨 (Weather)
                   - type: weather-forecast
                     entity: weather.25hotel
-                    show_forecast: true
+                    show_forecast: false
                     name: 25HOTEL
                   - type: horizontal-stack
                     cards:
@@ -123,6 +121,33 @@ views:
                       - entity: input_number.301_wakeminutes
                         name: 분 (Minutes)
                     show_header_toggle: false
+              - title: 공기청정기 (Air Cleaner)
+                type: grid
+                cards:
+                  - type: button
+                    tap_action:
+                      action: toggle
+                    icon: 'hass:power'
+                    show_name: true
+                    name: 전원
+                    hold_action:
+                      action: none
+                  - type: button
+                    tap_action:
+                      action: toggle
+                    name: 청정세기
+                    icon: 'hass:fan'
+                    hold_action:
+                      action: none
+                  - type: button
+                    tap_action:
+                      action: toggle
+                    entity: switch.301_front
+                    name: 순환회전
+                    icon: 'hass:rotate-3d-variant'
+                    hold_action:
+                      action: none
+                square: false
           - type: vertical-stack
             cards:
               - type: vertical-stack
