@@ -166,6 +166,7 @@ views:
                         show_state: false
                         hold_action:
                           action: none
+                        icon_height: 80px
                     square: false
                     columns: 1
                   - type: grid
