@@ -1,0 +1,10 @@
+# 판매 가능
+input_text.301_status.sellable
+#
+input_text.301_status.reservation
+# 투숙중
+input_text.301_status.staying
+# 체크아웃 요청
+input_text.301_status.checkout-request
+# 청소 요청
+input_text.301_status.clean-request
