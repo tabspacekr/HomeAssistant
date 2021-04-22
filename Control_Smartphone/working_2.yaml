@@ -204,12 +204,12 @@ views:
                           action: more-info
                         entity: binary_sensor.301_motion_occupancy
                         show_state: false
-                        name: 모션센서
+                        name: 모션 (Motion)
                       - type: button
                         tap_action:
                           action: more-info
                         entity: binary_sensor.301_door_contact
-                        name: 도어센서
+                        name: 도어 (Door)
                         show_state: false
                     square: true
                   - type: vertical-stack
@@ -229,13 +229,13 @@ views:
                         tap_action:
                           action: toggle
                         entity: switch.301_toilet
-                        name: 굿모닝 (Morning)
+                        name: 기상 (Morning)
                         icon: 'hass:weather-sunny'
                       - type: button
                         tap_action:
                           action: toggle
                         entity: switch.301_toilet
-                        name: 굿나잇 (Sleep)
+                        name: 취침 (Sleep)
                         icon: 'hass:weather-night'
           - type: vertical-stack
             cards:
@@ -657,40 +657,40 @@ views:
                         entity: switch.301_light_l1
                         name: 중앙 (Lounge)
                         icon: 'hass:lightbulb-on-outline'
-                        show_state: true
+                        show_state: false
                       - type: button
                         tap_action:
                           action: toggle
                         entity: switch.301_light_l2
                         name: 무드 (Mood)
                         icon: 'hass:lightbulb-on-outline'
-                        show_state: true
+                        show_state: false
                       - type: button
                         tap_action:
                           action: toggle
                         entity: switch.301_light_l3
                         name: 욕실 (Bath)
                         icon: 'hass:lightbulb-on-outline'
-                        show_state: true
+                        show_state: false
                       - type: button
                         tap_action:
                           action: toggle
                         entity: switch.301_light_l4
                         name: 환풍기 (Air Fan)
                         icon: 'hass:fan'
-                        show_state: true
+                        show_state: false
                       - type: button
                         tap_action:
                           action: more-info
                         entity: binary_sensor.301_motion_occupancy
-                        show_state: true
-                        name: 모션센서
+                        show_state: false
+                        name: 모션 (Motion)
                       - type: button
                         tap_action:
                           action: more-info
                         entity: binary_sensor.301_door_contact
-                        name: 도어센서
-                        show_state: true
+                        name: 도어 (Door)
+                        show_state: false
                     square: true
                   - type: vertical-stack
                     cards: []
@@ -709,13 +709,13 @@ views:
                         tap_action:
                           action: toggle
                         entity: switch.301_toilet
-                        name: 굿모닝 (Morning)
+                        name: 기상 (Morning)
                         icon: 'hass:weather-sunny'
                       - type: button
                         tap_action:
                           action: toggle
                         entity: switch.301_toilet
-                        name: 굿나잇 (Sleep)
+                        name: 취침 (Sleep)
                         icon: 'hass:weather-night'
   - title: 301TV
     path: 301s-tv
