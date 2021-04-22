@@ -1,0 +1,566 @@
+- id: '1613697960833'
+  alias: turn_off_all
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 4ef9439b8a49e342e4357eb852370247
+    type: click
+    subtype: single
+    discovery_id: 0x00158d0006727102 click_single
+  condition: []
+  action:
+  - service: scene.create
+    data:
+      scene_id: before_state
+      snapshot_entities:
+      - switch.2gaengseuwici_l1
+      - switch.2gaengseuwici_l2
+      - switch.2gaengseuwici2_l1
+      - switch.2gaengseuwici2_l2
+      - switch.4gaengseuwici_l1
+      - switch.4gaengseuwici_l2
+      - switch.4gaengseuwici_l3
+      - switch.4gaengseuwici_l4
+      - switch.rilrei
+  - service: input_boolean.turn_on
+    data: {}
+    entity_id: input_boolean.temp_status
+  - type: turn_off
+    device_id: d9465d82734d252c41c6c55fa34460cd
+    entity_id: switch.2gaengseuwici_l1
+    domain: switch
+  - type: turn_off
+    device_id: d9465d82734d252c41c6c55fa34460cd
+    entity_id: switch.2gaengseuwici_l2
+    domain: switch
+  - type: turn_off
+    device_id: 95e61f606b1525ffdcf99123c45b32d5
+    entity_id: switch.2gaengseuwici2_l1
+    domain: switch
+  - type: turn_off
+    device_id: 95e61f606b1525ffdcf99123c45b32d5
+    entity_id: switch.2gaengseuwici2_l2
+    domain: switch
+  - type: turn_off
+    device_id: 26db9fdf58c371ef8ccb46cbf207ddb8
+    entity_id: switch.4gaengseuwici_l1
+    domain: switch
+  - type: turn_off
+    device_id: 26db9fdf58c371ef8ccb46cbf207ddb8
+    entity_id: switch.4gaengseuwici_l2
+    domain: switch
+  - type: turn_off
+    device_id: 26db9fdf58c371ef8ccb46cbf207ddb8
+    entity_id: switch.4gaengseuwici_l3
+    domain: switch
+  - type: turn_off
+    device_id: 26db9fdf58c371ef8ccb46cbf207ddb8
+    entity_id: switch.4gaengseuwici_l4
+    domain: switch
+  - type: turn_off
+    device_id: 4f44b5da66df2a282375562c3a989045
+    entity_id: switch.rilrei_10a
+    domain: switch
+  - type: turn_off
+    device_id: ff07473d55eb88c06d9b89677aca93d6
+    entity_id: switch.rilrei16a
+    domain: switch
+  mode: single
+- id: '1613698494636'
+  alias: turn_on_recovery
+  description: ''
+  trigger:
+  - device_id: f6c75f35f1b013e6b993d4d11e139761
+    domain: zha
+    platform: device
+    type: remote_button_short_press
+    subtype: remote_button_short_press
+  condition:
+  - condition: state
+    entity_id: input_boolean.temp_status
+    state: 'on'
+  action:
+  - service: scene.turn_on
+    data:
+      entity_id: scene.before_state
+  - service: input_boolean.turn_off
+    data: {}
+    entity_id: input_boolean.temp_status
+  mode: single
+- id: '1613736941239'
+  alias: turn_on_all
+  description: 2번 누르면 모두 켜짐
+  trigger:
+  - device_id: f6c75f35f1b013e6b993d4d11e139761
+    domain: zha
+    platform: device
+    type: remote_button_double_press
+    subtype: remote_button_double_press
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 2646fb0c0f134e53ac1e6225a3773bdf
+    entity_id: light.2gang1
+    domain: light
+  - type: turn_on
+    device_id: 2646fb0c0f134e53ac1e6225a3773bdf
+    entity_id: light.2gang2
+    domain: light
+  - type: turn_on
+    device_id: dbaa411efd1b553393a6b3e0d1d2fc94
+    entity_id: light.4gang4
+    domain: light
+  - type: turn_on
+    device_id: dbaa411efd1b553393a6b3e0d1d2fc94
+    entity_id: light.4gang3
+    domain: light
+  - type: turn_on
+    device_id: dbaa411efd1b553393a6b3e0d1d2fc94
+    entity_id: light.4gang2
+    domain: light
+  - type: turn_on
+    device_id: dbaa411efd1b553393a6b3e0d1d2fc94
+    entity_id: light.4gang1
+    domain: light
+  mode: single
+- id: '1613737026666'
+  alias: turn_off_longpress
+  description: ''
+  trigger:
+  - device_id: f6c75f35f1b013e6b993d4d11e139761
+    domain: zha
+    platform: device
+    type: remote_button_long_press
+    subtype: remote_button_long_press
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 2646fb0c0f134e53ac1e6225a3773bdf
+    entity_id: light.2gang1
+    domain: light
+  - type: turn_off
+    device_id: 2646fb0c0f134e53ac1e6225a3773bdf
+    entity_id: light.2gang2
+    domain: light
+  - type: turn_off
+    device_id: dbaa411efd1b553393a6b3e0d1d2fc94
+    entity_id: light.4gang1
+    domain: light
+  - type: turn_off
+    device_id: dbaa411efd1b553393a6b3e0d1d2fc94
+    entity_id: light.4gang2
+    domain: light
+  - type: turn_off
+    device_id: dbaa411efd1b553393a6b3e0d1d2fc94
+    entity_id: light.4gang3
+    domain: light
+  - type: turn_off
+    device_id: dbaa411efd1b553393a6b3e0d1d2fc94
+    entity_id: light.4gang4
+    domain: light
+  mode: single
+- id: alarm_clock_123
+  alias: Wake 1
+  trigger:
+    platform: template
+    value_template: '{{ states(''sensor.time'') == states(''sensor.wake_time_1'')
+      }}'
+  condition:
+    condition: template
+    value_template: '{% set today = ''input_boolean.wakeweekday_'' ~ now().strftime("%a")
+      | lower ~ ''_1'' %} {{ is_state(''input_boolean.wakestatus_1'', ''on'') and
+      is_state(today, ''on'') }}
+
+      '
+  action:
+    service: switch.turn_on
+    entity_id: switch.office_1
+- id: '1615212248520'
+  alias: 301-일괄소등
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.301_all_off
+    from: 'on'
+    to: 'off'
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 42ad409c2d1653083127bd7fe001cfd9
+    entity_id: switch.301_light_l1
+    domain: switch
+  - type: turn_off
+    device_id: 42ad409c2d1653083127bd7fe001cfd9
+    entity_id: switch.301_light_l2
+    domain: switch
+  - type: turn_off
+    device_id: 42ad409c2d1653083127bd7fe001cfd9
+    entity_id: switch.301_light_l3
+    domain: switch
+  - type: turn_off
+    device_id: 42ad409c2d1653083127bd7fe001cfd9
+    entity_id: switch.301_light_l4
+    domain: switch
+  - type: turn_off
+    device_id: 4f44b5da66df2a282375562c3a989045
+    entity_id: switch.301_front
+    domain: switch
+  - type: turn_off
+    device_id: 75c0fef2ae8bde8234d39cc3eb8688d1
+    entity_id: switch.301_toilet
+    domain: switch
+  - type: turn_off
+    device_id: 67b9d889b40aaf4ae18a24304e4ce0af
+    entity_id: light.301_dimmer
+    domain: light
+  mode: parallel
+  max: 10
+- id: '1615257845346'
+  alias: Set theme at startup
+  description: Set theme at startup
+  trigger:
+  - platform: homeassistant
+    event: start
+  condition: []
+  action:
+  - service: frontend.set_theme
+    data:
+      name: Google Dark Theme
+  mode: single
+- id: '1618151732508'
+  alias: 비밀번호 취약 알림 해제
+  trigger:
+  - platform: event
+    event_type: call_service
+    event_data:
+      domain: persistent_notification
+      service: create
+  condition:
+  - condition: template
+    value_template: '{{ ''supervisor_issue_pwned'' in trigger.event.data.service_data.notification_id
+      }}
+
+      '
+  action:
+  - service: persistent_notification.dismiss
+    data:
+      notification_id: '{{ trigger.event.data.service_data.notification_id }}
+
+        '
+  mode: parallel
+  max: 10
+- id: '1618381919671'
+  alias: 301-모션 센서 조명 켜기
+  description: ''
+  use_blueprint:
+    path: tabspacekr/모션_센서_조명_켜기(switch_ver).yaml
+    input:
+      motion_entity: binary_sensor.301_motion_occupancy
+      switch_target:
+        entity_id: switch.301_front
+- id: '1618386785099'
+  alias: 301-웰컴
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 4ef9439b8a49e342e4357eb852370247
+    type: action
+    subtype: double
+    discovery_id: 0x00158d0006727102 action_double
+  condition: []
+  action:
+  - service: media_player.volume_set
+    target:
+      entity_id: media_player.301
+    data:
+      volume_level: 0.5
+  - service: media_player.play_media
+    data:
+      entity_id: media_player.301
+      media_content_type: music
+      media_content_id: /local/welcome_25hotel.mp3
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.301_all_off
+  - service: climate.turn_on
+    entity_id: climate.301_ac
+  - service: input_text.set_value
+    target:
+      entity_id: input_text.301_room_status
+    data:
+      value: staying
+  mode: single
+- id: '1618388557294'
+  alias: 301-체크아웃
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 4ef9439b8a49e342e4357eb852370247
+    type: click
+    subtype: single
+    discovery_id: 0x00158d0006727102 click_single
+  condition: []
+  action:
+  - service: media_player.volume_set
+    target:
+      entity_id: media_player.301
+    data:
+      volume_level: 0.5
+  - service: media_player.play_media
+    data:
+      entity_id: media_player.301
+      media_content_type: music
+      media_content_id: /local/checkout.mp3
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.301_all_off
+  - service: climate.turn_off
+    entity_id: climate.301_ac
+  - service: input_boolean.turn_off
+    entity_id:
+    - input_boolean.301_water
+    - input_boolean.301_clean
+    - input_boolean.301_towel
+    - input_boolean.301_sos
+    - input_boolean.301_extend
+    - input_boolean.301_dnd
+  - service: input_text.set_value
+    target:
+      entity_id: input_text.301_room_status
+    data:
+      value: checkout-request
+  mode: single
+- id: '1618461642867'
+  alias: 301-일괄점등
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.301_all_off
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 42ad409c2d1653083127bd7fe001cfd9
+    entity_id: switch.301_light_l1
+    domain: switch
+  - type: turn_on
+    device_id: 42ad409c2d1653083127bd7fe001cfd9
+    entity_id: switch.301_light_l2
+    domain: switch
+  - type: turn_on
+    device_id: 42ad409c2d1653083127bd7fe001cfd9
+    entity_id: switch.301_light_l3
+    domain: switch
+  - type: turn_on
+    device_id: 42ad409c2d1653083127bd7fe001cfd9
+    entity_id: switch.301_light_l4
+    domain: switch
+  - type: turn_on
+    device_id: 4f44b5da66df2a282375562c3a989045
+    entity_id: switch.301_front
+    domain: switch
+  - type: turn_on
+    device_id: 75c0fef2ae8bde8234d39cc3eb8688d1
+    entity_id: switch.301_toilet
+    domain: switch
+  - type: turn_on
+    device_id: 67b9d889b40aaf4ae18a24304e4ce0af
+    entity_id: light.301_dimmer
+    domain: light
+    brightness_pct: 100
+    flash: short
+  mode: single
+- id: '1618463666190'
+  alias: 301-에어컨(ON)
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.301_air_conditioner_power_stats
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - service: script.301_airconditioner_power
+  mode: single
+- id: '1618463687567'
+  alias: 301-에어컨(OFF)
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.301_air_conditioner_power_stats
+    from: 'on'
+    to: 'off'
+  condition: []
+  action:
+  - service: script.301_airconditioner_poweroff
+  mode: single
+- id: '1618977346556'
+  alias: 302-모션 센서 조명 켜기
+  description: ''
+  use_blueprint:
+    path: tabspacekr/모션_센서_조명_켜기(switch_ver).yaml
+    input:
+      motion_entity: binary_sensor.302_motion_occupancy
+      switch_target:
+        entity_id: switch.302_front
+- id: '1618978930353'
+  alias: 302-일괄소등
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.302_all_off
+    from: 'on'
+    to: 'off'
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 4e84a9204d3e1b832cda4a37d3789f58
+    entity_id: switch.302_light_l1
+    domain: switch
+  - type: turn_off
+    device_id: 4e84a9204d3e1b832cda4a37d3789f58
+    entity_id: switch.302_light_l2
+    domain: switch
+  - type: turn_off
+    device_id: 4e84a9204d3e1b832cda4a37d3789f58
+    entity_id: switch.302_light_l3
+    domain: switch
+  - type: turn_off
+    device_id: 4e84a9204d3e1b832cda4a37d3789f58
+    entity_id: switch.302_light_l4
+    domain: switch
+  - type: turn_off
+    device_id: ff07473d55eb88c06d9b89677aca93d6
+    entity_id: switch.302_front
+    domain: switch
+  - type: turn_off
+    device_id: ceb64fafbc288660f26fe4b87f31b604
+    entity_id: switch.302_toilet
+    domain: switch
+  - type: turn_off
+    device_id: a6289c3add0b150494c0facd76fb958f
+    entity_id: light.302_dimmer
+    domain: light
+  mode: single
+- id: '1618979046309'
+  alias: 302-체크아웃
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 6da556711f91928fd94b56e3a69caaad
+    type: click
+    subtype: single
+    discovery_id: 0x00158d00066b4923 click_single
+  condition: []
+  action:
+  - service: media_player.volume_set
+    target:
+      entity_id: media_player.301
+    data:
+      volume_level: 0.5
+  - service: media_player.play_media
+    data:
+      entity_id: media_player.301
+      media_content_type: music
+      media_content_id: /local/checkout.mp3
+  - service: input_boolean.turn_off
+    data: {}
+    target:
+      entity_id: input_boolean.302_all_off
+  - service: climate.turn_off
+    entity_id: climate.301_ac
+  - service: input_boolean.turn_off
+    entity_id:
+    - input_boolean.302_water
+    - input_boolean.302_clean
+    - input_boolean.302_towel
+    - input_boolean.302_sos
+    - input_boolean.302_extend
+    - input_boolean.302_dnd
+  - service: input_text.set_value
+    target:
+      entity_id:
+      - input_text.302_room_status
+    data:
+      value: checkout-request
+  mode: single
+- id: '1618979162747'
+  alias: 302-웰컴
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 6da556711f91928fd94b56e3a69caaad
+    type: click
+    subtype: double
+    discovery_id: 0x00158d00066b4923 click_double
+  condition: []
+  action:
+  - service: media_player.volume_set
+    target:
+      entity_id: media_player.301
+    data:
+      volume_level: 0.5
+  - service: media_player.play_media
+    data:
+      entity_id: media_player.301
+      media_content_type: music
+      media_content_id: /local/welcome_25hotel.mp3
+  - service: input_boolean.turn_on
+    data: {}
+    target:
+      entity_id:
+      - input_boolean.302_all_off
+  - service: climate.turn_on
+    entity_id: climate.301_ac
+  - service: input_text.set_value
+    target:
+      entity_id:
+      - input_text.302_room_status
+    data:
+      value: staying
+  mode: single
+- id: '1618979278467'
+  alias: 302-일괄점등
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.302_all_off
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 4e84a9204d3e1b832cda4a37d3789f58
+    entity_id: switch.302_light_l1
+    domain: switch
+  - type: turn_on
+    device_id: 4e84a9204d3e1b832cda4a37d3789f58
+    entity_id: switch.302_light_l2
+    domain: switch
+  - type: turn_on
+    device_id: 4e84a9204d3e1b832cda4a37d3789f58
+    entity_id: switch.302_light_l3
+    domain: switch
+  - type: turn_on
+    device_id: 4e84a9204d3e1b832cda4a37d3789f58
+    entity_id: switch.302_light_l4
+    domain: switch
+  - type: turn_on
+    device_id: ff07473d55eb88c06d9b89677aca93d6
+    entity_id: switch.302_front
+    domain: switch
+  - type: turn_on
+    device_id: ceb64fafbc288660f26fe4b87f31b604
+    entity_id: switch.302_toilet
+    domain: switch
+  - type: turn_on
+    device_id: a6289c3add0b150494c0facd76fb958f
+    entity_id: light.302_dimmer
+    domain: light
+    brightness_pct: 100
+    flash: short
+  mode: single
