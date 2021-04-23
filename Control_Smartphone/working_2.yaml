@@ -223,7 +223,7 @@ views:
                         entity: switch.301_toilet
                         hold_action:
                           action: none
-                        name: 시네마 (Cinema)
+                        name: 시네마 (Ambient)
                         icon: 'hass:television-ambient-light'
                       - type: button
                         tap_action:
@@ -703,7 +703,7 @@ views:
                         entity: switch.301_toilet
                         hold_action:
                           action: none
-                        name: 시네마 (Cinema)
+                        name: 시네마 (Ambient)
                         icon: 'hass:television-ambient-light'
                       - type: button
                         tap_action:
