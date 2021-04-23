@@ -1,0 +1,75 @@
+# 테스트용
+wakehour_1:
+  name: Hour
+  min: 00
+  max: 23
+  step: 1
+wakeminutes_1:
+  name: Minutes
+  min: 00
+  max: 59
+  step: 1
+  
+  
+# 301호
+301_wakehour:
+  name: 시 (Hour)
+  min: 00
+  max: 23
+  step: 1
+  initial: 8
+  unit_of_measurement: 시
+  icon: mdi:clock-start
+  mode: select
+
+301_wakeminutes:
+  name: 분 (Minutes)
+  min: 00
+  max: 59
+  step: 1
+  initial: 15
+  unit_of_measurement: 분
+  icon: mdi:clock-start
+  mode: select
+  
+# 302호
+302_wakehour:
+  name: 시 (Hour)
+  min: 00
+  max: 23
+  step: 1
+  initial: 8
+  unit_of_measurement: 시
+  icon: mdi:clock-start
+  mode: select
+  
+302_wakeminutes:
+  name: 분 (Minutes)
+  min: 00
+  max: 59
+  step: 1
+  initial: 15
+  unit_of_measurement: 분
+  icon: mdi:clock-start
+  mode: select
+  
+# 303호
+303_wakehour:
+  name: 시 (Hour)
+  min: 00
+  max: 23
+  step: 1
+  initial: 8
+  unit_of_measurement: 시
+  icon: mdi:clock-start
+  mode: select
+  
+303_wakeminutes:
+  name: 분 (Minutes)
+  min: 00
+  max: 59
+  step: 1
+  initial: 15
+  unit_of_measurement: 분
+  icon: mdi:clock-start
+  mode: select
