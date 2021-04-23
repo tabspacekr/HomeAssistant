@@ -88,7 +88,7 @@ views:
                     tap_action:
                       action: toggle
                     entity: input_boolean.301_extend
-                    name: 연장 (Extend Stay)
+                    name: 연장 (ExtendStay)
                     icon: 'hass:timeline-plus-outline'
                     hold_action:
                       action: none
@@ -1288,7 +1288,7 @@ views:
                     tap_action:
                       action: toggle
                     entity: input_boolean.301_extend
-                    name: 연장 (Extend Stay)
+                    name: 연장 (ExtendStay)
                     icon: 'hass:timeline-plus-outline'
                     hold_action:
                       action: none
