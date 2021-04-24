@@ -37,12 +37,14 @@ views:
                         graph: line
                         hours_to_show: 12
                         name: 객실 온도 (Temperature)
+                        theme: Google Blue Theme
                       - type: sensor
                         entity: sensor.301_temperature_humidity
                         name: 객실 습도 (Humidity)
                         graph: line
                         detail: 1
                         hours_to_show: 12
+                        theme: Google Blue Theme
                   - title: 에어컨 (Air Conditioner)
                     type: vertical-stack
                     cards:
@@ -142,9 +144,11 @@ views:
                       - type: entity
                         entity: sensor.date
                         name: 날짜 (Date)
+                        theme: Google Blue Theme
                       - type: entity
                         entity: sensor.time
                         name: 시간 (Time)
+                        theme: Google Blue Theme
                   - type: horizontal-stack
                     cards:
                       - type: button
@@ -155,10 +159,12 @@ views:
                         hold_action:
                           action: none
                         icon_height: 60px
+                        icon: 'mdi:alarm'
                       - type: entity
                         entity: sensor.301_wake_time
                         name: 알람 시간 (Alarm Time)
-                        icon: 'mdi:timer'
+                        icon: 'mdi:alarm'
+                        theme: Google Blue Theme
                   - type: grid
                     cards:
                       - type: button
@@ -182,10 +188,11 @@ views:
                       - type: button
                         tap_action:
                           action: none
-                        show_icon: false
+                        show_icon: true
                         name: 시 (Hour)
                         hold_action:
                           action: none
+                        icon: 'mdi:timer'
                       - type: button
                         tap_action:
                           action: toggle
@@ -229,6 +236,7 @@ views:
                         show_icon: true
                         hold_action:
                           action: none
+                        icon: 'mdi:timer'
                       - type: button
                         tap_action:
                           action: toggle
