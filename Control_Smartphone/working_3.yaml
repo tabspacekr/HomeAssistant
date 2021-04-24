@@ -56,6 +56,33 @@ views:
                     content: |-
                       <center>원하시는 온도를 설정 후 모드를 선택해주세요.<br>
                       (모드순서: 자동, 난방, 냉방, 제습, 송풍, 전원OFF)<br>
+              - title: 공기청정기 (Air Cleaner)
+                type: grid
+                cards:
+                  - type: button
+                    tap_action:
+                      action: toggle
+                    icon: 'hass:power'
+                    show_name: true
+                    name: 전원
+                    hold_action:
+                      action: none
+                  - type: button
+                    tap_action:
+                      action: toggle
+                    name: 청정세기
+                    icon: 'hass:fan'
+                    hold_action:
+                      action: none
+                  - type: button
+                    tap_action:
+                      action: toggle
+                    entity: switch.301_front
+                    name: 순환회전
+                    icon: 'hass:rotate-3d-variant'
+                    hold_action:
+                      action: none
+                square: false
           - type: vertical-stack
             cards:
               - type: vertical-stack
@@ -221,33 +248,6 @@ views:
                           action: none
                         icon: 'hass:plus'
                     columns: 5
-              - title: 공기청정기 (Air Cleaner)
-                type: grid
-                cards:
-                  - type: button
-                    tap_action:
-                      action: toggle
-                    icon: 'hass:power'
-                    show_name: true
-                    name: 전원
-                    hold_action:
-                      action: none
-                  - type: button
-                    tap_action:
-                      action: toggle
-                    name: 청정세기
-                    icon: 'hass:fan'
-                    hold_action:
-                      action: none
-                  - type: button
-                    tap_action:
-                      action: toggle
-                    entity: switch.301_front
-                    name: 순환회전
-                    icon: 'hass:rotate-3d-variant'
-                    hold_action:
-                      action: none
-                square: false
           - type: vertical-stack
             cards:
               - type: vertical-stack
