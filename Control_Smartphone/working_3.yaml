@@ -138,20 +138,20 @@ views:
                         tap_action:
                           action: toggle
                         name: '-3H'
-                        show_icon: false
+                        show_icon: true
                         hold_action:
                           action: none
                         entity: script.301_alarm_sub_3h
-                        icon_height: 10px
+                        icon: 'hass:minus'
                       - type: button
                         tap_action:
                           action: toggle
                         entity: script.301_alarm_sub_1h
                         name: '-1H'
-                        show_icon: false
+                        show_icon: true
                         hold_action:
                           action: none
-                        icon_height: 10px
+                        icon: 'hass:minus'
                       - type: button
                         tap_action:
                           action: none
@@ -159,69 +159,67 @@ views:
                         name: 시 (Hour)
                         hold_action:
                           action: none
-                        icon_height: 10px
                       - type: button
                         tap_action:
                           action: toggle
                         entity: script.301_alarm_add_1h
                         name: +1H
-                        show_icon: false
+                        show_icon: true
                         hold_action:
                           action: none
-                        icon_height: 10px
+                        icon: 'hass:plus'
                       - type: button
                         tap_action:
                           action: toggle
-                        show_icon: false
+                        show_icon: true
                         name: +3H
                         hold_action:
                           action: none
                         entity: script.301_alarm_add_3h
-                        icon_height: 10px
+                        icon: 'hass:plus'
                       - type: button
                         tap_action:
                           action: toggle
                         entity: script.301_alarm_sub_15m
                         name: '-15M'
-                        show_icon: false
+                        show_icon: true
                         hold_action:
                           action: none
-                        icon_height: 10px
+                        icon: 'hass:minus'
                       - type: button
                         tap_action:
                           action: toggle
                         entity: script.301_alarm_sub_5m
                         name: '-5M'
-                        show_icon: false
+                        show_icon: true
                         hold_action:
                           action: none
-                        icon_height: 10px
+                        icon: 'hass:minus'
                       - type: button
                         tap_action:
                           action: none
                         name: 분 (Minutes)
-                        show_icon: false
+                        show_icon: true
                         hold_action:
                           action: none
-                        icon_height: 10px
                       - type: button
                         tap_action:
                           action: toggle
                         entity: script.301_alarm_add_5m
                         name: +5M
-                        show_icon: false
+                        show_icon: true
                         hold_action:
                           action: none
-                        icon_height: 10px
+                        icon: 'hass:plus'
                       - type: button
                         tap_action:
                           action: toggle
                         entity: script.301_alarm_add_15m
-                        show_icon: false
+                        show_icon: true
                         name: +15M
                         hold_action:
                           action: none
-                        icon_height: 10px
+                        icon: 'hass:plus'
                     columns: 5
               - title: 공기청정기 (Air Cleaner)
                 type: grid
