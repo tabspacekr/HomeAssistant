@@ -1,0 +1,96 @@
+type: 'custom:button-card'
+entity: switch.geosil_jeondeung_right
+icon: 'mdi:raspberry-pi'
+aspect_ratio: 1/1
+name: 301
+styles:
+  card:
+    - background-color: |
+        [[[
+          if (entity.state == 0) return 'lime';
+          if (entity.state != 0) return 'black';
+          else return '#000044'
+        ]]] 
+    - border-radius: 10%
+    - padding: 10%
+    - color: ivory
+    - font-size: 30px
+    - text-shadow: 0px 0px 5px black
+    - text-transform: capitalize
+  grid:
+    - grid-template-areas: '"i temp" "n n" "cpu cpu" "ram ram" "sd sd"'
+    - grid-template-columns: 1fr 1fr
+    - grid-template-rows: 1fr min-content min-content min-content min-content
+  name:
+    - font-weight: bold
+    - font-size: 45px
+    - color: white
+    - align-self: middle
+    - justify-self: start
+    - padding-bottom: 4px
+  img_cell:
+    - justify-content: start
+    - align-items: start
+    - margin: none
+  icon:
+    - color: |
+        [[[
+          if (entity.state == 0) return 'lime';
+          if (entity.state != 0) return 'orange';
+          else return 'red';
+        ]]]
+    - width: 70%
+    - margin-top: '-10%'
+  custom_fields:
+    temp:
+      - align-self: start
+      - justify-self: end
+    cpu:
+      - padding-bottom: 2px
+      - align-self: middle
+      - justify-self: start
+      - '--text-color-sensor': >-
+          [[[ if (states["switch.geosil_jeondeung_right"].state == 0) return
+          "red"; ]]]
+    ram:
+      - padding-bottom: 2px
+      - align-self: middle
+      - justify-self: start
+      - '--text-color-sensor': >-
+          [[[ if (states["switch.geosil_jeondeung_right"].state == 0) return
+          "red"; ]]]
+    sd:
+      - align-self: middle
+      - justify-self: start
+      - '--text-color-sensor': >-
+          [[[ if (states["switch.geosil_jeondeung_right"].state == 0) return
+          "red"; ]]]
+custom_fields:
+  temp: |
+    [[[
+      return `<ha-icon
+        icon="mdi:thermometer"
+        style="width: 30px; height: 30px; color: yellow;">
+        </ha-icon><span>${entity.state}°C</span>`
+    ]]]
+  cpu: |
+    [[[
+      return `<ha-icon
+        icon="mdi:server"
+        style="width: 30px; height: 30px; color: deepskyblue;">
+        </ha-icon><span>CPU: <span style="color: var(--text-color-sensor);">${states['switch.geosil_jeondeung_right'].state}%</span></span>`
+    ]]]
+  ram: |
+    [[[
+      return `<ha-icon
+        icon="mdi:memory"
+        style="width: 30px; height: 30px; color: deepskyblue;">
+        </ha-icon><span>RAM: <span style="color: var(--text-color-sensor);">${states['switch.geosil_jeondeung_right'].state}%</span></span>`
+    ]]]
+  sd: |
+    [[[
+      return `<ha-icon
+        icon="mdi:harddisk"
+        style="width: 30px; height: 30px; color: deepskyblue;">
+        </ha-icon><span>SD: <span style="color: var(--text-color-sensor);">${states['switch.geosil_jeondeung_right'].state}%</span></span>`
+    ]]]
