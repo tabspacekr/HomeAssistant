@@ -347,8 +347,10 @@ views:
                         icon: 'hass:weather-night'
           - type: vertical-stack
             cards:
-              - title: 스마트 TV (With STB)
-                type: vertical-stack
+              - type: vertical-stack
+                cards: []
+                title: 스마트 TV (With STB)
+              - type: vertical-stack
                 cards:
                   - type: grid
                     cards:
