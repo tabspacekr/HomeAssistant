@@ -63,7 +63,7 @@ styles:
       - font-size: 15px
       - color: white
       - align-self: middle
-      - justify-self: middle
+      - justify-self: right
     room_status:
       - font-weight: bold
       - font-size: 15px
@@ -130,8 +130,8 @@ custom_fields:
       return '301호'
     ]]] 
   room_name: |
-    [[[
-      return '일반실'
+    [[[ 
+      return states['input_text.301_room_name'].state
     ]]] 
   room_status: |
     [[[
@@ -220,12 +220,12 @@ custom_fields:
       return `<ha-icon
         icon="mdi:radiator"
         style="width: 15px; height: 15px; color: white;">
-        </ha-icon> 바닥: 24/25`
+        </ha-icon> 바닥 ` + states['climate.301_ac'].attributes.current_temperature + ' / ' + states['climate.301_ac'].attributes.temperature 
     ]]]
   room_ac: |
     [[[
       return `<ha-icon
         icon="mdi:air-conditioner"
         style="width: 15px; height: 15px; color: white;">
-        </ha-icon> 난방: 22/21`
+        </ha-icon> 난방 ` + states['climate.301_ac'].attributes.current_temperature + ' / ' + states['climate.301_ac'].attributes.temperature 
     ]]]
