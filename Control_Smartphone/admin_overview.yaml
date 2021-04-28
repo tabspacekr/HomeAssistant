@@ -2,7 +2,8 @@ type: 'custom:button-card'
 entity: input_text.301_room_status
 icon: |
   [[[
-    if (entity.state == 'sellable') return 'hass:login';
+    if (states['input_boolean.301_dnd'].state == 'on') return 'hass:cancel';
+    else if (entity.state == 'sellable') return 'hass:login';
     else if (entity.state == 'reservation') return 'hass:elevator-passenger';
     else if (entity.state == 'staying') return 'hass:account';
     else if (entity.state == 'checkout-request') return 'hass:exit-run';
@@ -12,7 +13,8 @@ icon: |
 aspect_ratio: 1/1
 name: |
   [[[
-    if (entity.state == 'sellable') return '판매가능';
+    if (states['input_boolean.301_dnd'].state == 'on') return '방해금지';
+    else if (entity.state == 'sellable') return '판매가능';
     else if (entity.state == 'reservation') return '입실대기';
     else if (entity.state == 'staying') return '투숙중';
     else if (entity.state == 'checkout-request') return '체크아웃';
@@ -23,7 +25,8 @@ styles:
   card:
     - background-color: |
         [[[
-          if (entity.state == 'sellable') return '#7BBB01';
+          if (states['input_boolean.301_dnd'].state == 'on') return 'red'; 
+          else if (entity.state == 'sellable') return '#7BBB01';
           else if (entity.state == 'reservation') return '#F9A81F';
           else if (entity.state == 'staying') return '#F9A81F';
           else if (entity.state == 'checkout-request') return '#FE5260';
@@ -33,7 +36,7 @@ styles:
     - border-radius: 5%
     - padding: 5%
   grid:
-    - grid-template-areas: ' "room_number room_number room_lan room_wifi room_zigbee"  "n n room_name room_name room_name"  "i i room_sos room_sos room_sos"  "i i room_towel room_water room_clean"  "room_enter room_enter room_ac room_ac room_ac" "room_leave room_leave room_heat room_heat room_heat" "room_timeleft room_timeleft room_timeleft room_timeleft room_timeleft" '
+    - grid-template-areas: ' "room_number room_number room_lan room_wifi room_zigbee"  "n n room_name room_name room_name"  "i i room_extend room_sos room_sos"  "i i room_towel room_water room_clean"  "room_enter room_enter room_ac room_ac room_ac" "room_leave room_leave room_heat room_heat room_heat" "room_timeleft room_timeleft room_timeleft room_timeleft room_timeleft" '
     - grid-template-columns: 20% 20% 20% 20% 20%
     - grid-template-rows: 16% 14% 14% 14% 14% 14% 14%
   name:
@@ -60,7 +63,7 @@ styles:
       - font-size: 15px
       - color: white
       - align-self: middle
-      - justify-self: right
+      - justify-self: middle
     room_status:
       - font-weight: bold
       - font-size: 15px
@@ -92,6 +95,10 @@ styles:
       - color: white
       - justify-self: right
     room_sos:
+      - font-size: 15px
+      - color: white
+      - justify-self: right
+    room_extend:
       - font-size: 15px
       - color: white
       - justify-self: right
@@ -139,21 +146,21 @@ custom_fields:
     [[[
       return `<ha-icon
         icon="mdi:server-network"
-        style="width: 30px; height: 30px; color: white;">
+        style="width: 20px; height: 20px; color: white;">
         </ha-icon>`
     ]]]
   room_wifi: |
     [[[
       return `<ha-icon
         icon="mdi:wifi"
-        style="width: 30px; height: 30px; color: white;">
+        style="width: 20px; height: 20px; color: white;">
         </ha-icon>`
     ]]]
   room_zigbee: |
     [[[
       return `<ha-icon
         icon="mdi:zigbee"
-        style="width: 30px; height: 30px; color: white;">
+        style="width: 20px; height: 20px; color: white;">
         </ha-icon>`
     ]]]
   room_sos: |
@@ -161,28 +168,40 @@ custom_fields:
       if (states['input_boolean.301_sos'].state == 'on') return `<ha-icon
         icon="mdi:alarm-light"
         style="width: 30px; height: 30px; color: white;">
-        </ha-icon>`
+        </ha-icon>`;
+      else return ''
+    ]]]
+  room_extend: |
+    [[[
+      if (states['input_boolean.301_extend'].state == 'on') return `<ha-icon
+        icon="mdi:timeline-plus-outline"
+        style="width: 30px; height: 30px; color: white;">
+        </ha-icon>`;
+      else return ''
     ]]]
   room_towel: |
     [[[ 
       if (states['input_boolean.301_towel'].state == 'on') return `<ha-icon
         icon="mdi:car-defrost-rear"
         style="width: 30px; height: 30px; color: white;">
-        </ha-icon>`
+        </ha-icon>`;
+      else return ''
     ]]]
   room_clean: |
     [[[
       if (states['input_boolean.301_clean'].state == 'on') return `<ha-icon
         icon="mdi:spray"
         style="width: 30px; height: 30px; color: white;">
-        </ha-icon>`
+        </ha-icon>`;
+      else return ''
     ]]]
   room_water: |
     [[[
       if (states['input_boolean.301_water'].state == 'on') return `<ha-icon
         icon="mdi:coffee"
         style="width: 30px; height: 30px; color: white;">
-        </ha-icon>`
+        </ha-icon>`;
+      else return ''
     ]]]
   room_enter: |
     [[[
