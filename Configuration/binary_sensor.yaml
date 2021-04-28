@@ -1,17 +1,77 @@
 # 내부 네트워크 핑테스트용 바이너리 센서
-binary_sensor:
-  - platform: ping
-    host: 192.168.0.3
-    name: TabSpace-301
-    count: 2
-    scan_interval: 30
-  - platform: ping
-    host: 192.168.0.4
-    name: TabSpace-302
-    count: 2
-    scan_interval: 30
-  - platform: ping
-    host: 192.168.0.5
-    name: RM4-32-c2-31
-    count: 2
-    scan_interval: 30
+- platform: ping
+  host: 192.168.0.3
+  name: 301_ping
+  count: 2
+  scan_interval: 5
+- platform: ping
+  host: 192.168.0.5
+  name: 301_remote
+  count: 2
+  scan_interval: 5
+
+- platform: ping
+  host: 192.168.0.3
+  name: 302_ping
+  count: 2
+  scan_interval: 5
+- platform: ping
+  host: 192.168.0.5
+  name: 302_remote
+  count: 2
+  scan_interval: 5
+
+- platform: ping
+  host: 192.168.0.3
+  name: 303_ping
+  count: 2
+  scan_interval: 5
+- platform: ping
+  host: 192.168.0.5
+  name: 303_remote
+  count: 2
+  scan_interval: 5
+
+- platform: ping
+  host: 192.168.0.4
+  name: 305_ping
+  count: 2
+  scan_interval: 5
+- platform: ping
+  host: 192.168.0.5
+  name: 305_remote
+  count: 2
+  scan_interval: 5
+
+- platform: ping
+  host: 192.168.0.4
+  name: 306_ping
+  count: 2
+  scan_interval: 5
+- platform: ping
+  host: 192.168.0.5
+  name: 306_remote
+  count: 2
+  scan_interval: 5
+
+- platform: ping
+  host: 192.168.0.4
+  name: 307_ping
+  count: 2
+  scan_interval: 5
+- platform: ping
+  host: 192.168.0.5
+  name: 307_remote
+  count: 2
+  scan_interval: 5
+  
+- platform: ping
+  host: 192.168.0.4
+  name: 308_ping
+  count: 2
+  scan_interval: 5
+- platform: ping
+  host: 192.168.0.5
+  name: 308_remote
+  count: 2
+  scan_interval: 5
