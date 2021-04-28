@@ -1,0 +1,212 @@
+type: 'custom:button-card'
+entity: input_text.301_room_status
+icon: |
+  [[[
+    if (entity.state == 'sellable') return 'hass:login';
+    else if (entity.state == 'reservation') return 'hass:elevator-passenger';
+    else if (entity.state == 'staying') return 'hass:account';
+    else if (entity.state == 'checkout-request') return 'hass:exit-run';
+    else if (entity.state == 'clean-request') return 'hass:broom';
+    else return 'hass:settings'
+  ]]] 
+aspect_ratio: 1/1
+name: |
+  [[[
+    if (entity.state == 'sellable') return '판매가능';
+    else if (entity.state == 'reservation') return '입실대기';
+    else if (entity.state == 'staying') return '투숙중';
+    else if (entity.state == 'checkout-request') return '체크아웃';
+    else if (entity.state == 'clean-request') return '청소요청';
+    else return '판매불가'
+  ]]] 
+styles:
+  card:
+    - background-color: |
+        [[[
+          if (entity.state == 'sellable') return '#7BBB01';
+          else if (entity.state == 'reservation') return '#F9A81F';
+          else if (entity.state == 'staying') return '#F9A81F';
+          else if (entity.state == 'checkout-request') return '#FE5260';
+          else if (entity.state == 'clean-request') return '#FE5260';
+          else return 'gray'
+        ]]] 
+    - border-radius: 5%
+    - padding: 5%
+  grid:
+    - grid-template-areas: ' "room_number room_number room_lan room_wifi room_zigbee"  "n n room_name room_name room_name"  "i i room_sos room_sos room_sos"  "i i room_towel room_water room_clean"  "room_enter room_enter room_ac room_ac room_ac" "room_leave room_leave room_heat room_heat room_heat" "room_timeleft room_timeleft room_timeleft room_timeleft room_timeleft" '
+    - grid-template-columns: 20% 20% 20% 20% 20%
+    - grid-template-rows: 16% 14% 14% 14% 14% 14% 14%
+  name:
+    - font-size: 15px
+    - color: white
+    - align-self: middle
+    - justify-self: middle
+  img_cell:
+    - justify-content: start
+    - align-items: start
+    - margin: none
+  icon:
+    - width: 100%
+    - margin-top: 0%
+    - margin-left: 0%
+  custom_fields:
+    room_number:
+      - font-weight: bold
+      - font-size: 25px
+      - color: white
+      - justify-self: middle
+      - align-self: start
+    room_name:
+      - font-size: 15px
+      - color: white
+      - align-self: middle
+      - justify-self: right
+    room_status:
+      - font-weight: bold
+      - font-size: 15px
+      - color: white
+      - align-self: start
+      - justify-self: middle
+    room_lan:
+      - font-size: 15px
+      - color: white
+      - justify-self: right
+    room_wifi:
+      - font-size: 15px
+      - color: white
+      - justify-self: right
+    room_zigbee:
+      - font-size: 15px
+      - color: white
+      - justify-self: right
+    room_water:
+      - font-size: 15px
+      - color: white
+      - justify-self: right
+    room_clean:
+      - font-size: 15px
+      - color: white
+      - justify-self: right
+    room_towel:
+      - font-size: 15px
+      - color: white
+      - justify-self: right
+    room_sos:
+      - font-size: 15px
+      - color: white
+      - justify-self: right
+    room_enter:
+      - font-size: 15px
+      - color: white
+      - justify-self: middle
+    room_leave:
+      - font-size: 15px
+      - color: white
+      - justify-self: middle
+      - align-self: start
+    room_timeleft:
+      - font-size: 15px
+      - color: white
+      - justify-self: middle
+    room_ac:
+      - font-size: 15px
+      - color: white
+      - justify-self: middle
+    room_heat:
+      - font-size: 15px
+      - color: white
+      - justify-self: middle
+      - align-self: start
+custom_fields:
+  room_number: |
+    [[[
+      return '301호'
+    ]]] 
+  room_name: |
+    [[[
+      return '일반실'
+    ]]] 
+  room_status: |
+    [[[
+      if (entity.state == 'sellable') return '판매가능';
+      else if (entity.state == 'reservation') return '입실대기';
+      else if (entity.state == 'staying') return '투숙중';
+      else if (entity.state == 'checkout-request') return '체크아웃';
+      else if (entity.state == 'clean-request') return '청소요청';
+      else return '판매불가'
+    ]]] 
+  room_lan: |
+    [[[
+      return `<ha-icon
+        icon="mdi:server-network"
+        style="width: 30px; height: 30px; color: white;">
+        </ha-icon>`
+    ]]]
+  room_wifi: |
+    [[[
+      return `<ha-icon
+        icon="mdi:wifi"
+        style="width: 30px; height: 30px; color: white;">
+        </ha-icon>`
+    ]]]
+  room_zigbee: |
+    [[[
+      return `<ha-icon
+        icon="mdi:zigbee"
+        style="width: 30px; height: 30px; color: white;">
+        </ha-icon>`
+    ]]]
+  room_sos: |
+    [[[
+      if (states['input_boolean.301_sos'].state == 'on') return `<ha-icon
+        icon="mdi:alarm-light"
+        style="width: 30px; height: 30px; color: white;">
+        </ha-icon>`
+    ]]]
+  room_towel: |
+    [[[ 
+      if (states['input_boolean.301_towel'].state == 'on') return `<ha-icon
+        icon="mdi:car-defrost-rear"
+        style="width: 30px; height: 30px; color: white;">
+        </ha-icon>`
+    ]]]
+  room_clean: |
+    [[[
+      if (states['input_boolean.301_clean'].state == 'on') return `<ha-icon
+        icon="mdi:spray"
+        style="width: 30px; height: 30px; color: white;">
+        </ha-icon>`
+    ]]]
+  room_water: |
+    [[[
+      if (states['input_boolean.301_water'].state == 'on') return `<ha-icon
+        icon="mdi:coffee"
+        style="width: 30px; height: 30px; color: white;">
+        </ha-icon>`
+    ]]]
+  room_enter: |
+    [[[
+      return `입실 18:00`
+    ]]]
+  room_leave: |
+    [[[
+      return `퇴실 10:00`
+    ]]]
+  room_timeleft: |
+    [[[
+      return `16시간 남음`
+    ]]]
+  room_heat: |
+    [[[
+      return `<ha-icon
+        icon="mdi:radiator"
+        style="width: 15px; height: 15px; color: white;">
+        </ha-icon> 바닥: 24/25`
+    ]]]
+  room_ac: |
+    [[[
+      return `<ha-icon
+        icon="mdi:air-conditioner"
+        style="width: 15px; height: 15px; color: white;">
+        </ha-icon> 난방: 22/21`
+    ]]]
