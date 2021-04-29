@@ -144,17 +144,25 @@ custom_fields:
     ]]] 
   room_lan: |
     [[[
-      return `<ha-icon
+      if (states['binary_sensor.301_ping'].state == 'on') return `<ha-icon
         icon="mdi:server-network"
         style="width: 20px; height: 20px; color: white;">
-        </ha-icon>`
+        </ha-icon>`;
+      else return `<ha-icon
+        icon="mdi:server-network-off"
+        style="width: 20px; height: 20px; color: white;">
+        </ha-icon>`;
     ]]]
   room_wifi: |
     [[[
-      return `<ha-icon
+      if (states['binary_sensor.301_remote'].state == 'on') return `<ha-icon
         icon="mdi:wifi"
         style="width: 20px; height: 20px; color: white;">
-        </ha-icon>`
+        </ha-icon>`;
+      else return `<ha-icon
+        icon="mdi:wifi-off"
+        style="width: 20px; height: 20px; color: white;">
+        </ha-icon>`;
     ]]]
   room_zigbee: |
     [[[
