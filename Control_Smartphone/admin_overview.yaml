@@ -232,8 +232,41 @@ custom_fields:
     ]]]
   room_ac: |
     [[[
+      if (states['climate.301_ac'].state == 'off')
       return `<ha-icon
-        icon="mdi:air-conditioner"
+        icon="mdi:power"
+        style="width: 15px; height: 15px; color: white;">
+        </ha-icon> 꺼짐 ` + states['climate.301_ac'].attributes.current_temperature + ' / ' + states['climate.301_ac'].attributes.temperature 
+
+      else if (states['climate.301_ac'].state == 'cool')
+      return `<ha-icon
+        icon="mdi:snowflake"
+        style="width: 15px; height: 15px; color: white;">
+        </ha-icon> 냉방 ` + states['climate.301_ac'].attributes.current_temperature + ' / ' + states['climate.301_ac'].attributes.temperature 
+
+      else if (states['climate.301_ac'].state == 'heat')
+      return `<ha-icon
+        icon="mdi:fire"
         style="width: 15px; height: 15px; color: white;">
         </ha-icon> 난방 ` + states['climate.301_ac'].attributes.current_temperature + ' / ' + states['climate.301_ac'].attributes.temperature 
+
+      else if (states['climate.301_ac'].state == 'dry')
+      return `<ha-icon
+        icon="mdi:water-percent"
+        style="width: 15px; height: 15px; color: white;">
+        </ha-icon> 제습 ` + states['climate.301_ac'].attributes.current_temperature + ' / ' + states['climate.301_ac'].attributes.temperature 
+
+      else if (states['climate.301_ac'].state == 'heat_cool')
+      return `<ha-icon
+        icon="mdi:autorenew"
+        style="width: 15px; height: 15px; color: white;">
+        </ha-icon> 자동 ` + states['climate.301_ac'].attributes.current_temperature + ' / ' + states['climate.301_ac'].attributes.temperature 
+
+      else if (states['climate.301_ac'].state == 'fan_only')
+      return `<ha-icon
+        icon="mdi:fan"
+        style="width: 15px; height: 15px; color: white;">
+        </ha-icon> 송풍 ` + states['climate.301_ac'].attributes.current_temperature + ' / ' + states['climate.301_ac'].attributes.temperature 
+
+
     ]]]
