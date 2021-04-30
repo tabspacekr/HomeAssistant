@@ -213,15 +213,15 @@ custom_fields:
     ]]]
   room_enter: |
     [[[
-      return `입실 18:00`
+      return `입실 ` + states['sensor.301_enter_time'].state
     ]]]
   room_leave: |
     [[[
-      return `퇴실 10:00`
+      return `퇴실 ` + states['sensor.301_leave_time'].state
     ]]]
   room_timeleft: |
     [[[
-      return `16시간 남음`
+      return 'XX 시간 남음'
     ]]]
   room_heat: |
     [[[
