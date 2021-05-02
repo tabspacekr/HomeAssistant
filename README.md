@@ -3,11 +3,17 @@
 
 # Information
 Automation - HA Automation
+
 Blueprint - HA Blueprint
+
 Broadlink-IR-Remote - IR Blaster Broadlink RM4 mini BASE64 code
+
 Configuration - HA Configuration.yaml
+
 Control_Smartphone - Hotel/Motel HA Lovelace UI/UX
+
 Defination - Hotel/Motel HA Defination yaml file
+
 Script - Hotel/Motel HA Script
 
 # Contact Us
