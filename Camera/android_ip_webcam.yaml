@@ -1,0 +1,30 @@
+# android ip camera see https://www.home-assistant.io/integrations/android_ip_webcam/
+# in configuration.yaml or !include android_ip_webcam.yaml
+android_ip_webcam:
+  - host: 192.168.0.21 #galaxy s3 lte
+    port: 8080
+    name: Samsung Galaxy S3 LTE
+    username: tabspace
+    password: changeme
+    sensors:
+      - audio_connections
+      - battery_level
+      - battery_temp
+      - battery_voltage
+      - light
+      - motion
+      - pressure
+      - proximity
+      - sound
+      - video_connections
+    switches:
+      - exposure_lock
+      - ffc
+      - focus
+      - gps_active
+      - motion_detect
+      - night_vision
+      - overlay
+      - torch
+      - whitebalance_lock
+      - video_recording
