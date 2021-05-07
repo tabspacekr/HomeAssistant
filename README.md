@@ -8,6 +8,8 @@ Blueprint - HA Blueprint
 
 Broadlink-IR-Remote - IR Blaster Broadlink RM4 mini BASE64 code
 
+Camera - Old Unuse Android IP Camera, Xiaomi Dafang Hack
+
 Configuration - HA Configuration.yaml
 
 Control_Smartphone - Hotel/Motel HA Lovelace UI/UX
