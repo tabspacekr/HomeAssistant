@@ -1,7 +1,7 @@
-# HomeAssistant
+# Ⅰ. HomeAssistant
 탭스페이스(TabSpace)에서 관리하는 홈어시스턴트(HomeAssistant) 프로젝트 모음입니다.
 
-# Information
+# Ⅱ. Information
 
 ### 1. Automation - HA Automation
 HomeAssistant에서 활용이 가능한 자동화(오토메이션) 스크립트
@@ -29,7 +29,7 @@ HomeAssistant를 최적화 하기 위한 환경설정(Configuration) 코드
 ### 8. Script - Hotel/Motel HA Script
 객실관리 RCU에서 사용되는 스마트 호텔 스크립트
 
-# Contact Us
+# Ⅲ. Contact Us
 본 코드에 대한 문의사항은 아래 홈페이지 방문 또는 이메일을 발송바랍니다.
 
 ### https://www.tabspace.kr
