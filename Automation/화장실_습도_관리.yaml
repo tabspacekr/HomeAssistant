@@ -1,0 +1,10 @@
+alias: Humidity Management
+description: ''
+use_blueprint:
+  path: >-
+    tabspace/turn-a-fan-on-and-off-based-on-the-difference-between-a-humidity-sensor-and-a-baseline.yaml
+  input:
+    reference_humidity: '60'
+    humidity_sensor: sensor.hwajangsil_onseubdogye_humidity
+    fan_switch: switch.hwajangsil_jeseubgi
+    reference_humidity_sensor: sensor.onseubdogye_humidity
