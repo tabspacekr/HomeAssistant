@@ -1,0 +1,82 @@
+# 세탁기, 건조기, 식기세척기와 같은 가전기기의 동작이 종료시에 알림
+# 해당 기기에 스마트플러그와 같은 전력량 측정이 가능해야 합니다.
+# 스마트폰 PUSH 알림 또는 TTS 알림 설정이 가능합니다.
+
+blueprint:
+  name: 가전기기 작동완료 시 알림
+  description: 가전기기(세탁기, 건조기, 식기세척기 등)에 스마트플러그와 같은 전력량 측정이 가능하다면, 작동완료시에 알림처리
+  domain: automation
+  input:
+    power_sensor:
+      name: 전력량 측정 센서
+      description: '스마트플러그와 같은 전력량 측정 센서를 선택해주세요.'
+      selector:
+        entity:
+          domain: sensor
+    starting_threshold:
+      name: 시작 전력 임계값
+      description: 자동화 동작처리를 시작할 전력 임계값을 지정해주세요.
+      default: 5
+      selector:
+        number:
+          min: 1.0
+          max: 100.0
+          unit_of_measurement: W
+          mode: slider
+          step: 1.0
+    starting_hysteresis:
+      name: 시작 전력 임계값 유지 시간
+      description: 동작유무를 확인하기 위해 시작 전력 임계값을 초과한 상태를 유지해야 하는 시간을 지정해주세요.
+      default: 5
+      selector:
+        number:
+          min: 0.25
+          max: 60.0
+          unit_of_measurement: min
+          mode: slider
+          step: 0.25
+    finishing_threshold:
+      name: 동작 완료 전력 임계값
+      description: 가전기기가 작동완료되었음을 판단하기 위한 대기 전력을 지정해주세요.
+      default: 5
+      selector:
+        number:
+          min: 1.0
+          max: 100.0
+          unit_of_measurement: W
+          mode: slider
+          step: 1.0
+    finishing_hysteresis:
+      name: 동작 완료 전력 임계값 유지 시간
+      description: 완료유무를 ㅎ확인하기 위해 동작 완료 전력 임계값 이하인 상태를 유지해야 하는 시간을 지정해주세요.
+      default: 5
+      selector:
+        number:
+          min: 0.25
+          max: 60.0
+          unit_of_measurement: min
+          mode: slider
+          step: 0.25
+    actions:
+      name: 알림 처리
+      description: PUSH 알림, TTS 음성 알림 등 알림 처리를 선택해주세요.
+      selector:
+        action: {}
+trigger:
+- platform: numeric_state
+  entity_id: !input 'power_sensor'
+  for:
+    minutes: !input 'starting_hysteresis'
+  above: !input 'starting_threshold'
+condition: []
+action:
+- wait_for_trigger:
+  - platform: numeric_state
+    entity_id: !input 'power_sensor'
+    below: !input 'finishing_threshold'
+    for:
+      minutes: !input 'finishing_hysteresis'
+- choose: []
+  default: !input 'actions'
+mode: single
+max_exceeded: silent
