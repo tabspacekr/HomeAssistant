@@ -1,4 +1,4 @@
-# 매일 특정 시간에 HomeAssistant의 스냅샷 백업을 생성하고, 생성이 완료되면 공식 모바일 앱으로 push 알림 수행
+# 매일 특정 시간에 HomeAssistant의 스냅샷 백업을 생성하고, 생성이 완료되면 공식 모바일 앱으로 push 알림을 수행합니다.
 # 2021.04.11. ceo@tabspace.kr
 blueprint:
   name: 스냅샷 백업 자동 생성
