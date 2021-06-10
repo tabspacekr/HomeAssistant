@@ -1,4 +1,4 @@
-# 모션 감지시에 카메라 스냅샷을 공식 HomeAssistant 앱으로 발송
+# 모션 감지시에 카메라 스냅샷을 공식 HomeAssistant 앱으로 발송합니다.
 # 2021.04.13. ceo@tabspace.kr
 blueprint:
   name: 모션 감지시 카메라 스냅샷 메시지 발송
