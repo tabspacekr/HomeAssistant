@@ -1,6 +1,6 @@
 blueprint:
-  name: Door Sensor-activated Light
-  description: Turn on a light when door is opened.
+  name: (TSA-006)도어센서 상태에 따른 조명제어
+  description: 문이 열렸을때 조명을 켜고, 문이 닫혔을때 특정 시간 이후에 조명을 끕니다.
   domain: automation
   input:
     doorsensor_entity:
