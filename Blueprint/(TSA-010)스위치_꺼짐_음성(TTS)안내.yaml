@@ -2,8 +2,8 @@
 # google home mini 스피커에서 테스트 완료
 # 2021.04.10. ceo@tabspace.kr
 blueprint:
-  name: '스위치 꺼짐 음성안내'
-  description: '선택된 스위치가 꺼질 경우 TTS 음성으로 안내'
+  name: '(TSA-010)스위치 꺼짐 음성안내'
+  description: '선택된 스위치가 꺼질 경우 TTS 음성으로 안내합니다.'
   domain: automation
   input:
     target_switch:
