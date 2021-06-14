@@ -1,5 +1,5 @@
 blueprint:
-  name: SSL 인증서 만료알림
+  name: (TSA-003)SSL 인증서 만료알림
   description: 'This automation blueprint notifies when a SSL certificate is about to expire'
   domain: automation
   input:
