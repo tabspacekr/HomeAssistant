@@ -2,7 +2,7 @@
 # 2021.04.13. ceo@tabspace.kr
 
 blueprint:
-  name: 지역 퇴장 알림
+  name: (TSA-008)지역 퇴장 알림
   description: 설정한 지역에 사용자가 퇴장하는 경우, 모바일 디바이스로 알람을 보냅니다.
   domain: automation
   input:
