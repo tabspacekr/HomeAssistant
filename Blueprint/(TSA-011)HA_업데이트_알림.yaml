@@ -1,5 +1,5 @@
 blueprint:
-  name: Home Assistant update notification
+  name: (TSA-011)Home Assistant 업데이트 알림
   description: Send a notification when there's an update availiable for Home Assistant
   domain: automation
   input:
