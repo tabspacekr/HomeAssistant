@@ -2,7 +2,7 @@
 #advanced:
 #  last_seen: ISO_8601_local
 blueprint:
-  name: Offline detection for Z2M devices with last_seen
+  name: (TSA-012)Zigbee2MQTT 오프라인 기기조회
   description: Regularly test all sensors with 'lqi' unit of measurement (linkquality Z2M sensors) to detect
     offline and if so execute an action.
   domain: automation
