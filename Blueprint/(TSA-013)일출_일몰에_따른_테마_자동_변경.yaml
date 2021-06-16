@@ -1,7 +1,7 @@
 # 기존 backend-selected 테마와 같이, 일출과 일몰에 따른 테마를 자동으로 설정하는 기능
 # 2021.04.12. ceo@tabspace.kr
 blueprint:
-  name: 일출 일몰에 따른 테마 자동 변경
+  name: (TSA-013)일출 일몰에 따른 테마 자동 변경
   description: 일출 시에 밝은 테마로, 일몰 시에 어두운 테마로 자동으로 변경됩니다. configuration.yaml에 theme설정이 사전요구됩니다.
   domain: automation
   input:
