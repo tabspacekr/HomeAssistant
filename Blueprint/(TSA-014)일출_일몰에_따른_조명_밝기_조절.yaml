@@ -1,5 +1,5 @@
 blueprint:
-  name: Dim lights based on sun elevation
+  name: (TSA-014)일출 일몰에 따른 조명 밝기 조절
   description: >-
     Adjust brightness of lights based on the current sun elevation.
     If force debug is enabled, you need to execute this automation manually
