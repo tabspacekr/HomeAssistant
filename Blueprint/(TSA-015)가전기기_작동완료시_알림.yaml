@@ -3,7 +3,7 @@
 # 스마트폰 PUSH 알림 또는 TTS 알림 설정이 가능합니다.
 
 blueprint:
-  name: 가전기기 작동완료 시 알림
+  name: (TSA-015)가전기기 작동완료 시 알림
   description: 가전기기(세탁기, 건조기, 식기세척기 등)에 스마트플러그와 같은 전력량 측정이 가능하다면, 작동완료시에 알림처리
   domain: automation
   input:
