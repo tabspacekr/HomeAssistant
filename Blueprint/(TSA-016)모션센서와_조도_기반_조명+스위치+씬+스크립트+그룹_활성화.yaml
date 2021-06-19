@@ -1,5 +1,5 @@
 blueprint:
-  name: Turn on light, switch, scene, script or group based on motion and illuminance.
+  name: (TSA-016)모션센서와 조도 기반 조명 스위치 씬, 스크립트 그룹 활성화
   description: "Turn on a light, switch, scene, script or group based on motion detection,\
     \ and low light level.\nThis blueprint uses helper entities you have to create\
     \ yourself for some input values, to be able to dynamically set limits.\n\
