@@ -1,6 +1,6 @@
 blueprint:
   name: (TSA-016)모션센서와 조도 기반 조명 스위치 씬, 스크립트 그룹 활성화
-  description: "Turn on a light, switch, scene, script or group based on motion detection,\
+  description: "모션감지가 될 경우 조명, 스위치, 씬, 스크립트, 그룹을 활성화 합니다.\
     \ and low light level.\nThis blueprint uses helper entities you have to create\
     \ yourself for some input values, to be able to dynamically set limits.\n\
     \nRequired entities:\n  - Motion sensor (single sensor or group)\n  - Target entity\
