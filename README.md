@@ -1,4 +1,4 @@
-# Ⅰ. HomeAssistant
+# Ⅰ. About Repository
 탭스페이스(TabSpace)에서 관리하는 홈어시스턴트(HomeAssistant) 프로젝트 모음입니다.
 
 탭스페이스는 IoT 전문기업으로, 누구에게나 보편적인 '스마트홈' 솔루션을 제공합니다.
