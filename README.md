@@ -28,7 +28,7 @@ HomeAssistant를 최적화 하기 위한 환경설정(Configuration) 코드
 ### 6. Control_Smartphone - Hotel/Motel HA Lovelace UI/UX
 객실관리 RCU에서 사용되는 스마트 호텔 UI/UX 디자인 코드
 
-### 7. Defination - Hotel/Motel HA Defination yaml file
+### 7. Defination - SmartHotel HA Defination yaml file
 객실관리 RCU에서 사용되는 스마트 호텔 HomeAssistant 사용자 정의 코드
 
 ### 8. Script - Hotel/Motel HA Script
