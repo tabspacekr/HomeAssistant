@@ -1,5 +1,5 @@
 blueprint:
-  name: Advanced medication reminder
+  name: (TSA-019)일일 약물 섭취 관리
   description: Get advanced notification and history for medication reminder
   domain: automation
   input:
