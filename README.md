@@ -12,7 +12,7 @@ IoT Nerd/Geek이 아니더라도,
 HomeAssistant에서 활용이 가능한 자동화(오토메이션) 스크립트
 
 ### 2. Blueprint - HA Blueprint
-HomeAssistant에서 활용이 가능한 블루프린트 스크립트
+HomeAssistant에서 활용이 가능한 블루프린트(사전 자동화 정의코드) 스크립트
 
 ### 3. Broadlink-IR-Remote - IR Blaster Broadlink RM4 mini BASE64 code
 Broadlink사의 적외선(IR) 컨트롤 기기 RM4 mini에 대한 제어 코드
