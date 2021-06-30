@@ -31,7 +31,7 @@ HomeAssistant를 최적화 하기 위한 환경설정(Configuration) 코드
 ### 7. Defination - SmartHotel HA Defination yaml file
 객실관리 RCU에서 사용되는 스마트 호텔 HomeAssistant 사용자 정의 코드
 
-### 8. Script - Hotel/Motel HA Script
+### 8. Script - Hotel HA Script
 객실관리 RCU에서 사용되는 스마트 호텔 스크립트
 
 # Ⅲ. Contact Us
