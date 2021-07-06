@@ -6,7 +6,7 @@
 IoT Nerd/Geek이 아니더라도, 
 레거시(legacy) 조명/스위치/가전기기를 손쉽게 활용할 수 있는 '스마트호머(SmartHomer)'가 될 수 있습니다.
 
-# Ⅱ. Information
+# Ⅱ. Repository Information
 
 ### 1. Automation - HA Automation
 HomeAssistant에서 활용이 가능한 자동화(오토메이션) 스크립트
