@@ -39,4 +39,4 @@ HomeAssistant를 최적화 하기 위한 환경설정(Configuration) 코드
 
 ### https://www.tabspace.kr
 
-### ceo@tabspace.kr
+### ceo@tabspace.kr sales@tabspace.kr
