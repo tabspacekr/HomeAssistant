@@ -9,7 +9,7 @@ IoT Nerd/Geek이 아니더라도,
 # Ⅱ. Repository Information
 
 ### 1. Automation - HA Automation
-HomeAssistant에서 활용이 가능한 자동화(오토메이션) 스크립트
+HomeAssistant(HA)에서 활용이 가능한 자동화(오토메이션) 스크립트
 
 ### 2. Blueprint - HA Blueprint
 HomeAssistant에서 활용이 가능한 블루프린트(사전 자동화 정의코드) 스크립트
