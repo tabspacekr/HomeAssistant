@@ -1,0 +1,24 @@
+alias: 문닫혔을때 문이 닫혔습니다 멘트
+description: ''
+trigger:
+  - type: not_opened
+    platform: device
+    device_id: 684de14b4678f8f0de055be145d77b35
+    entity_id: binary_sensor.301_door_contact
+    domain: binary_sensor
+condition: []
+action:
+  - service: media_player.volume_set
+    target:
+      entity_id:
+        - media_player.302
+    data:
+      volume_level: 0.3
+  - service: media_player.play_media
+    data:
+      media_content_type: music
+      media_content_id: /local/door_close.mp3
+    target:
+      entity_id:
+        - media_player.302
+mode: single
