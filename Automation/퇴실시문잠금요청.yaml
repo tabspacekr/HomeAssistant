@@ -1,0 +1,39 @@
+alias: 퇴실시 문잠금요청
+description: ''
+trigger:
+  - platform: device
+    type: turned_off
+    device_id: f310d4b9358e73c77ee8a7a332e20625
+    entity_id: switch.301_lightnew_top
+    domain: switch
+  - platform: device
+    type: turned_off
+    device_id: f310d4b9358e73c77ee8a7a332e20625
+    entity_id: switch.301_lightnew_bottom
+    domain: switch
+condition:
+  - condition: device
+    type: is_off
+    device_id: f310d4b9358e73c77ee8a7a332e20625
+    entity_id: switch.301_lightnew_top
+    domain: switch
+  - condition: device
+    type: is_off
+    device_id: f310d4b9358e73c77ee8a7a332e20625
+    entity_id: switch.301_lightnew_bottom
+    domain: switch
+action:
+  - service: media_player.volume_set
+    target:
+      entity_id:
+        - media_player.302
+    data:
+      volume_level: 0.3
+  - service: media_player.play_media
+    data:
+      media_content_type: music
+      media_content_id: /local/please_lock.mp3
+    target:
+      entity_id:
+        - media_player.302
+mode: single
