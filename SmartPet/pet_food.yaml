@@ -1,0 +1,26 @@
+alias: 솔밤 냠 (원클릭)
+description: ''
+trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 6adf1f298a0f67dfe975b10a6b26211a
+    type: click
+    subtype: single
+    discovery_id: 0x00158d00066f9275 click_single
+condition: []
+action:
+  - service: input_boolean.toggle
+    target:
+      entity_id: input_boolean.solbam_food
+  - service: media_player.volume_set
+    target:
+      entity_id: media_player.googlehome8808
+    data:
+      volume_level: 0.5
+  - service: media_player.play_media
+    target:
+      entity_id: media_player.googlehome8808
+    data:
+      media_content_id: /local/solbam_food.mp3
+      media_content_type: music
+mode: single
