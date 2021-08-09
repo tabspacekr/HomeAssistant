@@ -1,0 +1,46 @@
+https://www.home-assistant.io/integrations/template/#examples
+
+curl을 python command로 변환
+- https://curl.trillworks.com/
+
+# template sensor 추가 configuration.yaml에 아래 추가
+
+template:
+  - trigger:
+      - platform: webhook
+        webhook_id: jw-webhook
+    sensor:
+      - name: "JW_Temperature"
+        state: "{{ trigger.json.temperature }}"
+        unit_of_measurement: '°C'
+
+      - name: "JW_Humidity"
+        state: "{{ trigger.json.humidity }}"
+        unit_of_measurement: '%'
+
+    binary_sensor:
+      - name: "Motion"
+        state: "{{ trigger.json.motion }}"
+        device_class: motion
+
+# curl로 호출 sh파일
+
+#!/bin/bash
+curl --header "Content-Type: application/json" \
+  --request POST \
+  --data '{"temperature": 5, "humidity": 34}' \
+  http://192.168.x.x:8123/api/webhook/jw-webhook
+
+# curl을 python으로 변환
+
+import requests
+
+headers = {
+    'Content-Type': 'application/json',
+}
+
+data = '{"temperature": 17, "humidity": 88}'
+
+response = requests.post('http://192.168.x.x:8123/api/webhook/jw-webhook', headers=headers, data=data)
+
+# 그러면, 카드 추가하기에서 sensor.JW_temp.... 형태로 추가됨.
