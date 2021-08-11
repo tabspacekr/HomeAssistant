@@ -1,0 +1,60 @@
+template:
+  - trigger:
+      - platform: webhook
+        webhook_id: planter_webhook
+    sensor:
+      - name: "Planter_Temperature_One"
+        state: "{{ trigger.json.Temperature1 }}"
+        unit_of_measurement: '°C'
+        
+      - name: "Planter_Temperature_Two"
+        state: "{{ trigger.json.Temperature2 }}"
+        unit_of_measurement: '°C'
+        
+      - name: "Planter_Temperature_Three"
+        state: "{{ trigger.json.Temperature3 }}"
+        unit_of_measurement: '°C'
+        
+      - name: "Planter_Temperature_Four"
+        state: "{{ trigger.json.Temperature4 }}"
+        unit_of_measurement: '°C'
+        
+      - name: "Planter_Temperature_Five"
+        state: "{{ trigger.json.Temperature5 }}"
+        unit_of_measurement: '°C'
+        
+      - name: "Planter_Temperature_Avg"
+        state: "{{ trigger.json.TemperatureAverage }}"
+        unit_of_measurement: '°C'
+
+      - name: "Planter_Humidity_One"
+        state: "{{ trigger.json.Humidity1 }}"
+        unit_of_measurement: '%'
+    
+      - name: "Planter_Humidity_Two"
+        state: "{{ trigger.json.Humidity2 }}"
+        unit_of_measurement: '%'
+        
+      - name: "Planter_Humidity_Three"
+        state: "{{ trigger.json.Humidity3 }}"
+        unit_of_measurement: '%'
+        
+      - name: "Planter_Humidity_Four"
+        state: "{{ trigger.json.Humidity4 }}"
+        unit_of_measurement: '%'
+        
+      - name: "Planter_Humidity_Five"
+        state: "{{ trigger.json.Humidity5 }}"
+        unit_of_measurement: '%'
+        
+      - name: "Planter_Humidity_Avg"
+        state: "{{ trigger.json.HumidityAverage }}"
+        unit_of_measurement: '%'
+        
+      - name: "Planter_Humidity_Soil"
+        state: "{{ trigger.json.Soil_Humidity }}"
+        unit_of_measurement: '%'
+        
+      - name: "Planter_Camera"
+        state: "{{ trigger.json.Camera }}"
+        unit_of_measurement: '%'
