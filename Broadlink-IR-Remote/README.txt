@@ -5,3 +5,5 @@ HA의 Configuration.yaml에 아래와 같이 Code선언 후에 사용할 수 있
 
 smartir:
 climate: !include climate.yaml
+
+국내 유통되는 삼성/LG 모델 등에서 범용적으로 사용 가능합니다.
