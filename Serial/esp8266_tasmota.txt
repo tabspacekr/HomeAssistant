@@ -1,0 +1,45 @@
+https://iotdesignpro.com/projects/getting-started-with-tasmota-on-esp8266-01-integrate-tasmota-with-home-assistant
+
+
+esp8266 tasmota flashing tip
+https://kocoafab.cc/tutorial/view/592
+
+https://www.instructables.com/Wifi-Smart-Doorsimplest-Method/
+
+https://blakadder.com/tuya-covers/
+
+tasmota command
+https://tasmota.github.io/docs/Commands/
+
+# Baud Rate는 19200으로 설정
+Baudrate 19200
+
+# gpio 참고용
+gpio1 tx
+gpio3 rx
+
+https://tasmota.github.io/docs/Peripherals/
+
+Communication~
+Serial~
+The ESP8266 has two hardware UARTS (Serial ports): UART0 on pins 1 and 3 (TX0 and RX0 resp.), and UART1 on pins 2 and 8 (TX1 and RX1 resp.), however, GPIO8 is used to connect the flash chip. This means that UART1 can only transmit data.
+
+UART0 also has hardware flow control on pins 15 and 13 (RTS0 and CTS0 resp.). These two pins can also be used as alternative TX0 and RX0 pins.
+
+# HEX로 전송 방법
+SerialSend5 
+
+BUILDING A HOME AUTOMATION SWITCH CONTROLLER “THING” – ADDING RS-232 TO TASMOTA AND CONTROLLING IT TROUGH HOME ASSISTANT
+https://wereallgeeks.wordpress.com/2021/02/26/tasmotars232/
+
+# ha command send by html
+## switchs.yaml
+  - platform: command_line
+    scan_interval: 600
+    switches:
+      myhome_open_the_door:
+        command_on: python3 -c "import requests; print(requests.get('http://192.168.10.43/control?cmd=GPIO,12,0').json()['state'])"
+        command_off: python3 -c "import requests; print(requests.get('http://192.168.10.43/control?cmd=GPIO,12,2').json()['state'])"
+        command_state: python3 -c "import requests; print(requests.get('http://192.168.10.43/control?cmd=status,GPIO,12').json()['state'])"
+        value_template: '{{ value == "0" }}'
+        friendly_name: "현관 문"
