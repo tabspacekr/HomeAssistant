@@ -1,0 +1,677 @@
+  - title: 301태블릿
+    panel: true
+    visible:
+      - user: 4b136012118449bfb89e162f96f9dcf7
+      - user: 05fabc2a318c47a59b5b5d3257e582ea
+      - user: 8524f7ffca694374890b75ffe6c42a84
+    path: '301'
+    badges: []
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: vertical-stack
+            cards:
+              - type: vertical-stack
+                cards:
+                  - type: vertical-stack
+                    cards: []
+                    title: 날씨 (Weather)
+                  - type: weather-forecast
+                    entity: weather.25hotel
+                    show_forecast: false
+                    name: 25HOTEL
+                  - type: horizontal-stack
+                    cards:
+                      - type: sensor
+                        entity: sensor.301_temperature_temperature
+                        graph: line
+                        hours_to_show: 12
+                        name: 객실 온도 (Temperature)
+                        theme: Google Blue Theme
+                      - type: sensor
+                        entity: sensor.301_temperature_humidity
+                        name: 객실 습도 (Humidity)
+                        graph: line
+                        detail: 1
+                        hours_to_show: 12
+                        theme: Google Blue Theme
+                  - title: 에어컨 (Air Conditioner)
+                    type: vertical-stack
+                    cards:
+                      - type: grid
+                        cards: []
+                        square: false
+                  - type: 'custom:simple-thermostat'
+                    entity: climate.301_ac
+                    layout:
+                      step: row
+                    step_size: 1
+                    hide:
+                      temperature: true
+                    header: false
+                    control: true
+              - title: 공기청정기 (Air Cleaner)
+                type: grid
+                cards:
+                  - type: button
+                    tap_action:
+                      action: toggle
+                    icon: 'hass:power'
+                    show_name: true
+                    name: 전원
+                    hold_action:
+                      action: none
+                  - type: button
+                    tap_action:
+                      action: toggle
+                    name: 청정세기
+                    icon: 'hass:fan'
+                    hold_action:
+                      action: none
+                  - type: button
+                    tap_action:
+                      action: toggle
+                    entity: switch.301_front
+                    name: 순환회전
+                    icon: 'hass:rotate-3d-variant'
+                    hold_action:
+                      action: none
+                square: false
+          - type: vertical-stack
+            cards:
+              - type: vertical-stack
+                cards: []
+                title: 요청 (Call)
+              - type: grid
+                cards:
+                  - type: button
+                    entity: input_boolean.301_water
+                    name: 음료 (Drink)
+                    icon: 'hass:coffee'
+                    tap_action:
+                      action: toggle
+                    show_state: false
+                  - type: button
+                    tap_action:
+                      action: toggle
+                    entity: input_boolean.301_clean
+                    name: 청소 (Clean)
+                    icon: 'hass:spray'
+                    show_state: false
+                  - type: button
+                    tap_action:
+                      action: toggle
+                    entity: input_boolean.301_towel
+                    name: 타월 (Towel)
+                    icon: 'hass:car-defrost-rear'
+                    show_state: false
+                  - type: button
+                    tap_action:
+                      action: toggle
+                    entity: input_boolean.301_extend
+                    name: 연장 (ExtendStay)
+                    icon: 'hass:timeline-plus-outline'
+                    hold_action:
+                      action: none
+                    show_state: false
+                  - type: button
+                    tap_action:
+                      action: toggle
+                    entity: input_boolean.301_dnd
+                    name: 방해금지 (DND)
+                    icon: 'hass:cancel'
+                    show_state: false
+                  - type: button
+                    tap_action:
+                      action: toggle
+                    entity: input_boolean.301_sos
+                    name: 도움 (SOS)
+                    show_state: false
+                    icon: 'hass:car-brake-alert'
+              - title: 모닝콜 (Alarm)
+                type: vertical-stack
+                cards:
+                  - type: horizontal-stack
+                    cards:
+                      - type: entity
+                        entity: sensor.date
+                        name: 날짜 (Date)
+                        theme: Google Blue Theme
+                      - type: entity
+                        entity: sensor.time
+                        name: 시간 (Time)
+                        theme: Google Blue Theme
+                  - type: horizontal-stack
+                    cards:
+                      - type: button
+                        tap_action:
+                          action: toggle
+                        entity: input_boolean.301_alarm
+                        name: 알람 설정 (Set Alarm)
+                        hold_action:
+                          action: none
+                        icon_height: 60px
+                        icon: 'mdi:alarm'
+                      - type: entity
+                        entity: sensor.301_wake_time
+                        name: 알람 시간 (Alarm Time)
+                        icon: 'mdi:alarm'
+                        theme: Google Blue Theme
+                  - type: grid
+                    cards:
+                      - type: button
+                        tap_action:
+                          action: toggle
+                        name: '-3H'
+                        show_icon: true
+                        hold_action:
+                          action: none
+                        entity: script.301_alarm_sub_3h
+                        icon: 'hass:minus'
+                      - type: button
+                        tap_action:
+                          action: toggle
+                        entity: script.301_alarm_sub_1h
+                        name: '-1H'
+                        show_icon: true
+                        hold_action:
+                          action: none
+                        icon: 'hass:minus'
+                      - type: button
+                        tap_action:
+                          action: none
+                        show_icon: true
+                        name: 시 (Hour)
+                        hold_action:
+                          action: none
+                        icon: 'mdi:timer'
+                      - type: button
+                        tap_action:
+                          action: toggle
+                        entity: script.301_alarm_add_1h
+                        name: +1H
+                        show_icon: true
+                        hold_action:
+                          action: none
+                        icon: 'hass:plus'
+                      - type: button
+                        tap_action:
+                          action: toggle
+                        show_icon: true
+                        name: +3H
+                        hold_action:
+                          action: none
+                        entity: script.301_alarm_add_3h
+                        icon: 'hass:plus'
+                      - type: button
+                        tap_action:
+                          action: toggle
+                        entity: script.301_alarm_sub_15m
+                        name: '-15M'
+                        show_icon: true
+                        hold_action:
+                          action: none
+                        icon: 'hass:minus'
+                      - type: button
+                        tap_action:
+                          action: toggle
+                        entity: script.301_alarm_sub_5m
+                        name: '-5M'
+                        show_icon: true
+                        hold_action:
+                          action: none
+                        icon: 'hass:minus'
+                      - type: button
+                        tap_action:
+                          action: none
+                        name: 분 (Minutes)
+                        show_icon: true
+                        hold_action:
+                          action: none
+                        icon: 'mdi:timer'
+                      - type: button
+                        tap_action:
+                          action: toggle
+                        entity: script.301_alarm_add_5m
+                        name: +5M
+                        show_icon: true
+                        hold_action:
+                          action: none
+                        icon: 'hass:plus'
+                      - type: button
+                        tap_action:
+                          action: toggle
+                        entity: script.301_alarm_add_15m
+                        show_icon: true
+                        name: +15M
+                        hold_action:
+                          action: none
+                        icon: 'hass:plus'
+                    columns: 5
+          - type: vertical-stack
+            cards:
+              - type: vertical-stack
+                cards:
+                  - type: vertical-stack
+                    cards: []
+                    title: 조명 (Light)
+                  - type: grid
+                    cards:
+                      - type: button
+                        tap_action:
+                          action: toggle
+                        entity: input_boolean.301_all_off
+                        icon: 'mdi:lightbulb-group-outline'
+                        name: 전체 (Room All)
+                        show_state: false
+                        hold_action:
+                          action: none
+                        icon_height: 80px
+                    square: false
+                    columns: 1
+                  - type: grid
+                    cards:
+                      - type: button
+                        tap_action:
+                          action: toggle
+                        entity: switch.301_lightnew_top
+                        name: 중앙 (Lounge)
+                        icon: 'hass:lightbulb-on-outline'
+                        show_state: false
+                      - type: button
+                        tap_action:
+                          action: toggle
+                        entity: switch.301_lightnew_bottom
+                        name: 무드 (Mood)
+                        icon: 'hass:lightbulb-on-outline'
+                        show_state: false
+                      - type: button
+                        tap_action:
+                          action: toggle
+                        entity: switch.301_light_l3
+                        name: 욕실 (Bath)
+                        icon: 'hass:lightbulb-on-outline'
+                        show_state: false
+                      - type: button
+                        tap_action:
+                          action: toggle
+                        entity: switch.301_light_l4
+                        name: 환풍기 (Air Fan)
+                        icon: 'hass:fan'
+                        show_state: false
+                      - type: button
+                        tap_action:
+                          action: more-info
+                        entity: binary_sensor.301_motion_occupancy
+                        show_state: false
+                        name: 모션 (Motion)
+                      - type: button
+                        tap_action:
+                          action: more-info
+                        entity: binary_sensor.301_door_contact
+                        name: 도어 (Door)
+                        show_state: false
+                    square: true
+                  - type: vertical-stack
+                    cards: []
+                    title: 씬 스위치 (Scene)
+                  - type: grid
+                    cards:
+                      - type: button
+                        tap_action:
+                          action: toggle
+                        entity: input_boolean.301_cinema
+                        hold_action:
+                          action: none
+                        name: 시네마 (Ambient)
+                        icon: 'hass:television-ambient-light'
+                      - type: button
+                        tap_action:
+                          action: toggle
+                        entity: input_boolean.301_wakeup
+                        name: 기상 (Morning)
+                        icon: 'hass:weather-sunny'
+                      - type: button
+                        tap_action:
+                          action: toggle
+                        entity: input_boolean.301_sleep
+                        name: 취침 (Sleep)
+                        icon: 'hass:weather-night'
+          - type: vertical-stack
+            cards:
+              - type: vertical-stack
+                cards: []
+                title: 스마트 TV (With STB)
+              - type: vertical-stack
+                cards:
+                  - type: grid
+                    cards:
+                      - type: button
+                        tap_action:
+                          action: toggle
+                        icon: 'hass:power'
+                        icon_height: 50px
+                        hold_action:
+                          action: none
+                        entity: script.301_ir_send_iptv_power
+                        show_name: false
+                      - type: button
+                        tap_action:
+                          action: toggle
+                        icon: 'hass:home'
+                        icon_height: 50px
+                        hold_action:
+                          action: none
+                        entity: script.301_ir_send_iptv_home
+                        show_name: false
+                      - type: button
+                        tap_action:
+                          action: toggle
+                        icon: 'hass:volume-mute'
+                        icon_height: 50px
+                        hold_action:
+                          action: none
+                        entity: script.301_ir_send_iptv_volume_mute
+                        show_name: false
+                    square: false
+                  - type: grid
+                    cards:
+                      - type: button
+                        tap_action:
+                          action: toggle
+                        icon: 'hass:volume-minus'
+                        icon_height: 50px
+                        entity: script.301_ir_send_iptv_volume_down
+                        show_name: false
+                        hold_action:
+                          action: none
+                      - type: button
+                        tap_action:
+                          action: none
+                        name: Volume
+                        icon_height: 50px
+                        show_icon: false
+                        show_name: true
+                        hold_action:
+                          action: none
+                      - type: button
+                        tap_action:
+                          action: toggle
+                        icon: 'hass:volume-plus'
+                        icon_height: 50px
+                        hold_action:
+                          action: none
+                        entity: script.301_ir_send_iptv_volume_up
+                        show_name: false
+                    columns: 3
+                    square: false
+                  - type: grid
+                    cards:
+                      - type: button
+                        tap_action:
+                          action: toggle
+                        icon: 'hass:magnify-minus'
+                        icon_height: 50px
+                        show_name: false
+                        entity: script.301_ir_send_iptv_channel_down
+                        hold_action:
+                          action: none
+                      - type: button
+                        tap_action:
+                          action: none
+                        name: Channel
+                        icon_height: 50px
+                        show_icon: false
+                        hold_action:
+                          action: none
+                      - type: button
+                        tap_action:
+                          action: toggle
+                        icon: 'hass:magnify-plus'
+                        icon_height: 50px
+                        show_name: false
+                        entity: script.301_ir_send_iptv_channel_up
+                        hold_action:
+                          action: none
+                    columns: 3
+                    square: false
+                  - type: grid
+                    cards:
+                      - type: button
+                        tap_action:
+                          action: toggle
+                        icon_height: 50px
+                        name: 나가기
+                        entity: script.301_ir_send_iptv_navigation_exit
+                        show_icon: false
+                        hold_action:
+                          action: none
+                      - type: button
+                        tap_action:
+                          action: toggle
+                        icon: 'hass:arrow-up-bold'
+                        icon_height: 50px
+                        entity: script.301_ir_send_iptv_nagivation_up
+                        show_name: false
+                        hold_action:
+                          action: none
+                      - type: button
+                        tap_action:
+                          action: toggle
+                        icon_height: 50px
+                        entity: script.301_ir_send_iptv_navigation_back
+                        name: 이전
+                        show_icon: false
+                        hold_action:
+                          action: none
+                    columns: 3
+                    square: false
+                  - type: grid
+                    cards:
+                      - type: button
+                        tap_action:
+                          action: toggle
+                        icon: 'hass:arrow-left-bold'
+                        icon_height: 50px
+                        entity: script.301_ir_send_iptv_nagivation_left
+                        show_name: false
+                        hold_action:
+                          action: none
+                      - type: button
+                        tap_action:
+                          action: toggle
+                        icon: 'hass:alpha-o-circle-outline'
+                        icon_height: 50px
+                        show_name: false
+                        entity: script.301_ir_send_iptv_nagivation_ok
+                        hold_action:
+                          action: none
+                      - type: button
+                        tap_action:
+                          action: toggle
+                        icon: 'hass:arrow-right-bold'
+                        icon_height: 50px
+                        show_name: false
+                        entity: script.301_ir_send_iptv_nagivation_right
+                        hold_action:
+                          action: none
+                    square: false
+                  - type: grid
+                    cards:
+                      - type: button
+                        tap_action:
+                          action: toggle
+                        icon_height: 50px
+                        entity: script.301_ir_send_iptv_menu
+                        show_icon: false
+                        name: 메뉴
+                        hold_action:
+                          action: none
+                      - type: button
+                        tap_action:
+                          action: toggle
+                        icon: 'hass:arrow-down-bold'
+                        icon_height: 50px
+                        show_name: false
+                        entity: script.301_ir_send_iptv_nagivation_down
+                        hold_action:
+                          action: none
+                      - type: button
+                        tap_action:
+                          action: toggle
+                        icon_height: 50px
+                        entity: script.301_ir_send_iptv_epg
+                        name: 편성표
+                        show_icon: false
+                        hold_action:
+                          action: none
+                    columns: 3
+                    square: false
+              - type: grid
+                cards:
+                  - type: button
+                    tap_action:
+                      action: toggle
+                    icon_height: 50px
+                    entity: script.301_ir_send_iptv_number_1
+                    show_icon: true
+                    name: '1'
+                    hold_action:
+                      action: none
+                    icon: 'hass:numeric-1'
+                    show_name: false
+                  - type: button
+                    tap_action:
+                      action: toggle
+                    icon_height: 50px
+                    show_icon: true
+                    name: '2'
+                    entity: script.301_ir_send_iptv_number_2
+                    hold_action:
+                      action: none
+                    icon: 'hass:numeric-2'
+                    show_name: false
+                  - type: button
+                    tap_action:
+                      action: toggle
+                    icon_height: 50px
+                    entity: script.301_ir_send_iptv_number_3
+                    name: '3'
+                    show_icon: true
+                    hold_action:
+                      action: none
+                    icon: 'hass:numeric-3'
+                    show_name: false
+                columns: 3
+                square: false
+              - type: grid
+                cards:
+                  - type: button
+                    tap_action:
+                      action: toggle
+                    icon_height: 50px
+                    entity: script.301_ir_send_iptv_number_4
+                    show_icon: true
+                    name: '4'
+                    hold_action:
+                      action: none
+                    show_name: false
+                    icon: 'hass:numeric-4'
+                  - type: button
+                    tap_action:
+                      action: toggle
+                    icon: 'hass:numeric-5'
+                    icon_height: 50px
+                    show_name: false
+                    entity: script.301_ir_send_iptv_number_5
+                    hold_action:
+                      action: none
+                    name: '5'
+                    show_icon: true
+                  - type: button
+                    tap_action:
+                      action: toggle
+                    icon_height: 50px
+                    entity: script.301_ir_send_iptv_number_6
+                    name: '6'
+                    show_icon: true
+                    hold_action:
+                      action: none
+                    show_name: false
+                    icon: 'hass:numeric-6'
+                columns: 3
+                square: false
+              - type: grid
+                cards:
+                  - type: button
+                    tap_action:
+                      action: toggle
+                    icon_height: 50px
+                    entity: script.301_ir_send_iptv_number_7
+                    show_icon: true
+                    name: '7'
+                    hold_action:
+                      action: none
+                    show_name: false
+                    icon: 'hass:numeric-7'
+                  - type: button
+                    tap_action:
+                      action: toggle
+                    icon_height: 50px
+                    show_name: false
+                    entity: script.301_ir_send_iptv_number_8
+                    hold_action:
+                      action: none
+                    name: '8'
+                    show_icon: true
+                    icon: 'hass:numeric-8'
+                  - type: button
+                    tap_action:
+                      action: toggle
+                    icon_height: 50px
+                    entity: script.301_ir_send_iptv_number_9
+                    name: '9'
+                    show_icon: true
+                    hold_action:
+                      action: none
+                    show_name: false
+                    icon: 'hass:numeric-9'
+                columns: 3
+                square: false
+              - type: grid
+                cards:
+                  - type: button
+                    tap_action:
+                      action: toggle
+                    icon_height: 50px
+                    entity: script.301_ir_send_iptv_number_star
+                    show_icon: false
+                    name: '*'
+                    hold_action:
+                      action: none
+                    show_name: true
+                    icon: 'hass:asterisk'
+                  - type: button
+                    tap_action:
+                      action: toggle
+                    icon_height: 50px
+                    name: '0'
+                    show_icon: true
+                    entity: script.301_ir_send_iptv_number_0
+                    hold_action:
+                      action: none
+                    show_name: false
+                    icon: 'hass:numeric-0'
+                  - type: button
+                    tap_action:
+                      action: toggle
+                    icon_height: 50px
+                    entity: script.301_ir_send_iptv_number_sharp
+                    name: '#'
+                    show_icon: false
+                    hold_action:
+                      action: none
+                    icon: 'hass:music-accidental-sharp'
+                    show_name: true
+                columns: 3
+                square: false
