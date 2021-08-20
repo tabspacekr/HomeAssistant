@@ -1,0 +1,20 @@
+camera:
+  - platform: local_file
+    name: planter_raw
+    file_path: /config/www/temp.jpg
+
+  - platform: local_file
+    name: planter_ndvi_1
+    file_path: /config/www/NDVI_sample1.jpg
+
+  - platform: local_file
+    name: planter_ndvi_1_gray
+    file_path: /config/www/NDVI_sample1_gray.jpg
+
+  - platform: local_file
+    name: planter_ndvi_2
+    file_path: /config/www/NDVI_sample2.jpg
+
+  - platform: local_file
+    name: planter_ndvi_2_gray
+    file_path: /config/www/NDVI_sample2_gray.jpg
