@@ -1,0 +1,32 @@
+# 참고 : https://www.home-assistant.io/integrations/http/
+
+# 1) ha 로그인 후 supervisor에서 let's encrypt addon 설치
+
+# 2) 구성 탭 클릭 후, 텍스트편집기에 아래와 같이 이메일과 도메인 정보 입력
+
+email: ceo@tabspacec.kr
+domains:
+  - ha.yourdomain.com
+certfile: fullchain.pem
+keyfile: privkey.pem
+challenge: http
+dns: {}
+
+# 3) file editor로 configuration.yaml 파일을 연 후 https사용설정을 위해 ssl 인증키값 위치 지정
+
+# SSL사용
+http:
+  server_port: 443
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
+
+# 4) HA재기동
+
+
+# 5) 결과
+# https://ha.yourdomain.com 으로 접근 가능
+
+# 6) 주의사항
+
+# 발행된 무료 ssl인증서인 let's encrypt는 인증서 유효기간이 90일로, 만료되기전에 재연장 작업을 수행해야 함.
+# 이는 단순히 supervicor의 let's encrypt addon을 restart해주는것만으로도 자동 연장처리함. 단, 연장은 만료일 x일 전에만 가능.
