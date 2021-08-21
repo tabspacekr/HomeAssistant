@@ -1,3 +1,4 @@
+#edit on configuration.yaml file
 camera:
   - platform: local_file
     name: planter_raw
