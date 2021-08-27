@@ -1,3 +1,4 @@
+# 라즈베리파이 + 아두이노 코드를 HA와 연계하기
 template:
   - trigger:
       - platform: webhook
