@@ -20,9 +20,8 @@ HomeAssistant에서 활용이 가능한 블루프린트(사전 자동화 정의�
 Broadlink사의 적외선(IR) 컨트롤 기기 RM4 mini에 대한 제어 코드
 
 ### 4. Camera - Old Unuse Android IP Camera, Xiaomi Dafang Hack
-안드로이드 4.1이상의 구형 스마트폰을 RTSP프로트콜 IP카메라로 활용 가능한 코드
-
-샤오미의 PT카메라인 Dafang의 커스텀 펌웨어 및 활용 코드
+- 안드로이드 4.1이상의 구형 스마트폰을 RTSP프로트콜 IP카메라로 활용 가능한 코드
+- 샤오미의 PT카메라인 Dafang의 커스텀 펌웨어 및 활용 코드
 
 ### 5. Configuration - HA Configuration.yaml
 HomeAssistant를 최적화 하기 위한 환경설정(Configuration) 코드
