@@ -1,4 +1,5 @@
-#edit on configuration.yaml file
+# edit on configuration.yaml file
+# 로컬 경로에 있는 이미지 파일을 카메라 형태로 사용하여, 해당 이미지파일을 갱신시에 lovelace에서 즉시 갱신되는 효과를 가질 수 있음
 camera:
   - platform: local_file
     name: planter_raw
