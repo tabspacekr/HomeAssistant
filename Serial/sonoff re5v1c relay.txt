@@ -1,0 +1,6 @@
+# pinmap : https://templates.blakadder.com/sonoff_RE5V1C.html
+
+# tasmotizer : https://github.com/tasmota/tasmotizer/releases
+
+# PL2303HXA PHASED OUT SINCE 2012. PLEASE CONTACT YOUR SUPPLIER 오류난경우
+# - https://zelkun.tistory.com/entry/PL2303HXA-PHASED-OUT-SINCE-2012-PLEASE-CONTACT-YOUR-SUPPLIER
