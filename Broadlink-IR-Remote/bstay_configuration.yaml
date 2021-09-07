@@ -1,0 +1,57 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+# Use MariaDB for Recording
+recorder:
+  db_url: mysql://homeassistant:tabspace@core-mariadb/homeassistant?charset=utf8mb4
+
+# 테마 적용
+frontend:
+  themes: !include themes.yaml
+
+sensor:
+  - platform: template
+    sensors:
+      weather_temperature:
+        friendly_name : "GG_WEATHER"
+        unit_of_measurement: 'C'
+        value_template: "{{ state_attr('weather.tabspace', 'temperature') }}"
+
+
+# IR리모콘 사용을 손쉽게 할 수 있는 smartir 커스텀 컴포넌트 호출 ( https://github.com/smartHomeHub/SmartIR )  
+smartir:
+
+climate:
+- platform: smartir
+  name: GG_AC
+  unique_id: GG_AC
+  # 디바이스 코드는 https://github.com/smartHomeHub/SmartIR/blob/master/docs/CLIMATE.md#available-codes-for-climate-devices 에서 확인
+  device_code: 1062
+  controller_data: remote.gg_ir_remote
+  temperature_sensor: sensor.weather_temperature
+  #humidity_sensor: sensor.301_temperature_humidity
+
+
+media_player:
+  - platform: smartir
+    name: GG_TV
+    unique_id: GG_TV
+    # 디바이스 코드는 https://github.com/smartHomeHub/SmartIR/blob/master/docs/MEDIA_PLAYER.md 에서 확인
+    device_code: 1062
+    controller_data: remote.gg_ir_remote
+    #power_sensor: binary_sensor.tv_power
+
+http:
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 10.200.0.0/16  # Add the IP address of the proxy server
