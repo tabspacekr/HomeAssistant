@@ -1,4 +1,4 @@
-=== 경로 생성 및 파일 생성 ===
+# === 경로 생성 및 파일 생성 ===
 cd /
 sudo mkdir backup
 cd backup
@@ -9,11 +9,11 @@ sudo vi db_backup_databases.txt
 sudo vi db_backup.sh
 sudo chmod a+x db_backup.sh
 
-=== 권한 정리 ===
+# === 권한 정리 ===
 cd /
 sudo chown ec2-user:ec2-user backup -R
 
-=== db_backup.shell 생성 ===
+# === db_backup.shell 생성 ===
 #!/bin/bash
 
 #======================================
@@ -64,11 +64,11 @@ done
 # 1 week ago backup delete
 rm -rf $BAK_FILE_SAVE_PATH/$WEEK_AGO
 
-=== crontab 설정 ===
+# === crontab 설정 ===
 crontab -e
 0 5 * * * /backup/shell_script/db_backup.sh &
 
-=== crontab 시간대 변경 ===
+# === crontab 시간대 변경 ===
 sudo ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime
 sudo systemctl restart crond
 # 만약 cron daemon을 재기동하지 않으면, 기존 utc기준으로 시간이 계산되어 오전5시가 아닌 한국시간 기준으로 오후2시(14시)에 명령이 실행됨
