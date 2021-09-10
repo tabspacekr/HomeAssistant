@@ -1,4 +1,4 @@
-# === 경로 생성 및 파일 생성 ===
+# Step1. 사전작업 === 경로 생성 및 파일 생성 ===
 cd /
 sudo mkdir backup
 cd backup
