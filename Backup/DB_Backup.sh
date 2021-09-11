@@ -1,4 +1,4 @@
-# Step1. 사전작업 === 경로 생성 및 파일 생성 ===
+# Step1. 사전작업, 경로 생성 및 파일 생성
 cd /
 sudo mkdir backup
 cd backup
@@ -9,7 +9,7 @@ sudo vi db_backup_databases.txt
 sudo vi db_backup.sh
 sudo chmod a+x db_backup.sh
 
-# === 권한 정리 ===
+# Step2. 권한 정리
 cd /
 sudo chown ec2-user:ec2-user backup -R
 
