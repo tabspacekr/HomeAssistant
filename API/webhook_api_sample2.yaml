@@ -56,6 +56,3 @@ template:
         state: "{{ trigger.json.Soil_Humidity }}"
         unit_of_measurement: '%'
         
-      - name: "Planter_Camera"
-        state: "{{ trigger.json.Camera }}"
-        unit_of_measurement: '%'
