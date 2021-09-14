@@ -13,7 +13,8 @@ sudo chmod a+x db_backup.sh
 cd /
 sudo chown ec2-user:ec2-user backup -R
 
-# === db_backup.shell 생성 ===
+# Step3. db_backup.shell 생성
+# /backup/shell_script/db_backup.sh
 #!/bin/bash
 
 #======================================
