@@ -9,7 +9,7 @@ sudo vi db_backup_databases.txt
 sudo vi db_backup.sh
 sudo chmod a+x db_backup.sh
 
-# Step2. 권한 정리
+# Step2. 권한 정리, aws ami는 ec2-user
 cd /
 sudo chown ec2-user:ec2-user backup -R
 
