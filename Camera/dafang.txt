@@ -1,0 +1,48 @@
+https://github.com/EliasKotlyar/Xiaomi-Dafang-Hacks/blob/master/hacks/install_cfw.md
+
+https://github.com/EliasKotlyar/Xiaomi-Dafang-Hacks/blob/master/hacks/faq.md
+
+dafang mqtt 연동
+- https://github.com/EliasKotlyar/Xiaomi-Dafang-Hacks/blob/master/integration/homeassistant/homeassistant.md
+
+1. dafang ip에 ssh접속한 후
+기본비밀번호는 root에 ismart12임
+
+cp /system/sdcard/config/mqtt.conf.dist /system/sdcard/config/mqtt.conf
+vi /system/sdcard/config/mqtt.conf
+USER, PASS, HOST 부분 변경, AUTODISCOVERY_PREFIX 주석 해제
+
+2. dafang web ui 화면에 들어가서 MQTT Control과 MQTT Live Status Updates를 stop 후 다시 start
+
+HA에 rtsp 연동
+
+configuration.yaml에 아래 내용 추가 후 재기동
+
+camera:
+  - platform: ffmpeg
+    name: DaFang3
+    input: -rtsp_transport tcp -i rtsp://dafang:8554/unicast
+rtsp:// dafang :8554/unicast 부분의 dafang을 hostname으로 변경, 일부 공유기의 경우 hostname이 인식되지 않기에 IP카메라의 주소로 직접 연결
+
+만약 dafang hack에 rtsp camera id/pw를 설정해두었으면 다음과 같이 id/pw명기하여 접속
+
+rtsp://tabspace:tabspace@192.168.0.16:8554/unicast
+rtsp://아이디:비밀번호@192.168.0.16:8554/unicast
+
+유선랜 관련 참고 : https://www.reddit.com/r/wyzecam/comments/g518kb/yet_another_dafang_hacks_post_usb_ethernet_mod/
+ASIX AX88772 모델은 인식됨
+
+https://youtu.be/xLwUoj3ZFt0
+외부안테나 장착관련 참고
+
+IP캠 내부 안테나 확인용 분해 영상
+https://www.youtube.com/watch?v=PYVvlepSsdI&ab_channel=TechOrange
+
+dafang ipcam 검증완료
+안테나가 배송시에 체결이 약해져서 신호가 약했던것이며, 분해 후 다시 체결하여 정상동작 확인
+
+향후 진행필요사항
+- IP카메라로 할 수 있는 아이템 발굴 / cctv활용 등
+
+dafang hack 비밀번호 분실 시
+https://github.com/EliasKotlyar/Xiaomi-Dafang-Hacks/issues/1022
