@@ -46,3 +46,7 @@ dafang ipcam 검증완료
 
 dafang hack 비밀번호 분실 시
 https://github.com/EliasKotlyar/Xiaomi-Dafang-Hacks/issues/1022
+
+dafang에서 onvif설정 시, pt컨트롤이 되지 않음
+https://github.com/EliasKotlyar/Xiaomi-Dafang-Hacks/issues/1229#issuecomment-650377826
+Do you have onvif activated? That blocks the motor for itself. #1629
