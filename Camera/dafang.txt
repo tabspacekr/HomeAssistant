@@ -50,3 +50,5 @@ https://github.com/EliasKotlyar/Xiaomi-Dafang-Hacks/issues/1022
 dafang에서 onvif설정 시, pt컨트롤이 되지 않음
 https://github.com/EliasKotlyar/Xiaomi-Dafang-Hacks/issues/1229#issuecomment-650377826
 Do you have onvif activated? That blocks the motor for itself. #1629
+
+ntp서버의 기본값은 time.google.com 으로 되어 있으나, 간혹 동작하지 않는 경우가 발생하며, 이 경우에는 1970년으로 인식하게 되므로 time.bora.net의 uplus ntp서버를 
