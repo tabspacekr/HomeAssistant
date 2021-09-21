@@ -5,8 +5,7 @@ https://github.com/EliasKotlyar/Xiaomi-Dafang-Hacks/blob/master/hacks/faq.md
 dafang mqtt 연동
 - https://github.com/EliasKotlyar/Xiaomi-Dafang-Hacks/blob/master/integration/homeassistant/homeassistant.md
 
-1. dafang ip에 ssh접속한 후
-기본비밀번호는 root에 ismart12임
+1. dafang ip에 ssh접속한 후 (기본비밀번호 root // ismart12)
 
 cp /system/sdcard/config/mqtt.conf.dist /system/sdcard/config/mqtt.conf
 vi /system/sdcard/config/mqtt.conf
