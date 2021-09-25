@@ -9,3 +9,6 @@ bolt lock 방식 또한, 접점제어 형태로 적용 가능
 
 magnetic lock 방식 또한, 접점제어 형태로 적용 가능
 - https://smartstore.naver.com/keps119/products/4588123209?NaPm=ct%3Dktwmyd00%7Cci%3D0zi0003gaiLvU0HPUvlK%7Ctr%3Dpla%7Chk%3D975a93eec325e290d6bd0fee6bbf052a631a9fae
+
+sonoff re5v1c tasmota 적용 시 참고사항
+- inching mode 설정이 필요함. (tasmota console에서 inching설정)
