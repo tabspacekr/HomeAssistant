@@ -1,0 +1,56 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Text to speech
+tts:
+  - platform: google_translate
+    language: 'ko'
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+recorder:
+#  db_url: mysql://homeassistant:homeassistant@core-mariadb/homeassistant?charset=utf8mb4
+  purge_keep_days: 14
+  exclude:
+    entity_globs:
+      - sensor.*_linkquality
+      - sensor.*_current
+      - sensor.*_battery
+
+# 리버스프록시 사용 2021.09.26.
+http:
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 10.10.0.0/16
+    
+sensor:
+# 시스템 모니터 시작
+  - platform: systemmonitor
+    resources:
+      - type: disk_use_percent
+        arg: /
+      - type: memory_use_percent
+      - type: processor_temperature
+      - type: processor_use
+  - platform: filesize
+    file_paths:
+      - /config/home-assistant_v2.db      
+# 시스템 모니터 종료
+
+# assuming you have only one non-system user
+homeassistant:
+#  auth_providers:
+#    - type: trusted_networks
+#      trusted_networks:
+#        - 192.168.0.0/24
+#        - 192.168.1.0/24
+#        - 127.0.0.1
+#        - ::1
+#      allow_bypass_login: true
+#    - type: homeassistant
+  allowlist_external_dirs:
+    - /config
