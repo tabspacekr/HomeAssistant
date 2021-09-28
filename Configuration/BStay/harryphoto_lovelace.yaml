@@ -1,0 +1,125 @@
+type: picture-elements
+elements:
+  - type: state-icon
+    entity: binary_sensor.harry_dw01_contact
+    style:
+      top: 40%
+      left: 9%
+  - type: state-icon
+    entity: binary_sensor.harry_motion04_occupancy
+    style:
+      top: 57%
+      left: 22%
+  - type: state-icon
+    entity: binary_sensor.harry_motion05_occupancy
+    style:
+      top: 57%
+      left: 32%
+  - type: state-icon
+    entity: binary_sensor.harry_motion06_occupancy
+    style:
+      top: 57%
+      left: 43%
+  - type: state-icon
+    entity: binary_sensor.harry_motion07_occupancy
+    style:
+      top: 60%
+      left: 53%
+  - type: state-icon
+    entity: binary_sensor.harry_motion08_occupancy
+    style:
+      top: 67%
+      left: 65%
+  - type: state-icon
+    entity: binary_sensor.harry_motion09_occupancy
+    style:
+      top: 71%
+      left: 76%
+  - type: state-icon
+    entity: binary_sensor.harry_motion01_occupancy
+    style:
+      top: 40%
+      left: 20%
+  - type: state-icon
+    entity: binary_sensor.harry_motion02_occupancy
+    style:
+      top: 40%
+      left: 40%
+  - type: state-icon
+    entity: binary_sensor.harry_motion03_occupancy
+    style:
+      top: 50%
+      left: 60%
+  - type: state-icon
+    entity: sensor.harry_th04_temperature
+    style:
+      top: 24%
+      left: 11%
+  - type: state-label
+    entity: sensor.harry_th04_temperature
+    style:
+      top: 22%
+      left: 20%
+  - type: state-label
+    entity: sensor.harry_th04_humidity
+    style:
+      top: 26%
+      left: 20%
+  - type: state-icon
+    entity: sensor.harry_th03_temperature
+    style:
+      top: 25%
+      left: 39%
+  - type: state-label
+    entity: sensor.harry_th03_temperature
+    style:
+      top: 24%
+      left: 48%
+  - type: state-label
+    entity: sensor.harry_th03_humidity
+    style:
+      top: 28%
+      left: 48%
+  - type: state-icon
+    entity: sensor.harry_th02_temperature
+    style:
+      top: 44%
+      left: 46%
+  - type: state-label
+    entity: sensor.harry_th02_temperature
+    style:
+      top: 40%
+      left: 55%
+  - type: state-label
+    entity: sensor.harry_th02_humidity
+    style:
+      top: 44%
+      left: 55%
+  - type: state-icon
+    entity: sensor.harry_th01_temperature
+    style:
+      top: 56%
+      left: 70%
+  - type: state-label
+    entity: sensor.harry_th01_temperature
+    style:
+      top: 55%
+      left: 79%
+  - type: state-label
+    entity: sensor.harry_th01_humidity
+    style:
+      top: 59%
+      left: 79%
+  - type: state-icon
+    entity: climate.harry_ac
+    style:
+      top: 90%
+      left: 11%
+  - type: state-label
+    entity: climate.harry_ac
+    attribute: current_temperature
+    suffix: °C
+    style:
+      top: 90%
+      left: 20%
+image: /local/map_black.jpg
