@@ -1,0 +1,926 @@
+kiosk_mode:
+  user_settings:
+    - users:
+        - updog
+      kiosk: true
+      ignore_entity_settings: true
+      ignore_mobile_settings: true
+title: 아무도없개
+views:
+  - path: home
+    title: 요약
+    icon: hass:map
+    badges: []
+    cards:
+      - type: grid
+        cards:
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: home
+            entity: ''
+            show_icon: true
+            name: 요약
+            icon: hass:map
+            hold_action:
+              action: none
+            theme: Google Blue Theme
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: air
+            entity: ''
+            show_icon: true
+            name: 에어컨
+            icon: hass:air-filter
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: motion
+            entity: ''
+            show_icon: true
+            name: 모션
+            icon: hass:walk
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: door
+            entity: ''
+            show_icon: true
+            name: 도어
+            icon: hass:door
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: thermometer
+            entity: ''
+            show_icon: true
+            name: 온습도
+            icon: hass:thermometer
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: cash
+            entity: ''
+            show_icon: true
+            name: 지폐계수기
+            icon: hass:cash-multiple
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: cctv
+            entity: ''
+            show_icon: true
+            name: CCTV
+            icon: hass:cctv
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: admin
+            entity: ''
+            show_icon: true
+            name: 관리
+            icon: hass:account-tie-voice-outline
+            hold_action:
+              action: none
+        square: false
+        columns: 4
+      - type: picture-elements
+        elements:
+          - type: state-icon
+            entity: binary_sensor.updog_m_04_occupancy
+            style:
+              top: 80%
+              left: 51%
+          - type: state-icon
+            entity: binary_sensor.updog_m_03_occupancy
+            style:
+              top: 65%
+              left: 51%
+          - type: state-icon
+            entity: binary_sensor.updog_m_02_occupancy
+            style:
+              top: 48%
+              left: 55%
+          - type: state-icon
+            entity: binary_sensor.updog_m_01_occupancy
+            style:
+              top: 35%
+              left: 48%
+          - type: state-icon
+            entity: binary_sensor.updog_dw_02_contact
+            style:
+              top: 61%
+              left: 43%
+          - type: state-icon
+            entity: binary_sensor.updog_dw_03_contact
+            style:
+              top: 65.5%
+              left: 43%
+          - type: state-icon
+            entity: binary_sensor.updog_dw_04_contact
+            style:
+              top: 70%
+              left: 43%
+          - type: state-icon
+            entity: binary_sensor.updog_dw_07_contact
+            style:
+              top: 74.5%
+              left: 43%
+          - type: state-icon
+            entity: binary_sensor.updog_dw_06_contact
+            style:
+              top: 81%
+              left: 43%
+          - type: state-icon
+            entity: binary_sensor.updog_dw_06_contact
+            style:
+              top: 27%
+              left: 55%
+          - type: state-icon
+            entity: sensor.updog_th_02_temperature
+            style:
+              top: 66.5%
+              left: 66%
+          - type: state-label
+            entity: sensor.updog_th_02_temperature
+            style:
+              top: 65%
+              left: 74.5%
+          - type: state-label
+            entity: sensor.updog_th_02_humidity
+            style:
+              top: 67.5%
+              left: 74.5%
+          - type: state-icon
+            entity: sensor.updog_th_01_temperature
+            style:
+              top: 56%
+              left: 37%
+          - type: state-label
+            entity: sensor.updog_th_01_temperature
+            style:
+              top: 55%
+              left: 28%
+          - type: state-label
+            entity: sensor.updog_th_01_humidity
+            style:
+              top: 57.5%
+              left: 28%
+          - type: state-icon
+            entity: climate.updog_ac
+            style:
+              top: 25%
+              left: 46%
+          - type: state-label
+            entity: climate.updog_ac
+            attribute: current_temperature
+            suffix: °C
+            style:
+              top: 21%
+              left: 46%
+        image: /local/map_updog.png
+  - title: 에어컨
+    path: air
+    icon: hass:air-conditioner
+    badges: []
+    cards:
+      - type: grid
+        cards:
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: home
+            entity: ''
+            show_icon: true
+            name: 요약
+            icon: hass:map
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: air
+            entity: ''
+            show_icon: true
+            name: 에어컨
+            icon: hass:air-filter
+            hold_action:
+              action: none
+            theme: Google Blue Theme
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: motion
+            entity: ''
+            show_icon: true
+            name: 모션
+            icon: hass:walk
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: door
+            entity: ''
+            show_icon: true
+            name: 도어
+            icon: hass:door
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: thermometer
+            entity: ''
+            show_icon: true
+            name: 온습도
+            icon: hass:thermometer
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: cash
+            entity: ''
+            show_icon: true
+            name: 지폐계수기
+            icon: hass:cash-multiple
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: cctv
+            entity: ''
+            show_icon: true
+            name: CCTV
+            icon: hass:cctv
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: admin
+            entity: ''
+            show_icon: true
+            name: 관리
+            icon: hass:account-tie-voice-outline
+            hold_action:
+              action: none
+        square: false
+        columns: 4
+      - type: markdown
+        content: 에어컨 제어는 '캐리어' 에어컨 리모콘 코드 학습 후 추후 적용 예정입니다.
+        title: 작업중
+      - type: thermostat
+        entity: climate.updog_ac
+      - type: history-graph
+        entities:
+          - entity: climate.updog_ac
+        hours_to_show: 24
+        refresh_interval: 0
+  - title: 모션현황
+    path: motion
+    icon: hass:walk
+    badges: []
+    cards:
+      - type: grid
+        cards:
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: home
+            entity: ''
+            show_icon: true
+            name: 요약
+            icon: hass:map
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: air
+            entity: ''
+            show_icon: true
+            name: 에어컨
+            icon: hass:air-filter
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: motion
+            entity: ''
+            show_icon: true
+            name: 모션
+            icon: hass:walk
+            hold_action:
+              action: none
+            theme: Google Blue Theme
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: door
+            entity: ''
+            show_icon: true
+            name: 도어
+            icon: hass:door
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: thermometer
+            entity: ''
+            show_icon: true
+            name: 온습도
+            icon: hass:thermometer
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: cash
+            entity: ''
+            show_icon: true
+            name: 지폐계수기
+            icon: hass:cash-multiple
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: cctv
+            entity: ''
+            show_icon: true
+            name: CCTV
+            icon: hass:cctv
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: admin
+            entity: ''
+            show_icon: true
+            name: 관리
+            icon: hass:account-tie-voice-outline
+            hold_action:
+              action: none
+        square: false
+        columns: 4
+      - type: grid
+        cards:
+          - type: button
+            entity: binary_sensor.updog_m_04_occupancy
+          - type: button
+            entity: binary_sensor.updog_m_03_occupancy
+          - type: button
+            entity: binary_sensor.updog_m_01_occupancy
+          - type: button
+            entity: binary_sensor.updog_m_02_occupancy
+        columns: 4
+        square: false
+      - type: logbook
+        entities:
+          - binary_sensor.updog_m_01_occupancy
+          - binary_sensor.updog_m_02_occupancy
+          - binary_sensor.updog_m_03_occupancy
+          - binary_sensor.updog_m_04_occupancy
+        hours_to_show: 24
+  - title: 도어
+    path: door
+    icon: hass:door
+    badges: []
+    cards:
+      - type: grid
+        cards:
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: home
+            entity: ''
+            show_icon: true
+            name: 요약
+            icon: hass:map
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: air
+            entity: ''
+            show_icon: true
+            name: 에어컨
+            icon: hass:air-filter
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: motion
+            entity: ''
+            show_icon: true
+            name: 모션
+            icon: hass:walk
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: door
+            entity: ''
+            show_icon: true
+            name: 도어
+            icon: hass:door
+            hold_action:
+              action: none
+            theme: Google Blue Theme
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: thermometer
+            entity: ''
+            show_icon: true
+            name: 온습도
+            icon: hass:thermometer
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: cash
+            entity: ''
+            show_icon: true
+            name: 지폐계수기
+            icon: hass:cash-multiple
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: cctv
+            entity: ''
+            show_icon: true
+            name: CCTV
+            icon: hass:cctv
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: admin
+            entity: ''
+            show_icon: true
+            name: 관리
+            icon: hass:account-tie-voice-outline
+            hold_action:
+              action: none
+        square: false
+        columns: 4
+      - type: grid
+        cards:
+          - type: button
+            entity: binary_sensor.updog_dw_07_contact
+          - type: button
+            entity: binary_sensor.updog_dw_04_contact
+          - type: button
+            entity: binary_sensor.updog_dw_03_contact
+          - type: button
+            entity: binary_sensor.updog_dw_02_contact
+          - type: button
+            entity: binary_sensor.updog_dw_01_contact
+        square: false
+      - type: logbook
+        entities:
+          - binary_sensor.updog_dw_04_contact
+          - binary_sensor.updog_dw_07_contact
+          - binary_sensor.updog_dw_03_contact
+          - binary_sensor.updog_dw_02_contact
+        hours_to_show: 24
+  - title: 온습도
+    path: thermometer
+    icon: hass:thermometer
+    badges: []
+    cards:
+      - type: grid
+        cards:
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: home
+            entity: ''
+            show_icon: true
+            name: 요약
+            icon: hass:map
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: air
+            entity: ''
+            show_icon: true
+            name: 에어컨
+            icon: hass:air-filter
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: motion
+            entity: ''
+            show_icon: true
+            name: 모션
+            icon: hass:walk
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: door
+            entity: ''
+            show_icon: true
+            name: 도어
+            icon: hass:door
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: thermometer
+            entity: ''
+            show_icon: true
+            name: 온습도
+            icon: hass:thermometer
+            hold_action:
+              action: none
+            theme: Google Blue Theme
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: cash
+            entity: ''
+            show_icon: true
+            name: 지폐계수기
+            icon: hass:cash-multiple
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: cctv
+            entity: ''
+            show_icon: true
+            name: CCTV
+            icon: hass:cctv
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: admin
+            entity: ''
+            show_icon: true
+            name: 관리
+            icon: hass:account-tie-voice-outline
+            hold_action:
+              action: none
+        square: false
+        columns: 4
+      - type: grid
+        cards:
+          - type: gauge
+            entity: sensor.updog_th_02_temperature
+            min: 10
+            max: 40
+          - type: gauge
+            entity: sensor.updog_th_01_temperature
+            min: 10
+            max: 40
+        square: false
+        columns: 2
+      - type: grid
+        cards:
+          - type: sensor
+            entity: sensor.updog_th_01_temperature
+            graph: line
+            theme: Google Blue Theme
+          - type: sensor
+            entity: sensor.updog_th_01_humidity
+            graph: line
+            theme: Google Blue Theme
+          - type: sensor
+            entity: sensor.updog_th_02_temperature
+            graph: line
+            theme: Google Blue Theme
+          - type: sensor
+            entity: sensor.updog_th_02_humidity
+            graph: line
+            theme: Google Blue Theme
+        columns: 2
+        square: false
+  - icon: hass:cash-multiple
+    title: 지폐계수기
+    path: cash
+    badges: []
+    cards:
+      - type: grid
+        cards:
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: home
+            entity: ''
+            show_icon: true
+            name: 요약
+            icon: hass:map
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: air
+            entity: ''
+            show_icon: true
+            name: 에어컨
+            icon: hass:air-filter
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: motion
+            entity: ''
+            show_icon: true
+            name: 모션
+            icon: hass:walk
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: door
+            entity: ''
+            show_icon: true
+            name: 도어
+            icon: hass:door
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: thermometer
+            entity: ''
+            show_icon: true
+            name: 온습도
+            icon: hass:thermometer
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: cash
+            entity: ''
+            show_icon: true
+            name: 지폐계수기
+            icon: hass:cash-multiple
+            hold_action:
+              action: none
+            theme: Google Blue Theme
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: cctv
+            entity: ''
+            show_icon: true
+            name: CCTV
+            icon: hass:cctv
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: admin
+            entity: ''
+            show_icon: true
+            name: 관리
+            icon: hass:account-tie-voice-outline
+            hold_action:
+              action: none
+        square: false
+        columns: 4
+      - type: entity
+        entity: binary_sensor.updog_dw_06_contact
+      - type: logbook
+        entities:
+          - binary_sensor.updog_dw_06_contact
+        hours_to_show: 24
+  - title: CCTV
+    path: cctv
+    icon: hass:cctv
+    badges: []
+    cards:
+      - type: grid
+        cards:
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: home
+            entity: ''
+            show_icon: true
+            name: 요약
+            icon: hass:map
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: air
+            entity: ''
+            show_icon: true
+            name: 에어컨
+            icon: hass:air-filter
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: motion
+            entity: ''
+            show_icon: true
+            name: 모션
+            icon: hass:walk
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: door
+            entity: ''
+            show_icon: true
+            name: 도어
+            icon: hass:door
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: thermometer
+            entity: ''
+            show_icon: true
+            name: 온습도
+            icon: hass:thermometer
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: cash
+            entity: ''
+            show_icon: true
+            name: 지폐계수기
+            icon: hass:cash-multiple
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: cctv
+            entity: ''
+            show_icon: true
+            name: CCTV
+            icon: hass:cctv
+            hold_action:
+              action: none
+            theme: Google Blue Theme
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: admin
+            entity: ''
+            show_icon: true
+            name: 관리
+            icon: hass:account-tie-voice-outline
+            hold_action:
+              action: none
+        square: false
+        columns: 4
+      - type: markdown
+        content: CCTV 연동 작업중입니다.
+        title: 작업중
+  - title: 관리용
+    path: admin
+    icon: hass:account-tie-voice-outline
+    badges: []
+    cards:
+      - type: grid
+        cards:
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: home
+            entity: ''
+            show_icon: true
+            name: 요약
+            icon: hass:map
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: air
+            entity: ''
+            show_icon: true
+            name: 에어컨
+            icon: hass:air-filter
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: motion
+            entity: ''
+            show_icon: true
+            name: 모션
+            icon: hass:walk
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: door
+            entity: ''
+            show_icon: true
+            name: 도어
+            icon: hass:door
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: thermometer
+            entity: ''
+            show_icon: true
+            name: 온습도
+            icon: hass:thermometer
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: cash
+            entity: ''
+            show_icon: true
+            name: 지폐계수기
+            icon: hass:cash-multiple
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: cctv
+            entity: ''
+            show_icon: true
+            name: CCTV
+            icon: hass:cctv
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: admin
+            entity: ''
+            show_icon: true
+            name: 관리
+            icon: hass:account-tie-voice-outline
+            hold_action:
+              action: none
+            theme: Google Blue Theme
+        square: false
+        columns: 4
+      - type: entities
+        entities:
+          - sensor.disk_use_percent
+          - sensor.memory_use_percent
+          - sensor.processor_temperature
+          - sensor.processor_use_percent
+          - sensor.home_assistant_v2_db
+custom_header:
+  disabled_mode: true
+  hidden_tab_redirect: false
+  chevrons: false
+  shadow: false
