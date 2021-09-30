@@ -15,7 +15,6 @@ script: !include scripts.yaml
 scene: !include scenes.yaml
 
 recorder:
-#  db_url: mysql://homeassistant:homeassistant@core-mariadb/homeassistant?charset=utf8mb4
   purge_keep_days: 14
   exclude:
     entity_globs:
