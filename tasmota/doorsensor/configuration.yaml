@@ -1,0 +1,7 @@
+binary_sensor:
+  - platform: mqtt
+    name: "contact sensor test"
+    state_topic: "cmnd/test_room/POWER2"
+    payload_on: "ON"
+    payload_off: "OFF"
+    device_class: door
