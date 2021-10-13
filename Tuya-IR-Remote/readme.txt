@@ -3,3 +3,7 @@
 tasmota로 flashing 한 후 module을 YTF IR(62)로 변경 후 mqtt로 제어 (mqtt broker에서 설정한 정보 입력)
 - firmware upgrade 모드 진입시에 gpio0번을 ground로 같이 넣어주어야함
 - https://tasmota.github.io/docs/devices/YTF-IR-Bridge/
+
+
+# HA Integration 관련
+tasmota_irhvac.txt을 참고하여, custom_component 추가
