@@ -14,6 +14,6 @@
   unique_id: 301_ac
   # 디바이스 코드는 https://github.com/smartHomeHub/SmartIR/blob/master/docs/CLIMATE.md#available-codes-for-climate-devices 에서 확인
   device_code: 1062
-  controller_data: remote.301_remote
-  temperature_sensor: sensor.301_temperature_temperature
-  humidity_sensor: sensor.301_temperature_humidity
+  controller_data: remote.301_remote # HA에서 연동된 broadlink rm4c mini 의 이름을 입력
+  temperature_sensor: sensor.301_temperature_temperature # 별도의 온도 센서의 정보를 입력
+  humidity_sensor: sensor.301_temperature_humidity # 별도의 습도 센서의 정보를 
