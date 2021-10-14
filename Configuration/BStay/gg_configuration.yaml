@@ -1,0 +1,206 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+google_assistant:
+  project_id: barunsonstay-6860e
+  service_account: !include barunsonstay-6860e-897f68399817.json
+  report_state: true
+  exposed_domains:
+    - switch
+    - light
+    - sensor
+    - climate
+    - scene
+    - script
+  entity_config:
+    # 301호
+    switch.gg_plug:
+      name: 스탠드
+#      room: 301
+      aliases:
+        - 조명
+        - 전등
+        - 전구
+        - 불
+        - 형광등
+    LG_AC:
+      name: 에어컨
+#      room: 301
+      aliases:
+        - 냉방기
+        - 난방기
+        - 냉난방기
+        - 회의실 에어컨
+        - 회의실
+
+# Text to speech
+tts:
+  - platform: google_translate
+    language: 'ko'
+    
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+# Use MariaDB for Recording
+recorder:
+  #db_url: mysql://homeassistant:tabspace@core-mariadb/homeassistant?charset=utf8mb4
+
+# 테마 적용
+frontend:
+  themes: !include themes.yaml
+
+sensor:
+  - platform: template
+    sensors:
+      weather_temperature:
+        friendly_name : "GG_WEATHER"
+        unit_of_measurement: 'C'
+        value_template: "{{ state_attr('weather.tabspace', 'temperature') }}"
+      weather_humidity:
+        friendly_name : "GG_HUMIDITY"
+        unit_of_measurement: '%'
+        value_template: "{{ state_attr('weather.tabspace', 'humidity') }}"
+
+# IR리모콘 사용을 손쉽게 할 수 있는 smartir 커스텀 컴포넌트 호출 ( https://github.com/smartHomeHub/SmartIR )  
+smartir:
+
+climate:
+#- platform: smartir
+#  name: GG_AC
+#  unique_id: GG_AC
+  # 디바이스 코드는 https://github.com/smartHomeHub/SmartIR/blob/master/docs/CLIMATE.md#available-codes-for-climate-devices 에서 확인
+#  device_code: 1062
+#  controller_data: remote.gg_ir_remote
+#  temperature_sensor: sensor.weather_temperature
+#  humidity_sensor: sensor.weather_humidity
+
+#smartir에서도 mqtt를 controller_data 형태로 사용이 가능. mqttexplorer로 확인하여 주소 및 형식은 확인 필요
+#  - platform: smartir
+#    name: Office AC
+#    unique_id: office_ac
+#    device_code: 3000 #mqtt디바이스코드는 smartir용이라 지원하지 않을수도있을듯. 3000번대코드가 mqtt용 코드로 식별됨
+#    controller_data: home-assistant/office-ac/command
+#    temperature_sensor: sensor.weather_temperature
+#    humidity_sensor: sensor.weather_humidity
+#    power_sensor: binary_sensor.ac_power #전원 켜짐을 확인하기 위함. 스마트플러그나 릴레이로 처리
+  
+  - platform: tasmota_irhvac
+    name: "LG_AC"
+    command_topic: "cmnd/tasmota_ir/irhvac"
+    # Pick one of the following:
+    # State is updated when the tasmota device receives an IR signal (includes own transmission and original remote)
+    # useful when a normal remote is in use alongside the tasmota device, may be less reliable than the second option.
+    state_topic: "tele/tasmota_ir/RESULT"
+    # State is updated when the tasmota device completes IR transmissionm, should be pretty reliable.
+    temperature_sensor: sensor.weather_temperature
+    vendor: "LG2"
+    min_temp: 18 #optional - default 16 int value
+    max_temp: 30 #optional - default 32 int value
+    target_temp: 26 #optional - default 26 int value
+    initial_operation_mode: "off" # optional - default "off" string value (one of the "supported_modes")
+    away_temp: 24 #optional - default 24 int value
+    precision: 1 #optional - default 1 int or float value. Can be set to 1, 0.5 or 0.1
+    supported_modes:
+      #- "heat"
+      - "cool"
+      - "dry"
+      - "fan_only"
+      - "auto"
+      - "off" #Turns the AC off - Should be in quotes
+      # Some devices have "auto" and "fan_only" switched
+      # If the following two lines are uncommented, "auto" and "fan" shoud be commented out
+      #- auto_fan_only #if remote shows fan but tasmota says auto
+      #- fan_only_auto #if remote shows auto but tasmota says fan
+    supported_fan_speeds:
+      # Some devices say max,but it is high, and auto which is max
+      # If you uncomment the following two, you have to comment high and max
+      # - auto_max #woud become max
+      # - max_high #would become high
+      #- on
+      #- off
+      #- low
+      - "medium"
+      #- "high"
+      #- middle
+      #- focus
+      #- diffuse
+      - "min"
+      - "max"
+      - "auto"
+    supported_swing_list:
+      - "off"
+      - "vertical" #up to down
+      # - horizontal # Left to right
+      # - both
+    default_quiet_mode: "Off" #optional - default "Off" string value
+    default_turbo_mode: "Off" #optional - default "Off" string value
+    default_econo_mode: "Off" #optional - default "Off" string value
+    hvac_model: "-1" #optional - default "1" string value
+    celsius_mode: "On" #optional - default "On" string value
+    default_light_mode: "Off" #optional - default "Off" string value
+    default_filter_mode: "Off" #optional - default "Off" string value
+    default_clean_mode: "Off" #optional - default "Off" string value
+    default_beep_mode: "Off" #optional - default "Off" string value
+    default_sleep_mode: "-1" #optional - default "-1" string value  
+  
+media_player:
+  - platform: smartir
+    name: GG_TV
+    unique_id: GG_TV
+    # 디바이스 코드는 https://github.com/smartHomeHub/SmartIR/blob/master/docs/MEDIA_PLAYER.md 에서 확인
+    device_code: 1062
+    controller_data: remote.gg_ir_remote
+    power_sensor: switch.gg_plug_energy
+    
+input_number:
+  gg_tv_volume:
+    icon: mdi:volume-medium
+    name: Volume
+    initial: 30
+    min: 1
+    max: 100
+    step: 1
+
+#유선접점 테스트
+binary_sensor:
+  - platform: mqtt
+    name: "contact sensor test"
+    state_topic: "cmnd/test_room/POWER2"
+    payload_on: "ON"
+    payload_off: "OFF"
+    device_class: door
+  - platform: mqtt
+    name: "contact sensor test2"
+    state_topic: "cmnd/test_room/POWER3"
+    payload_on: "ON"
+    payload_off: "OFF"
+    device_class: door
+
+http:
+  # 리버스프록시 환경을 사용하기 위함
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 10.200.0.0/16  # Add the IP address of the proxy server
+    
+homeassistant:
+  # 자동로그인 처리 부분
+  #auth_providers:
+    #- type: homeassistant # 이게 없으면 ID/PW 로그인을 지원하지 않음
+    #- type: trusted_networks
+      # 참고 : https://www.home-assistant.io/docs/authentication/providers/#trusted-networks
+      #trusted_networks:
+        #- 192.168.0.100
+        #- 127.0.0.0/24
+      # 태블릿 접속시에, IP를 고정하여 이곳에 ID를 명시하면됨.
+      #trusted_users:
+        # IP주소 뒤에 ID는 t301과 같은 id가 아닌, HA에서 인식하는 고유한 USERID값이 되어야 함. 이는 구성-사용자-사용자이름클릭하여 팝업창에서 조회 가능
+        # 참고 : https://community.home-assistant.io/t/proper-syntax-for-trusted-users-configuration/213876/2
+        #192.168.0.100: 05fabc2a318c47a59b5b5d3257e582ea
+      #allow_bypass_login: true
+  #media_dirs:
+    #media: /config/media
+  allowlist_external_dirs:
+    - /config
