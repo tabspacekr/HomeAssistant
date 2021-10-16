@@ -35,6 +35,51 @@ smartir:
 # 에어컨
 climate: !include climate.yaml
 
+# 마그네틱 센서
+binary_sensor:
+  - platform: mqtt
+    name: "harry_mg1"
+    state_topic: "cmnd/harry_mg1/POWER2"
+    payload_on: "ON"
+    payload_off: "OFF"
+    device_class: door
+
+  - platform: mqtt
+    name: "harry_mg2"
+    state_topic: "cmnd/harry_mg2/POWER2"
+    payload_on: "ON"
+    payload_off: "OFF"
+    device_class: door
+
+  - platform: mqtt
+    name: "harry_mg3"
+    state_topic: "cmnd/harry_mg3/POWER2"
+    payload_on: "ON"
+    payload_off: "OFF"
+    device_class: door
+
+  - platform: mqtt
+    name: "harry_mg4"
+    state_topic: "cmnd/harry_mg4/POWER2"
+    payload_on: "ON"
+    payload_off: "OFF"
+    device_class: door
+
+  - platform: mqtt
+    name: "harry_mg5"
+    state_topic: "cmnd/harry_mg5/POWER2"
+    payload_on: "ON"
+    payload_off: "OFF"
+    device_class: door
+
+  - platform: mqtt
+    name: "harry_mg6"
+    state_topic: "cmnd/harry_mg6/POWER2"
+    payload_on: "ON"
+    payload_off: "OFF"
+    device_class: door
+
+
 # TV
 media_player: !include media_player.yaml
 
