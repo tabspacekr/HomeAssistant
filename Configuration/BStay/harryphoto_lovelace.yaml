@@ -1,125 +1,923 @@
-type: picture-elements
-elements:
-  - type: state-icon
-    entity: binary_sensor.harry_dw01_contact
-    style:
-      top: 40%
-      left: 9%
-  - type: state-icon
-    entity: binary_sensor.harry_motion04_occupancy
-    style:
-      top: 57%
-      left: 22%
-  - type: state-icon
-    entity: binary_sensor.harry_motion05_occupancy
-    style:
-      top: 57%
-      left: 32%
-  - type: state-icon
-    entity: binary_sensor.harry_motion06_occupancy
-    style:
-      top: 57%
-      left: 43%
-  - type: state-icon
-    entity: binary_sensor.harry_motion07_occupancy
-    style:
-      top: 60%
-      left: 53%
-  - type: state-icon
-    entity: binary_sensor.harry_motion08_occupancy
-    style:
-      top: 67%
-      left: 65%
-  - type: state-icon
-    entity: binary_sensor.harry_motion09_occupancy
-    style:
-      top: 71%
-      left: 76%
-  - type: state-icon
-    entity: binary_sensor.harry_motion01_occupancy
-    style:
-      top: 40%
-      left: 20%
-  - type: state-icon
-    entity: binary_sensor.harry_motion02_occupancy
-    style:
-      top: 40%
-      left: 40%
-  - type: state-icon
-    entity: binary_sensor.harry_motion03_occupancy
-    style:
-      top: 50%
-      left: 60%
-  - type: state-icon
-    entity: sensor.harry_th04_temperature
-    style:
-      top: 24%
-      left: 11%
-  - type: state-label
-    entity: sensor.harry_th04_temperature
-    style:
-      top: 22%
-      left: 20%
-  - type: state-label
-    entity: sensor.harry_th04_humidity
-    style:
-      top: 26%
-      left: 20%
-  - type: state-icon
-    entity: sensor.harry_th03_temperature
-    style:
-      top: 25%
-      left: 39%
-  - type: state-label
-    entity: sensor.harry_th03_temperature
-    style:
-      top: 24%
-      left: 48%
-  - type: state-label
-    entity: sensor.harry_th03_humidity
-    style:
-      top: 28%
-      left: 48%
-  - type: state-icon
-    entity: sensor.harry_th02_temperature
-    style:
-      top: 44%
-      left: 46%
-  - type: state-label
-    entity: sensor.harry_th02_temperature
-    style:
-      top: 40%
-      left: 55%
-  - type: state-label
-    entity: sensor.harry_th02_humidity
-    style:
-      top: 44%
-      left: 55%
-  - type: state-icon
-    entity: sensor.harry_th01_temperature
-    style:
-      top: 56%
-      left: 70%
-  - type: state-label
-    entity: sensor.harry_th01_temperature
-    style:
-      top: 55%
-      left: 79%
-  - type: state-label
-    entity: sensor.harry_th01_humidity
-    style:
-      top: 59%
-      left: 79%
-  - type: state-icon
-    entity: climate.harry_ac
-    style:
-      top: 90%
-      left: 11%
-  - type: state-label
-    entity: climate.harry_ac
-    attribute: current_temperature
-    suffix: °C
-    style:
-      top: 90%
-      left: 20%
-image: /local/map_black.jpg
+kiosk_mode:
+  user_settings:
+    - users:
+        - harryphoto
+      kiosk: true
+      ignore_entity_settings: true
+      ignore_mobile_settings: true
+title: 해리포토
+views:
+  - path: home
+    title: 요약
+    icon: hass:map
+    badges: []
+    cards:
+      - type: grid
+        cards:
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: home
+            entity: ''
+            show_icon: true
+            name: 요약
+            icon: hass:map
+            hold_action:
+              action: none
+            theme: Google Blue Theme
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: air
+            entity: ''
+            show_icon: true
+            name: 에어컨
+            icon: hass:air-filter
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: motion
+            entity: ''
+            show_icon: true
+            name: 모션
+            icon: hass:walk
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: door
+            entity: ''
+            show_icon: true
+            name: 도어
+            icon: hass:door
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: thermometer
+            entity: ''
+            show_icon: true
+            name: 온습도
+            icon: hass:thermometer
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: cctv
+            entity: ''
+            show_icon: true
+            name: CCTV
+            icon: hass:cctv
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: admin
+            entity: ''
+            show_icon: true
+            name: 관리
+            icon: hass:account-tie-voice-outline
+            hold_action:
+              action: none
+        square: false
+        columns: 4
+      - type: picture-elements
+        elements:
+          - type: state-icon
+            entity: binary_sensor.harry_dw0e_contact
+            style:
+              top: 40%
+              left: 9%
+          - type: state-icon
+            entity: binary_sensor.harry_dw0a_contact
+            style:
+              top: 75%
+              left: 82%
+          - type: state-icon
+            entity: binary_sensor.harry_mo06_occupancy
+            style:
+              top: 57%
+              left: 22%
+          - type: state-icon
+            entity: binary_sensor.harry_mo05_occupancy
+            style:
+              top: 57%
+              left: 32%
+          - type: state-icon
+            entity: binary_sensor.harry_mo04_occupancy
+            style:
+              top: 57%
+              left: 43%
+          - type: state-icon
+            entity: binary_sensor.harry_mo03_occupancy
+            style:
+              top: 60%
+              left: 53%
+          - type: state-icon
+            entity: binary_sensor.harry_mo02_occupancy
+            style:
+              top: 67%
+              left: 65%
+          - type: state-icon
+            entity: binary_sensor.harry_mo01_occupancy
+            style:
+              top: 71%
+              left: 76%
+          - type: state-icon
+            entity: binary_sensor.harry_mo01_occupancy
+            style:
+              top: 40%
+              left: 20%
+          - type: state-icon
+            entity: binary_sensor.harry_moh2_occupancy
+            style:
+              top: 40%
+              left: 40%
+          - type: state-icon
+            entity: binary_sensor.harry_moh2_occupancy
+            style:
+              top: 50%
+              left: 60%
+          - type: state-icon
+            entity: sensor.harry_th04_temperature
+            style:
+              top: 24%
+              left: 11%
+          - type: state-label
+            entity: sensor.harry_th04_temperature
+            style:
+              top: 22%
+              left: 20%
+          - type: state-label
+            entity: sensor.harry_th04_humidity
+            style:
+              top: 26%
+              left: 20%
+          - type: state-icon
+            entity: sensor.harry_th03_temperature
+            style:
+              top: 25%
+              left: 39%
+          - type: state-label
+            entity: sensor.harry_th03_temperature
+            style:
+              top: 24%
+              left: 48%
+          - type: state-label
+            entity: sensor.harry_th03_humidity
+            style:
+              top: 28%
+              left: 48%
+          - type: state-icon
+            entity: sensor.harry_th02_temperature
+            style:
+              top: 44%
+              left: 46%
+          - type: state-label
+            entity: sensor.harry_th02_temperature
+            style:
+              top: 40%
+              left: 55%
+          - type: state-label
+            entity: sensor.harry_th02_humidity
+            style:
+              top: 44%
+              left: 55%
+          - type: state-icon
+            entity: sensor.harry_th01_temperature
+            style:
+              top: 56%
+              left: 70%
+          - type: state-label
+            entity: sensor.harry_th01_temperature
+            style:
+              top: 55%
+              left: 79%
+          - type: state-label
+            entity: sensor.harry_th01_humidity
+            style:
+              top: 59%
+              left: 79%
+          - type: state-icon
+            entity: climate.harry_ac
+            style:
+              top: 90%
+              left: 11%
+          - type: state-label
+            entity: climate.harry_ac
+            attribute: current_temperature
+            suffix: °C
+            style:
+              top: 90%
+              left: 20%
+        image: /local/map_black.jpg
+  - title: 에어컨
+    path: air
+    icon: hass:air-conditioner
+    badges: []
+    cards:
+      - type: grid
+        cards:
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: home
+            entity: ''
+            show_icon: true
+            name: 요약
+            icon: hass:map
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: air
+            entity: ''
+            show_icon: true
+            name: 에어컨
+            icon: hass:air-filter
+            hold_action:
+              action: none
+            theme: Google Blue Theme
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: motion
+            entity: ''
+            show_icon: true
+            name: 모션
+            icon: hass:walk
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: door
+            entity: ''
+            show_icon: true
+            name: 도어
+            icon: hass:door
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: thermometer
+            entity: ''
+            show_icon: true
+            name: 온습도
+            icon: hass:thermometer
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: cctv
+            entity: ''
+            show_icon: true
+            name: CCTV
+            icon: hass:cctv
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: admin
+            entity: ''
+            show_icon: true
+            name: 관리
+            icon: hass:account-tie-voice-outline
+            hold_action:
+              action: none
+        square: false
+        columns: 4
+      - type: thermostat
+        entity: climate.harry_ac
+      - type: history-graph
+        entities:
+          - entity: climate.harry_ac
+        hours_to_show: 24
+        refresh_interval: 0
+  - title: 모션현황
+    path: motion
+    icon: hass:walk
+    badges: []
+    cards:
+      - type: grid
+        cards:
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: home
+            entity: ''
+            show_icon: true
+            name: 요약
+            icon: hass:map
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: air
+            entity: ''
+            show_icon: true
+            name: 에어컨
+            icon: hass:air-filter
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: motion
+            entity: ''
+            show_icon: true
+            name: 모션
+            icon: hass:walk
+            hold_action:
+              action: none
+            theme: Google Blue Theme
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: door
+            entity: ''
+            show_icon: true
+            name: 도어
+            icon: hass:door
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: thermometer
+            entity: ''
+            show_icon: true
+            name: 온습도
+            icon: hass:thermometer
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: cctv
+            entity: ''
+            show_icon: true
+            name: CCTV
+            icon: hass:cctv
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: admin
+            entity: ''
+            show_icon: true
+            name: 관리
+            icon: hass:account-tie-voice-outline
+            hold_action:
+              action: none
+        square: false
+        columns: 4
+      - type: grid
+        cards:
+          - type: button
+            entity: binary_sensor.harry_mo01_occupancy
+            show_state: false
+            name: 1번방
+          - type: button
+            entity: binary_sensor.harry_mo02_occupancy
+            name: 2번방
+          - type: button
+            entity: binary_sensor.harry_mo03_occupancy
+            name: 3번방
+          - type: button
+            entity: binary_sensor.harry_mo04_occupancy
+            name: 4번방
+          - type: button
+            entity: binary_sensor.harry_mo05_occupancy
+            name: 5번방
+          - type: button
+            entity: binary_sensor.harry_mo06_occupancy
+            name: 6번방
+          - type: button
+            entity: binary_sensor.harry_moh2_occupancy
+            name: 내측복도
+          - type: button
+            entity: binary_sensor.harry_moh3_occupancy
+            name: 창측복도
+      - type: logbook
+        entities:
+          - binary_sensor.harry_mo01_occupancy
+          - binary_sensor.harry_mo02_occupancy
+          - binary_sensor.harry_mo03_occupancy
+          - binary_sensor.harry_mo04_occupancy
+          - binary_sensor.harry_mo05_occupancy
+          - binary_sensor.harry_mo06_occupancy
+          - binary_sensor.harry_moh2_occupancy
+          - binary_sensor.harry_moh3_occupancy
+        hours_to_show: 24
+  - title: 지폐계수기
+    path: door
+    icon: hass:cash-multiple
+    badges: []
+    cards:
+      - type: grid
+        cards:
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: home
+            entity: ''
+            show_icon: true
+            name: 요약
+            icon: hass:map
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: air
+            entity: ''
+            show_icon: true
+            name: 에어컨
+            icon: hass:air-filter
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: motion
+            entity: ''
+            show_icon: true
+            name: 모션
+            icon: hass:walk
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: door
+            entity: ''
+            show_icon: true
+            name: 도어
+            icon: hass:door
+            hold_action:
+              action: none
+            theme: Google Blue Theme
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: thermometer
+            entity: ''
+            show_icon: true
+            name: 온습도
+            icon: hass:thermometer
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: cctv
+            entity: ''
+            show_icon: true
+            name: CCTV
+            icon: hass:cctv
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: admin
+            entity: ''
+            show_icon: true
+            name: 관리
+            icon: hass:account-tie-voice-outline
+            hold_action:
+              action: none
+        square: false
+        columns: 4
+      - type: grid
+        cards:
+          - type: button
+            entity: binary_sensor.harry_mg1
+            show_state: true
+            name: 1번방-계수기
+          - type: button
+            entity: binary_sensor.harry_mg2
+            show_state: true
+            name: 2번방-계수기
+          - type: button
+            entity: binary_sensor.harry_mg3
+            show_state: true
+            name: 3번방-계수기
+          - type: button
+            entity: binary_sensor.harry_mg4
+            show_state: true
+            name: 4번방-계수기
+          - type: button
+            entity: binary_sensor.harry_mg5
+            show_state: true
+            name: 5번방-계수기
+          - type: button
+            entity: binary_sensor.harry_mg6
+            show_state: true
+            name: 6번방-계수기
+          - type: button
+            entity: binary_sensor.harry_dw01_contact
+            show_state: true
+            name: 1번방-카메라
+          - type: button
+            entity: binary_sensor.harry_dw02_contact
+            show_state: true
+            name: 2번방-카메라
+          - type: button
+            entity: binary_sensor.harry_dw03_contact
+            show_state: true
+            name: 3번방-카메라
+          - type: button
+            entity: binary_sensor.harry_dw04_contact
+            show_state: true
+            name: 4번방-카메라
+          - type: button
+            entity: binary_sensor.harry_dw05_contact
+            show_state: true
+            name: 5번방-카메라
+          - type: button
+            entity: binary_sensor.harry_dw06_contact
+            show_state: true
+            name: 6번방-카메라
+          - type: button
+            entity: binary_sensor.harry_dw0b_contact
+            show_state: true
+            name: 지폐교환기-1번
+          - type: button
+            entity: binary_sensor.harry_dw0c_contact
+            name: 지폐교환기-2번
+            show_state: true
+          - type: button
+            entity: binary_sensor.harry_dw0d_contact
+            show_state: true
+            name: 지폐교환기-3번
+        columns: 3
+      - type: logbook
+        entities:
+          - binary_sensor.harry_dw01_contact
+          - binary_sensor.harry_dw02_contact
+          - binary_sensor.harry_dw03_contact
+          - binary_sensor.harry_dw04_contact
+          - binary_sensor.harry_dw05_contact
+          - binary_sensor.harry_dw06_contact
+          - binary_sensor.harry_mg1
+          - binary_sensor.harry_mg2
+          - binary_sensor.harry_mg3
+          - binary_sensor.harry_mg4
+          - binary_sensor.harry_mg5
+          - binary_sensor.harry_mg6
+          - binary_sensor.harry_dw0d_contact
+          - binary_sensor.harry_dw0c_contact
+          - binary_sensor.harry_dw0b_contact
+        hours_to_show: 24
+        theme: Google Dark Theme
+  - path: thermometer
+    icon: hass:thermometer
+    title: 온습도현황
+    badges: []
+    cards:
+      - type: grid
+        cards:
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: home
+            entity: ''
+            show_icon: true
+            name: 요약
+            icon: hass:map
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: air
+            entity: ''
+            show_icon: true
+            name: 에어컨
+            icon: hass:air-filter
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: motion
+            entity: ''
+            show_icon: true
+            name: 모션
+            icon: hass:walk
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: door
+            entity: ''
+            show_icon: true
+            name: 도어
+            icon: hass:door
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: thermometer
+            entity: ''
+            show_icon: true
+            name: 온습도
+            icon: hass:thermometer
+            hold_action:
+              action: none
+            theme: Google Blue Theme
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: cctv
+            entity: ''
+            show_icon: true
+            name: CCTV
+            icon: hass:cctv
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: admin
+            entity: ''
+            show_icon: true
+            name: 관리
+            icon: hass:account-tie-voice-outline
+            hold_action:
+              action: none
+        square: false
+        columns: 4
+      - type: grid
+        cards:
+          - type: sensor
+            entity: sensor.harry_th01_temperature
+            graph: line
+            detail: 2
+            theme: Google Blue Theme
+          - type: sensor
+            entity: sensor.harry_th01_humidity
+            graph: line
+            detail: 2
+            theme: Google Blue Theme
+          - type: sensor
+            entity: sensor.harry_th02_temperature
+            graph: line
+            detail: 2
+            theme: Google Blue Theme
+          - type: sensor
+            entity: sensor.harry_th02_humidity
+            graph: line
+            detail: 2
+            theme: Google Blue Theme
+          - type: sensor
+            entity: sensor.harry_th03_temperature
+            graph: line
+            detail: 2
+            theme: Google Blue Theme
+          - type: sensor
+            entity: sensor.harry_th03_humidity
+            graph: line
+            detail: 2
+            theme: Google Blue Theme
+          - type: sensor
+            entity: sensor.harry_th04_temperature
+            graph: line
+            detail: 2
+            theme: Google Blue Theme
+          - type: sensor
+            entity: sensor.harry_th04_humidity
+            graph: line
+            detail: 2
+            theme: Google Blue Theme
+        columns: 2
+        square: false
+  - title: CCTV
+    path: cctv
+    icon: hass:cctv
+    badges: []
+    cards:
+      - type: grid
+        cards:
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: home
+            entity: ''
+            show_icon: true
+            name: 요약
+            icon: hass:map
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: air
+            entity: ''
+            show_icon: true
+            name: 에어컨
+            icon: hass:air-filter
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: motion
+            entity: ''
+            show_icon: true
+            name: 모션
+            icon: hass:walk
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: door
+            entity: ''
+            show_icon: true
+            name: 도어
+            icon: hass:door
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: thermometer
+            entity: ''
+            show_icon: true
+            name: 온습도
+            icon: hass:thermometer
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: cctv
+            entity: ''
+            show_icon: true
+            name: CCTV
+            icon: hass:cctv
+            hold_action:
+              action: none
+            theme: Google Blue Theme
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: admin
+            entity: ''
+            show_icon: true
+            name: 관리
+            icon: hass:account-tie-voice-outline
+            hold_action:
+              action: none
+        square: false
+        columns: 4
+      - type: markdown
+        content: CCTV작업중입니다.
+  - title: 배터리
+    path: battery
+    icon: hass:battery-medium
+    badges: []
+    cards:
+      - type: glance
+        entities:
+          - entity: sensor.harry_motion01_battery
+          - entity: sensor.harry_motion02_battery
+          - entity: sensor.harry_motion03_battery
+          - entity: sensor.harry_motion04_battery
+          - entity: sensor.harry_motion05_battery
+          - entity: sensor.harry_motion06_battery
+          - entity: sensor.harry_motion07_battery
+          - entity: sensor.harry_motion08_battery
+          - entity: sensor.harry_motion09_battery
+          - entity: sensor.harry_dw01_battery
+          - entity: sensor.harry_dw02_battery
+          - entity: sensor.harry_dw03_battery
+          - entity: sensor.harry_dw04_battery
+          - entity: sensor.harry_dw05_battery
+          - entity: sensor.harry_dw06_battery
+          - entity: sensor.harry_dw07_battery
+          - entity: sensor.harry_dw08_battery
+          - entity: sensor.harry_dw09_battery
+          - entity: sensor.harry_dw10_battery
+          - entity: sensor.harry_dw11_battery
+          - entity: sensor.harry_dw12_battery
+          - entity: sensor.harry_dw13_battery
+          - entity: sensor.harry_dw14_battery
+          - entity: sensor.harry_dw15_battery
+          - entity: sensor.harry_dw16_battery
+          - entity: sensor.harry_dw17_battery
+          - entity: sensor.harry_th01_battery
+          - entity: sensor.harry_th02_battery
+          - entity: sensor.harry_th03_battery
+          - entity: sensor.harry_th04_battery
+  - title: 관리용
+    path: admin
+    badges: []
+    cards:
+      - type: grid
+        cards:
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: home
+            entity: ''
+            show_icon: true
+            name: 요약
+            icon: hass:map
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: air
+            entity: ''
+            show_icon: true
+            name: 에어컨
+            icon: hass:air-filter
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: motion
+            entity: ''
+            show_icon: true
+            name: 모션
+            icon: hass:walk
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: door
+            entity: ''
+            show_icon: true
+            name: 도어
+            icon: hass:door
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: thermometer
+            entity: ''
+            show_icon: true
+            name: 온습도
+            icon: hass:thermometer
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: cctv
+            entity: ''
+            show_icon: true
+            name: CCTV
+            icon: hass:cctv
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: admin
+            entity: ''
+            show_icon: true
+            name: 관리
+            icon: hass:account-tie-voice-outline
+            hold_action:
+              action: none
+            theme: Google Blue Theme
+        square: false
+        columns: 4
+      - type: entities
+        entities:
+          - sensor.disk_use_percent
+          - sensor.memory_use_percent
+          - sensor.processor_temperature
+          - sensor.processor_use_percent
+          - sensor.home_assistant_v2_db
+      - type: weather-forecast
+        entity: weather.haeripoto
+        secondary_info_attribute: humidity
+custom_header:
+  hidden_tab_redirect: false
+  chevrons: false
+  shadow: false
+  disabled_mode: true
