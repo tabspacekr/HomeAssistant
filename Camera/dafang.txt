@@ -52,5 +52,5 @@ Do you have onvif activated? That blocks the motor for itself. #1629
 
 ntp서버의 기본값은 time.google.com 으로 되어 있으나, 간혹 동작하지 않는 경우가 발생하며, 이 경우에는 1970년으로 인식하게 되므로 time.bora.net의 uplus ntp서버를 
 
-osd time date format
+osd time date format (개선사항)
 DAFANG %Y-%m-%d %H:%M:%S
