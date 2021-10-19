@@ -1,5 +1,7 @@
 https://github.com/EliasKotlyar/Xiaomi-Dafang-Hacks/blob/master/hacks/install_cfw.md
 
+512MB이하로 FAT32포맷된 SD카드에 demo.bin 파일을 복사 및 dafnag에 삽입한 후, reset버튼을 누른 상태로 bootloader 작업
+
 https://github.com/EliasKotlyar/Xiaomi-Dafang-Hacks/blob/master/hacks/faq.md
 
 dafang mqtt 연동
