@@ -62,7 +62,7 @@ do
         echo "" >> ${BAK_FILE_SAVE_PATH}/${BAK_FILE_DIRECTORY}/${BAK_LOG_FILE_NM}
 done
 
-# 1 week ago backup delete
+# 백업은 1주일만 보관하여, 이전 데이터는 삭제함
 rm -rf $BAK_FILE_SAVE_PATH/$WEEK_AGO
 
 # Step4. crontab 설정
