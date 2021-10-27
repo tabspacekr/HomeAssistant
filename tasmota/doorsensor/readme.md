@@ -1,11 +1,15 @@
-sonoff basic r2활용 도어센서모니터링
+Sonoff basic R2 활용 도어센서모니터링
 
-사전정보 gpio3 = rx
-사전정보 gpio1 = tx
+사전정보
+<pre>
+gpio3 = rx
+gpio1 = tx
+</pre>
 
 접점제어 방식으로, 도어센서2개를 사용할 수 없을까 하여 테스트해보았으나, 테스트결과 tx쪽은 활용할수없는것으로 보임.
 
 절차
+<pre>
 1. sonoff basic r2 wifi relay에 4pin 부분 핀헤더 납땜하여 tasmota 펌업
 2. 전원 인가 후 wifi연결 및 IP주소 식별
 3. IP주소로 웹페이지 들어간 후, 설정 - 모듈설정 - gpio3를 switch 2로 설정 (자동재부팅)
@@ -24,3 +28,4 @@ binary_sensor:
     payload_on: "ON"
     payload_off: "OFF"
     device_class: door
+</pre>
