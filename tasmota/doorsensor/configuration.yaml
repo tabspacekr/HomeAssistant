@@ -1,3 +1,4 @@
+# HA configuration.yaml에 binary_sensor를 mqtt format으로 추가
 binary_sensor:
   - platform: mqtt
     name: "contact sensor test"
