@@ -29,3 +29,9 @@ binary_sensor:
     payload_off: "OFF"
     device_class: door
 </pre>
+
+참고
+
+<img src="https://raw.githubusercontent.com/tabspacekr/HomeAssistant/main/tasmota/doorsensor/sonoff_basic_r2_1.jpg">
+<img src="https://raw.githubusercontent.com/tabspacekr/HomeAssistant/main/tasmota/doorsensor/sonoff_basic_r2_2.jpg">
+<img src="https://raw.githubusercontent.com/tabspacekr/HomeAssistant/main/tasmota/doorsensor/sonoffbasic_sensor_ha.png">
