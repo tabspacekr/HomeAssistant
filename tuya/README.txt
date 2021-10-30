@@ -24,6 +24,7 @@ https://support.tuya.com/en/help/_detail/K9g77ypvvc20x
 https://developer.tuya.com/en/docs/cloud/user-management?id=K95ztzvgwnshy#title-9-Get%20the%20user%20list
 
 #rtsp protocol
+# 트래픽단위로 과금됨
 https://developer.tuya.com/en/docs/cloud/19b50885a2?id=Kag2d0i8bjfh3
 
 https://support.tuya.com/en/help/_detail/K9g77ypvvc20x
