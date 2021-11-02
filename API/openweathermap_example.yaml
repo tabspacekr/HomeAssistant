@@ -5,25 +5,25 @@ sensor:
   - platform: template
     sensors:
       weather_temperature:
-        friendly_name : "GG_TEMPERATURE"
+        friendly_name : "OWM_TEMPERATURE"
         unit_of_measurement: 'C'
         value_template: "{{ state_attr('weather.openweathermap', 'temperature') }}"
       weather_humidity:
-        friendly_name : "GG_HUMIDITY"
+        friendly_name : "OWM_HUMIDITY"
         unit_of_measurement: '%'
         value_template: "{{ state_attr('weather.openweathermap', 'humidity') }}"
         
       weather_pressure:
-        friendly_name : "GG_PRESSURE"
+        friendly_name : "OWM_PRESSURE"
         unit_of_measurement: '%'
         value_template: "{{ state_attr('weather.openweathermap', 'pressure') }}"
 
       weather_wind_bearing:
-        friendly_name : "GG_WIND_BEARING"
+        friendly_name : "OWM_WIND_BEARING"
         unit_of_measurement: '%'
         value_template: "{{ state_attr('weather.openweathermap', 'wind_bearing') }}"
 
       weather_wind_speed:
-        friendly_name : "GG_WIND_SPEED"
+        friendly_name : "OWM_WIND_SPEED"
         unit_of_measurement: '%'
         value_template: "{{ state_attr('weather.openweathermap', 'wind_speed') }}"
