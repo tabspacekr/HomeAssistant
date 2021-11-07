@@ -1,4 +1,4 @@
-#debian11 install
+#debian11 bullseye install
 
 apt update && apt upgrade -y && apt autoremove -y
 
