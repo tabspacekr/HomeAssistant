@@ -1,4 +1,4 @@
-# Step1. 사전작업, 경로 생성 및 파일 생성
+# Step1. 사전작업, 경로 생성 및 파일 생성 (DB_Backup.sh)
 cd /
 sudo mkdir backup
 cd backup
