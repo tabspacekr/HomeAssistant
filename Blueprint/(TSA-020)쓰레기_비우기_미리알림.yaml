@@ -1,5 +1,5 @@
 blueprint:
-  name: (TSA-020)Garbage reminder
+  name: (TSA-020)쓰레기 비우기 미리알림
   domain: automation
   input:
     reminder_time:
