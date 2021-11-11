@@ -1,4 +1,4 @@
-헤이홈제품과 tuya IR remote 제품은 YTF로 동일
+Tuya 기반의 국내유통 IoT디바이스(헤이홈 등) IR remote 제품은 tasmota에서 YTF로 설정
 
 tasmota로 flashing 한 후 module을 YTF IR(62)로 변경 후 mqtt로 제어 (mqtt broker에서 설정한 정보 입력)
 - firmware upgrade 모드 진입시에 gpio0번을 ground로 같이 넣어주어야함
