@@ -2,6 +2,7 @@
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 
+# google assistant support
 google_assistant:
   project_id: barunsonstay-6860e
   service_account: !include barunsonstay-6860e-897f68399817.json
