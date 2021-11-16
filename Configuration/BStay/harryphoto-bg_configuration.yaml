@@ -1,0 +1,180 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+frontend:
+  themes:  !include themes.yaml
+
+# Text to speech
+tts:
+  - platform: google_translate
+    language: 'ko'
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+recorder:
+#  db_url: mysql://homeassistant:homeassistant@core-mariadb/homeassistant?charset=utf8mb4
+  purge_keep_days: 14
+  exclude:
+    entity_globs:
+      - sensor.*_linkquality
+      - sensor.*_current
+      - sensor.*_battery
+
+http:
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 10.10.0.0/16
+
+binary_sensor:
+  - platform: mqtt
+    name: "door_sensor_1"
+    state_topic: "cmnd/door1/POWER2"
+    payload_on: "ON"
+    payload_off: "OFF"
+    device_class: door
+  - platform: mqtt
+    name: "door_sensor_2"
+    state_topic: "cmnd/door2/POWER2"
+    payload_on: "ON"
+    payload_off: "OFF"
+    device_class: door
+  - platform: mqtt
+    name: "door_sensor_3"
+    state_topic: "cmnd/door3/POWER2"
+    payload_on: "ON"
+    payload_off: "OFF"
+    device_class: door
+  - platform: mqtt
+    name: "door_sensor_4"
+    state_topic: "cmnd/door4/POWER2"
+    payload_on: "ON"
+    payload_off: "OFF"
+    device_class: door
+  - platform: mqtt
+    name: "door_sensor_5"
+    state_topic: "cmnd/door5/POWER2"
+    payload_on: "ON"
+    payload_off: "OFF"
+    device_class: door
+
+camera:
+  - platform: ffmpeg
+    name: CCTV_ROOM1
+    input: -rtsp_transport tcp -i rtsp://192.168.88.15:554/stream2
+  - platform: ffmpeg
+    name: CCTV_ROOM2
+    input: -rtsp_transport tcp -i rtsp://192.168.88.17:554/stream2
+  - platform: ffmpeg
+    name: CCTV_ROOM3
+    input: -rtsp_transport tcp -i rtsp://192.168.88.13:554/stream2
+  - platform: ffmpeg
+    name: CCTV_HALL1
+    input: -rtsp_transport tcp -i rtsp://192.168.88.16:554/stream2
+  - platform: ffmpeg
+    name: CCTV_HALL2
+    input: -rtsp_transport tcp -i rtsp://192.168.88.12:554/stream2
+  - platform: ffmpeg
+    name: CCTV_HALL3
+    input: -rtsp_transport tcp -i rtsp://192.168.88.18:554/stream2
+  - platform: ffmpeg
+    name: CCTV_OUTDOOR1
+    input: -rtsp_transport tcp -i rtsp://192.168.88.14:554/stream2
+  - platform: ffmpeg
+    name: CCTV_OUTDOOR2
+    input: -rtsp_transport tcp -i rtsp://192.168.88.11:554/stream2
+    
+input_boolean: !include input_boolean.yaml
+
+homeassistant:
+#  elevation: 0
+#  latitude: 37.55197729073459
+#  longitude: 126.9216590269567
+#  auth_providers:
+#    - type: trusted_networks
+#      trusted_networks:
+#        - 192.168.0.0/24
+#        - 192.168.1.0/24
+#        - 127.0.0.1
+#        - ::1
+#      allow_bypass_login: true
+#    - type: homeassistant
+  allowlist_external_dirs:
+    - /config
+
+sensor:
+# 시스템 모니터 시작
+  - platform: systemmonitor
+    resources:
+      - type: disk_use_percent
+        arg: /
+      - type: memory_use_percent
+      - type: processor_temperature
+      - type: processor_use
+  - platform: filesize
+    file_paths:
+      - /config/home-assistant_v2.db      
+# 시스템 모니터 종료
+    
+climate:
+  - platform: tasmota_irhvac
+    name: "LG AC" 
+    command_topic: "cmnd/ir_harryphoto_beomgye/irhvac" 
+    # Pick one of the following:
+    # State is updated when the tasmota device receives an IR signal (includes own transmission and original remote)
+    # useful when a normal remote is in use alongside the tasmota device, may be less reliable than the second option.
+    state_topic: "tele/ir_harryphoto_beomgye/RESULT" 
+    # State is updated when the tasmota device completes IR transmissionm, should be pretty reliable.
+    temperature_sensor: sensor.harry_th01_temperature
+    vendor: "LG2" #위에서 식별한 IR리시브 정보를 입력
+    min_temp: 18 #optional - default 16 int value #리모콘에서 설정되는 최소온도값으로 수정
+    max_temp: 30 #optional - default 32 int value #리모콘에서 설정되는 최대온도값으로 수정
+    target_temp: 26 #optional - default 26 int value
+    initial_operation_mode: "off" # optional - default "off" string value (one of the "supported_modes")
+    away_temp: 24 #optional - default 24 int value
+    precision: 1 #optional - default 1 int or float value. Can be set to 1, 0.5 or 0.1
+    supported_modes: #모드는 운전선택을 눌러서 지원되는부분을 식별하여 주석 또는 주석 해제처리
+      - "heat" 
+      - "cool" 
+      - "dry" 
+      - "fan_only" 
+      - "auto" 
+      - "off" #Turns the AC off - Should be in quotes
+      # Some devices have "auto" and "fan_only" switched
+      # If the following two lines are uncommented, "auto" and "fan" shoud be commented out
+      #- auto_fan_only #if remote shows fan but tasmota says auto
+      #- fan_only_auto #if remote shows auto but tasmota says fan
+    supported_fan_speeds: #이것도 콘솔에 찍히는 리모콘수신정보로 확인하여 주석 또는 주석 해제
+      # Some devices say max,but it is high, and auto which is max
+      # If you uncomment the following two, you have to comment high and max
+      # - auto_max #woud become max
+      # - max_high #would become high
+      #- on
+      #- off
+      #- min
+      #- medium
+      #- max
+      #- focus
+      #- diffuse
+      - "low"
+      - "middle"
+      - "high" 
+      - "auto" 
+    supported_swing_list: #상하좌우바람 버튼 있을 경우 주석 또는 주석해제
+      - "off" 
+      - "vertical" #up to down
+      - "horizontal" # Left to right
+      - "both"
+    default_quiet_mode: "Off" #optional - default "Off" string value
+    default_turbo_mode: "Off" #optional - default "Off" string value
+    default_econo_mode: "Off" #optional - default "Off" string value
+    hvac_model: "-1" #optional - default "1" string value
+    celsius_mode: "On" #optional - default "On" string value
+    default_light_mode: "Off" #optional - default "Off" string value
+    default_filter_mode: "Off" #optional - default "Off" string value
+    default_clean_mode: "Off" #optional - default "Off" string value
+    default_beep_mode: "Off" #optional - default "Off" string value
+    default_sleep_mode: "-1" #optional - default "-1" string value  
