@@ -1,0 +1,7 @@
+# configuration.yaml에 아래 항목 추가
+# 통계DB 저장용
+shell_command:
+  insert_db_mo01: curl http://call.url.com/api/HARRYPHOTO_BG_MO_01.php
+  insert_db_mo02: curl http://call.url.com/api/HARRYPHOTO_BG_MO_02.php
+  insert_db_mo01_count: curl http://call.url.com/api/HARRYPHOTO_BG_MO_COUNT_01.php
+  insert_db_mo02_count: curl http://call.url.com/api/HARRYPHOTO_BG_MO_COUNT_02.php
