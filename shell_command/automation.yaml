@@ -1,0 +1,14 @@
+# automation.yaml
+alias: 모션센서01 통계저장
+description: ''
+trigger:
+  - type: motion
+    platform: device
+    device_id: 6ff347995170da8e757d57f23ce0e0a2
+    entity_id: binary_sensor.harry_mo01_occupancy
+    domain: binary_sensor
+condition: []
+action:
+  - service: shell_command.insert_db_mo01
+  - service: shell_command.insert_db_mo01_count
+mode: single
