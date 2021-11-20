@@ -11,3 +11,4 @@ tasmota_irhvac.txt을 참고하여, custom_component 추가
 # 이슈사항
 - carrier 에어컨은 국내에서만 유통되고 있는것으로 보이며 범용 ir code 미동작
 - 학습 기능을 이용해보려 하였으나, 물리적 리모콘에서 버튼을 눌러 발신시에 코드가 랜덤하게 바뀌는 이슈 있음
+- GA(google assistant) Integration 시에 power off command가 비정상동작하는 이슈 있음
