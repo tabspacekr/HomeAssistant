@@ -1,0 +1,21 @@
+#edit on configuration.yaml
+sensor:
+  # 카메라 토큰 관련
+  - platform: template
+    sensors:
+      cam_token_room1:
+          value_template: "{{ state_attr('camera.cctv_room1', 'access_token') }}"
+      cam_token_room2:
+          value_template: "{{ state_attr('camera.cctv_room2', 'access_token') }}"
+      cam_token_room3:
+          value_template: "{{ state_attr('camera.cctv_room3', 'access_token') }}"
+      cam_token_hall1:
+          value_template: "{{ state_attr('camera.cctv_hall1', 'access_token') }}"
+      cam_token_hall2:
+          value_template: "{{ state_attr('camera.cctv_hall2', 'access_token') }}"
+      cam_token_hall3:
+          value_template: "{{ state_attr('camera.cctv_hall3', 'access_token') }}"
+      cam_token_outdoor1:
+          value_template: "{{ state_attr('camera.cctv_outdoor1', 'access_token') }}"
+      cam_token_outdoor2:
+          value_template: "{{ state_attr('camera.cctv_outdoor2', 'access_token') }}"
