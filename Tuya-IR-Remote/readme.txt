@@ -7,6 +7,7 @@ tasmota로 flashing 한 후 module을 YTF IR(62)로 변경 후 mqtt로 제어 (m
 
 # HA Integration 관련
 tasmota_irhvac.txt을 참고하여, custom_component 추가
+- repo : https://github.com/hristo-atanasov/Tasmota-IRHVAC.git
 
 # 이슈사항
 - carrier 에어컨은 국내에서만 유통되고 있는것으로 보이며 범용 ir code 미동작
