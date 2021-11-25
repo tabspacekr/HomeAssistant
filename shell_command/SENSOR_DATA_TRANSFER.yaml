@@ -1,0 +1,22 @@
+# configuration.yaml add this
+shell_command:
+  insert_ras: 'python3 "/home/pi/zigbee_ras.py" "{{ temperature }}" "{{ humidity }}" "{{ pressure }}"'
+
+# in service call automation example
+alias: 라즈베리파이로 센서데이터 전송(온도)
+description: ''
+trigger:
+  - platform: state
+    entity_id: sensor.env_temperature
+    attribute: state_class
+condition: []
+action:
+  - service: shell_command.insert_ras
+    data_template:
+      temperature: |
+        {{ state_attr('sensor.env_temperature', 'temperature') }}
+      humidity: |
+        {{ state_attr('sensor.env_temperature', 'humidity') }}
+      pressure: |
+        {{ state_attr('sensor.env_temperature', 'pressure') }}
+mode: single
