@@ -1,6 +1,9 @@
 # configuration.yaml add this
+# **주의** .py 파일은 ha가 설치된 경로에 존재하여야 인식함.
+# 아래의 예시는 /usr/share/hassio/homeassistant/ 경로에 zigbee_ras.py 파일을 넣어서 실행시키는 예시
 shell_command:
-  insert_ras: 'python3 "/home/pi/zigbee_ras.py" "{{ temperature }}" "{{ humidity }}" "{{ pressure }}"'
+  insert_ras: 'python3 "/config/zigbee_ras.py" "{{ temperature }}" "{{ humidity }}" "{{ pressure }}"'
+  insert_db: 'python3 "/config/zigbee_db.py" "{{ temperature }}" "{{ humidity }}" "{{ pressure }}"'
 
 # in service call automation example
 alias: 라즈베리파이로 센서데이터 전송(온도)
@@ -11,7 +14,9 @@ trigger:
     attribute: state_class
 condition: []
 action:
+  #configuration.yaml에 선언한 shell_command를 서비스호출
   - service: shell_command.insert_ras
+    #data_template의 변수에 센서데이터를 넘겨서 python code를 처리할 수 있음.
     data_template:
       temperature: |
         {{ state_attr('sensor.env_temperature', 'temperature') }}
