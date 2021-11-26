@@ -25,3 +25,7 @@ action:
       pressure: |
         {{ state_attr('sensor.env_temperature', 'pressure') }}
 mode: single
+
+#***주의*** home assistant는 docker 컨테이너 기반으로 되어 있기에, 기본적인 python만 깔려있음.
+#따라서 pymysql 등의 함수를 이용하기 위해서는  docker exec -it 3bdf45abdd77 /bin/bash 와 같이 컨테이너로 직접접근하여 pip3 install pymysql 형태로 설치해주어야함.
+#이는 scp시의 ssh-key도 마찬가지임
