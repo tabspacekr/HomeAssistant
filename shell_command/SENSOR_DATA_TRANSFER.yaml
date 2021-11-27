@@ -1,4 +1,4 @@
-# configuration.yaml add this
+# in configuration.yaml add this
 # **주의** .py 파일은 ha가 설치된 경로에 존재하여야 인식함.
 # 아래의 예시는 /usr/share/hassio/homeassistant/ 경로에 zigbee_ras.py 파일을 넣어서 실행시키는 예시
 shell_command:
@@ -6,7 +6,7 @@ shell_command:
   insert_db: 'python3 "/config/zigbee_db.py" "{{ temperature }}" "{{ humidity }}" "{{ pressure }}"'
 
 # in service call automation example
-alias: 라즈베리파이로 센서데이터 전송(온도)
+alias: 온습도 변경 시 라즈베리파이로 센서데이터 전송(온도)
 description: ''
 trigger:
   - platform: state
