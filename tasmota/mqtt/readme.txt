@@ -37,7 +37,7 @@ Rule<x>
 Rule<x> 1
 
 #예제(도어센서 0x662E)
-Rule1 on ZbReceived#0x662E# do publish homeassistant/binary_sensor/door_sensor/contact %value% endon
+Rule1 on ZbReceived#0x662E#Contact do publish homeassistant/binary_sensor/door_sensor/contact %value% endon
 Rule1 1
 
 binary_sensor
