@@ -40,15 +40,24 @@ Rule<x> 1
 Rule1 on ZbReceived#0x662E#Contact do publish homeassistant/binary_sensor/door_sensor/contact %value% endon
 Rule1 1
 
-binary_sensor
+#in configuration.yaml
+binary_sensor: !include binary_sensor.yaml
 
+#in binary_sensor.yaml
 - platform: mqtt
   name: "mqtt_door_sensor"
-  state_topic: "tele/sonoff-z2t/SENSOR"
-  value_template: "{{ value_json.ZigbeeReceived['0x2E8F'].Power }}"
-  device_class: window
-  payload_on: true
-  payload_off: false
+  state_topic: "tele/SonoffZB/SENSOR"
+  value_template: "{{ value_json.ZbReceived['0x662E'].Contact }}"
+  device_class: door
+  payload_on: 1
+  payload_off: 0
+- platform: mqtt
+  name: "mqtt_motion_sensor"
+  state_topic: "tele/SonoffZB/SENSOR"
+  value_template: "{{ value_json.ZbReceived['0x057B'].Occupancy }}"
+  device_class: motion
+  payload_on: 1
+  payload_off: 0
 
 
 
