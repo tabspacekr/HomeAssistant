@@ -7,6 +7,9 @@ zbname 0x662e, door_sensor
 - https://www.zigbee2mqtt.io/devices/MCCGQ12LM.html
 - Exposes	contact, battery, voltage, linkquality
 
+10:40:27.213 MQT: tele/SonoffZB/SENSOR = {"ZbReceived":{"0x662E":{"Device":"0x662E","Name":" door_sensor","0500<00":"200000010000","ZoneStatusChange":32,"ZoneStatusChangeZone":1,"Contact":0,"Endpoint":1,"LinkQuality":157}}}
+10:40:32.750 MQT: tele/SonoffZB/SENSOR = {"ZbReceived":{"0x662E":{"Device":"0x662E","Name":" door_sensor","0500<00":"210000010000","ZoneStatusChange":33,"ZoneStatusChangeZone":1,"Contact":1,"Endpoint":1,"LinkQuality":157}}}
+
 zbname 0x057B, motion_sensor
 - https://www.zigbee2mqtt.io/devices/RTCGQ12LM.html
 - Exposes	occupancy, battery, occupancy_timeout, linkquality
