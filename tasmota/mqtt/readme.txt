@@ -14,6 +14,8 @@ zbname 0x057B, motion_sensor
 - https://www.zigbee2mqtt.io/devices/RTCGQ12LM.html
 - Exposes	occupancy, battery, occupancy_timeout, linkquality
 
+10:41:26.618 MQT: tele/SonoffZB/SENSOR = {"ZbReceived":{"0x057B":{"Device":"0x057B","Name":" motion_sensor","Occupancy":1,"Endpoint":1,"LinkQuality":194}}}
+
 zbname 0x5E54, scene_button
 - https://www.zigbee2mqtt.io/devices/WXKG13LM.html
 - Exposes	battery, voltage, action, linkquality
