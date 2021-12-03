@@ -30,7 +30,15 @@ zbname 0x5E54, scene_button
 #더블클릭
 10:44:36.772 MQT: tele/SonoffZB/SENSOR = {"ZbReceived":{"0x5E54":{"Device":"0x5E54","Name":" scene_button","0006!00":"","Power":0,"Endpoint":1,"LinkQuality":92}}}
 
-Rule1 on ZbReceived#0x5E54# do publish 
+#MQTT 개별 Publish
+- https://tasmota.github.io/docs/Zigbee/#sending-sensor-values-to-separated-mqtt-topics
+Rule<x>
+  on zbreceived#<zigbee_id>#<zigbee_sensorname> do publish home/zigbee/<zigbee_name>/<sensorname> %value% endon
+Rule<x> 1
+
+#예제(도어센서 0x662E)
+Rule1 on ZbReceived#0x662E# do publish homeassistant/binary_sensor/door_sensor/contact %value% endon
+Rule1 1
 
 binary_sensor
 
