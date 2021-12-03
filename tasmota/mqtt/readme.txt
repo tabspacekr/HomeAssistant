@@ -1,3 +1,4 @@
+#sonoff zigbee bridge tasmota f/w 시의 zigbee2tasmota 처리 연구
 zbconfig {"Channel":25}
 
 zbforget 0xB427
