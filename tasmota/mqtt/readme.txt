@@ -65,27 +65,28 @@ binary_sensor: !include binary_sensor.yaml
 #in configuration.yaml
 sensor: !include sensor.yaml
 
-#in sensor.yaml
+#in sensor.yaml  
 - platform: mqtt
   name: "mqtt_button"
   state_topic: "tele/SonoffZB/SENSOR"
-  unit_of_measurement: "dBm"
-  value_template: "{{ value_json.RSSI }}"
-  availability:
-    - topic: "home/sensor1/status"
-  payload_available: "online"
-  payload_not_available: "offline"
-  json_attributes_topic: "home/sensor1/attributes"
+  value_template: "{{ value_json.ZbReceived['0x5E54'].Power }}"
   
-- platform: mqtt
-  name: "mqtt_button"
-  state_topic: "tele/SonoffZB/SENSOR"
-  value_template: "{{ value_json.ZbReceived['0x5E54'].Occupancy }}"
+
+
+
+  
+  value_template: |-
+    {% if {{ value_json.ZbReceived['0x5E54'].Power }} == 2 %}
+      {{ value | round(2) }}
+    {% else %}
+      {{ value | round(2) * 0.9 + states(entity_id) * 0.1 }}
+    {% endif %}
 
 # sensor device_class list
 - https://www.home-assistant.io/integrations/sensor.mqtt/
 
-
+# tip
+- json parser online : http://json.parser.online.fr/
 
 Sonoff ZbBridge
 Tasmota-SonoffZB
