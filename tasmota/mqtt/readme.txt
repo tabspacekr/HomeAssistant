@@ -58,6 +58,9 @@ binary_sensor: !include binary_sensor.yaml
   device_class: motion
   payload_on: 1
   payload_off: 0
+  
+# binary_sensor device_class list
+- https://www.home-assistant.io/integrations/binary_sensor/
 
 
 
