@@ -1,4 +1,6 @@
-#sonoff zigbee bridge tasmota f/w 시의 zigbee2tasmota 처리 연구
+#sonoff zigbee bridge tasmota f/w 시의 zigbee2tasmota 처리 방법
+
+#zigbee 채널 변경
 zbconfig {"Channel":25}
 
 zbforget 0xB427
