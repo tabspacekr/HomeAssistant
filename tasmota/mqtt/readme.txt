@@ -2,10 +2,11 @@
 - https://zigbee.blakadder.com/Sonoff_ZBBridge.html
 - https://github.com/arendst/Tasmota/raw/development/tools/fw_SonoffZigbeeBridge_ezsp/ncp-uart-sw_6.7.8_115200.ota
 
-#zigbee 채널 변경
-zbconfig {"Channel":25}
+# zigbee 채널 변경
+- zbconfig {"Channel":25}
 
-zbforget 0xB427
+# zigbee device 삭제
+- zbforget 0xB427
 
 zbname 0x662e, door_sensor
 - https://www.zigbee2mqtt.io/devices/MCCGQ12LM.html
