@@ -1,4 +1,6 @@
 #sonoff zigbee bridge tasmota f/w 시의 zigbee2tasmota 처리 방법
+- https://zigbee.blakadder.com/Sonoff_ZBBridge.html
+- https://github.com/arendst/Tasmota/raw/development/tools/fw_SonoffZigbeeBridge_ezsp/ncp-uart-sw_6.7.8_115200.ota
 
 #zigbee 채널 변경
 zbconfig {"Channel":25}
