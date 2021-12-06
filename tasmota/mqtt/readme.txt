@@ -130,6 +130,26 @@ sensor: !include sensor.yaml
   state_topic: "tele/SonoffZB/SENSOR"
   value_template: "{{ value_json.ZbReceived['xiaomi_button_switch'].Power }}"
   
+- platform: mqtt
+  name: "tuya_mqtt_temperature"
+  state_topic: "tele/SonoffZB/SENSOR"
+  device_class: temperature
+  unit_of_measurement: "°C"
+  value_template: "{{ value_json.ZbReceived['Tuya_Temp_sensor'].Temperature }}"
+
+- platform: mqtt
+  name: "tuya_mqtt_humidity"
+  state_topic: "tele/SonoffZB/SENSOR"
+  device_class: humidity
+  unit_of_measurement: "%"
+  value_template: "{{ value_json.ZbReceived['Tuya_Temp_sensor'].Humidity }}"
+  
+- platform: mqtt
+  name: "tuya_mqtt_temperature_lqi"
+  state_topic: "tele/SonoffZB/SENSOR"
+  device_class: signal_strength
+  unit_of_measurement: "LQI"
+  value_template: "{{ value_json.ZbReceived['Tuya_Temp_sensor'].LinkQuality }}"  
 
 
 
