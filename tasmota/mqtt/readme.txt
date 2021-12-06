@@ -97,6 +97,16 @@ Rule1 1
 Rule2 on ZbReceived#xiaomi_door_sensor#Contact do publish tabspace/door/002 {"Contact":"%value%"} endon
 Rule2 1
 
+**test**
+Rule1 on ZbReceived#Tuya_Door_Sensor#Contact do publish tabspace/door/001 {"Contact":"%value%"} endon
+Rule2 on ZbReceived#xiaomi_door_sensor#Contact do publish tabspace/door/002 {"Contact":"%value%"} endon
+
+
+Rule1 on ZbReceived#Tuya_Door_Sensor do publish tabspace/door/001 {"Contact":"%value%", "LinkQuality":"%Var2%"} endon
+
+
+ on ZbReceived#Tuya_Door_Sensor#LinkQuality do publish tabspace/door/001 {} endon
+
 #in configuration.yaml
 binary_sensor: !include binary_sensor.yaml
 
