@@ -91,8 +91,11 @@ Rule<x>
 Rule<x> 1
 
 #예제(도어센서 0x662E)
-Rule1 on ZbReceived#0x662E#Contact do publish homeassistant/binary_sensor/door_sensor/contact %value% endon
+Rule1 on ZbReceived#Tuya_Door_Sensor#Contact do publish tabspace/door/001 {"Contact":"%value%"} endon
 Rule1 1
+
+Rule2 on ZbReceived#xiaomi_door_sensor#Contact do publish tabspace/door/002 {"Contact":"%value%"} endon
+Rule2 1
 
 #in configuration.yaml
 binary_sensor: !include binary_sensor.yaml
