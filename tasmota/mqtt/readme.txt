@@ -154,13 +154,82 @@ sensor: !include sensor.yaml
   device_class: humidity
   unit_of_measurement: "%"
   value_template: "{{ value_json.ZbReceived['Tuya_Temp_sensor'].Humidity }}"
-  
+
+#lqi
 - platform: mqtt
-  name: "tuya_mqtt_temperature_lqi"
+  name: "Tuya_Door_Sensor_LQI"
   state_topic: "tele/SonoffZB/SENSOR"
   device_class: signal_strength
   unit_of_measurement: "LQI"
-  value_template: "{{ value_json.ZbReceived['Tuya_Temp_sensor'].LinkQuality }}"  
+  value_template: "{{ value_json.ZbReceived['Tuya_Door_Sensor'].LinkQuality }}"
+- platform: mqtt
+  name: "Tuya_Motion_Sensor_LQI"
+  state_topic: "tele/SonoffZB/SENSOR"
+  device_class: signal_strength
+  unit_of_measurement: "LQI"
+  value_template: "{{ value_json.ZbReceived['Tuya_Motion_Sensor'].LinkQuality }}"
+- platform: mqtt
+  name: "Tuya_Temp_sensor_LQI"
+  state_topic: "tele/SonoffZB/SENSOR"
+  device_class: signal_strength
+  unit_of_measurement: "LQI"
+  value_template: "{{ value_json.ZbReceived['Tuya_Temp_sensor'].LinkQuality }}"
+- platform: mqtt
+  name: "xiaomi_button_switch_LQI"
+  state_topic: "tele/SonoffZB/SENSOR"
+  device_class: signal_strength
+  unit_of_measurement: "LQI"
+  value_template: "{{ value_json.ZbReceived['xiaomi_button_switch'].LinkQuality }}"
+- platform: mqtt
+  name: "xiaomi_door_sensor_LQI"
+  state_topic: "tele/SonoffZB/SENSOR"
+  device_class: signal_strength
+  unit_of_measurement: "LQI"
+  value_template: "{{ value_json.ZbReceived['xiaomi_door_sensor'].LinkQuality }}"
+- platform: mqtt
+  name: "xiaomi_motion_sensor_LQI"
+  state_topic: "tele/SonoffZB/SENSOR"
+  device_class: signal_strength
+  unit_of_measurement: "LQI"
+  value_template: "{{ value_json.ZbReceived['xiaomi_motion_sensor'].LinkQuality }}"
+
+#battery BatteryPercentage
+- platform: mqtt
+  name: "Tuya_Door_Sensor_battery"
+  state_topic: "tele/SonoffZB/SENSOR"
+  device_class: battery
+  unit_of_measurement: "%"
+  value_template: "{{ value_json.ZbReceived['Tuya_Door_Sensor'].BatteryPercentage }}"
+- platform: mqtt
+  name: "Tuya_Motion_Sensor_battery"
+  state_topic: "tele/SonoffZB/SENSOR"
+  device_class: battery
+  unit_of_measurement: "%"
+  value_template: "{{ value_json.ZbReceived['Tuya_Motion_Sensor'].BatteryPercentage }}"
+- platform: mqtt
+  name: "Tuya_Temp_sensor_battery"
+  state_topic: "tele/SonoffZB/SENSOR"
+  device_class: battery
+  unit_of_measurement: "%"
+  value_template: "{{ value_json.ZbReceived['Tuya_Temp_sensor'].BatteryPercentage }}"
+- platform: mqtt
+  name: "xiaomi_button_switch_battery"
+  state_topic: "tele/SonoffZB/SENSOR"
+  device_class: battery
+  unit_of_measurement: "%"
+  value_template: "{{ value_json.ZbReceived['xiaomi_button_switch'].BatteryPercentage }}"
+- platform: mqtt
+  name: "xiaomi_door_sensor_battery"
+  state_topic: "tele/SonoffZB/SENSOR"
+  device_class: battery
+  unit_of_measurement: "%"
+  value_template: "{{ value_json.ZbReceived['xiaomi_door_sensor'].BatteryPercentage }}"
+- platform: mqtt
+  name: "xiaomi_motion_sensor_battery"
+  state_topic: "tele/SonoffZB/SENSOR"
+  device_class: battery
+  unit_of_measurement: "%"
+  value_template: "{{ value_json.ZbReceived['xiaomi_motion_sensor'].BatteryPercentage }}"
 
 
 
