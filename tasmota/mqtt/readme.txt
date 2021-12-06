@@ -90,17 +90,33 @@ binary_sensor: !include binary_sensor.yaml
 - platform: mqtt
   name: "mqtt_door_sensor"
   state_topic: "tele/SonoffZB/SENSOR"
-  value_template: "{{ value_json.ZbReceived['0x662E'].Contact }}"
+  value_template: "{{ value_json.ZbReceived['xiaomi_door_sensor'].Contact }}"
   device_class: door
   payload_on: 1
   payload_off: 0
 - platform: mqtt
   name: "mqtt_motion_sensor"
   state_topic: "tele/SonoffZB/SENSOR"
-  value_template: "{{ value_json.ZbReceived['0x057B'].Occupancy }}"
+  value_template: "{{ value_json.ZbReceived['xiaomi_motion_sensor'].Occupancy }}"
   device_class: motion
   payload_on: 1
   payload_off: 0
+
+- platform: mqtt
+  name: "tuya_mqtt_door_sensor"
+  state_topic: "tele/SonoffZB/SENSOR"
+  value_template: "{{ value_json.ZbReceived['Tuya_Door_Sensor'].Contact }}"
+  device_class: door
+  payload_on: 1
+  payload_off: 0
+- platform: mqtt
+  name: "tuya_mqtt_motion_sensor"
+  state_topic: "tele/SonoffZB/SENSOR"
+  value_template: "{{ value_json.ZbReceived['Tuya_Motion_Sensor'].Occupancy }}"
+  device_class: motion
+  payload_on: 1
+  payload_off: 0
+ 
   
 # binary_sensor device_class list
 - https://www.home-assistant.io/integrations/binary_sensor/
@@ -112,7 +128,7 @@ sensor: !include sensor.yaml
 - platform: mqtt
   name: "mqtt_button"
   state_topic: "tele/SonoffZB/SENSOR"
-  value_template: "{{ value_json.ZbReceived['0x5E54'].Power }}"
+  value_template: "{{ value_json.ZbReceived['xiaomi_button_switch'].Power }}"
   
 
 
