@@ -35,6 +35,15 @@ zbname 0x5E54, scene_button
 #더블클릭
 10:44:36.772 MQT: tele/SonoffZB/SENSOR = {"ZbReceived":{"0x5E54":{"Device":"0x5E54","Name":" scene_button","0006!00":"","Power":0,"Endpoint":1,"LinkQuality":92}}}
 
+zbname 0x221C,	tuya 모션센서 RH3040
+- https://www.zigbee2mqtt.io/devices/RH3040.html
+- Exposes	battery, occupancy, battery_low, tamper, linkquality
+
+#모션반응
+02:18:52.709 MQT: tele/SonoffZB/SENSOR = {"ZbReceived":{"0x221C":{"Device":"0x221C","0500<00":"010000010000","ZoneStatusChange":1,"ZoneStatusChangeZone":1,"Occupancy":1,"Endpoint":1,"LinkQuality":173}}}
+#모션미반응
+02:17:12.023 MQT: tele/SonoffZB/SENSOR = {"ZbReceived":{"0x221C":{"Device":"0x221C","0500<00":"000000010000","ZoneStatusChange":0,"ZoneStatusChangeZone":1,"Occupancy":0,"Endpoint":1,"LinkQuality":168}}}
+
 #MQTT 개별 Publish
 - https://tasmota.github.io/docs/Zigbee/#sending-sensor-values-to-separated-mqtt-topics
 Rule<x>
