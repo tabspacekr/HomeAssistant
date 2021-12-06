@@ -15,6 +15,9 @@
 02:43:18.045 CMD: setoption83 1
 02:43:18.049 MQT: stat/SonoffZB/RESULT = {"SetOption83":"ON"}
 
+# 초록색 LED에서 상태값 표기
+- poweronstate 1
+
 #적용 전
 02:37:25.203 MQT: tele/SonoffZB/SENSOR = {"ZbReceived":{"0xCBA4":{"Device":"0xCBA4","Name":"Tuya_Door_Sensor","0500<00":"010000010000","ZoneStatusChange":1,"ZoneStatusChangeZone":1,"Contact":1,"Endpoint":1,"LinkQuality":144}}}
 
