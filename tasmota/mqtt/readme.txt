@@ -11,6 +11,17 @@
 # zigbee device 삭제
 - zbforget 0xB427
 
+# 손쉬운 mqtt사용을 위한 ZbReceived 노출순서 변경
+02:43:18.045 CMD: setoption83 1
+02:43:18.049 MQT: stat/SonoffZB/RESULT = {"SetOption83":"ON"}
+
+#적용 전
+02:37:25.203 MQT: tele/SonoffZB/SENSOR = {"ZbReceived":{"0xCBA4":{"Device":"0xCBA4","Name":"Tuya_Door_Sensor","0500<00":"010000010000","ZoneStatusChange":1,"ZoneStatusChangeZone":1,"Contact":1,"Endpoint":1,"LinkQuality":144}}}
+
+#적용 후
+02:45:47.498 MQT: tele/SonoffZB/SENSOR = {"ZbReceived":{"xiaomi_motion_sensor":{"Device":"0x057B","Name":"xiaomi_motion_sensor","Occupancy":0,"Endpoint":1,"LinkQuality":178}}}
+
+
 *** 샤오미 도어센서 ***
 zbname 0x662e,door_sensor
 - https://www.zigbee2mqtt.io/devices/MCCGQ12LM.html
