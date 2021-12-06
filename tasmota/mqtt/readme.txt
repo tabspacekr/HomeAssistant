@@ -73,6 +73,17 @@ zbname 0xCBA4, tuya 도어센서 RH3001
 #열림
 02:22:55.736 MQT: tele/SonoffZB/SENSOR = {"ZbReceived":{"0xCBA4":{"Device":"0xCBA4","Name":" Tuya_Door_Sensor","0500<00":"010000010000","ZoneStatusChange":1,"ZoneStatusChangeZone":1,"Contact":1,"Endpoint":1,"LinkQuality":139}}}
 
+*** Tuya 온습도센서 ***
+zbname 0x2E3A,Tuya_Temp_sensor RH3052
+- Exposes	humidity, temperature, battery, linkquality
+
+#메시지 포맷
+03:56:31.637 MQT: tele/SonoffZB/SENSOR = {"ZbReceived":{"Tuya_Temp_sensor":{"Device":"0x2E3A","Name":"Tuya_Temp_sensor","Temperature":25.69,"Humidity":26.17,"Endpoint":1,"LinkQuality":144}}}
+
+
+
+************************ EXAMPLE *******************************
+
 #MQTT 개별 Publish
 - https://tasmota.github.io/docs/Zigbee/#sending-sensor-values-to-separated-mqtt-topics
 Rule<x>
