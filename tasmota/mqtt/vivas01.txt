@@ -25,3 +25,7 @@ sensor: !include sensor.yaml
   device_class: signal_strength
   unit_of_measurement: "LQI"
   value_template: "{{ value_json.ZbReceived['vivas01_th'].LinkQuality }}"
+
+
+Rule1 on ZbReceived#vivas01_th#Temperature do publish dain/vivas01/temperature {"Temperature":"%value%"} endon on ZbReceived#vivas01_th#Humidity do publish dain/vivas01/humidity {"Humidity":"%value%"} endon on ZbReceived#vivas01_th#LinkQuality do publish dain/vivas01/linkquality {"LinkQuality":"%value%"} endon
+Rule1 1
