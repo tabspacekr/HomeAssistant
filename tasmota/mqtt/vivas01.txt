@@ -1,6 +1,7 @@
 *** 공인 IP는 HA MQTT Broker의 connection 정보를 통해 확인 가능함 ***
 
 *** zigbee 페어링 및 zbname을 통한 alias설정 후 적용 ***
+*** sonoff zigbee bridge를 사용하였음 ***
 
 *** Tasmota Rule ***
 Rule1 on ZbReceived#vivas01_th#Temperature do publish dain/vivas01/temperature {"Temperature":"%value%"} endon on ZbReceived#vivas01_th#Humidity do publish dain/vivas01/humidity {"Humidity":"%value%"} endon on ZbReceived#vivas01_th#LinkQuality do publish dain/vivas01/linkquality {"LinkQuality":"%value%"} endon
