@@ -266,9 +266,3 @@ sensor: !include sensor.yaml
 Sonoff ZbBridge
 Tasmota-SonoffZB
 
-
-🕗01m
-Device 	 	
-🕗02m
-Device 0x662E		
-🕗03m
