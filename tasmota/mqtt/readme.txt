@@ -15,7 +15,7 @@
 02:43:18.045 CMD: setoption83 1
 02:43:18.049 MQT: stat/SonoffZB/RESULT = {"SetOption83":"ON"}
 
-# 초록색 LED에서 상태값 표기
+# 초록색 LED에서 상태값 표기 (미동작)
 - poweronstate 1
 
 #적용 전
