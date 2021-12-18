@@ -3,7 +3,7 @@
 *** zigbee 페어링 및 zbname을 통한 alias설정 후 적용 ***
 *** sonoff zigbee bridge를 사용하였음 ***
 
-*** Tasmota Rule ***
+*** Tasmota Rule, 수신된 zigbee통신값을 mqtt로 송출 ***
 Rule1 on ZbReceived#vivas01_th#Temperature do publish dain/vivas01/temperature {"Temperature":"%value%"} endon on ZbReceived#vivas01_th#Humidity do publish dain/vivas01/humidity {"Humidity":"%value%"} endon on ZbReceived#vivas01_th#LinkQuality do publish dain/vivas01/linkquality {"LinkQuality":"%value%"} endon
 Rule1 1
 
