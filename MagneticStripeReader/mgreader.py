@@ -1,33 +1,26 @@
 #!/usr/bin/env python
 
-# MagTek MSR100 Mini Swipe Card Reader
-# Original Code Written By: Jeffrey Ness
-# ReWrite Code Written By: TabSpace
-# 
-# Some Thanks need to go out to
-# http://www.micahcarrick.com/credit-card-reader-pyusb.html
-# for helping me get on the right track
+# 마그네틱방식 출입제어기 v1
+# 2021.12.21. ceo@tabspace.kr
+# MagTek MSR100 Mini Swipe Card Reader, Sonoff RE5V1C 필요
+# 사전에 pymysql, pyusb를 pip3로 설치 필요함
 
 import usb.core
 import usb.util
 import pymysql.cursors
+import requests
 
-# connection 정보
-conn = pymysql.connect(
-    host = 'db.yourdb', # host name
-    user = 'tabspace', # user name
-    password = 'yourpassword', # password
-    db = 'tabspace', # db name
-    charset = 'utf8mb4'
-)
-cursor = conn.cursor()
+# 리눅스 콘솔에서 lsusb를 입력하여, 인식된 키보드 에뮬레이션 방식의 카드리더기의 Bus 정보와 Device 정보를 입력해주어야함
+# MagTek Device MSR100 Mini Swipe : Bus 006 Device 002: ID 0801:0001 MagTek Mini Swipe Reader (Keyboard Emulation)
+# Unlabeled MSR100 Like Device : Bus 001 Device 005: ID ffff:0035 
 
-# MagTek Device MSR100 Mini Swipe
-#enter lsusb
-#Bus 006 Device 002: ID 0801:0001 MagTek Mini Swipe Reader (Keyboard Emulation)
+# Bus 006 Device 002: ID 0801:0001 MagTek Mini Swipe Reader (Keyboard Emulation)
+#vendorid = 0x0801
+#productid = 0x0001
+# Bus 001 Device 005: ID ffff:0035 Unlabeled MSR100 Like Device 
+vendorid = 0xffff
+productid = 0x0035
 
-vendorid = 0x0801
-productid = 0x0001
 
 # Define our Character Map per Reference Manual
 # http://www.magtek.com/documentation/public/99875206-17.01.pdf
@@ -203,13 +196,33 @@ while True:
 
     print (sdata)
 
+    # 마그네틱 카드 정보를 db에 insert하기 위한 connection 정보
+    conn = pymysql.connect(
+        host = 'database.kr', # host name
+        user = 'user_name', # user name
+        password = 'pass_word', # password
+        db = 'db_name', # db name
+        charset = 'utf8mb4'
+    )
+    # DB접속
+    cursor = conn.cursor()
+    
+    # mgreader_log 테이블에 device_id와 mg_data insert
     sql = "insert into mgreader_log(device_id,mg_data) values(%s, %s);"
     val = ("VAVAS01", sdata)
-    #print (sql)
+    
+    # db insert
     cursor.execute(sql, val)
+    # db commit
     conn.commit()
+    # db 연결 종료
+    conn.close()
+
+    # Sonoff RE5V1C의 릴레이를 curl형태로 호출, 전원을 차단처리하여 데드볼트락의 failsafe기능으로 문이 열리는 원리임
+    url = "http://192.168.1.119/cm?cmnd=Power%20off" # Sonoff RE5V1C에서 할당받은 ip주소를 입력해줌, 만약 암호가 걸려있으면 http://<ip>/cm?user=admin&password=joker&cmnd=Power%20off 형태로 변경
+    door_open = requests.get(url).json
+
 
     #반복은 계속 되고 있는중. 프로세스 모니터링 하여서, 만약에 mgreader python 프로그램이 죽으면 다시 동작하게끔 하는 코드를 고려해야함.
     #로컬 텍스트 파일 및 클라우드 DB에 데이터를 쌓아야함. 순번, 시간정보와, 어디서 긁혔는지 코드정보, 데이터를 저장하는 필드가 필요함.
     #긁은 코드에 대해 정교하게 처리하는 방식이 필요함. 정교하게 하기 위해서는 0000 코드가 들어왔을떄에 다시 긁어달라는 내용이 필요하나, 고민이 필요한 부분이 있음.
-    #열어주는 코드
