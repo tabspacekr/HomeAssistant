@@ -23,6 +23,6 @@ else
         # 백그라운드로 프로세스 시작, nohup.out 안남기기 위해 /dev/null로 날림
         # nohup python3 /root/mg.py & > /dev/null
         # 백그라운드로 프로세스 시작
-        python3 /root/mg.py & >> /root/mg.log
+        python3 /root/mg.py & >> /root/mg.log 2>&1
         echo "출입통제기 서비스 재시작"
 fi
