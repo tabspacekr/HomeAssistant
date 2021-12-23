@@ -21,8 +21,8 @@ else
         # 실행중인 프로세스 이름으로 모두 강제 종료처리
         pkill -9 -f "python3 /root/mg.py"
         # 백그라운드로 프로세스 시작, nohup.out 안남기기 위해 /dev/null로 날림
-        # nohup python3 /root/mg.py & > /dev/null
+        # nohup python3 /root/mg.py > /dev/null & 
         # 백그라운드로 프로세스 시작
-        python3 /root/mg.py & >> /root/mg.log 2>&1
+        nohup python3 /root/mg.py &
         echo "출입통제기 서비스 재시작"
 fi
