@@ -1,5 +1,5 @@
 # 1분마다 실행 감시
-*/1 * * * * su - root - c /root/msr_kill_protect.sh >> /root/msr_kill_protect.log
+*/1 * * * * /root/msr_kill_protect.sh >> /root/msr_kill_protect.log
 # 부팅 시 자동실행
 @reboot su - root -c /root/msr_kill_protect.sh >> /root/msr_kill_protect.log
 
