@@ -3,6 +3,9 @@
 데드볼트 + 퇴실(EXIT)버튼 + SONOFF InchingRelay + OrangePi Zero LTS + MSR100 으로 
 
 
+작업완료 후 시간을 정상적으로 한국표준시로 적용하기 위해 linux console에서 아래 명령어 입력
+timedatectl set-timezone Asia/Seoul
+
 참고사이트 
 - https://chloro.tistory.com/107 백그라운드프로세스 nohup
 - https://hue9010.github.io/etc/process_kill/ 리눅스에서 kill, pkill를 통해 특정 프로세스 종료시키기
