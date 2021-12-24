@@ -2,6 +2,13 @@
 
 데드볼트 + 퇴실(EXIT)버튼 + SONOFF InchingRelay + OrangePi Zero LTS + MSR100 으로 
 
+설치 필요 패키지
+sudo apt install python3
+sudo apt install python3-pip
+sudo pip3 install usb
+sudo pip3 install pyusb
+sudo pip3 install pymysql
+sudo pip3 install requests
 
 작업완료 후 시간을 정상적으로 한국표준시로 적용하기 위해 linux console에서 아래 명령어 입력
 timedatectl set-timezone Asia/Seoul
@@ -13,3 +20,4 @@ timedatectl set-timezone Asia/Seoul
 - https://yoonbh2714.blogspot.com/2017/01/ubuntu-unexpected-operator_97.html Ubuntu unexpected operator 쉘스크립트 에러
 - http://daplus.net/unix-ps-%EA%B2%B0%EA%B3%BC%EC%97%90-grep%EC%9D%B4-%EB%82%98%ED%83%80%EB%82%98%EC%A7%80-%EC%95%8A%EB%8F%84%EB%A1%9D%ED%95%98%EB%A0%A4%EB%A9%B4-%EC%96%B4%EB%96%BB%EA%B2%8C%ED%95%B4%EC%95%BC/ [unix] ps 결과에 ‘grep’이 나타나지 않도록하려면 어떻게해야합니까?
 - https://blog.naver.com/jeong2091/221970687773 리눅스(Linux) 프로세스 자동 재시작 쉘 스크립트 작성하는법!!
+- https://blog.daum.net/sualchi/13721064 SQL 접속시 접속정보 별도 보관해서 사용하기(python)
