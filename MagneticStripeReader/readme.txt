@@ -1,7 +1,9 @@
 무인매장 출입관리기 개발
 
 데드볼트 + 퇴실(EXIT)버튼 + SONOFF InchingRelay + OrangePi Zero LTS + MSR100 으로 출입관리기 구현
-향후 NFC(RFID)등 기능 보완 예정, SONOFF GPIO Port를 통한 Tasmota 제어 기능 보완 예정 (인터넷 또는 WIFI가 단절되더라도 exit버튼으로 퇴실가능하도록)
+SONOFF GPIO Port(ERX, ETX 활용)를 통한 Tasmota 제어(Magnetic Door Sensor, Exit Button 기능 구현) 
+
+향후 NFC(RFID)등 기능 보완 예정, 기타 기능 보완 예정 (인터넷 또는 WIFI가 단절되더라도 exit버튼으로 퇴실가능하도록)
 
 설치 필요 패키지
 sudo apt install python3
