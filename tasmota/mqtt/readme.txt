@@ -83,7 +83,15 @@ zbname 0x2E3A,Tuya_Temp_sensor RH3052
 #메시지 포맷
 03:56:31.637 MQT: tele/SonoffZB/SENSOR = {"ZbReceived":{"Tuya_Temp_sensor":{"Device":"0x2E3A","Name":"Tuya_Temp_sensor","Temperature":25.69,"Humidity":26.17,"Endpoint":1,"LinkQuality":144}}}
 
+*** Tuya 2Gang 스위치 ***
 
+#메시지 포맷
+10:19:00.311 MQT: tele/SonoffZB/SENSOR = {"ZbReceived":{"Tuya_2Gang_Switch":{"Device":"0x8BF8","Name":"Tuya_2Gang_Switch","Power":1,"Endpoint":1,"LinkQuality":204}}}
+10:19:09.911 MQT: tele/SonoffZB/SENSOR = {"ZbReceived":{"Tuya_2Gang_Switch":{"Device":"0x8BF8","Name":"Tuya_2Gang_Switch","Power":0,"Endpoint":1,"LinkQuality":202}}}
+10:19:13.711 MQT: tele/SonoffZB/SENSOR = {"ZbReceived":{"Tuya_2Gang_Switch":{"Device":"0x8BF8","Name":"Tuya_2Gang_Switch","Power":1,"Endpoint":2,"LinkQuality":204}}}
+10:19:18.761 MQT: tele/SonoffZB/SENSOR = {"ZbReceived":{"Tuya_2Gang_Switch":{"Device":"0x8BF8","Name":"Tuya_2Gang_Switch","Power":0,"Endpoint":2,"LinkQuality":204}}}
+10:19:20.811 MQT: tele/SonoffZB/SENSOR = {"ZbReceived":{"Tuya_2Gang_Switch":{"Device":"0x8BF8","Name":"Tuya_2Gang_Switch","Power":1,"Endpoint":1,"LinkQuality":202}}}
+10:19:21.466 MQT: tele/SonoffZB/SENSOR = {"ZbReceived":{"Tuya_2Gang_Switch":{"Device":"0x8BF8","Name":"Tuya_2Gang_Switch","Power":1,"Endpoint":2,"LinkQuality":204}}}
 
 ************************ EXAMPLE *******************************
 
