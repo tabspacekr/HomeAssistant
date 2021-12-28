@@ -1,0 +1,20 @@
+# VAVAS01 마그네틱 도어센서
+- platform: mqtt
+  name: "VAVAS01_DOOR1_SENSOR"
+  state_topic: "cmnd/dain/VAVAS01_DOOR1/POWER2"
+  availability_topic: "tele/VAVAS01_DOOR1/LWT"
+  payload_on: "OFF"
+  payload_off: "ON"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  device_class: door
+# VAVAS01 EXIT 버튼
+- platform: mqtt
+  name: "VAVAS01_EXIT_BUTTON"
+  state_topic: "cmnd/dain/VAVAS01_DOOR1/POWER3"
+  availability_topic: "tele/VAVAS01_DOOR1/LWT"
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  device_class: opening
