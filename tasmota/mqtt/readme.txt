@@ -111,6 +111,7 @@ Rule2 1
 **test**
 Rule1 on ZbReceived#Tuya_Door_Sensor#Contact do publish tabspace/door/001 {"Contact":"%value%"} endon
 Rule2 on ZbReceived#xiaomi_door_sensor#Contact do publish tabspace/door/002 {"Contact":"%value%"} endon
+Rule3 on ZbReceived#Tuya_2Gang_Switch#Endpoint=1 do publish tabspace/switch/001 {"Power":"%value%"} endon
 
 
 Rule1 on ZbReceived#Tuya_Door_Sensor do publish tabspace/door/001 {"Contact":"%value%", "LinkQuality":"%Var2%"} endon
