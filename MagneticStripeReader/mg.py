@@ -222,7 +222,9 @@ while True:
     conn.close()
 
     # Sonoff RE5V1C의 릴레이를 curl형태로 호출, 전원을 차단처리하여 데드볼트락의 failsafe기능으로 문이 열리는 원리임
-    url = "http://192.168.1.119/cm?cmnd=Power%20off" # Sonoff RE5V1C에서 할당받은 ip주소를 입력해줌, 만약 암호가 걸려있으면 http://<ip>/cm?user=admin&password=joker&cmnd=Power%20off 형태로 변경
+    url = "http://192.168.1.119/cm?cmnd=Power%20off" # Sonoff RE5V1C에서 할당받은 ip주소로 변경이 필요. mac주소 고정 권장
+    # 만약 ID가 admin 비밀번호가 joker 형태로 설정되어 있으면
+    # url = "http://192.168.1.119/cm?user=admin&password=joker&cmnd=Power%20off"
     try:
       door_open = requests.get(url).json
     except:
