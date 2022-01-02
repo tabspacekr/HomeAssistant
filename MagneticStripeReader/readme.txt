@@ -3,7 +3,9 @@
 데드볼트 + 퇴실(EXIT)버튼 + SONOFF InchingRelay + OrangePi Zero LTS + MSR100 으로 출입관리기 구현
 SONOFF GPIO Port(ERX, ETX 활용)를 통한 Tasmota 제어(Magnetic Door Sensor, Exit Button 기능 구현) 
 
-향후 NFC(RFID)등 기능 보완 예정, 타이머 기능 보강 예정
+향후 근태관리 등으로 활용이 가능하도록 NFC(RFID)등 기능 보완 예정
+지정된 온습도에 따라 제어가 가능한 자동제어 기능 보강
+전등 및 climate domain에 사용이 가능한 타이머 기능 보강 예정
 기타 기능 보완 예정 (인터넷 또는 WIFI가 단절되더라도 exit버튼으로 퇴실가능하도록)
 
 설치 필요 패키지
