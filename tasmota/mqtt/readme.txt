@@ -15,6 +15,11 @@
 02:43:18.045 CMD: setoption83 1
 02:43:18.049 MQT: stat/SonoffZB/RESULT = {"SetOption83":"ON"}
 
+# 각 디바이스별 mqtt publish
+- setoption89 1
+# 각 디바이스별 mqtt publish 시에 friendly name으로 처리
+- setoption112 1
+
 # 초록색 LED에서 상태값 표기 (미동작)
 - poweronstate 1
 
