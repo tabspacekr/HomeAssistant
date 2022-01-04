@@ -1,0 +1,71 @@
+my_user_config.h
+IR_RCV_BUFFER_SIZE 1000
+IR_RCV_TIMEOUT 50
+PubSubClient.h and sonoff_post.h
+MQTT_MAX_PACKET_SIZE 2000
+
+setoption58 1
+
+끄기 완료
+irsend {"Protocol":"NEC","Bits":32,"Data":"0x1FE20DF","DataLSB":"0x807F04FB","Repeat":0,"RawData":"+8985-4450+590-520CdCdCdCdCdCdC-1640C-1635C-1615+615f+595fCfCfCfI-525CdCdCfCdCdCdCdCjCeCfCdCfIfCfCfCeC-40095A-2200I","RawDataInfo":[71,71,0]}
+
+//
+04:26:10.959 RSL: RESULT = {"IrReceived":{"Protocol":"NEC","Bits":32,"Data":"0x1FE20DF","DataLSB":"0x807F04FB","Repeat":0,"RawData":"+9005-4400+615-520+590dEdEdEdEdEdE-1640E-1615C-1635Eh+595gCgChEhE-525EdEdEhIdEdEdEdEjEhEhEdEhEhEhEhEhE-40090A-2180E","RawDataInfo":[71,71,0]}}
+04:26:11.659 RSL: RESULT = {"IrReceived":{"Protocol":"NEC","Bits":32,"Data":"0x1FE20DF","DataLSB":"0x807F04FB","Repeat":0,"RawData":"+9005-4400+615-500C-520+590eFeFeFeFeF-1640+595-1635FiHiFiHiFiFiF-525FeFeFiFeFeFeFeFjFiFiFeFgFgFiFiFgF-40095+8985-2200H","RawDataInfo":[71,71,0]}}
+04:26:12.108 RSL: RESULT = {"IrReceived":{"Protocol":"NEC","Bits":32,"Data":"0x1FE20DF","DataLSB":"0x807F04FB","Repeat":0,"RawData":"+9005-4425+595-520+590dEdEdEdEdCdE-1640E-1635EgCgEgEfEgCgE-525EdCdEfEdEdEdEdEhEgEgEdEgEgEgEgEfE-40105A-2180E","RawDataInfo":[71,71,0]}}
+04:26:12.609 RSL: RESULT = {"IrReceived":{"Protocol":"NEC","Bits":32,"Data":"0x1FE20DF","DataLSB":"0x807F04FB","Repeat":0,"RawData":"+9005-4425+595-520+590dEdEdEdEdEdE-1640E-1635EgCgEgEgCgEgE-525EdEdEgCdEdEdEdEhEgEgEdEgEgEgEgEfE-40105+9010-2180C","RawDataInfo":[71,71,0]}}
+04:26:13.108 RSL: RESULT = {"IrReceived":{"Protocol":"NEC","Bits":32,"Data":"0x1FE20DF","DataLSB":"0x807F04FB","Repeat":0,"RawData":"+9005-4400+615-520+590dEdEd+595dEdEdE-1640E-1635FhEgEhFhEhEhE-525EdEdEhEdEdFdEdEiEhEgEdEhEhEhEhFhE-40105+9010-2180E","RawDataInfo":[71,71,0]}}
+04:26:13.759 RSL: RESULT = {"IrReceived":{"Protocol":"NEC","Bits":32,"Data":"0x1FE20DF","DataLSB":"0x807F04FB","Repeat":0,"RawData":"+9010-4425+590-520CdCd+595dEdEdCdC-1640C-1635CgCgEgCgCgCgE-525CdCdCgCdCdCdCdChCgCgCdCgEgEgEgCfC-40105+9005-2180C","RawDataInfo":[71,71,0]}}
+04:26:14.408 RSL: RESULT = {"IrReceived":{"Protocol":"NEC","Bits":32,"Data":"0x1FE20DF","DataLSB":"0x807F04FB","Repeat":0,"RawData":"+9010-4420+595-520+590dEdEdEdEdEdE-1640C-1635EgEgEgEgEgEgE-525EdEdEfEdEdEdEdEhEfC-1630CdEgEgEfEgEfE-40100+9005-2180E","RawDataInfo":[71,71,0]}}
+04:26:14.909 RSL: RESULT = {"IrReceived":{"Protocol":"NEC","Bits":32,"Data":"0x1FE20DF","DataLSB":"0x807F04FB","Repeat":0,"RawData":"+9010-4425+590-520CdCdCdCdCdCdC-1640C-1635Cf+595fCfCfCfCfC-525CdGdCfChCdCdCdChCfCeCdCfCeCfCfCeC-40100A-2180C","RawDataInfo":[71,71,0]}}
+04:26:15.459 RSL: RESULT = {"IrReceived":{"Protocol":"NEC","Bits":32,"Data":"0x1FE20DF","DataLSB":"0x807F04FB","Repeat":0,"RawData":"+9030-4425+595-520+590dEdEdEdEdEdE-1640E-1635EfEgEgEgCgEgE-525EdEdEgEdEdCdEdEhEgCgEdEfEgCgEgEfE-40100+9005-2180+565","RawDataInfo":[71,71,0]}}
+//
+
+spd 완료
+irsend {"Protocol":"NEC","Bits":32,"Data":"0x1FE609F","DataLSB":"0x807F06F9","Repeat":0,"RawData":"+9000-4430+595-520+590dEdEdEdEdEdE-1640E-1635EfEfEgCgCgEgE-525EdEgEgEdEdEdEdEhCgEdCdEgCgEgEgEfE-40095+9010-2180E","RawDataInfo":[71,71,0]}
+
+//
+04:26:56.645 RSL: RESULT = {"IrReceived":{"Protocol":"NEC","Bits":32,"Data":"0x1FE609F","DataLSB":"0x807F06F9","Repeat":0,"RawData":"+8960-4475+565-550CdCdCdCdCdCdC-1665CeCeCeCeCeCeCeCdCdCeCeCdCdCdCdC-555CeCd+570-545CeCeCeCeCeC-40115+8975-2230C","RawDataInfo":[71,71,0]}}
+04:26:57.495 RSL: RESULT = {"IrReceived":{"Protocol":"NEC","Bits":32,"Data":"0x1FE609F","DataLSB":"0x807F06F9","Repeat":0,"RawData":"+9010-4405+610-505C-525+590dC-520FgFgFgF-1640F-1635+595iJiJiJiJiJiFeFgFhF-1620CgJgFgFgFeFkCgFgFhFhFhFhFhF-40090+9000-2210+565","RawDataInfo":[71,71,0]}}
+04:26:58.345 RSL: RESULT = {"IrReceived":{"Protocol":"NEC","Bits":32,"Data":"0x1FE609F","DataLSB":"0x807F06F9","Repeat":0,"RawData":"+9005-4450+595-520Cd+590dEdEdEdCdE-1640EfEfEfE-1620+610-1615+615iJ-1635E-525EdEkEfElEdEdEdElEfElElEfEfEfEf+565-1645+585-40140+8980-2210E","RawDataInfo":[71,71,0]}}
+04:26:58.467 RSL: RESULT = {"IrReceived":{"Protocol":"NEC","Bits":0,"Data":"0xFFFFFFFFFFFFFFFF","DataLSB":"0xFFFFFFFFFFFFFFFF","Repeat":1,"RawData":"+9005-2205+590","RawDataInfo":[3,3,0]}}
+04:26:59.245 RSL: RESULT = {"IrReceived":{"Protocol":"NEC","Bits":32,"Data":"0x1FE609F","DataLSB":"0x807F06F9","Repeat":0,"RawData":"+8985-4430+585-550+590-520EfEfEfEfEfE-1640EgEgEgEgEgEgEg+565dHdHgE-1665HdE-525EjEjEjEgEfEjEgEgEgEg+595gE-40110+8980-2205E","RawDataInfo":[71,71,0]}}
+04:26:59.337 RSL: RESULT = {"IrReceived":{"Protocol":"NEC","Bits":0,"Data":"0xFFFFFFFFFFFFFFFF","DataLSB":"0xFFFFFFFFFFFFFFFF","Repeat":1,"RawData":"+8980-2205+565","RawDataInfo":[3,3,0]}}
+04:27:00.145 RSL: RESULT = {"IrReceived":{"Protocol":"NEC","Bits":32,"Data":"0x1FE609F","DataLSB":"0x807F06F9","Repeat":0,"RawData":"+8985-4430+610-520+590dEdE-525EdEdEdE-1640E-1635EhEgEgEgEgEgE-530EfEgE-1620CfEf+585iE-505CfEgEfEfKgK-1645Kg+565-1665KmN-40135+8980-2210N","RawDataInfo":[71,71,0]}}
+04:27:00.936 RSL: RESULT = {"IrReceived":{"Protocol":"NEC","Bits":32,"Data":"0x1FE609F","DataLSB":"0x807F06F9","Repeat":0,"RawData":"+8980-4450+590-525+585dCdEdEdCdCdC-1645C-1640CgEgEgEgEgCgC-530CdCgCgCdCdCdCdChCgCdCdCgCgCgCgCgC-40110+8985-2205C","RawDataInfo":[71,71,0]}}
+04:27:01.037 RSL: RESULT = {"IrReceived":{"Protocol":"NEC","Bits":0,"Data":"0xFFFFFFFFFFFFFFFF","DataLSB":"0xFFFFFFFFFFFFFFFF","Repeat":1,"RawData":"+8985-2205+590","RawDataInfo":[3,3,0]}}
+04:27:01.845 RSL: RESULT = {"IrReceived":{"Protocol":"NEC","Bits":32,"Data":"0x1FE609F","DataLSB":"0x807F06F9","Repeat":0,"RawData":"+9025-4430+595-520+590dCdEdCdEdEdE-1640E-1635EgEgE-1620+610hIfEgE-525EdEfEgEdEdEdC-515CjEfEdEdEgEfEfEhIhI-40090+9000-2185+585","RawDataInfo":[71,71,0]}}
+04:27:01.987 RSL: RESULT = {"IrReceived":{"Protocol":"NEC","Bits":0,"Data":"0xFFFFFFFFFFFFFFFF","DataLSB":"0xFFFFFFFFFFFFFFFF","Repeat":1,"RawData":"+9000-2210+585","RawDataInfo":[3,3,0]}}
+04:27:02.745 RSL: RESULT = {"IrReceived":{"Protocol":"NEC","Bits":32,"Data":"0x1FE609F","DataLSB":"0x807F06F9","Repeat":0,"RawData":"+8990-4430+615-520+590dEdEdEdEdEdE-1640EfEfEfEfEfEfEfE-530E-525EfEfEdEdEdEdEhEfEhEhEfEfEfE-1620+610fE-40095+9000-2210E","RawDataInfo":[71,71,0]}}
+04:27:02.837 RSL: RESULT = {"IrReceived":{"Protocol":"NEC","Bits":0,"Data":"0xFFFFFFFFFFFFFFFF","DataLSB":"0xFFFFFFFFFFFFFFFF","Repeat":1,"RawData":"+8975-2210+565","RawDataInfo":[3,3,0]}}
+//
+
+#dfs on (*ok)
+irsend {"Protocol":"NEC","Bits":32,"Data":"0x1FED827","DataLSB":"0x807F1BE4","Repeat":0,"RawData":"+9025-4425+595-520+590dEdEdEdEdEdE-1640E-1635EfEgEgEgEfEgE-525E-1615+615gEdEgEgEdEdChEdEdEgEdEdEgEiJgE","RawDataInfo":[67,67,0]}
+
+//
+04:27:42.068 RSL: RESULT = {"IrReceived":{"Protocol":"NEC","Bits":32,"Data":"0x1FED827","DataLSB":"0x807F1BE4","Repeat":0,"RawData":"+9025-4400+615-520+590d+595dEdEdEdEdE-1640E-1635EhEhEhEhEhEhE-525EhEhEdEhEgEdEdEiEdEdEgEdEdEhEhEgE-40080A-2160C","RawDataInfo":[71,71,0]}}
+04:27:43.117 RSL: RESULT = {"IrReceived":{"Protocol":"NEC","Bits":32,"Data":"0x1FED827","DataLSB":"0x807F1BE4","Repeat":0,"RawData":"+9005-4445+590-520CdCdCdCdC-525CeC-1640Cf+585fG-1645+565-1660I-1665IkIjI-550IjIjIlIkIkIlIlIlIlIlIjIlIlIkGfCfC-40085+9030-2180C","RawDataInfo":[71,71,0]}}
+04:27:44.118 RSL: RESULT = {"IrReceived":{"Protocol":"NEC","Bits":32,"Data":"0x1FED827","DataLSB":"0x807F1BE4","Repeat":0,"RawData":"+8980-4425+610-520+590dEdEd+595dEdEdE-1640E-1635EhEhEhEhFhEhE-525EhEhEiEhEgEdEdEiEiEdEhEdEdEhEhEhE-40100+9000-2180E","RawDataInfo":[71,71,0]}}
+04:27:45.068 RSL: RESULT = {"IrReceived":{"Protocol":"NEC","Bits":32,"Data":"0x1FED827","DataLSB":"0x807F1BE4","Repeat":0,"RawData":"+8975-4430+610-530+585dEdEdEdEd+580d+560-1670G-1665GiGiGiGiGi+565iJ-550J-1660JlJkJiJiJkJkG-555JkJkJlJkJkJlJlJiJ-40130+9005-2180J","RawDataInfo":[71,71,0]}}
+04:27:45.160 RSL: RESULT = {"IrReceived":{"Protocol":"NEC","Bits":0,"Data":"0xFFFFFFFFFFFFFFFF","DataLSB":"0xFFFFFFFFFFFFFFFF","Repeat":1,"RawData":"+8980-2200+590","RawDataInfo":[3,3,0]}}
+04:27:46.068 RSL: RESULT = {"IrReceived":{"Protocol":"NEC","Bits":32,"Data":"0x1FED827","DataLSB":"0x807F1BE4","Repeat":0,"RawData":"+9005-4400+615-520+590dEdEdEdEdEdE-1640E-1635EgEgEgEgEfEgE-525Eg+595gEdEgEgEdEdEhEdEdEgEdEdEgEgEfE-40100+9000-2185E","RawDataInfo":[71,71,0]}}
+04:27:47.117 RSL: RESULT = {"IrReceived":{"Protocol":"NEC","Bits":32,"Data":"0x1FED827","DataLSB":"0x807F1BE4","Repeat":0,"RawData":"+8980-4425+615-520+590dEdEdEdEdEdE-1615C-1635E-1610CgEgEgEgEgE-525EgEgEdEgEgEdEdEiEdEdEgEdEiEgEgE-1640E-40100+9005-2180E","RawDataInfo":[71,71,0]}}
+04:27:48.218 RSL: RESULT = {"IrReceived":{"Protocol":"NEC","Bits":32,"Data":"0x1FED827","DataLSB":"0x807F1BE4","Repeat":0,"RawData":"+8980-4440+595-520+590dEdEdEdEdEdE-1640E-1635EgE-1620+610fEhI-1615IfE-525EgEgEdEgEgEdEdEkCdEdCgCdCdEgCgEgE-40105A-2205E","RawDataInfo":[71,71,0]}}
+04:27:49.167 RSL: RESULT = {"IrReceived":{"Protocol":"NEC","Bits":32,"Data":"0x1FED827","DataLSB":"0x807F1BE4","Repeat":0,"RawData":"+9000-4445+595-520+590dEdEdEdEdEdE-1640EfEfEfEfEfEfEfE-525E-1635EhEdEhE-1620+610gE-505JgEdEdEhEdEgEhEhChC-40080A-2205E","RawDataInfo":[71,71,0]}}
+04:27:49.310 RSL: RESULT = {"IrReceived":{"Protocol":"NEC","Bits":0,"Data":"0xFFFFFFFFFFFFFFFF","DataLSB":"0xFFFFFFFFFFFFFFFF","Repeat":1,"RawData":"+8985-2200+590","RawDataInfo":[3,3,0]}}
+//
+
+#dfs off (ok)
+irsend {"Protocol":"NEC","Bits":32,"Data":"0x1FEB04F","DataLSB":"0x807F0DF2","Repeat":0,"RawData":"+9025-4400+615-520+590dE-525EdEfE-545+570g+565-1665I-1640EkE-1615CkEkE-1660HmIfE-1635EdEnEn+595dEdEdEfEdEnEdEdEnEnEnOnE-40095+9000-2180E","RawDataInfo":[71,71,0]}
+
+//
+04:28:35.418 RSL: RESULT = {"IrReceived":{"Protocol":"NEC","Bits":32,"Data":"0x1FEB04F","DataLSB":"0x807F0DF2","Repeat":0,"RawData":"+9000-4430+610-525+590dEdEd+585dFdEdE-1645F-1640EgFhFhFg+565-1665+560jK-555IjI-550IjIjImKmImImImIjImImIjIjIjIjI-40120+8980-2205E","RawDataInfo":[71,71,0]}}
+04:28:36.467 RSL: RESULT = {"IrReceived":{"Protocol":"NEC","Bits":32,"Data":"0x1FEB04F","DataLSB":"0x807F0DF2","Repeat":0,"RawData":"+8995-4450+565-550CdCdCdCdCdCdC-1665CeCeCeC-1660CeCfCeCdCfCdCeCeCd+560dCdCdCdCeCdCdCeCeCeCeC-40120+8980-2205+590","RawDataInfo":[71,71,0]}}
+04:28:37.568 RSL: RESULT = {"IrReceived":{"Protocol":"NEC","Bits":32,"Data":"0x1FEB04F","DataLSB":"0x807F0DF2","Repeat":0,"RawData":"+9005-4425+595-520+590dEdEdEdEdEdE-1640E-1635EgCgEfEgEgCgE-525EgEdEfEgEdEdEdEhEdEgEdEdEgEgEgEfE-40090A-2180E","RawDataInfo":[71,71,0]}}
+04:28:38.517 RSL: RESULT = {"IrReceived":{"Protocol":"NEC","Bits":32,"Data":"0x1FEB04F","DataLSB":"0x807F0DF2","Repeat":0,"RawData":"+8980-4450+590-530+585-525EfCfCfCfEfC-1645C-1640ChEhChEhChEhCdEhEdEhEhEdEdEfEdEfEgEfCfEhEhEhEgE-40100+8975-2210+565","RawDataInfo":[71,71,0]}}
+04:28:39.618 RSL: RESULT = {"IrReceived":{"Protocol":"NEC","Bits":32,"Data":"0x1FEB04F","DataLSB":"0x807F0DF2","Repeat":0,"RawData":"+9005-4425+595-520+590dEdEdCdEdEdE-1640E-1635CgEgCgC-1630CgCgE-525CgEdChEgEdCdEdEiEdEgEdEdEgEgCgEfE-40090+8975-2205E","RawDataInfo":[71,71,0]}}
+04:28:40.667 RSL: RESULT = {"IrReceived":{"Protocol":"NEC","Bits":32,"Data":"0x1FEB04F","DataLSB":"0x807F0DF2","Repeat":0,"RawData":"+8975-4450+565-550Cd+560dEdCdEdCdE-1670C-1665CgCgEgEgEgCgC-555+570-1660CdCgCgCdCdCdCdCdCjCdCdCgCgCgCgC-40125A-2210E","RawDataInfo":[71,71,0]}}
+04:28:41.818 RSL: RESULT = {"IrReceived":{"Protocol":"NEC","Bits":32,"Data":"0x1FEB04F","DataLSB":"0x807F0DF2","Repeat":0,"RawData":"+8975-4450+560-550+565dCdEdCdEdCdE-1670E-1665EgEgEgCgEgEgEdEgEdEgEgEdEdEdEdEdE-1660EdEdEhEhEgEgE-40120A-2205E","RawDataInfo":[71,71,0]}}
+04:28:42.918 RSL: RESULT = {"IrReceived":{"Protocol":"NEC","Bits":32,"Data":"0x1FEB04F","DataLSB":"0x807F0DF2","Repeat":0,"RawData":"+8980-4425+615-520+590d+595-515FdEdEdEdE-1640F-1635EiEiEiEiEhEhE-530Eh+585jK-1645+565-1665M-550+560oPoP-555PoMnMoMoM-1660MnMrKlE-40100+9005-2185E","RawDataInfo":[71,71,0]}}
+//
