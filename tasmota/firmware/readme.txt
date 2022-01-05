@@ -11,3 +11,8 @@ TasmoCompiler - simple web GUI to compile Tasmota with your own settings
 Simplest way to compile is with GitPod, requires only a web browser.
 
 Once you have set up the development environment, unzip the source code into a folder.
+
+
+
+backup_20220105_173021.bin
+- sonoff zigbee bridge original firmware backup
