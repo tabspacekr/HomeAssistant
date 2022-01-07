@@ -1,0 +1,18 @@
+#define PROJECT                "TabSpace"
+#define STA_SSID1              "TabSpace-IoT"
+#define STA_PASS1              "STRONGPASSWORD@!#!%"
+#define DEVICE_NAME          "TabSpace-ZB"
+#define FRIENDLY_NAME          "TabSpace-ZB"
+#define MQTT_USE               true 
+#define MQTT_HOST               "api.tabspace.kr"
+#define MQTT_PORT               1883
+#define MQTT_USER            "TabSpace"
+#define MQTT_PASS            "STRONGPASSWORD@!#!%"
+#define WEB_PASSWORD           "STRONGPASSWORD@!#!%"
+#define NTP_SERVER1            "pool.ntp.org"
+#define APP_TIMEZONE           9
+#define ZIGBEE_DISTINCT_TOPICS true
+#define ZIGBEE_FRIENDLY_NAMES  true
+#define USE_ZIGBEE_CHANNEL  25
+#define USER_RULE1 "ON system#Boot DO backlog Sleep 0; SetOption89 1; Setoption112 1; SetOption83 1 ENDON"
+#define USER_BACKLOG "Rule1 1"
