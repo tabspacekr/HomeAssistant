@@ -12,7 +12,7 @@ Simplest way to compile is with GitPod, requires only a web browser.
 
 Once you have set up the development environment, unzip the source code into a folder.
 
-
+8ch relay
 
 backup_20220105_173021.bin
 - sonoff zigbee bridge original firmware backup
