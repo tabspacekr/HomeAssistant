@@ -7,3 +7,5 @@ smartir:
 climate: !include climate.yaml
 
 국내 유통되는 삼성/LG 모델 등에서 범용적으로 사용 가능합니다.
+
+로컬 구성이 아닌 클라우드기반 서비스에서는 동작하지 않습니다.
