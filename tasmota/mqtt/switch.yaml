@@ -1,0 +1,106 @@
+# configuration.yaml파일에서 !include switch.yaml 선언
+# switch.yaml 
+- platform: mqtt
+  unique_id: "2gang1"
+  name: "2gang1"
+  availability_topic: "tele/BarunsonStay_9DF5F5/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  state_topic: "tele/BarunsonStay_9DF5F5/gg_000_sw/SENSOR"
+  value_template: >
+    {% if value_json['ZbReceived']['gg_000_sw']['Endpoint'] == 1 %}
+    {%- if value_json['ZbReceived']['gg_000_sw']['Power'] == 1 -%}
+      { "Device":"gg_000_sw", "Endpoint":"1", "send":{"Power":"On"} }
+    {%- else -%}
+      { "Device":"gg_000_sw", "Endpoint":"1", "send":{"Power":"Off"} }
+    {% endif %}
+    {% else %}
+    {{ states('switch.2gang1') }}
+    {% endif %}
+  command_topic: "cmnd/BarunsonStay_9DF5F5/ZbSend"
+  payload_on: '{ "Device":"gg_000_sw", "Endpoint":"1", "send":{"Power":"On"} }'
+  payload_off: '{ "Device":"gg_000_sw", "Endpoint":"1", "send":{"Power":"Off"} }'
+
+- platform: mqtt
+  unique_id: "2gang2"
+  name: "2gang2"
+  availability_topic: "tele/BarunsonStay_9DF5F5/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  state_topic: "tele/BarunsonStay_9DF5F5/gg_000_sw/SENSOR"
+  value_template: >
+    {% if value_json['ZbReceived']['gg_000_sw']['Endpoint'] == 2 %}
+    {%- if value_json['ZbReceived']['gg_000_sw']['Power'] == 1 -%}
+      { "Device":"gg_000_sw", "Endpoint":"2", "send":{"Power":"On"} }
+    {%- else -%}
+      { "Device":"gg_000_sw", "Endpoint":"2", "send":{"Power":"Off"} }
+    {% endif %}
+    {% else %}
+    {{ states('switch.2gang2') }}
+    {% endif %}
+  command_topic: "cmnd/BarunsonStay_9DF5F5/ZbSend"
+  payload_on: '{ "Device":"gg_000_sw", "Endpoint":"2", "send":{"Power":"On"} }'
+  payload_off: '{ "Device":"gg_000_sw", "Endpoint":"2", "send":{"Power":"Off"} }'
+
+- platform: mqtt
+  unique_id: "3gang1"
+  name: "3gang1"
+  availability_topic: "tele/BarunsonStay_9DF5F5/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  state_topic: "tele/BarunsonStay_9DF5F5/gg_000_sw2/SENSOR"
+  value_template: >
+    {% if value_json['ZbReceived']['gg_000_sw2']['Endpoint'] == 1 %}
+    {%- if value_json['ZbReceived']['gg_000_sw2']['Power'] == 1 -%}
+      { "Device":"gg_000_sw2", "Endpoint":"1", "send":{"Power":"On"} }
+    {%- else -%}
+      { "Device":"gg_000_sw2", "Endpoint":"1", "send":{"Power":"Off"} }
+    {% endif %}
+    {% else %}
+    {{ states('switch.3gang1') }}
+    {% endif %}
+  command_topic: "cmnd/BarunsonStay_9DF5F5/ZbSend"
+  payload_on: '{ "Device":"gg_000_sw2", "Endpoint":"1", "send":{"Power":"On"} }'
+  payload_off: '{ "Device":"gg_000_sw2", "Endpoint":"1", "send":{"Power":"Off"} }'
+
+- platform: mqtt
+  unique_id: "3gang2"
+  name: "3gang2"
+  availability_topic: "tele/BarunsonStay_9DF5F5/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  state_topic: "tele/BarunsonStay_9DF5F5/gg_000_sw2/SENSOR"
+  value_template: >
+    {% if value_json['ZbReceived']['gg_000_sw2']['Endpoint'] == 2 %}
+    {%- if value_json['ZbReceived']['gg_000_sw2']['Power'] == 1 -%}
+      { "Device":"gg_000_sw2", "Endpoint":"2", "send":{"Power":"On"} }
+    {%- else -%}
+      { "Device":"gg_000_sw2", "Endpoint":"2", "send":{"Power":"Off"} }
+    {% endif %}
+    {% else %}
+    {{ states('switch.3gang2') }}
+    {% endif %}
+  command_topic: "cmnd/BarunsonStay_9DF5F5/ZbSend"
+  payload_on: '{ "Device":"gg_000_sw2", "Endpoint":"2", "send":{"Power":"On"} }'
+  payload_off: '{ "Device":"gg_000_sw2", "Endpoint":"2", "send":{"Power":"Off"} }'
+
+- platform: mqtt
+  unique_id: "3gang3"
+  name: "3gang3"
+  availability_topic: "tele/BarunsonStay_9DF5F5/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  state_topic: "tele/BarunsonStay_9DF5F5/gg_000_sw2/SENSOR"
+  value_template: >
+    {% if value_json['ZbReceived']['gg_000_sw2']['Endpoint'] == 3 %}
+    {%- if value_json['ZbReceived']['gg_000_sw2']['Power'] == 1 -%}
+      { "Device":"gg_000_sw2", "Endpoint":"3", "send":{"Power":"On"} }
+    {%- else -%}
+      { "Device":"gg_000_sw2", "Endpoint":"3", "send":{"Power":"Off"} }
+    {% endif %}
+    {% else %}
+    {{ states('switch.3gang3') }}
+    {% endif %}
+  command_topic: "cmnd/BarunsonStay_9DF5F5/ZbSend"
+  payload_on: '{ "Device":"gg_000_sw2", "Endpoint":"3", "send":{"Power":"On"} }'
+  payload_off: '{ "Device":"gg_000_sw2", "Endpoint":"3", "send":{"Power":"Off"} }'
