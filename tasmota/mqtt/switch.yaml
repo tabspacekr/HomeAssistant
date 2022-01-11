@@ -17,7 +17,7 @@
     {% else %}
     {{ states('switch.2gang1') }}
     {% endif %}
-  command_topic: "cmnd/BarunsonStay_9DF5F5/ZbSend" # ZbSend를 mqtt로 cmnd topic에 발송하여 
+  command_topic: "cmnd/BarunsonStay_9DF5F5/ZbSend" # ZbSend를 mqtt로 cmnd topic에 발송하여 기기제어 처리. Endpoint로 스위치버튼 1,2,3 
   payload_on: '{ "Device":"gg_000_sw", "Endpoint":"1", "send":{"Power":"On"} }'
   payload_off: '{ "Device":"gg_000_sw", "Endpoint":"1", "send":{"Power":"Off"} }'
 
