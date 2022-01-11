@@ -1,12 +1,12 @@
 # configuration.yaml파일에서 !include switch.yaml 선언
 # switch.yaml 
 - platform: mqtt
-  unique_id: "2gang1"
+  unique_id: "2gang1" # unique_id와 name은 동일하게 설정
   name: "2gang1"
-  availability_topic: "tele/BarunsonStay_9DF5F5/LWT"
+  availability_topic: "tele/BarunsonStay_9DF5F5/LWT" # zigbee hub의 tele topic의 LWT status를 지정
   payload_available: "Online"
   payload_not_available: "Offline"
-  state_topic: "tele/BarunsonStay_9DF5F5/gg_000_sw/SENSOR"
+  state_topic: "tele/BarunsonStay_9DF5F5/gg_000_sw/SENSOR" # setoption89, setoption112, setoption83이 활성화 되어있는 것을 가정함
   value_template: >
     {% if value_json['ZbReceived']['gg_000_sw']['Endpoint'] == 1 %}
     {%- if value_json['ZbReceived']['gg_000_sw']['Power'] == 1 -%}
@@ -17,7 +17,7 @@
     {% else %}
     {{ states('switch.2gang1') }}
     {% endif %}
-  command_topic: "cmnd/BarunsonStay_9DF5F5/ZbSend"
+  command_topic: "cmnd/BarunsonStay_9DF5F5/ZbSend" # ZbSend를 mqtt로 cmnd topic에 발송하여 
   payload_on: '{ "Device":"gg_000_sw", "Endpoint":"1", "send":{"Power":"On"} }'
   payload_off: '{ "Device":"gg_000_sw", "Endpoint":"1", "send":{"Power":"Off"} }'
 
