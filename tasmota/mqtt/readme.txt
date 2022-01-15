@@ -23,10 +23,10 @@
 # 초록색 LED에서 상태값 표기 (미동작)
 - poweronstate 1
 
-#적용 전
+# setoption 적용 전 mqtt
 02:37:25.203 MQT: tele/SonoffZB/SENSOR = {"ZbReceived":{"0xCBA4":{"Device":"0xCBA4","Name":"Tuya_Door_Sensor","0500<00":"010000010000","ZoneStatusChange":1,"ZoneStatusChangeZone":1,"Contact":1,"Endpoint":1,"LinkQuality":144}}}
 
-#적용 후
+# setoption 적용 후 mqtt
 02:45:47.498 MQT: tele/SonoffZB/SENSOR = {"ZbReceived":{"xiaomi_motion_sensor":{"Device":"0x057B","Name":"xiaomi_motion_sensor","Occupancy":0,"Endpoint":1,"LinkQuality":178}}}
 
 
