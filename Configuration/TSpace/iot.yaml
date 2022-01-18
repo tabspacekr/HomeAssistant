@@ -1,0 +1,294 @@
+views:
+  - title: Home
+    visible:
+      - user: e06cb3189f6146cbb7d7481d4178456e
+    badges: []
+    cards:
+      - type: area
+        area: around
+        navigation_path: AROUND
+      - type: area
+        area: moggeumto_geoncugsamuso
+        navigation_path: mokgeumto
+  - title: AROUND
+    path: AROUND
+    icon: mdi:thermometer-lines
+    visible:
+      - user: e06cb3189f6146cbb7d7481d4178456e
+      - user: 9b7e603af8c24cb8b7239db430736b85
+    badges: []
+    cards:
+      - type: grid
+        cards:
+          - type: button
+            tap_action:
+              action: toggle
+            entity: switch.around_light1_1
+            show_state: true
+            icon: mdi:lightbulb-on-outline
+            name: 현관1
+          - type: button
+            tap_action:
+              action: toggle
+            entity: switch.around_light1_2
+            show_state: true
+            icon: mdi:lightbulb-on-outline
+            name: 현관2
+          - type: button
+            tap_action:
+              action: toggle
+            entity: switch.around_light1_3
+            name: 현관3
+          - type: button
+            tap_action:
+              action: toggle
+            entity: switch.around_light2_1
+            name: 주방1
+          - type: button
+            tap_action:
+              action: toggle
+            entity: switch.around_light2_2
+            name: 주방2
+          - type: button
+            tap_action:
+              action: toggle
+            entity: switch.around_light3_1
+            name: 화장실1
+          - type: button
+            tap_action:
+              action: toggle
+            entity: switch.around_light3_2
+            name: 화장실2
+          - type: button
+            tap_action:
+              action: toggle
+            entity: switch.around_light4_1
+            name: 창고1
+          - type: button
+            tap_action:
+              action: toggle
+            entity: switch.around_light4_2
+            name: 창고2
+      - type: grid
+        cards:
+          - type: sensor
+            entity: sensor.around_temperature
+            detail: 1
+            graph: line
+          - type: sensor
+            entity: sensor.around_humidity
+            graph: line
+      - type: thermostat
+        entity: climate.around01_ir
+      - type: entities
+        entities:
+          - entity: sensor.around_temperature
+          - entity: sensor.around_humidity
+          - entity: sensor.around_illuminance_1
+            name: 회의테이블 조도
+          - entity: sensor.around_illuminance_2
+      - type: grid
+        cards:
+          - type: button
+            entity: binary_sensor.around_door1
+            show_state: true
+            name: 창문
+          - type: button
+            entity: binary_sensor.around_door2
+            show_state: true
+            name: 현관
+          - type: button
+            entity: binary_sensor.around_door3
+            show_state: true
+            name: 화장실
+      - type: grid
+        cards:
+          - type: button
+            entity: binary_sensor.around_motion1
+            show_state: true
+            name: 회의테이블
+          - type: button
+            entity: binary_sensor.around_motion2
+            show_state: true
+            name: 창고
+      - type: button
+        tap_action:
+          action: toggle
+        entity: switch.around_permitjoin
+  - title: 목금토 건축사무소
+    path: mokgeumto
+    icon: mdi:smoke-detector-variant
+    visible:
+      - user: e06cb3189f6146cbb7d7481d4178456e
+      - user: b3b1002ca0b641cc82df094d69487685
+    badges: []
+    cards:
+      - type: grid
+        cards:
+          - type: button
+            tap_action:
+              action: toggle
+            entity: switch.mokgeumto_light1_1
+            show_state: true
+            icon: mdi:lightbulb-on-outline
+            name: 대표이사실 전등
+          - type: button
+            tap_action:
+              action: toggle
+            entity: switch.mokgeumto_light1_2
+            show_state: true
+            icon: mdi:lightbulb-on-outline
+            name: 사무실 전등
+          - type: button
+            tap_action:
+              action: toggle
+            entity: switch.mokgeumto_light1_3
+            show_state: true
+            icon: mdi:lightbulb-on-outline
+            name: 복도등
+          - type: button
+            tap_action:
+              action: toggle
+            entity: switch.mokgeumto_light1_4
+            show_state: true
+            icon: mdi:lightbulb-on-outline
+            name: light1_4
+          - type: button
+            tap_action:
+              action: toggle
+            entity: switch.mokgeumto_light2_1
+            show_state: true
+            icon: mdi:lightbulb-on-outline
+            name: 입구 간접등
+          - type: button
+            tap_action:
+              action: toggle
+            entity: switch.mokgeumto_light2_2
+            show_state: true
+            icon: mdi:lightbulb-on-outline
+            name: 탕비실 중앙
+          - type: button
+            tap_action:
+              action: toggle
+            entity: switch.mokgeumto_light2_3
+            show_state: true
+            icon: mdi:lightbulb-on-outline
+            name: 회의실
+          - type: button
+            tap_action:
+              action: toggle
+            entity: switch.mokgeumto_light2_4
+            show_state: true
+            icon: mdi:lightbulb-on-outline
+            name: light2_4
+          - type: button
+            tap_action:
+              action: toggle
+            entity: switch.mokgeumto_light3_1
+            show_state: true
+            icon: mdi:lightbulb-on-outline
+            name: 현관출입문
+          - type: button
+            tap_action:
+              action: toggle
+            entity: switch.mokgeumto_light3_2
+            show_state: true
+            icon: mdi:lightbulb-on-outline
+            name: 탕비실 간접등
+          - type: button
+            tap_action:
+              action: toggle
+            entity: switch.mokgeumto_light3_3
+            show_state: true
+            icon: mdi:lightbulb-on-outline
+            name: 현관간접등
+          - type: button
+            tap_action:
+              action: toggle
+            entity: switch.mokgeumto_light3_4
+            show_state: true
+            icon: mdi:lightbulb-on-outline
+            name: light3_4
+          - type: button
+            tap_action:
+              action: toggle
+            entity: switch.mokgeumto_light4_1
+            icon: mdi:lightbulb-on-outline
+            show_state: true
+            name: 창고
+        square: false
+      - type: grid
+        cards:
+          - type: button
+            entity: binary_sensor.mokgeumto_door1
+            show_state: true
+            name: 도어센서
+          - type: button
+            entity: binary_sensor.mokgeumto_door2
+            name: 도어2
+            show_state: true
+          - type: button
+            entity: binary_sensor.mokgeumto_motion1
+            show_state: true
+            name: 모션1
+          - type: button
+            tap_action:
+              action: toggle
+            entity: binary_sensor.mokgeumto_motion2
+            name: 모션2
+            show_state: true
+          - type: button
+            entity: binary_sensor.mokgeumto_motion3
+            name: 모션3
+            show_state: true
+          - type: button
+            entity: binary_sensor.mokgeumto_motion4
+            name: 모션4
+            show_state: true
+      - type: grid
+        cards:
+          - type: sensor
+            entity: sensor.mokgeumto_temperature
+            detail: 1
+            graph: line
+            name: 온도
+          - type: sensor
+            entity: sensor.mokgeumto_humidity
+            graph: line
+            name: 습도
+        columns: 2
+        square: false
+      - type: grid
+        cards:
+          - type: sensor
+            entity: sensor.mokgeumto_temperature_2
+            detail: 1
+            graph: line
+            name: 온도
+          - type: sensor
+            entity: sensor.mokgeumto_humidity_2
+            graph: line
+            name: 습도
+        columns: 2
+        square: false
+      - type: thermostat
+        entity: climate.mokgeumto_ir
+        name: 에어컨
+      - type: thermostat
+        entity: climate.mokgeumto_ir2
+        name: 에어컨
+      - type: markdown
+        content: |+
+          3구 스위치 / MOKGEUMTO_LI01
+          3구 스위치 / MOKGEUMTO_LI02
+          4구 스위치 / MOKGEUMTO_LI03
+          2구 스위치 / MOKGEUMTO_LI04
+          도어센서 MOKGEUMTO_DO1 
+          모션센서 MOKGEUMTO_MO01
+          온습도센서 MOKGEUMTO_TH01 
+          IR리시버 TabSpace-15B50E-5390
+
+      - type: button
+        tap_action:
+          action: toggle
+        entity: switch.mokgeumto_permitjoin
