@@ -1,4 +1,5 @@
 # configuration.yaml파일에서 !include switch.yaml 선언
+# to do, mqtt publish rule을 작성하여 endpoint별로 상태값을 저장하도록 
 # switch.yaml 
 - platform: mqtt
   unique_id: "2gang1" # unique_id와 name은 동일하게 설정
