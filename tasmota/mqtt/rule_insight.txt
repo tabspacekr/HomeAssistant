@@ -1,3 +1,57 @@
-Rule2 ON ZBReceived#27_000_sw2#Endpoint DO var1 %value% ENDON ON ZBReceived#27_000_sw2#Power DO publish tele/27_000/27_000_sw2/Switch2_%var1% {"Endpoint":%var1%,"Power":%value%} ENDON
+Rule2 ON ZBReceived#TEST_SW_01#Endpoint DO var1 %value% ENDON ON ZBReceived#TEST_SW_01#Power DO publish2 tele/test_zb/TEST_SW_01/Switch%var1%/Power %value% ENDON
 
-Rule3 ON ZBReceived#27_000_sw#Endpoint DO var1 %value% ENDON ON ZBReceived#27_000_sw#Power DO publish tele/27_000/27_000_sw/Switch1_%var1% {"Endpoint":%var1%,"Power":%value%} ENDON
+Rule3 ON ZBReceived#TEST_SW_02#Endpoint DO var1 %value% ENDON ON ZBReceived#TEST_SW_02#Power DO publish2 tele/test_zb/TEST_SW_02/Switch%var1%/Power %value% ENDON
+
+
+
+- platform: mqtt
+  unique_id: "test_sw_01_1"
+  name: "test_sw_01_1"
+  availability_topic: "tele/test_zb/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  state_topic: "tele/test_zb/TEST_SW_01/Switch1/Power"
+  state_on: "1"
+  state_off: "0"
+  command_topic: "cmnd/test_zb/ZbSend"
+  payload_on: '{ "Device":"TEST_SW_01", "Endpoint":"1", "send":{"Power":"On"} }'
+  payload_off: '{ "Device":"TEST_SW_01", "Endpoint":"1", "send":{"Power":"Off"} }'
+
+- platform: mqtt
+  unique_id: "test_sw_01_2"
+  name: "test_sw_01_2"
+  availability_topic: "tele/test_zb/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  state_topic: "tele/test_zb/TEST_SW_01/Switch2/Power"
+  state_on: "1"
+  state_off: "0"
+  command_topic: "cmnd/test_zb/ZbSend"
+  payload_on: '{ "Device":"TEST_SW_01", "Endpoint":"2", "send":{"Power":"On"} }'
+  payload_off: '{ "Device":"TEST_SW_01", "Endpoint":"2", "send":{"Power":"Off"} }'
+
+- platform: mqtt
+  unique_id: "test_sw_02_1"
+  name: "test_sw_02_1"
+  availability_topic: "tele/test_zb/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  state_topic: "tele/test_zb/TEST_SW_02/Switch1/Power"
+  state_on: "1"
+  state_off: "0"
+  command_topic: "cmnd/test_zb/ZbSend"
+  payload_on: '{ "Device":"TEST_SW_02", "Endpoint":"1", "send":{"Power":"On"} }'
+  payload_off: '{ "Device":"TEST_SW_02", "Endpoint":"1", "send":{"Power":"Off"} }'
+
+- platform: mqtt
+  unique_id: "test_sw_02_2"
+  name: "test_sw_02_2"
+  availability_topic: "tele/test_zb/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  state_topic: "tele/test_zb/TEST_SW_02/Switch2/Power"
+  state_on: "1"
+  state_off: "0"
+  command_topic: "cmnd/test_zb/ZbSend"
+  payload_on: '{ "Device":"TEST_SW_02", "Endpoint":"2", "send":{"Power":"On"} }'
+  payload_off: '{ "Device":"TEST_SW_02", "Endpoint":"2", "send":{"Power":"Off"} }'
