@@ -1,0 +1,3 @@
+Rule2 ON ZBReceived#27_000_sw2#Endpoint DO var1 %value% ENDON ON ZBReceived#27_000_sw2#Power DO publish tele/27_000/27_000_sw2/Switch2_%var1% {"Endpoint":%var1%,"Power":%value%} ENDON
+
+Rule3 ON ZBReceived#27_000_sw#Endpoint DO var1 %value% ENDON ON ZBReceived#27_000_sw#Power DO publish tele/27_000/27_000_sw/Switch1_%var1% {"Endpoint":%var1%,"Power":%value%} ENDON
