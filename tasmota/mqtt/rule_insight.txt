@@ -2,8 +2,6 @@ Rule2 ON ZBReceived#TEST_SW_01#Endpoint DO var1 %value% ENDON ON ZBReceived#TEST
 
 Rule3 ON ZBReceived#TEST_SW_02#Endpoint DO var1 %value% ENDON ON ZBReceived#TEST_SW_02#Power DO publish2 tele/test_zb/TEST_SW_02/Switch%var1%/Power %value% ENDON
 
-
-
 - platform: mqtt
   unique_id: "test_sw_01_1"
   name: "test_sw_01_1"
