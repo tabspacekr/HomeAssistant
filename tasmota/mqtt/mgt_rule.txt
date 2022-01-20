@@ -1,0 +1,14 @@
+#목금토 최종
+Rule2 ON ZBReceived#MOKGEUMTO_LI01#Endpoint DO var1 %value% ENDON ON ZBReceived#MOKGEUMTO_LI01#Power DO publish2 tele/MOKGEUMTO/MOKGEUMTO_LI01/Switch%var1%/Power %value% ENDON ON ZBReceived#MOKGEUMTO_LI02#Endpoint DO var1 %value% ENDON ON ZBReceived#MOKGEUMTO_LI02#Power DO publish2 tele/MOKGEUMTO/MOKGEUMTO_LI02/Switch%var1%/Power %value% ENDON ON ZBReceived#MOKGEUMTO_LI03#Endpoint DO var1 %value% ENDON ON ZBReceived#MOKGEUMTO_LI03#Power DO publish2 tele/MOKGEUMTO/MOKGEUMTO_LI03/Switch%var1%/Power %value% ENDON ON ZBReceived#MOKGEUMTO_LI04#Endpoint DO var1 %value% ENDON ON ZBReceived#MOKGEUMTO_LI04#Power DO publish2 tele/MOKGEUMTO/MOKGEUMTO_LI04/Switch%var1%/Power %value% ENDON
+
+#Human Readable
+Rule2 ON ZBReceived#MOKGEUMTO_LI01#Endpoint DO var1 %value% ENDON ON ZBReceived#MOKGEUMTO_LI01#Power DO publish2 tele/MOKGEUMTO/MOKGEUMTO_LI01/Switch%var1%/Power %value% ENDON
+ ON ZBReceived#MOKGEUMTO_LI02#Endpoint DO var1 %value% ENDON ON ZBReceived#MOKGEUMTO_LI02#Power DO publish2 tele/MOKGEUMTO/MOKGEUMTO_LI02/Switch%var1%/Power %value% ENDON
+ ON ZBReceived#MOKGEUMTO_LI03#Endpoint DO var1 %value% ENDON ON ZBReceived#MOKGEUMTO_LI03#Power DO publish2 tele/MOKGEUMTO/MOKGEUMTO_LI03/Switch%var1%/Power %value% ENDON
+ ON ZBReceived#MOKGEUMTO_LI04#Endpoint DO var1 %value% ENDON ON ZBReceived#MOKGEUMTO_LI04#Power DO publish2 tele/MOKGEUMTO/MOKGEUMTO_LI04/Switch%var1%/Power %value% ENDON
+
+#Do not use. Tasmota cannot support Rule4/Rule5. Just use Rule1/Rule2/Rule3.
+Rule2 ON ZBReceived#MOKGEUMTO_LI01#Endpoint DO var1 %value% ENDON ON ZBReceived#MOKGEUMTO_LI01#Power DO publish2 tele/MOKGEUMTO/MOKGEUMTO_LI01/Switch%var1%/Power %value% ENDON
+Rule3 ON ZBReceived#MOKGEUMTO_LI02#Endpoint DO var1 %value% ENDON ON ZBReceived#MOKGEUMTO_LI02#Power DO publish2 tele/MOKGEUMTO/MOKGEUMTO_LI02/Switch%var1%/Power %value% ENDON
+Rule4 ON ZBReceived#MOKGEUMTO_LI03#Endpoint DO var1 %value% ENDON ON ZBReceived#MOKGEUMTO_LI03#Power DO publish2 tele/MOKGEUMTO/MOKGEUMTO_LI03/Switch%var1%/Power %value% ENDON
+Rule5 ON ZBReceived#MOKGEUMTO_LI04#Endpoint DO var1 %value% ENDON ON ZBReceived#MOKGEUMTO_LI04#Power DO publish2 tele/MOKGEUMTO/MOKGEUMTO_LI04/Switch%var1%/Power %value% ENDON
