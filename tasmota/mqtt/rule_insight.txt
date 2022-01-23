@@ -1,4 +1,8 @@
+#working ver1
 Rule2 ON ZBReceived#TEST_SW_01#Endpoint DO var1 %value% ENDON ON ZBReceived#TEST_SW_01#Power DO publish2 tele/test_zb/TEST_SW_01/Switch%var1%/Power %value% ENDON
+#edit ver2
+Rule2 ON ZBReceived#TEST_SW_01#Endpoint DO var1 %value% ENDON ON ZBReceived#TEST_SW_01#Power var2 %value% DO publish2 tele/test_zb/TEST_SW_01/Switch%var1%/Power %var2% ENDON
+
 
 Rule3 ON ZBReceived#TEST_SW_02#Endpoint DO var1 %value% ENDON ON ZBReceived#TEST_SW_02#Power DO publish2 tele/test_zb/TEST_SW_02/Switch%var1%/Power %value% ENDON
 
