@@ -1,0 +1,10 @@
+lookstore_relay_on_time:
+  name: lookstore_relay_on
+  has_date: false
+  has_time: true
+  initial: '17:00'
+lookstore_relay_off_time:
+  name: lookstore_relay_off
+  has_date: false
+  has_time: true
+  initial: '12:30'
