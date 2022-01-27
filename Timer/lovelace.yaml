@@ -1,0 +1,31 @@
+type: vertical-stack
+cards:
+  - type: horizontal-stack
+    cards:
+      - type: button
+        tap_action:
+          action: toggle
+        entity: automation.rugseutoeo_ganpan_on_jadonghwa
+        show_state: true
+        name: 간판 ON 타이머
+        icon: mdi:electric-switch-closed
+        show_icon: true
+      - type: button
+        tap_action:
+          action: toggle
+        entity: automation.rugseutoeo_ganpan_off_jadonghwa
+        name: 간판 OFF 타이머
+        show_state: true
+        icon: mdi:electric-switch
+  - type: horizontal-stack
+    cards:
+      - type: entity
+        entity: input_datetime.lookstore_relay_on_time
+        state_color: false
+        theme: Google Point Theme
+        name: 간판 ON 시간
+      - type: entity
+        entity: input_datetime.lookstore_relay_off_time
+        state_color: false
+        theme: Google Point Theme
+        name: 간판 OFF 시간
