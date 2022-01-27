@@ -1,0 +1,24 @@
+- id: '1643250751386'
+  alias: 룩스토어 간판 ON 자동화
+  description: ''
+  trigger:
+  - platform: time
+    at: input_datetime.lookstore_relay_on_time
+  condition: []
+  action:
+  - service: switch.turn_on
+    target:
+      entity_id: switch.lookstore_relay
+  mode: single
+- id: '1643250776856'
+  alias: 룩스토어 간판 OFF 자동화
+  description: ''
+  trigger:
+  - platform: time
+    at: input_datetime.lookstore_relay_off_time
+  condition: []
+  action:
+  - service: switch.turn_off
+    target:
+      entity_id: switch.lookstore_relay
+  mode: single
