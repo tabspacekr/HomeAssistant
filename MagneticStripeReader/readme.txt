@@ -5,9 +5,9 @@ SONOFF GPIO Port(ERX, ETX 활용)를 통한 Tasmota 제어(Magnetic Door Sensor,
 
 향후 근태관리 등으로 활용이 가능하도록 NFC(RFID)등 기능 보완 예정
 지정된 온습도에 따라 제어가 가능한 자동제어 기능 보강
-전등 및 climate domain에 사용이 가능한 타이머 기능 보강 예정
+전등 및 climate domain에 사용이 가능한 타이머 기능 보강 예정 (input_datetime 선언)
 기타 기능 보완 예정 (인터넷 또는 WIFI가 단절되더라도 exit버튼으로 퇴실가능하도록)
-tasmota rule설정을 통한 네트워크단절시에 릴레이제어
+-> tasmota rule설정을 통한 네트워크단절시에 릴레이제어
 
 설치 필요 패키지
 sudo apt install python3
