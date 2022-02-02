@@ -1,3 +1,5 @@
+#configuration에 input_datetime.yaml을 선언한 후 사용
+#시간만 사용할 경우, has_date를 false로 두어야 함
 lookstore_relay_on_time:
   name: lookstore_relay_on
   has_date: false
