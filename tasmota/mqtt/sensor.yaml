@@ -1,0 +1,103 @@
+- platform: mqtt
+  name: "nori_1f_food_temperature"
+  unique_id: "nori_1f_food_temperature"
+  state_topic: "tele/nori_back/nori_1f_food_th/SENSOR"
+  device_class: temperature
+  unit_of_measurement: "°C"
+  value_template: >
+    {% if value_json.ZbReceived['nori_1f_food_th'].Temperature == NULL %}
+      {{ states('sensor.nori_1f_food_temperature') }}
+    {% else %}
+      {{ value_json.ZbReceived['nori_1f_food_th'].Temperature }}
+    {% endif %}
+  
+- platform: mqtt
+  name: "nori_1f_food_humidity"
+  unique_id: "nori_1f_food_humidity"
+  state_topic: "tele/nori_back/nori_1f_food_th/SENSOR"
+  device_class: humidity
+  unit_of_measurement: "%"
+  value_template: >
+    {% if value_json.ZbReceived['nori_1f_food_th'].Humidity == NULL %}
+      {{ states('sensor.nori_1f_food_humidity') }}
+    {% else %}
+      {{ value_json.ZbReceived['nori_1f_food_th'].Humidity }}
+    {% endif %}
+  
+- platform: mqtt
+  name: "nori_1f_kids_temperature"
+  unique_id: "nori_1f_kids_temperature"
+  state_topic: "tele/nori_back/nori_1f_kids_th/SENSOR"
+  device_class: temperature
+  unit_of_measurement: "°C"
+  value_template: >
+    {% if value_json.ZbReceived['nori_1f_kids_th'].Temperature == NULL %}
+      {{ states('sensor.nori_1f_kids_temperature') }}
+    {% else %}
+      {{ value_json.ZbReceived['nori_1f_kids_th'].Temperature }}
+    {% endif %}
+  
+- platform: mqtt
+  name: "nori_1f_kids_humidity"
+  unique_id: "nori_1f_kids_humidity"
+  state_topic: "tele/nori_back/nori_1f_kids_th/SENSOR"
+  device_class: humidity
+  unit_of_measurement: "%"
+  value_template: >
+    {% if value_json.ZbReceived['nori_1f_kids_th'].Humidity == NULL %}
+      {{ states('sensor.nori_1f_kids_humidity') }}
+    {% else %}
+      {{ value_json.ZbReceived['nori_1f_kids_th'].Humidity }}
+    {% endif %}
+  
+- platform: mqtt
+  name: "nori_2f_kids_temperature"
+  unique_id: "nori_2f_kids_temperature"
+  state_topic: "tele/nori_back/nori_2f_kids_th/SENSOR"
+  device_class: temperature
+  unit_of_measurement: "°C"
+  value_template: >
+    {% if value_json.ZbReceived['nori_2f_kids_th'].Temperature == NULL %}
+      {{ states('sensor.nori_2f_kids_temperature') }}
+    {% else %}
+      {{ value_json.ZbReceived['nori_2f_kids_th'].Temperature }}
+    {% endif %}
+
+- platform: mqtt
+  name: "nori_2f_kids_humidity"
+  unique_id: "nori_2f_kids_humidity"
+  state_topic: "tele/nori_back/nori_2f_kids_th/SENSOR"
+  device_class: humidity
+  unit_of_measurement: "%"
+  value_template: >
+    {% if value_json.ZbReceived['nori_2f_kids_th'].Humidity == NULL %}
+      {{ states('nori_2f_kids_humidity') }}
+    {% else %}
+      {{ value_json.ZbReceived['nori_2f_kids_th'].Humidity }}
+    {% endif %}
+  
+- platform: mqtt
+  name: "nori_2f_vega_temperature"
+  unique_id: "nori_2f_vega_temperature"
+  state_topic: "tele/nori_back/nori_2f_vega_th/SENSOR"
+  device_class: temperature
+  unit_of_measurement: "°C"
+  value_template: >
+    {% if value_json.ZbReceived['nori_2f_vega_th'].Temperature == NULL %}
+      {{ states('sensor.nori_2f_vega_temperature') }}
+    {% else %}
+      {{ value_json.ZbReceived['nori_2f_vega_th'].Temperature }}
+    {% endif %}
+
+- platform: mqtt
+  name: "nori_2f_vega_humidity"
+  unique_id: "nori_2f_vega_humidity"
+  state_topic: "tele/nori_back/nori_2f_vega_th/SENSOR"
+  device_class: humidity
+  unit_of_measurement: "%"
+  value_template: >
+    {% if value_json.ZbReceived['nori_2f_vega_th'].Humidity == NULL %}
+      {{ states('sensor.nori_2f_vega_humidity') }}
+    {% else %}
+      {{ value_json.ZbReceived['nori_2f_vega_th'].Humidity }}
+    {% endif %}
