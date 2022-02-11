@@ -1,9 +1,11 @@
-고퀄(헤이홈) 스마트 리모콘 허브 펌웨어 백업
+ESP8266칩 기반 Tuya 고퀄(헤이홈) 스마트 리모콘 허브(인증명 GKW-IR021) 펌웨어 백업
 
 tasmotizer의 backup기능이 정상적으로 동작하지 않아, esptool을 통한 백업 방식 사용
 
 github repository: https://github.com/espressif/esptool
 flashing tool (win64) : https://github.com/espressif/esptool/releases/download/v3.2/esptool-v3.2-win64.zip
+
+*주의* Tuya에서 ESP8266칩 기반의 펌웨어 조작을 막기 위해, 자체 WiFi칩으로 점차적으로 대체하고 있으므로, tasmotizer 작업이 불가능할 수도 있
 
 #백업
 esptool -b 115200 --port COM4 read_flash 0x000000 0x100000 flash_1M.bin
