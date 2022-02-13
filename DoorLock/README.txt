@@ -14,3 +14,4 @@ magnetic lock 방식 또한, 접점제어 형태로 적용 가능
 
 sonoff re5v1c tasmota 적용 시 참고사항
 - inching mode 설정이 필요함. (tasmota console에서 inching설정)
+- 또는 automation에서 unlock 해제 시에 5초 뒤 다시 lock을 하는 형태로 구성
