@@ -9,6 +9,10 @@ SONOFF GPIO Port(ERX, ETX 활용)를 통한 Tasmota 제어(Magnetic Door Sensor,
 기타 기능 보완 예정 (인터넷 또는 WIFI가 단절되더라도 exit버튼으로 퇴실가능하도록)
 -> tasmota rule설정을 통한 네트워크단절시에 릴레이제어
 
+딜레이 이슈 보강
+
+리눅스 로그 정리 및 자동 재부팅 기능 적용
+
 설치 필요 패키지
 sudo apt install python3
 sudo apt install python3-pip
