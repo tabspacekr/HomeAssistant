@@ -1,4 +1,4 @@
-무인매장 신용/체크카드 기반 마그네틱 출입관리기
+무인매장 신용/체크카드/삼성페이 기반 마그네틱 출입관리기
 
 데드볼트 + 퇴실(EXIT)버튼 + SONOFF InchingRelay + OrangePi Zero LTS + MSR100 으로 출입관리기 구현
 SONOFF GPIO Port(ERX, ETX 활용)를 통한 Tasmota 제어(Magnetic Door Sensor, Exit Button 기능 구현) 
