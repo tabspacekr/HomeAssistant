@@ -10,6 +10,7 @@ SONOFF GPIO Port(ERX, ETX 활용)를 통한 Tasmota 제어(Magnetic Door Sensor,
 -> tasmota rule설정을 통한 네트워크단절시에 릴레이제어
 
 딜레이 이슈 보강
+- orangepi에 wifi안테나 유무 확인 필요
 
 리눅스 로그 정리 및 자동 재부팅 기능 적용
 
