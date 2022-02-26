@@ -7,3 +7,5 @@ sip phone agent auto answer (python)
 # DO2
 android 중고폰을 통한 업사이클링 개념, 또는 전용장비 활용
 오픈소스 Linphone을 ( https://www.linphone.org/ ) 커스텀앱 
+- android 발신수신 모두 가능
+- iphone 발신만가능하고 
