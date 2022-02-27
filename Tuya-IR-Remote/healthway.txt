@@ -1,3 +1,5 @@
+tasmota용 ir코드임
+
 my_user_config.h
 IR_RCV_BUFFER_SIZE 1000
 IR_RCV_TIMEOUT 50
