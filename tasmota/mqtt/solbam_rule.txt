@@ -2,4 +2,4 @@ Rule2 ON ZBReceived#LS01#Endpoint DO var1 %value% ENDON ON ZBReceived#LS01#Power
  ON ZBReceived#LS02#Endpoint DO var1 %value% ENDON ON ZBReceived#LS02#Power DO publish2 tele/solbam_zb/LS02/Switch%var1%/Power %value% ENDON
  ON ZBReceived#LS03#Endpoint DO var1 %value% ENDON ON ZBReceived#LS03#Power DO publish2 tele/solbam_zb/LS03/Switch%var1%/Power %value% ENDON
  ON ZBReceived#LS04#Endpoint DO var1 %value% ENDON ON ZBReceived#LS04#Power DO publish2 tele/solbam_zb/LS04/Switch%var1%/Power %value% ENDON
- ON ZBReceived#LS05#Endpoint DO var1 %value% ENDON ON ZBReceived#LS05#Power DO publish2 tele/solbam_zb/LS04/Switch%var1%/Power %value% ENDON
+ ON ZBReceived#LS05#Endpoint DO var1 %value% ENDON ON ZBReceived#LS05#Power DO publish2 tele/solbam_zb/LS05/Switch%var1%/Power %value% ENDON
