@@ -24,9 +24,10 @@ http:
 
 
 # 5) 결과
-# https://ha.yourdomain.com 으로 접근 가능
+https://ha.yourdomain.com:8123 으로 접근 가능
+만약 https://ha.yourdomain.com 형태로 접근하기 위해서는 네트워크장비에서 포트포워딩 필요
 
 # 6) 주의사항
 
 # 발행된 무료 ssl인증서인 let's encrypt는 인증서 유효기간이 90일로, 만료되기전에 재연장 작업을 수행해야 함.
-# 이는 단순히 supervicor의 let's encrypt addon을 restart해주는것만으로도 자동 연장처리함. 단, 연장은 만료일 x일 전에만 가능.
+# 이는 단순히 supervicor의 let's encrypt addon을 restart해주는것만으로도 자동 연장처리함. 단, 연장은 만료일 30일 전에만 가능.
