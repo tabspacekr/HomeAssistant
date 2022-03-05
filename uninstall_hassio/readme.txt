@@ -1,3 +1,4 @@
+서비스 종료 후 도커 컨테이너 삭제 후 재설치
 root@tabspace:~# systemctl stop hassio-supervisor.service 
 root@tabspace:~# systemctl stop hassio-apparmor.service 
 root@tabspace:~# docker rmi -f homeassistant/amd64-
