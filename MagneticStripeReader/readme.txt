@@ -8,7 +8,7 @@ SONOFF GPIO Port(ERX, ETX 활용)를 통한 Tasmota 제어(Magnetic Door Sensor,
 전등 및 climate domain에 사용이 가능한 타이머 기능 보강 예정 (input_datetime 선언)
 기타 기능 보완 예정 (인터넷 또는 WIFI가 단절되더라도 exit버튼으로 퇴실가능하도록)
 -> tasmota rule설정을 통한 네트워크단절시에 릴레이제어
-
+-> orange pi자체 제어 처리도 하나의 방식 고려
 딜레이 이슈 보강
 - orangepi에 wifi안테나 유무 확인 필요
 - 유선구성으로, 별도의 wifi router 적용
