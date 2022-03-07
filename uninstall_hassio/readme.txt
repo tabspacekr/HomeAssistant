@@ -1,6 +1,8 @@
-서비스 종료 후 도커 컨테이너 삭제 후 재설치
-root@tabspace:~# systemctl stop hassio-supervisor.service 
-root@tabspace:~# systemctl stop hassio-apparmor.service 
+HA 서비스 종료 
+systemctl stop hassio-supervisor.service 
+systemctl stop hassio-apparmor.service 
+
+도커 컨테이너 삭제
 root@tabspace:~# docker rmi -f homeassistant/amd64-
 homeassistant/amd64-addon-configurator:5.3.3     homeassistant/amd64-hassio-supervisor:2022.01.1
 homeassistant/amd64-addon-mariadb:2.4.0          homeassistant/amd64-hassio-supervisor:latest
@@ -23,6 +25,7 @@ Untagged: homeassistant/amd64-addon-mosquitto@sha256:5eaadc62c70a6d89fb33fd7db32
 
 ref: https://community.home-assistant.io/t/ha-supervised-cannot-uninstall-the-docker-script-installation/304250/2
 
+이후 재설치
 
 
 root@tabspace:~# docker ps
