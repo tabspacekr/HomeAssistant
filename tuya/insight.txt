@@ -1,0 +1,8 @@
+ha의 integration에서 제공하는 tuya 항목의 경우, switch제품군은 모두 인식하나 일부 장비에 대해서는 unsupported상태로 표시됨.
+
+대표적으로 도어센서, 리모콘허브가 있음.
+
+이 경우에, 도어센서는 가상의 전등스위치 디바이스를 tuya iot platform에서 생성한 후, tuya app내에서 도어센서 open/close 신호를 가상의 전등스위치에 맵핑하여 사용
+도어센서 open시에 switch 를 on, 도어센서 close시에 switch를 off하는 형태로 구성하면, ha에서 해당 상태값으로 판별이 가능함.
+
+리모콘 허브의 경우에는 tuya app에서 tab-to-run automation을 활용하여 scene을 생성하면, ha에 해당 scene이 인식됨. 해당 scene을 호출하는 형태로 부분적으로나마 unsupport장비에 대한 지원이 가능함.
