@@ -6,3 +6,10 @@ ha의 integration에서 제공하는 tuya 항목의 경우, switch제품군은 �
 도어센서 open시에 switch 를 on, 도어센서 close시에 switch를 off하는 형태로 구성하면, ha에서 해당 상태값으로 판별이 가능함.
 
 리모콘 허브의 경우에는 tuya app에서 tab-to-run automation을 활용하여 scene을 생성하면, ha에 해당 scene이 인식됨. 해당 scene을 호출하는 형태로 부분적으로나마 unsupport장비에 대한 지원이 가능함.
+
+https://support.tuya.com/en/help/_detail/K9q79msw3accz
+- What are the quantity requirements regarding the features or other aspects of an all-in-one app?
+
+https://support.tuya.com/en/help/_detail/K9d1qg76wki07
+- How many devices can I add to your app? (2021-09-26 18:23:18)
+- Dear user, we are sorry for your inconvenience. My device list in the app supports up to 200 devices, and you can create up to 20 home, so adding together is 4000 devices. But the router has a bottleneck, and a router hangs about 10 (depending on the router performance)
