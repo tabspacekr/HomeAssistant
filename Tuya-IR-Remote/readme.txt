@@ -1,5 +1,6 @@
 Tuya 기반의 국내유통 IoT디바이스(헤이홈 등) IR remote 제품은 tasmota에서 YTF로 설정
 삼각형모양 리모콘허브 LQ-Y08도 동일함
+- 현재 Tuya 자체적으로 ESP8266기반의 칩셋을 유통하지 않아, 신규버전부터는 사용 불가
 
 tasmota로 flashing 한 후 module을 YTF IR(62)로 변경 후 mqtt로 제어 (mqtt broker에서 설정한 정보 입력)
 - firmware upgrade 모드 진입시에 gpio0번을 ground로 같이 넣어주어야함
