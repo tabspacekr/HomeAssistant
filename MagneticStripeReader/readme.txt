@@ -16,14 +16,17 @@ SONOFF GPIO Port(ERX, ETX 활용)를 통한 Tasmota 제어(Magnetic Door Sensor,
 - 유선구성으로, 별도의 wifi router 적용
 
 리눅스 로그 정리 및 자동 재부팅 기능 적용
+- crontab
 
 설치 필요 패키지
 sudo apt install python3
 sudo apt install python3-pip
+sudo apt install mpg123
 sudo pip3 install usb
 sudo pip3 install pyusb
 sudo pip3 install pymysql
 sudo pip3 install requests
+
 
 작업완료 후 시간을 정상적으로 한국표준시로 적용하기 위해 linux console에서 아래 명령어 입력
 timedatectl set-timezone Asia/Seoul
