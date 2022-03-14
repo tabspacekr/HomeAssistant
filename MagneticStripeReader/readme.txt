@@ -16,7 +16,7 @@ SONOFF GPIO Port(ERX, ETX 활용)를 통한 Tasmota 제어(Magnetic Door Sensor,
 - 유선구성으로, 별도의 wifi router 적용
 
 리눅스 로그 정리 및 자동 재부팅 기능 적용
-- crontab
+- crontab 설정에서 reboot -f
 
 설치 필요 패키지
 sudo apt install python3
