@@ -1,0 +1,1 @@
+Rule2 ON ZBReceived#xiaomi_switch#Endpoint DO var1 %value% ENDON ON ZBReceived#xiaomi_switch#Power DO publish2 tele/sdm_zb/xiaomi_switch/Switch%var1%/Power %value% ENDON
