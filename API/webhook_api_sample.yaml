@@ -1,6 +1,6 @@
 https://www.home-assistant.io/integrations/template/#examples
 
-curl을 python command로 변환
+curl을 python command로 변환 참고 url
 - https://curl.trillworks.com/
 
 # template sensor 추가 configuration.yaml에 아래 추가
