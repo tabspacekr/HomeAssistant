@@ -62,7 +62,9 @@ chrMap = {
     37: '8',
     38: '9',
     39: '0',
-    40: 'KEY_ENTER',
+    #40: 'KEY_ENTER',
+    # 마그네틱상에 KEY_ENTER가 있으면 오동작 발생 위험이 있으므로 맵핑된 코드를 임의의 케릭터로 변경
+    40: '_',
     41: 'KEY_ESCAPE',
     42: 'KEY_BACKSPACE',
     43: 'KEY_TAB',
@@ -118,7 +120,9 @@ shiftchrMap = {
     37: '*',
     38: '(',
     39: ')',
-    40: 'KEY_ENTER',
+    #40: 'KEY_ENTER',
+    # 마그네틱상에 KEY_ENTER가 있으면 오동작 발생 위험이 있으므로 맵핑된 코드를 임의의 케릭터로 변경
+    40: '_',
     41: 'KEY_ESCAPE',
     42: 'KEY_BACKSPACE',
     43: 'KEY_TAB',
