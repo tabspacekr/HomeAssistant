@@ -1,5 +1,6 @@
 # configuration.yaml에 아래 항목 추가
-# 통계DB 저장용
+# shell_command를 생성하여, curl command로 외부 웹서버로 정보 호출, 이를 통해 통계DB에 대한 external db저장이 가능
+# 향후, parameter를 통한 공용 php파일로 data insert가 가능하도록 구현 예정
 shell_command:
   insert_db_mo01: curl http://call.url.com/api/HARRYPHOTO_BG_MO_01.php
   insert_db_mo02: curl http://call.url.com/api/HARRYPHOTO_BG_MO_02.php
