@@ -1,3 +1,5 @@
+#루트 권한으로 작업
+sudo -i
 cd /usr/share/hassio/homeassistant/custom_components/
 sudo git clone https://github.com/hristo-atanasov/Tasmota-IRHVAC.git
 cd Tasmota-IRHVAC/
@@ -5,3 +7,4 @@ custom_components/
 sudo mv tasmota_irhvac ../../
 cd ..
 sudo rm -rf Tasmota-IRHVAC/
+#작업 후 ha core restart 하여 custom_component/tasmota_irhvac 
