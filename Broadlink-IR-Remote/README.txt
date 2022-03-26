@@ -8,4 +8,4 @@ climate: !include climate.yaml
 
 국내 유통되는 삼성/LG 모델 등에서 범용적으로 사용 가능합니다.
 로컬 구성이 아닌 클라우드기반으로 HA가 설치된 경우에는 동작하지 않습니다.
-- integration 에서 ip기반 동작만 지원하기때문
+- 사유 : smartir integration 에서 broadlink local control 기능은 ip기반 동작만 지원하기때문
