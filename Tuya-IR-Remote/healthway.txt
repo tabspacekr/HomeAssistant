@@ -1,4 +1,5 @@
-tasmota용 ir코드임
+tasmota용 ir코드
+- receive를 여러번 수신하여, 가장 많이 수신된 code를 발신하는 전통적인 방식의 code study
 
 my_user_config.h
 IR_RCV_BUFFER_SIZE 1000
