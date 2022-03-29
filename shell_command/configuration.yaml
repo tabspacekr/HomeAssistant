@@ -1,4 +1,6 @@
 # configuration.yaml에 아래 항목 추가
+# shell_command: !include shell_command.yaml 형태로 분리하여 configuration.yaml파일을 간결하게 가능함
+# shell_command code 추가 시에 ha core system restart 필요함
 # shell_command를 생성하여, curl command로 외부 웹서버로 정보 호출, 이를 통해 통계DB에 대한 external db저장이 가능
 # 향후, parameter를 통한 공용 php파일로 data insert가 가능하도록 구현 예정
 shell_command:
