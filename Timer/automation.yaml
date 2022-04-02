@@ -1,3 +1,4 @@
+#automation.yaml에 추가하거나, 아래 코드를 참고하여 gui환경에서 trigger/action
 - id: '1643250751386'
   alias: 룩스토어 간판 ON 자동화
   description: ''
