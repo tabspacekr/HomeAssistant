@@ -1,4 +1,7 @@
-# 참고 : https://www.home-assistant.io/integrations/http/
+# ref : https://www.home-assistant.io/integrations/http/
+# 이미 도메인을 구입한 경우에 해당 도메인의 A레코드를 공인IP로 추가하여 https설정
+# 또는 duckdns등을 통하여 무료 2차 도메인을 할당 받은 후에 https설정
+# https를 설정한 후에야 컴패니언 앱의 PUSH서비스를 제공받을 수 있음
 
 # 1) ha 로그인 후 supervisor에서 let's encrypt addon 설치
 
