@@ -1,4 +1,5 @@
-#루트 권한으로 작업
+# 루트 권한으로 작업
+# HA에서 MQTT Publish Message가 안되는 경우, rm -rf /usr/share/hassio/homeassistant/custom_components/tasmota_irhaac/ 로 제거 후 재설치
 sudo -i
 cd /usr/share/hassio/homeassistant/custom_components/
 sudo git clone https://github.com/hristo-atanasov/Tasmota-IRHVAC.git
