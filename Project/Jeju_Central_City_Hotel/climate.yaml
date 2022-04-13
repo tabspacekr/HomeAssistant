@@ -1,0 +1,36 @@
+# https://www.home-assistant.io/integrations/generic_thermostat/
+- platform: generic_thermostat
+  name: JEJU_001_HEATER
+  heater: input_boolean.jeju_001_relay_c
+  target_sensor: sensor.JEJU_001_TH_temperature
+  min_temp: 15
+  max_temp: 30
+  ac_mode: false
+  target_temp: 16
+  cold_tolerance: 0.3
+  hot_tolerance: 0.3
+  min_cycle_duration:
+    seconds: 5
+  keep_alive:
+    minutes: 3
+  initial_hvac_mode: "off"
+  away_temp: 18 #퇴실 시 온도
+  precision: 0.1
+  
+- platform: generic_thermostat
+  name: JEJU_001_COOLER
+  heater: input_boolean.jeju_001_relay_c
+  target_sensor: sensor.JEJU_001_TH_temperature
+  min_temp: 15
+  max_temp: 30
+  ac_mode: true
+  target_temp: 18
+  cold_tolerance: 0.3
+  hot_tolerance: 0.3
+  min_cycle_duration:
+    seconds: 5
+  keep_alive:
+    minutes: 3
+  initial_hvac_mode: "off"
+  away_temp: 28 #퇴실 시 온도
+  precision: 0.1
