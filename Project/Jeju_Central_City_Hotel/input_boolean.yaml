@@ -1,0 +1,29 @@
+jeju_001_relay_a:
+  name: "001호_릴레이_A_콘센트전열"
+  icon: mdi:power-plug-outline
+  initial: false
+  
+jeju_001_relay_b:
+  name: "001호_릴레이_B_화장실전열"
+  icon: mdi:power-plug-outline
+  initial: false
+  
+jeju_001_relay_c:
+  name: "001호_릴레이_C_바닥난방"
+  icon: mdi:radiator
+  initial: false
+  
+jeju_001_light:
+  name: "001호_웰컴조명"
+  icon: mdi:lightbulb-group
+  initial: false
+  
+jeju_001_havc_heat:
+  name: "001호_난방모드"
+  icon: mdi:car-seat-heater
+  initial: false
+
+jeju_001_havc_cool:
+  name: "001호_냉방모드"
+  icon: mdi:car-seat-cooler
+  initial: false
