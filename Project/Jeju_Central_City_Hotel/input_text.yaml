@@ -1,0 +1,9 @@
+jeju_001_keyinsert:
+  name: "객실상태_001호"
+  icon: mdi:cards
+  initial: "알수 없음"
+  
+jeju_001_havc_mode:
+  name: "냉난방모드_001호"
+  icon: mdi:home-thermometer
+  initial: "알수 없음"
