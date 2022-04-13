@@ -1,0 +1,223 @@
+title: TabSpace
+views:
+  - theme: Backend-selected
+    path: poc_room
+    title: POC_ROOM
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: markdown
+            content: 객실 상태를 조회할 수 있습니다.
+            title: 객실현황
+          - type: entity
+            entity: input_text.jeju_001_keyinsert
+            state_color: false
+          - square: false
+            columns: 3
+            type: grid
+            cards:
+              - show_name: true
+                show_icon: true
+                type: button
+                entity: binary_sensor.jeju_001_ds_contact
+                name: 도어센서
+                show_state: true
+              - show_name: true
+                show_icon: true
+                type: button
+                tap_action:
+                  action: toggle
+                entity: switch.jeju_001_sw3_l1
+                name: 방해금지
+                icon: mdi:close-octagon
+                show_state: true
+              - show_name: true
+                show_icon: true
+                type: button
+                tap_action:
+                  action: toggle
+                entity: switch.jeju_001_sw3_l2
+                name: 청소요청
+                icon: mdi:vacuum
+                show_state: true
+              - show_name: true
+                show_icon: true
+                type: button
+                tap_action:
+                  action: toggle
+                entity: input_boolean.jeju_001_relay_a
+                name: 객실전열
+                show_state: true
+              - show_name: true
+                show_icon: true
+                type: button
+                tap_action:
+                  action: toggle
+                entity: input_boolean.jeju_001_relay_b
+                name: 화장실전열
+                show_state: true
+              - show_name: true
+                show_icon: true
+                type: button
+                tap_action:
+                  action: toggle
+                entity: input_boolean.jeju_001_relay_c
+                name: 냉난방
+                show_state: true
+          - square: true
+            columns: 4
+            type: grid
+            cards:
+              - show_name: true
+                show_icon: true
+                type: button
+                tap_action:
+                  action: toggle
+                entity: switch.jeju_001_sw1_l1
+                name: 전등1
+                show_state: true
+              - show_name: true
+                show_icon: true
+                type: button
+                tap_action:
+                  action: toggle
+                entity: switch.jeju_001_sw1_l2
+                name: 전등2
+                show_state: true
+              - show_name: true
+                show_icon: true
+                type: button
+                tap_action:
+                  action: toggle
+                entity: switch.jeju_001_sw1_l3
+                name: 전등3
+                show_state: true
+              - show_name: true
+                show_icon: true
+                type: button
+                tap_action:
+                  action: toggle
+                entity: switch.jeju_001_sw1_l4
+                name: 전등4
+                show_state: true
+          - square: false
+            columns: 3
+            type: grid
+            cards:
+              - hours_to_show: 24
+                graph: line
+                type: sensor
+                entity: sensor.jeju_001_th_temperature
+                detail: 1
+                name: 온도
+              - hours_to_show: 24
+                graph: line
+                type: sensor
+                entity: sensor.jeju_001_th_humidity
+                detail: 1
+                name: 습도
+              - hours_to_show: 24
+                graph: line
+                type: sensor
+                entity: sensor.jeju_001_th_illuminance_lux
+                detail: 1
+                name: 조도
+      - type: vertical-stack
+        cards:
+          - type: markdown
+            content: 프론트에서 세부적으로 설정할 수 있는 관리화면입니다.
+            title: 객실관리
+          - type: horizontal-stack
+            cards:
+              - type: entity
+                entity: input_text.jeju_001_havc_mode
+                name: 모드설정
+                state_color: false
+              - show_name: true
+                show_icon: true
+                type: button
+                tap_action:
+                  action: call-service
+                  service: input_boolean.turn_on
+                  service_data: {}
+                  target:
+                    entity_id: input_boolean.jeju_001_havc_heat
+                entity: input_boolean.jeju_001_havc_heat
+                show_state: true
+                name: 난방
+              - show_name: true
+                show_icon: true
+                type: button
+                entity: input_boolean.jeju_001_havc_cool
+                show_state: true
+                name: 냉방
+                tap_action:
+                  action: call-service
+                  service: input_boolean.turn_on
+                  service_data: {}
+                  target:
+                    entity_id: input_boolean.jeju_001_havc_cool
+          - type: entities
+            entities:
+              - entity: input_number.jeju_001_heat_temp_set
+                secondary_info: none
+                name: 난방모드 설정온도
+                icon: mdi:car-seat-heater
+              - entity: input_number.jeju_001_cool_temp_set
+                name: 냉방모드 설정온도
+                icon: mdi:car-seat-cooler
+          - type: conditional
+            conditions:
+              - entity: input_text.jeju_001_havc_mode
+                state: 냉방
+            card:
+              type: thermostat
+              entity: climate.jeju_001_cooler
+          - type: conditional
+            conditions:
+              - entity: input_text.jeju_001_havc_mode
+                state: 난방
+            card:
+              type: thermostat
+              entity: climate.jeju_001_heater
+      - type: vertical-stack
+        cards:
+          - type: markdown
+            content: 로그 정보를 조회할 수 있습니다.
+            title: 로그
+          - type: history-graph
+            entities:
+              - entity: input_text.jeju_001_keyinsert
+            title: 재실 현황
+            hours_to_show: 24
+          - type: logbook
+            entities:
+              - binary_sensor.jeju_001_ds_contact
+            hours_to_show: 24
+            title: 문열림 현황
+          - type: conditional
+            conditions:
+              - entity: input_text.jeju_001_havc_mode
+                state: 냉방
+            card:
+              type: history-graph
+              entities:
+                - entity: climate.jeju_001_cooler
+              title: 냉방 현황
+          - type: conditional
+            conditions:
+              - entity: input_text.jeju_001_havc_mode
+                state: 난방
+            card:
+              type: history-graph
+              entities:
+                - entity: climate.jeju_001_heater
+              title: 난방 현황
+          - type: history-graph
+            entities:
+              - entity: sensor.jeju_001_th_temperature
+              - entity: sensor.jeju_001_th_humidity
+              - entity: sensor.jeju_001_th_illuminance_lux
+            title: 온습도 조도 현황
+            hours_to_show: 24
