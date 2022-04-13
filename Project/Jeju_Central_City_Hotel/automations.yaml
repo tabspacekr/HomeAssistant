@@ -1,0 +1,915 @@
+- id: '1649819657026'
+  alias: JEJU_001_CARD_INSERT_CUSTOMER
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.card001_left
+    from: 'on'
+    to: 'off'
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 1
+  - platform: state
+    entity_id: binary_sensor.card001_right
+    from: 'on'
+    to: 'off'
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 1
+  condition:
+  - condition: state
+    entity_id: binary_sensor.card001_left
+    state: 'off'
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 1
+  - condition: state
+    entity_id: binary_sensor.card001_right
+    state: 'off'
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 1
+  action:
+  - service: input_text.set_value
+    data:
+      value: 재실
+    target:
+      entity_id: input_text.jeju_001_keyinsert
+  - service: input_boolean.turn_on
+    data: {}
+    target:
+      entity_id:
+      - input_boolean.jeju_001_relay_a
+      - input_boolean.jeju_001_relay_b
+      - input_boolean.jeju_001_light
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: input_text.jeju_001_havc_mode
+        state: 냉방
+      sequence:
+      - service: climate.turn_on
+        data: {}
+        target:
+          entity_id: climate.jeju_001_cooler
+    - conditions:
+      - condition: state
+        entity_id: input_text.jeju_001_havc_mode
+        state: 난방
+      sequence:
+      - service: climate.turn_on
+        data: {}
+        target:
+          entity_id: climate.jeju_001_heater
+    default: []
+  mode: single
+- id: '1649819834086'
+  alias: JEJU_001_CARD_INSERT_BLANK
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.card001_left
+    from: 'off'
+    to: 'on'
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 1
+  - platform: state
+    entity_id: binary_sensor.card001_right
+    from: 'off'
+    to: 'on'
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 1
+  condition:
+  - condition: state
+    entity_id: binary_sensor.card001_left
+    state: 'on'
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 1
+  - condition: state
+    entity_id: binary_sensor.card001_right
+    state: 'on'
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 1
+  - condition: state
+    entity_id: input_text.jeju_001_keyinsert
+    state: 재실
+  action:
+  - service: input_text.set_value
+    data:
+      value: 퇴실
+    target:
+      entity_id: input_text.jeju_001_keyinsert
+  - service: input_boolean.turn_off
+    data: {}
+    target:
+      entity_id:
+      - input_boolean.jeju_001_relay_a
+      - input_boolean.jeju_001_relay_b
+      - input_boolean.jeju_001_light
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: input_text.jeju_001_havc_mode
+        state: 냉방
+      sequence:
+      - service: climate.set_preset_mode
+        data:
+          preset_mode: away
+        target:
+          entity_id: climate.jeju_001_cooler
+    - conditions:
+      - condition: state
+        entity_id: input_text.jeju_001_havc_mode
+        state: 난방
+      sequence:
+      - service: climate.set_preset_mode
+        data:
+          preset_mode: away
+        target:
+          entity_id: climate.jeju_001_heater
+    default: []
+  mode: single
+- id: '1649824245557'
+  alias: JEJU_001_CARD_INSERT_CLEAN
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.card001_left
+    from: 'on'
+    to: 'off'
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 1
+  condition:
+  - condition: state
+    entity_id: binary_sensor.card001_left
+    state: 'off'
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 1
+  - condition: state
+    entity_id: binary_sensor.card001_right
+    state: 'on'
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 1
+  action:
+  - service: input_text.set_value
+    data:
+      value: 청소중
+    target:
+      entity_id: input_text.jeju_001_keyinsert
+  - service: input_boolean.turn_on
+    data: {}
+    target:
+      entity_id:
+      - input_boolean.jeju_001_relay_a
+      - input_boolean.jeju_001_relay_b
+      - input_boolean.jeju_001_light
+  mode: single
+- id: '1649824420847'
+  alias: JEJU_001_CARD_INSERT_CLEAN_OK
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.card001_right
+    from: 'on'
+    to: 'off'
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 1
+  condition:
+  - condition: state
+    entity_id: binary_sensor.card001_left
+    state: 'on'
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 1
+  - condition: state
+    entity_id: binary_sensor.card001_right
+    state: 'off'
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 1
+  action:
+  - service: input_text.set_value
+    data:
+      value: 청소완료
+    target:
+      entity_id: input_text.jeju_001_keyinsert
+  - service: input_boolean.turn_off
+    data: {}
+    target:
+      entity_id:
+      - input_boolean.jeju_001_relay_a
+      - input_boolean.jeju_001_relay_b
+      - input_boolean.jeju_001_relay_c
+      - input_boolean.jeju_001_light
+  mode: single
+- id: '1649828829203'
+  alias: JEJU_001_RELAY_A_ON
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.jeju_001_relay_a
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - service: switch.turn_on
+    data: {}
+    target:
+      entity_id:
+      - switch.jeju_001_relay1
+      - switch.jeju_001_relay2
+  mode: single
+- id: '1649828860687'
+  alias: JEJU_001_RELAY_B_ON
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.jeju_001_relay_b
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - service: switch.turn_on
+    data: {}
+    target:
+      entity_id:
+      - switch.jeju_001_relay3
+      - switch.jeju_001_relay4
+  mode: single
+- id: '1649828886604'
+  alias: JEJU_001_RELAY_C_ON
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.jeju_001_relay_c
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - service: switch.turn_on
+    data: {}
+    target:
+      entity_id:
+      - switch.jeju_001_relay5
+      - switch.jeju_001_relay6
+      - switch.jeju_001_relay7
+      - switch.jeju_001_relay8
+  mode: single
+- id: '1649828985880'
+  alias: JEJU_001_RELAY_A_OFF
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.jeju_001_relay_a
+    from: 'on'
+    to: 'off'
+  condition: []
+  action:
+  - service: switch.turn_off
+    data: {}
+    target:
+      entity_id:
+      - switch.jeju_001_relay1
+      - switch.jeju_001_relay2
+  mode: single
+- id: '1649829005432'
+  alias: JEJU_001_RELAY_B_OFF
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.jeju_001_relay_b
+    from: 'on'
+    to: 'off'
+  condition: []
+  action:
+  - service: switch.turn_off
+    data: {}
+    target:
+      entity_id:
+      - switch.jeju_001_relay3
+      - switch.jeju_001_relay4
+  mode: single
+- id: '1649829020088'
+  alias: JEJU_001_RELAY_C_OFF
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.jeju_001_relay_c
+    from: 'on'
+    to: 'off'
+  condition: []
+  action:
+  - service: switch.turn_off
+    data: {}
+    target:
+      entity_id:
+      - switch.jeju_001_relay5
+      - switch.jeju_001_relay6
+      - switch.jeju_001_relay7
+      - switch.jeju_001_relay8
+  mode: single
+- id: '1649834118145'
+  alias: JEJU_001_LIGHT_ON(WELCOME)
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.jeju_001_light
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - service: switch.turn_on
+    data: {}
+    target:
+      entity_id:
+      - switch.jeju_001_sw1_l1
+      - switch.jeju_001_sw1_l2
+      - switch.jeju_001_sw1_l3
+      - switch.jeju_001_sw1_l4
+  mode: single
+- id: '1649834148578'
+  alias: JEJU_001_LIGHT_OFF(EXIT)
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.jeju_001_light
+    from: 'on'
+    to: 'off'
+  condition: []
+  action:
+  - service: switch.turn_off
+    data: {}
+    target:
+      entity_id:
+      - switch.jeju_001_sw1_l1
+      - switch.jeju_001_sw1_l2
+      - switch.jeju_001_sw1_l3
+      - switch.jeju_001_sw1_l4
+  mode: single
+- id: '1649835731587'
+  alias: JEJU_001_HAVC_SET_HEAT
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.jeju_001_havc_heat
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - service: input_boolean.turn_off
+    data: {}
+    target:
+      entity_id: input_boolean.jeju_001_havc_cool
+  - service: climate.turn_off
+    data: {}
+    target:
+      entity_id: climate.jeju_001_cooler
+  - service: climate.set_preset_mode
+    data:
+      preset_mode: none
+    target:
+      entity_id:
+      - climate.jeju_001_cooler
+  - service: input_text.set_value
+    data:
+      value: 난방
+    target:
+      entity_id: input_text.jeju_001_havc_mode
+  - service: climate.set_temperature
+    data:
+      temperature: '{{ states(''input_number.jeju_001_heat_temp_set'') }}'
+    target:
+      entity_id: climate.jeju_001_heater
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: input_text.jeju_001_keyinsert
+        state: 재실
+      sequence:
+      - service: climate.turn_on
+        data: {}
+        target:
+          entity_id: climate.jeju_001_heater
+    default: []
+  mode: single
+- id: '1649835861391'
+  alias: JEJU_001_HAVC_SET_COOL
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.jeju_001_havc_cool
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - service: input_boolean.turn_off
+    data: {}
+    target:
+      entity_id: input_boolean.jeju_001_havc_heat
+  - service: climate.turn_off
+    data: {}
+    target:
+      entity_id: climate.jeju_001_heater
+  - service: climate.set_preset_mode
+    data:
+      preset_mode: none
+    target:
+      entity_id:
+      - climate.jeju_001_heater
+  - service: climate.set_temperature
+    data:
+      temperature: '{{ states(''input_number.jeju_001_cool_temp_set'') }}'
+    target:
+      entity_id: climate.jeju_001_cooler
+  - service: input_text.set_value
+    data:
+      value: 냉방
+    target:
+      entity_id: input_text.jeju_001_havc_mode
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: input_text.jeju_001_keyinsert
+        state: 재실
+      sequence:
+      - service: climate.turn_on
+        data: {}
+        target:
+          entity_id: climate.jeju_001_cooler
+    default: []
+  mode: single
+- id: '1649838658396'
+  alias: JEJU_001_APPLY_TEMP
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_number.jeju_001_heat_temp_set
+  - platform: state
+    entity_id: input_number.jeju_001_cool_temp_set
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: input_text.jeju_001_havc_mode
+        state: 냉방
+      sequence:
+      - service: climate.set_temperature
+        data:
+          temperature: '{{ states(''input_number.jeju_001_cool_temp_set'') }}'
+        target:
+          entity_id: climate.jeju_001_cooler
+    - conditions:
+      - condition: state
+        entity_id: input_text.jeju_001_havc_mode
+        state: 난방
+      sequence:
+      - service: climate.set_temperature
+        data:
+          temperature: '{{ states(''input_number.jeju_001_heat_temp_set'') }}'
+        target:
+          entity_id: climate.jeju_001_heater
+    default: []
+  mode: single
+- id: '1649839952457'
+  alias: JEJU_001_SW1-1_ON
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: switch.jeju_001_sw1_l1
+    from: 'off'
+    to: 'on'
+  - platform: state
+    entity_id: switch.jeju_001_sw2_l1
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: switch.jeju_001_sw1_l1
+        state: 'off'
+      sequence:
+      - service: switch.turn_on
+        data: {}
+        target:
+          entity_id: switch.jeju_001_sw1_l1
+    - conditions:
+      - condition: state
+        entity_id: switch.jeju_001_sw2_l1
+        state: 'off'
+      sequence:
+      - service: switch.turn_on
+        data: {}
+        target:
+          entity_id: switch.jeju_001_sw2_l1
+    default: []
+  mode: single
+- id: '1649839992477'
+  alias: JEJU_001_SW1-1_OFF
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: switch.jeju_001_sw1_l1
+    from: 'on'
+    to: 'off'
+  - platform: state
+    entity_id: switch.jeju_001_sw2_l1
+    from: 'on'
+    to: 'off'
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: switch.jeju_001_sw1_l1
+        state: 'on'
+      sequence:
+      - service: switch.turn_off
+        data: {}
+        target:
+          entity_id: switch.jeju_001_sw1_l1
+    - conditions:
+      - condition: state
+        entity_id: switch.jeju_001_sw2_l1
+        state: 'on'
+      sequence:
+      - service: switch.turn_off
+        data: {}
+        target:
+          entity_id: switch.jeju_001_sw2_l1
+    default: []
+  mode: single
+- id: '1649840051638'
+  alias: JEJU_001_SW1-2_OFF
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: switch.jeju_001_sw1_l2
+    from: 'on'
+    to: 'off'
+  - platform: state
+    entity_id: switch.jeju_001_sw2_l2
+    from: 'on'
+    to: 'off'
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: switch.jeju_001_sw1_l2
+        state: 'on'
+      sequence:
+      - service: switch.turn_off
+        data: {}
+        target:
+          entity_id: switch.jeju_001_sw1_l2
+    - conditions:
+      - condition: state
+        entity_id: switch.jeju_001_sw2_l2
+        state: 'on'
+      sequence:
+      - service: switch.turn_off
+        data: {}
+        target:
+          entity_id: switch.jeju_001_sw2_l2
+    default: []
+  mode: single
+- id: '1649840089334'
+  alias: JEJU_001_SW1-2_ON
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: switch.jeju_001_sw1_l2
+    from: 'off'
+    to: 'on'
+  - platform: state
+    entity_id: switch.jeju_001_sw2_l2
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: switch.jeju_001_sw1_l2
+        state: 'off'
+      sequence:
+      - service: switch.turn_on
+        data: {}
+        target:
+          entity_id: switch.jeju_001_sw1_l2
+    - conditions:
+      - condition: state
+        entity_id: switch.jeju_001_sw2_l2
+        state: 'off'
+      sequence:
+      - service: switch.turn_on
+        data: {}
+        target:
+          entity_id: switch.jeju_001_sw2_l2
+    default: []
+  mode: single
+- id: '1649840152963'
+  alias: JEJU_001_SW1-3_OFF
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: switch.jeju_001_sw1_l3
+    from: 'on'
+    to: 'off'
+  - platform: state
+    entity_id: switch.jeju_001_sw2_l3
+    from: 'on'
+    to: 'off'
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: switch.jeju_001_sw1_l3
+        state: 'on'
+      sequence:
+      - service: switch.turn_off
+        data: {}
+        target:
+          entity_id: switch.jeju_001_sw1_l3
+    - conditions:
+      - condition: state
+        entity_id: switch.jeju_001_sw2_l3
+        state: 'on'
+      sequence:
+      - service: switch.turn_off
+        data: {}
+        target:
+          entity_id: switch.jeju_001_sw2_l3
+    default: []
+  mode: single
+- id: '1649840185279'
+  alias: JEJU_001_SW1-3_ON
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: switch.jeju_001_sw1_l3
+    from: 'off'
+    to: 'on'
+  - platform: state
+    entity_id: switch.jeju_001_sw2_l3
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: switch.jeju_001_sw1_l3
+        state: 'off'
+      sequence:
+      - service: switch.turn_on
+        data: {}
+        target:
+          entity_id: switch.jeju_001_sw1_l3
+    - conditions:
+      - condition: state
+        entity_id: switch.jeju_001_sw2_l3
+        state: 'off'
+      sequence:
+      - service: switch.turn_on
+        data: {}
+        target:
+          entity_id: switch.jeju_001_sw2_l3
+    default: []
+  mode: single
+- id: '1649840213065'
+  alias: JEJU_001_SW1-4_OFF
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: switch.jeju_001_sw1_l4
+    from: 'on'
+    to: 'off'
+  - platform: state
+    entity_id: switch.jeju_001_sw2_l4
+    from: 'on'
+    to: 'off'
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: switch.jeju_001_sw1_l4
+        state: 'on'
+      sequence:
+      - service: switch.turn_off
+        data: {}
+        target:
+          entity_id: switch.jeju_001_sw1_l4
+    - conditions:
+      - condition: state
+        entity_id: switch.jeju_001_sw2_l4
+        state: 'on'
+      sequence:
+      - service: switch.turn_off
+        data: {}
+        target:
+          entity_id: switch.jeju_001_sw2_l4
+    default: []
+  mode: single
+- id: '1649840246817'
+  alias: JEJU_001_SW1-4_ON
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: switch.jeju_001_sw1_l4
+    from: 'off'
+    to: 'on'
+  - platform: state
+    entity_id: switch.jeju_001_sw2_l4
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: switch.jeju_001_sw1_l4
+        state: 'off'
+      sequence:
+      - service: switch.turn_on
+        data: {}
+        target:
+          entity_id: switch.jeju_001_sw1_l4
+    - conditions:
+      - condition: state
+        entity_id: switch.jeju_001_sw2_l4
+        state: 'off'
+      sequence:
+      - service: switch.turn_on
+        data: {}
+        target:
+          entity_id: switch.jeju_001_sw2_l4
+    default: []
+  mode: single
+- id: '1649840367001'
+  alias: JEJU_001_SW3-1_ON
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: switch.jeju_001_sw3_l1
+    from: 'off'
+    to: 'on'
+  - platform: state
+    entity_id: switch.jeju_001_sw4_l1
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: switch.jeju_001_sw3_l1
+        state: 'off'
+      sequence:
+      - service: switch.turn_on
+        data: {}
+        target:
+          entity_id: switch.jeju_001_sw3_l1
+    - conditions:
+      - condition: state
+        entity_id: switch.jeju_001_sw4_l1
+        state: 'off'
+      sequence:
+      - service: switch.turn_on
+        data: {}
+        target:
+          entity_id: switch.jeju_001_sw4_l1
+    default: []
+  mode: single
+- id: '1649840409806'
+  alias: JEJU_001_SW3-2_ON
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: switch.jeju_001_sw3_l2
+    from: 'off'
+    to: 'on'
+  - platform: state
+    entity_id: switch.jeju_001_sw4_l2
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: switch.jeju_001_sw3_l2
+        state: 'off'
+      sequence:
+      - service: switch.turn_on
+        data: {}
+        target:
+          entity_id: switch.jeju_001_sw3_l2
+    - conditions:
+      - condition: state
+        entity_id: switch.jeju_001_sw4_l2
+        state: 'off'
+      sequence:
+      - service: switch.turn_on
+        data: {}
+        target:
+          entity_id: switch.jeju_001_sw4_l2
+    default: []
+  mode: single
+- id: '1649840490853'
+  alias: JEJU_001_SW3-1_OFF
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: switch.jeju_001_sw3_l1
+    from: 'on'
+    to: 'off'
+  - platform: state
+    entity_id: switch.jeju_001_sw4_l1
+    from: 'on'
+    to: 'off'
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: switch.jeju_001_sw3_l1
+        state: 'on'
+      sequence:
+      - service: switch.turn_off
+        data: {}
+        target:
+          entity_id: switch.jeju_001_sw3_l1
+    - conditions:
+      - condition: state
+        entity_id: switch.jeju_001_sw4_l1
+        state: 'on'
+      sequence:
+      - service: switch.turn_off
+        data: {}
+        target:
+          entity_id: switch.jeju_001_sw4_l1
+    default: []
+  mode: single
+- id: '1649840528762'
+  alias: JEJU_001_SW3-2_OFF
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: switch.jeju_001_sw3_l2
+    from: 'on'
+    to: 'off'
+  - platform: state
+    entity_id: switch.jeju_001_sw4_l2
+    from: 'on'
+    to: 'off'
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: switch.jeju_001_sw3_l2
+        state: 'on'
+      sequence:
+      - service: switch.turn_off
+        data: {}
+        target:
+          entity_id: switch.jeju_001_sw3_l2
+    - conditions:
+      - condition: state
+        entity_id: switch.jeju_001_sw4_l2
+        state: 'on'
+      sequence:
+      - service: switch.turn_off
+        data: {}
+        target:
+          entity_id: switch.jeju_001_sw4_l2
+    default: []
+  mode: single
