@@ -21,9 +21,10 @@
 #define APP_TIMEZONE           9
 #define USER_TEMPLATE "{\"NAME\":\"Sonoff RE5V1C\",\"GPIO\":[17,255,255,255,255,255,0,0,21,56,0,0,0],\"FLAG\":0,\"BASE\":18}" 
 #define MODULE USER_MODULE
+#define USE_I2C
 #ifndef USE_DS3231
 #define USE_DS3231          // DS3231 external RTC (+1k2 code)
-//    #define USE_RTC_ADDR  0x68                   // Default I2C address 0x68
+#define USE_RTC_ADDR  0x68                   // Default I2C address 0x68
 #endif
 
 2-5. Select version v11.0.0, English/English 로 체크 후 [COMPILE] 버튼 클릭
