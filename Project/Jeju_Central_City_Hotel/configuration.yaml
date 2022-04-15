@@ -1,0 +1,34 @@
+
+# Loads default set of integrations. Do not remove.
+default_config:
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+# 좌측 접근성 메뉴 호출
+panel_custom: !include panel_custom.yaml
+
+# 에어컨 및 온도조절기 제어
+climate: !include climate.yaml
+
+homeassistant:
+  allowlist_external_dirs:
+    - /config
+
+# 로그 저장 주기를 10일로 변경
+recorder:
+  purge_keep_days: 10
+
+# zerotier 접속을위한 reverproxy에서의 접속 허용    
+http:
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 10.100.0.0/16  # Add the IP address of the proxy server
+
+# Broadlink RM4mini 사용을 위한 호출    
+smartir:
