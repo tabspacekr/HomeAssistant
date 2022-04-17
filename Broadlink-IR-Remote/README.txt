@@ -3,8 +3,10 @@
 따라서, SmartIR 컴포넌트의 사전 설치가 필요하며
 HA의 Configuration.yaml에 아래와 같이 Code선언 후에 사용할 수 있습니다.
 
+#configuration.yaml에 아래 내용 추가
 smartir:
 climate: !include climate.yaml
+#broadlink integration 후에 climate.yaml에 해당 코드 입력
 
 국내 유통되는 삼성/LG 모델 등에서 범용적으로 사용 가능합니다.
 로컬 구성이 아닌 클라우드기반으로 HA가 설치된 경우에는 동작하지 않습니다.
