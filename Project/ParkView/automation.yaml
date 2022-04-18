@@ -1,0 +1,44 @@
+# 특정시간에 모션센서 반응 시에 전등스위치 ON/OFF
+alias: 모션ON
+description: ''
+trigger:
+  - platform: state
+    entity_id: binary_sensor.mosyeonsenseo_occupancy
+    from: 'off'
+    to: 'on'
+condition:
+  - condition: time
+    after: '19:30:00'
+    before: '06:00:00'
+action:
+  - service: switch.turn_on
+    data: {}
+    target:
+      entity_id:
+        - switch.jeondeungseuwici_l1
+        - switch.jeondeungseuwici_l2
+        - switch.jeondeungseuwici_l3
+        - switch.jeondeungseuwici_l4
+mode: single
+
+alias: 모션OFF
+description: ''
+trigger:
+  - platform: state
+    from: 'on'
+    to: 'off'
+    entity_id: binary_sensor.mosyeonsenseo_occupancy
+condition:
+  - condition: time
+    after: '19:30:00'
+    before: '06:00:00'
+action:
+  - service: switch.turn_off
+    data: {}
+    target:
+      entity_id:
+        - switch.jeondeungseuwici_l1
+        - switch.jeondeungseuwici_l2
+        - switch.jeondeungseuwici_l3
+        - switch.jeondeungseuwici_l4
+mode: single
