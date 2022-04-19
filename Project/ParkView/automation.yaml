@@ -1,4 +1,5 @@
 # 특정시간에 모션센서 반응 시에 전등스위치 ON/OFF
+# To Do : convert BluePrint
 alias: 모션ON
 description: ''
 trigger:
