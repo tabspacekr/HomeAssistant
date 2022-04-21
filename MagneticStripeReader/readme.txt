@@ -2,7 +2,7 @@
 - 무인매장에 불특정 다수를 상대로한 출입통제
 - 누구나 가지고 있는 신용/체크카드의 마그네틱 정보를 통한 출입인증 방식
 
-데드볼트 + 퇴실(EXIT)버튼 + SONOFF InchingRelay + OrangePi Zero LTS + MSR100 으로 출입관리기 구현
+데드볼트락 or EM락 + 퇴실(EXIT)버튼 + SONOFF InchingRelay + OrangePi Zero LTS + MSR100 으로 출입관리기 구현
 SONOFF GPIO Port(ERX, ETX 활용)를 통한 Tasmota 제어(Magnetic Door Sensor, Exit Button 기능 구현) 
 -> 별도의 USB형 외부 사운드카드를 적용하여 출입문 열릴 시에 '문이 열렸습니다' 멘트 보강 완료 (door_open.mp3)
 
@@ -13,8 +13,8 @@ To Do List
 - 전등 및 climate domain에 사용이 가능한 타이머 기능 보강 예정 (input_datetime 선언)
 - 기타 기능 보완 예정 (인터넷 또는 WIFI가 단절되더라도 exit버튼으로 퇴실가능하도록)
    -> tasmota rule설정을 통한 네트워크단절시에 릴레이제어
-   --> 내부ip를 통한 relay on 제어
-   -> orange pi자체 제어 처리도 하나의 방식 고려
+   --> 내부ip를 통한 relay on 제어 (192.168.88.100)
+   -> orange pi자체 제어 처리도 하나의 방식 고려(GPIO)
 
 적용 완료 사항
 - 딜레이 이슈 보강
