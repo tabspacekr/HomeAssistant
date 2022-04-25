@@ -3,6 +3,7 @@
 # "DATASHEET": http://cl.ly/ekot
 # https://gist.github.com/kadamski/92653913a53baf9dd1a8
 from __future__ import print_function
+# pip3 install pyserial
 import serial, struct, sys, time, subprocess
 import requests
 
@@ -117,7 +118,7 @@ if __name__ == "__main__":
 
               response = requests.post('http://192.168.1.185:8123/api/webhook/pm-webhook', headers=headers, data=data)
 
-              time.sleep(2)
+              time.sleep(5)
         print("Going to sleep for 1 min...")
         cmd_set_sleep(1)
         time.sleep(60)
