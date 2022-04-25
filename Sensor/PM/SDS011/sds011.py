@@ -1,9 +1,10 @@
 #!/usr/bin/python -u
 # coding=utf-8
 # "DATASHEET": http://cl.ly/ekot
-# original code by https://gist.github.com/kadamski/92653913a53baf9dd1a8
+# https://gist.github.com/kadamski/92653913a53baf9dd1a8
 from __future__ import print_function
 import serial, struct, sys, time, subprocess
+import requests
 
 DEBUG = 0
 CMD_MODE = 2
@@ -108,6 +109,14 @@ if __name__ == "__main__":
             values = cmd_query_data();
             if values is not None and len(values) == 2:
               print("PM2.5: ", values[0], ", PM10: ", values[1])
+              headers = {
+                  'Content-Type': 'application/json',
+              }
+
+              data = '{"pm25": '+str(values[0])+', "pm10": '+str(values[1])+'}'
+
+              response = requests.post('http://192.168.1.185:8123/api/webhook/pm-webhook', headers=headers, data=data)
+
               time.sleep(2)
         print("Going to sleep for 1 min...")
         cmd_set_sleep(1)
