@@ -1,0 +1,14 @@
+template:
+  - trigger:
+      - platform: webhook
+        webhook_id: pm-webhook
+    sensor:
+      - name: "PM2.5"
+        state: "{{ trigger.json.pm25 }}"
+        device_class: pm25
+        #unit_of_measurement: '㎛'
+
+      - name: "PM10"
+        state: "{{ trigger.json.pm10 }}"
+        device_class: pm10
+        #unit_of_measurement: '㎛'
