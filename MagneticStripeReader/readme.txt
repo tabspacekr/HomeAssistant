@@ -4,7 +4,11 @@
 
 데드볼트락 or EM락 + 퇴실(EXIT)버튼 + SONOFF InchingRelay + OrangePi Zero LTS + MSR100 으로 출입관리기 구현
 SONOFF GPIO Port(ERX, ETX 활용)를 통한 Tasmota 제어(Magnetic Door Sensor, Exit Button 기능 구현) 
--> 별도의 USB형 외부 사운드카드를 적용하여 출입문 열릴 시에 '문이 열렸습니다' 멘트 보강 완료 (door_open.mp3)
+별도의 USB형 외부 사운드카드를 적용하여 출입문 열릴 시에 음성으로 안내
+- door_open.mp3 : '문이 열렸습니다' (카드가 정상 인식된 경우)
+- door_open_limit.mp3 : '문이 열렸습니다' (카드인식 3회 연속 오류이나, 매장출입을 진행하기 위함. 목소리톤만 다르게 멘트)
+- door_close.mp3 : '경비중입니다. 문이 열리지 않습니다' (HA에서 출입제한모드로 설정한 경우)
+- error.mp3 : '카드 인식에 실패했습니다. 다시 시도해주세요' (카드 인식이 실패한 경우)
 
 To Do List
 - 향후 근태관리 등으로 활용이 가능하도록 NFC(RFID)등 기능 보완 예정
