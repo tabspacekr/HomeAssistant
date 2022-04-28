@@ -6,5 +6,4 @@
 #* * * * * sleep 30; /root/msr_kill_protect.sh >> /root/msr_kill_protect.log   
 # 부팅 시 자동실행
 @reboot su - root -c /root/msr_kill_protect.sh
-#로그 사용 시 주석 해제
 #@reboot su - root -c /root/msr_kill_protect.sh >> /root/msr_kill_protect.log
