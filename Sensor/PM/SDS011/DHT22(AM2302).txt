@@ -1,0 +1,22 @@
+REF: https://tasmota.github.io/docs/AM2301/
+
+Tasmota 설정
+- Configuration -> Configure Module
+- GPIO3을 AM2301로 설정
+
+DHT22센서는 MQTT PUBLISH MESSAGE를 tele/%topic%/SENSOR 에 JSON 형태로 제공
+
+{
+  "Time": "2019-01-01T00:00:00",
+  "AM2301": {
+    "Temperature": 24.6,
+    "Humidity": 58.2
+  },
+  "TempUnit": "C"
+}
+
+온도보정
+- REF: https://tasmota.github.io/docs/Commands/#tempoffset
+- console에서 [tempoffset 범위]로 설정. 범위는 -12.6도에서 +12.6도까지 가능
+- 예: -5도로 설정 시, TempOffset -5
+- 예2: +2.4도로 설정 시 TempOffset +5
