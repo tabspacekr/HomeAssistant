@@ -1,0 +1,41 @@
+- platform: generic_thermostat
+  name: demo_heater
+  heater: switch.heater
+  #heater: input_boolean.heater_status
+  target_sensor: sensor.heater_am2301_temperature
+  #target_sensor: sensor.naebu_onseubdo_temperature
+  #target_sensor: sensor.oebugonggongdeiteo_ondo
+  min_temp: 18
+  max_temp: 30
+  ac_mode: false
+  target_temp: 26
+  cold_tolerance: 0
+  hot_tolerance: 0
+  min_cycle_duration:
+    seconds: 5
+  keep_alive:
+    minutes: 3
+  initial_hvac_mode: "off"
+  away_temp: 16
+  precision: 0.5
+  
+- platform: generic_thermostat
+  name: demo_cooler
+  heater: switch.cooler
+  #heater: input_boolean.cooler_status
+  target_sensor: sensor.heater_am2301_temperature
+  #target_sensor: sensor.naebu_onseubdo_temperature
+  #target_sensor: sensor.oebugonggongdeiteo_ondo
+  min_temp: 18
+  max_temp: 30
+  ac_mode: true
+  target_temp: 22
+  cold_tolerance: 0
+  hot_tolerance: 0
+  min_cycle_duration:
+    seconds: 5
+  keep_alive:
+    minutes: 3
+  initial_hvac_mode: "off"
+  away_temp: 16
+  precision: 0.5
