@@ -1,0 +1,30 @@
+- name: demo_humidifier
+  humidifier: switch.humidifier
+  #humidifier: input_boolean.humidifier_status
+  #target_sensor: sensor.heater_am2301_humidity
+  target_sensor: sensor.naebu_onseubdo_humidity
+  device_class: "humidifier"
+  dry_tolerance: 3
+  wet_tolerance: 0
+  target_humidity: 50
+  min_cycle_duration:
+    seconds: 5
+  away_humidity: 35
+  away_fixed: True
+  min_humidity: 30
+  max_humidity: 70
+
+- name: demo_dehumidifier
+  humidifier: input_boolean.dehumidifier_status
+  #target_sensor: sensor.heater_am2301_humidity
+  target_sensor: sensor.naebu_onseubdo_humidity
+  device_class: "dehumidifier"
+  dry_tolerance: 3
+  wet_tolerance: 0
+  target_humidity: 50
+  min_cycle_duration:
+    seconds: 5
+  away_humidity: 35
+  away_fixed: True
+  min_humidity: 30
+  max_humidity: 70
