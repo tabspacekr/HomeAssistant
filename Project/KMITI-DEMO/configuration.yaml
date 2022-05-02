@@ -1,0 +1,75 @@
+
+# Loads default set of integrations. Do not remove.
+default_config:
+
+# Text to speech
+tts:
+  - platform: google_translate
+    language: 'ko'
+
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+frontend:
+  themes: !include_dir_merge_named themes
+
+panel_custom: !include panel_custom.yaml
+alarm_control_panel: !include alarm_control_panel.yaml
+sensor: !include sensor.yaml
+binary_sensor: !include binary_sensor.yaml
+climate: !include climate.yaml
+generic_hygrostat: !include generic_hygrostat.yaml
+switch: !include switch.yaml
+input_boolean: !include input_boolean.yaml
+input_datetime: !include input_datetime.yaml
+
+recorder:
+  purge_keep_days: 14
+  db_url: mysql://homeassistant:homeassistant@core-mariadb/homeassistant?charset=utf8mb4
+  exclude:
+    entity_globs:
+      - sensor.*_linkquality
+      - sensor.*_current
+      - sensor.*_battery
+      
+http:
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 10.100.0.0/16  # Add the IP address of the proxy server
+
+homeassistant:
+  allowlist_external_dirs:
+    - /config
+    
+smartir:
+
+template:
+  - trigger:
+      - platform: webhook
+        webhook_id: pm-webhook
+        
+    sensor:
+      - name: "내부센서 PM2.5"
+        unique_id: "PM2.5"
+        state: "{{ trigger.json.pm25 }}"
+        device_class: pm25
+        unit_of_measurement: '㎛'
+
+      - name: "내부센서 PM10"
+        unique_id: "PM10"
+        state: "{{ trigger.json.pm10 }}"
+        device_class: pm10
+        unit_of_measurement: '㎛'
+        
+      - name: "외부공공데이터 온도"
+        unique_id: "OUTSIDE_TEMPERATURE"
+        state: "{{ state_attr('weather.tabspace', 'temperature') }}"
+        device_class: temperature
+        unit_of_measurement: '°C'
+  
+      - name: "외부공공데이터 습도"
+        unique_id: "OUTSIDE_HUMIDITY"
+        state: "{{ state_attr('weather.tabspace', 'humidity') }}"
+        device_class: humidity
+        unit_of_measurement: '%'
