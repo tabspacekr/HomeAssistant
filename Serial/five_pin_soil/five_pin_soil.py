@@ -1,5 +1,4 @@
 #참조: https://blog.actorsfit.com/a?ID=01200-258ba477-1fdb-4a28-9d6a-657effd55f10
-from pstats import StatsProfile
 import serial
 import time
 
@@ -89,7 +88,13 @@ if ser.is_open:
             #feedback_data = int(str_return_data[-6:-2], 16)
             #feedback_data = str_return_data[6:10]
             #print(str_return_data[6:10])
-            STP = int(str_return_data[6:10],16) / 10
+            #STP = int(str_return_data[6:10],16) / 10
+            # 온도가 영하로 가는 경우에는 2의 보수 계산으로 음수처리를 함.
+            x = int(str_return_data[6:10],16)
+            #print(x)
+            if (x & 0x8000) == 0x8000:
+                x = -( (x ^ 0xffff) + 1)
+            STP = x / 10
             print("--STP : "+str(STP)+"c")
 
         ser.write(eval('send_data_'+str(address_no)+'2'))   # RS485 Serial Send Data Commands
