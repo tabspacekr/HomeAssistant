@@ -365,5 +365,6 @@ while True:
         conn.commit() # db commit
         conn.close() # db 연결 종료
         print ("["+str(datetime.now())+"] Auth Log : DB Connection End") 
+        continue
     except pymysql.err.InternalError as e:
             code, msg = e.args
