@@ -1,3 +1,4 @@
+#Webhook 생성시에 별도의 long live api key 없이도 ha에 반영가능
 template:
   - trigger:
       - platform: webhook
@@ -7,7 +8,6 @@ template:
         state: "{{ trigger.json.pm25 }}"
         device_class: pm25
         #unit_of_measurement: '㎛'
-
       - name: "PM10"
         state: "{{ trigger.json.pm10 }}"
         device_class: pm10
