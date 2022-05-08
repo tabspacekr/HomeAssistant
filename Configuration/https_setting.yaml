@@ -27,8 +27,8 @@ http:
 
 
 # 5) 결과
-https://ha.yourdomain.com:8123 으로 접근 가능
-만약 https://ha.yourdomain.com 형태로 접근하기 위해서는 네트워크장비에서 포트포워딩 필요
+https://ha.yourdomain.com 으로 접근 가능
+- 만약 server_port:443 으로 미선언 시, https://ha.yourdomain.com:8123 으로 접근해야 가능, 이경우 https://ha.yourdomain.com 형태로 접근하기 위해서는 네트워크장비에서 포트포워딩 필요
 
 # 6) 주의사항
 
