@@ -2,9 +2,9 @@
   name: demo_heater
   heater: switch.heater
   #heater: input_boolean.heater_status
-  target_sensor: sensor.heater_am2301_temperature
-  #target_sensor: sensor.naebu_onseubdo_temperature
-  #target_sensor: sensor.oebugonggongdeiteo_ondo
+  target_sensor: sensor.heater_am2301_temperature # DHT11 AM2301 Sensor
+  #target_sensor: sensor.naebu_onseubdo_temperature # Zigbee Xiaomi Sensor
+  #target_sensor: sensor.oebugonggongdeiteo_ondo # External API Sensor
   min_temp: 18
   max_temp: 30
   ac_mode: false
@@ -23,9 +23,9 @@
   name: demo_cooler
   heater: switch.cooler
   #heater: input_boolean.cooler_status
-  target_sensor: sensor.heater_am2301_temperature
-  #target_sensor: sensor.naebu_onseubdo_temperature
-  #target_sensor: sensor.oebugonggongdeiteo_ondo
+  target_sensor: sensor.heater_am2301_temperature # DHT11 AM2301 Sensor
+  #target_sensor: sensor.naebu_onseubdo_temperature # Zigbee Xiaomi Sensor
+  #target_sensor: sensor.oebugonggongdeiteo_ondo # External API Sensor
   min_temp: 18
   max_temp: 30
   ac_mode: true
