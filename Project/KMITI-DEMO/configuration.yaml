@@ -54,13 +54,13 @@ template:
         unique_id: "PM2.5"
         state: "{{ trigger.json.pm25 }}"
         device_class: pm25
-        unit_of_measurement: '㎛'
+        unit_of_measurement: '㎍/㎥'
 
       - name: "내부센서 PM10"
         unique_id: "PM10"
         state: "{{ trigger.json.pm10 }}"
         device_class: pm10
-        unit_of_measurement: '㎛'
+        unit_of_measurement: '㎍/㎥'
         
       - name: "외부공공데이터 온도"
         unique_id: "OUTSIDE_TEMPERATURE"
