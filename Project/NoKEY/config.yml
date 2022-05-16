@@ -1,0 +1,32 @@
+  # see ref : https://hub.docker.com/r/flyte/mqtt-gpio
+# see ref2 : https://github.com/flyte/mqtt-io/wiki/GPIO-Configuration
+# see ref3 : https://www.home-assistant.io/docs/mqtt/discovery/
+  #  47  python3 -m pip install --upgrade pip
+  #  48  pip3 install OrangePi.GPIO
+
+
+mqtt:
+  host: solbam.untitle.org
+  port: 1883
+  user: mqtt
+  password: mqtt@123
+  topic_prefix: gpio
+  ha_discovery:
+   enabled: yes 
+
+# GPIO
+gpio_modules:
+  # Use the Orange Pi built-in GPIO
+  - name: pi_gpio 
+    module: orangepi
+    board: zero
+    mode: board
+
+digital_inputs:
+  # Pin 0 is an input connected to a doorbell button
+  - name: door_sensor
+    module: pi_gpio
+    pin: 39
+    ha_discovery:
+      name: mqtt_door_sensor_test
+      device_class: door
