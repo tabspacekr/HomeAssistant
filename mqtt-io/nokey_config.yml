@@ -1,0 +1,35 @@
+mqtt:
+  host: mqtt.hostname.com
+  port: 1883
+  user: mqtt
+  password: mqttpassword
+  topic_prefix: gpio
+  ha_discovery:
+   enabled: yes 
+
+# GPIO
+gpio_modules:
+  # Use the Orange Pi built-in GPIO
+  - name: pi_gpio 
+    module: orangepi
+    board: zero
+    mode: board
+
+digital_inputs:
+  - name: gpio_door_sensor
+    module: pi_gpio
+    pin: 7 
+    pulldown: True
+    # 도어 센서일 경우 inverted옵션 True로 설정
+    inverted: True
+    ha_discovery:
+      name: gpio_door_sensor
+      device_class: door
+
+digital_outputs:
+  - name: gpio_switch
+    module: pi_gpio
+    pin: 12
+    ha_discovery:
+      name: gpio_switch
+      device_class: switch
