@@ -1,3 +1,4 @@
+# python3 -m mqtt_io config.yml
 mqtt:
   host: mqtt.hostname.com
   port: 1883
