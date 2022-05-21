@@ -1,6 +1,7 @@
 # NOKEY PROJECT QRCODE Reader
 # 2022.05.09. ceo@tabspace.kr
 # PreRequirements : sudo apt install python3-evdev
+# ToDo : php based auth
 
 import evdev
 from evdev import *
