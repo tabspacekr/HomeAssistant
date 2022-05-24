@@ -1,0 +1,73 @@
+mqtt:
+  host: iot.tabspace.kr
+  port: 1883
+  user: mqtt
+  password: tabspace2021
+  topic_prefix: gpio
+  ha_discovery:
+   enabled: yes 
+
+# GPIO
+gpio_modules:
+  - name: pi_gpio 
+    module: orangepi
+    board: zero
+    mode: board
+
+digital_outputs:
+  - name: mqtt_relay_test1
+    module: pi_gpio
+    pin: 8
+    inverted: True
+    ha_discovery:
+      name: mqtt_relay_test1
+      device_class: switch
+  - name: mqtt_relay_test2
+    module: pi_gpio
+    pin: 10
+    inverted: True
+    ha_discovery:
+      name: mqtt_relay_test2
+      device_class: switch
+  - name: mqtt_relay_test3
+    module: pi_gpio
+    pin: 12
+    inverted: True
+    ha_discovery:
+      name: mqtt_relay_test3
+      device_class: switch
+  - name: mqtt_relay_test4
+    module: pi_gpio
+    pin: 16
+    inverted: True
+    ha_discovery:
+      name: mqtt_relay_test4
+      device_class: switch
+  - name: mqtt_relay_test5
+    module: pi_gpio
+    pin: 18
+    inverted: True
+    ha_discovery:
+      name: mqtt_relay_test5
+      device_class: switch
+  - name: mqtt_relay_test6
+    module: pi_gpio
+    pin: 22
+    inverted: True
+    ha_discovery:
+      name: mqtt_relay_test6
+      device_class: switch
+  - name: mqtt_relay_test7
+    module: pi_gpio
+    pin: 24
+    inverted: True
+    ha_discovery:
+      name: mqtt_relay_test7
+      device_class: switch
+  - name: mqtt_relay_test8
+    module: pi_gpio
+    pin: 26
+    inverted: True
+    ha_discovery:
+      name: mqtt_relay_test8
+      device_class: switch
