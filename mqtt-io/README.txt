@@ -50,3 +50,18 @@ digital_outputs:
 ====================
 
 python3 -m mqtt_io config.yml
+
+
+====
+
+digital_inputs:
+  - name: gpio_motion_sensor
+    module: pi_gpio
+    pin: 7 
+    pulldown: True
+    # 모션센서 활용
+    #inverted: True
+    ha_discovery:
+      name: gpio_motion_sensor
+      device_class: motion 
+
