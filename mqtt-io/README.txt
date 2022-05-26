@@ -19,7 +19,8 @@ mqtt:
   password: mqttpassword
   topic_prefix: gpio
   ha_discovery:
-   enabled: yes 
+   enabled: yes
+   name: mqttname
 
 # GPIO
 gpio_modules:
