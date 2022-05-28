@@ -1,8 +1,8 @@
-  # see ref : https://hub.docker.com/r/flyte/mqtt-gpio
+# see ref : https://hub.docker.com/r/flyte/mqtt-gpio
 # see ref2 : https://github.com/flyte/mqtt-io/wiki/GPIO-Configuration
 # see ref3 : https://www.home-assistant.io/docs/mqtt/discovery/
-  #  47  python3 -m pip install --upgrade pip
-  #  48  pip3 install OrangePi.GPIO
+#  python3 -m pip install --upgrade pip
+#  pip3 install OrangePi.GPIO
 
 
 mqtt:
