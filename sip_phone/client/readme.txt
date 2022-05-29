@@ -4,6 +4,8 @@ https://raspberrypihq.com/use-a-push-button-with-raspberry-pi-gpio/
 
 sip phone agent auto answer (python)
 
+mqtt-io의 gpio mqtt publish 활용
+
 # DO2
 android 중고폰을 통한 업사이클링 개념, 또는 전용장비 활용
 오픈소스 Linphone을 ( https://www.linphone.org/ ) 커스텀앱 
