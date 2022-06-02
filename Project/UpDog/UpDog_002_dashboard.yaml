@@ -1,0 +1,67 @@
+  - title: 아무도없개-노원점
+    path: updog2
+    icon: mdi:dog
+    visible:
+      - user: 93102ba9443443d89b1bfe1792427567
+      - user: c130f9f91ec34620ae54957d3ad04b8f
+      - user: 9c7b96deab844505a3fcd013b222eadd
+    type: sidebar
+    badges: []
+    cards:
+      - type: grid
+        cards:
+          - type: button
+            tap_action:
+              action: toggle
+            entity: binary_sensor.updog_002_ms
+            name: 동작감지
+            show_state: true
+          - type: button
+            tap_action:
+              action: toggle
+            entity: climate.updog_002_ir
+            icon: mdi:air-conditioner
+            name: 냉난방기
+            show_state: true
+        columns: 2
+        square: false
+      - type: grid
+        cards:
+          - type: sensor
+            entity: sensor.dain_nowon_t2_ds18b20_temperature
+            graph: line
+            theme: Google Point Theme
+          - type: sensor
+            entity: sensor.dain_nowon_t1_ds18b20_temperature
+            graph: line
+            theme: Google Point Theme
+        columns: 2
+        square: false
+      - type: thermostat
+        entity: climate.updog_002_ir
+        name: 에어컨 제어
+      - type: history-graph
+        entities:
+          - entity: binary_sensor.updog_002_ms
+        hours_to_show: 24
+        refresh_interval: 0
+        title: 동작감지 로그
+        view_layout:
+          position: sidebar
+      - type: history-graph
+        entities:
+          - entity: climate.updog_002_ir
+          - entity: sensor.dain_nowon_t1_ds18b20_temperature
+          - entity: sensor.dain_nowon_t2_ds18b20_temperature
+        hours_to_show: 24
+        refresh_interval: 0
+        view_layout:
+          position: sidebar
+        title: 온도 로그
+      - type: logbook
+        entities:
+          - binary_sensor.updog_002_ms
+        hours_to_show: 24
+        view_layout:
+          position: sidebar
+        title: 시스템 로그
