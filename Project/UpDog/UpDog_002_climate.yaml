@@ -1,0 +1,55 @@
+#UPDOG002_IR
+- platform: tasmota_irhvac
+  name: "updog_002_ir" 
+  command_topic: "cmnd/dain-nowon-ir/irhvac" 
+  state_topic: "tele/dain-nowon-ir/RESULT" 
+  temperature_sensor: sensor.dain_nowon_t2_ds18b20_temperature
+  vendor: "SAMSUNG_AC" #위에서 식별한 IR리시브 정보를 입력
+  min_temp: 18 #optional - default 16 int value #리모콘에서 설정되는 최소온도값으로 수정
+  max_temp: 30 #optional - default 32 int value #리모콘에서 설정되는 최대온도값으로 수정
+  target_temp: 26 #optional - default 26 int value
+  initial_operation_mode: "off" # optional - default "off" string value (one of the "supported_modes")
+  away_temp: 24 #optional - default 24 int value
+  precision: 1 #optional - default 1 int or float value. Can be set to 1, 0.5 or 0.1
+  supported_modes: #모드는 운전선택을 눌러서 지원되는부분을 식별하여 주석 또는 주석 해제처리
+    - "heat" 
+    - "cool" 
+    - "dry" 
+    - "fan_only" 
+    - "auto" 
+    - "off" #Turns the AC off - Should be in quotes
+    # Some devices have "auto" and "fan_only" switched
+    # If the following two lines are uncommented, "auto" and "fan" shoud be commented out
+    #- auto_fan_only #if remote shows fan but tasmota says auto
+    #- fan_only_auto #if remote shows auto but tasmota says fan
+  supported_fan_speeds: #이것도 콘솔에 찍히는 리모콘수신정보로 확인하여 주석 또는 주석 해제
+    # Some devices say max,but it is high, and auto which is max
+    # If you uncomment the following two, you have to comment high and max
+    # - auto_max #woud become max
+    # - max_high #would become high
+    #- on
+    #- off
+    #- low
+    - "medium" 
+    #- "high" 
+    #- middle
+    #- focus
+    #- diffuse
+    - "min" 
+    - "max" 
+    - "auto" 
+  supported_swing_list: #상하좌우바람 버튼 있을 경우 주석 또는 주석해제
+    - "off" 
+    - "vertical" #up to down
+    # - horizontal # Left to right
+    # - both
+  default_quiet_mode: "Off" #optional - default "Off" string value
+  default_turbo_mode: "Off" #optional - default "Off" string value
+  default_econo_mode: "Off" #optional - default "Off" string value
+  hvac_model: "-1" #optional - default "1" string value
+  celsius_mode: "On" #optional - default "On" string value
+  default_light_mode: "Off" #optional - default "Off" string value
+  default_filter_mode: "Off" #optional - default "Off" string value
+  default_clean_mode: "Off" #optional - default "Off" string value
+  default_beep_mode: "Off" #optional - default "Off" string value
+  default_sleep_mode: "-1" #optional - default "-1" string value  
