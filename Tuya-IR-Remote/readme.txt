@@ -17,3 +17,12 @@ tasmota_irhvac.txt을 참고하여, custom_component 추가
 - 학습 기능을 이용해보려 하였으나, 물리적 리모콘에서 버튼을 눌러 발신시에 코드가 랜덤하게 바뀌는 이슈 있음
 - GA(google assistant) Integration 시에 power off command가 비정상동작하는 이슈 있음
 - HA업데이트 후 climate 미동작시에, github repository에서 최신버전 다운로드 후 HA 재기동 필요
+
+# 설치방법
+cd /usr/share/hassio/homeassistant/custom_components/
+git clone https://github.com/hristo-atanasov/Tasmota-IRHVAC.git
+rm -rf tasmota_irhvac/
+cd Tasmota-IRHVAC/custom_components/tasmota_irhvac
+mv tasmota_irhvac/ ../../
+cd ../../
+rm -rf Tasmota-IRHVAC/
