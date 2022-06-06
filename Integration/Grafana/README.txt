@@ -33,3 +33,4 @@ HA Grafana Integration 절차
 
 # 팁
 - HA Addon 설정에서 외부port를 매핑하면 로그인 없이 Grafana 시각화 표시 가능
+- HA와 SSL인증서를 공유하나, HA에서 인증서 갱신후에는 Grafana재기동 필요
