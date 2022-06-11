@@ -20,6 +20,7 @@ To Do List
    -> tasmota rule설정을 통한 네트워크단절시에 릴레이제어
    --> 내부ip를 통한 relay on 제어 (192.168.88.100)
    -> orange pi자체 제어 처리도 하나의 방식 고려(GPIO)
+- evdev python module로 전환
 
 적용 완료 사항
 - 딜레이 이슈 보강
