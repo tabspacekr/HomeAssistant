@@ -1,0 +1,164 @@
+  - title: 아무도없개-1
+    path: updog1
+    icon: mdi:dog
+    visible:
+      - user: 93102ba9443443d89b1bfe1792427567
+      - user: c130f9f91ec34620ae54957d3ad04b8f
+      - user: 8548cd581d2c471fb36bb17afa97df1b
+    type: sidebar
+    badges: []
+    cards:
+      - type: grid
+        cards:
+          - show_state: true
+            show_name: true
+            camera_view: auto
+            type: picture-entity
+            entity: camera.updog1ip
+            camera_image: camera.updog1ip
+            aspect_ratio: '2:1'
+            hold_action:
+              action: none
+          - show_state: true
+            show_name: true
+            camera_view: auto
+            type: picture-entity
+            entity: camera.updog1ip_2
+            camera_image: camera.updog1ip_2
+            aspect_ratio: '2:1'
+            hold_action:
+              action: none
+          - show_state: true
+            show_name: true
+            camera_view: auto
+            type: picture-entity
+            entity: camera.updog1ip_3
+            camera_image: camera.updog1ip_3
+            aspect_ratio: '2:1'
+            hold_action:
+              action: none
+          - show_state: true
+            show_name: true
+            camera_view: auto
+            type: picture-entity
+            entity: camera.updog1ip_4
+            camera_image: camera.updog1ip_4
+            aspect_ratio: '2:1'
+            hold_action:
+              action: none
+          - show_state: true
+            show_name: true
+            camera_view: auto
+            type: picture-entity
+            entity: camera.updog1ip_5
+            camera_image: camera.updog1ip_5
+            aspect_ratio: '2:1'
+            hold_action:
+              action: none
+          - show_state: true
+            show_name: true
+            camera_view: auto
+            type: picture-entity
+            entity: camera.updog1ip_6
+            camera_image: camera.updog1ip_6
+            aspect_ratio: '2:1'
+            hold_action:
+              action: none
+          - show_state: true
+            show_name: true
+            camera_view: auto
+            type: picture-entity
+            entity: camera.updog1ip_7
+            camera_image: camera.updog1ip_7
+            aspect_ratio: '2:1'
+            hold_action:
+              action: none
+          - show_state: true
+            show_name: true
+            camera_view: auto
+            type: picture-entity
+            entity: camera.updog1ip_8
+            camera_image: camera.updog1ip_8
+            aspect_ratio: '2:1'
+            hold_action:
+              action: none
+        square: false
+        columns: 2
+      - type: grid
+        cards:
+          - show_name: true
+            show_icon: true
+            type: button
+            entity: binary_sensor.updog_001_ms
+            name: 동작감지
+            show_state: true
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: climate.updog_001_ir
+            icon: mdi:air-conditioner
+            name: 냉난방기
+            show_state: true
+        columns: 2
+        square: false
+      - type: grid
+        cards:
+          - hours_to_show: 24
+            graph: line
+            type: sensor
+            entity: sensor.dain01_tmp1_ds18b20_temperature
+            theme: Google Point Theme
+            detail: 1
+          - hours_to_show: 24
+            graph: line
+            type: sensor
+            entity: sensor.dain01_tmp2_ds18b20_temperature
+            theme: Google Point Theme
+            detail: 1
+        columns: 2
+        square: false
+      - type: thermostat
+        entity: climate.updog_001_ir
+        name: 에어컨 제어
+      - type: history-graph
+        entities:
+          - entity: binary_sensor.updog_001_ms
+        hours_to_show: 24
+        refresh_interval: 0
+        title: 동작감지 로그
+        view_layout:
+          position: sidebar
+      - type: history-graph
+        entities:
+          - entity: climate.updog_001_ir
+          - entity: sensor.dain01_tmp1_ds18b20_temperature
+          - entity: sensor.dain01_tmp2_ds18b20_temperature
+        hours_to_show: 24
+        refresh_interval: 0
+        view_layout:
+          position: sidebar
+        title: 온도 로그
+      - type: logbook
+        entities:
+          - binary_sensor.updog_001_ms
+        hours_to_show: 24
+        view_layout:
+          position: sidebar
+        title: 시스템 로그
+      - chart_type: line
+        period: day
+        days_to_show: 14
+        type: statistics-graph
+        entities:
+          - sensor.dain01_tmp1_ds18b20_temperature
+          - sensor.dain01_tmp2_ds18b20_temperature
+        stat_types:
+          - max
+          - sum
+          - mean
+          - min
+        title: 14일간 온도 로그
+        view_layout:
+          position: sidebar
