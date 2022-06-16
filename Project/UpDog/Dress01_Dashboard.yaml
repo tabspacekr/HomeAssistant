@@ -1,0 +1,125 @@
+  - theme: Backend-selected
+    visible:
+      - user: 93102ba9443443d89b1bfe1792427567
+      - user: c130f9f91ec34620ae54957d3ad04b8f
+    title: dress1
+    path: dress01
+    icon: mdi:hanger
+    type: sidebar
+    badges: []
+    cards:
+      - square: false
+        columns: 4
+        type: grid
+        cards:
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: switch.dress_01_sw
+            name: 일괄전등
+            show_state: true
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: switch.dress_01_sw_1
+            show_state: true
+            name: 전등1
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: switch.dress_01_sw_2
+            show_state: true
+            name: 전등2
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: switch.dress_01_sw_3
+            show_state: true
+            name: 전등3
+      - type: grid
+        cards:
+          - show_name: true
+            show_icon: true
+            type: button
+            entity: binary_sensor.dress_01_ms
+            name: 동작감지
+            show_state: true
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: climate.dress01_ir
+            icon: mdi:air-conditioner
+            name: 냉난방기
+            show_state: true
+        columns: 2
+        square: false
+      - type: history-graph
+        entities:
+          - entity: binary_sensor.dress_01_ms
+        hours_to_show: 24
+        refresh_interval: 0
+        title: 동작감지 로그
+        view_layout:
+          position: sidebar
+      - type: history-graph
+        entities:
+          - entity: climate.dress01_ir
+          - entity: sensor.dain_dress01_tp_dht11_temperature
+        hours_to_show: 24
+        refresh_interval: 0
+        view_layout:
+          position: sidebar
+        title: 온도 로그
+      - type: logbook
+        entities:
+          - binary_sensor.dress_01_ms
+        hours_to_show: 24
+        view_layout:
+          position: sidebar
+        title: 시스템 로그
+      - chart_type: line
+        period: day
+        days_to_show: 14
+        type: statistics-graph
+        entities:
+          - sensor.dain_dress01_tp_dht11_temperature
+          - sensor.dain_dress01_tp_dht11_humidity
+        stat_types:
+          - max
+          - sum
+          - mean
+          - min
+        title: 14일간 온도 로그
+        view_layout:
+          position: sidebar
+      - type: grid
+        cards:
+          - hours_to_show: 24
+            graph: line
+            type: sensor
+            entity: sensor.dain_dress01_tp_dht11_temperature
+            theme: Google Point Theme
+            detail: 1
+            name: 온도
+          - hours_to_show: 24
+            graph: line
+            type: sensor
+            entity: sensor.dain_dress01_tp_dht11_humidity
+            theme: Google Point Theme
+            detail: 1
+            name: 습도
+        columns: 2
+        square: false
+      - type: thermostat
+        entity: climate.dress01_ir
+        name: 에어컨 제어
