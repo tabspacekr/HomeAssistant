@@ -10,5 +10,5 @@ HA와 외부시스템간의 연계처리를 위한 api 가이드 문서
 
 복잡한 로직의 경우 shell_command로 ha에서 호출 후 사전 작성된 python code를 사용하는 방식을 권장
 - 단, ha의 shell_command 적용을 위해 core restart가 필요
-
+- shell command 경로 지정시 ha재기동 없이 sh파일만 수정하여 관리가능
 OpenWeatherMap의 경우 API키 발행 후에 HA Integration에서 설정이 필요
