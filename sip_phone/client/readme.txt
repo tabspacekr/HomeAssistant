@@ -3,6 +3,8 @@ gpio포트에 연결된 push button을 누르면 python script가 반응하여 s
 https://raspberrypihq.com/use-a-push-button-with-raspberry-pi-gpio/
 
 sip phone agent auto answer (python)
+- 통화가 수신이 될때에 자동으로 응답처리
+- 오픈소스 sip 프로트콜 linux client 식별
 
 mqtt-io의 gpio mqtt publish 활용
 
