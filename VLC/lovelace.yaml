@@ -1,0 +1,62 @@
+title: TabSpace
+views:
+  - theme: Backend-selected
+    path: default_view
+    title: Home
+    type: sidebar
+    badges: []
+    cards:
+      - type: media-control
+        entity: media_player.home_group
+        view_layout:
+          position: sidebar
+      - type: horizontal-stack
+        cards:
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: input_boolean.music_time
+            icon: hass:music
+            show_state: true
+            name: 음악재생
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: input_boolean.delete_song
+            show_state: false
+          - type: button
+            tap_action:
+              action: toggle
+            entity: input_boolean.shuffle_music
+      - type: horizontal-stack
+        cards:
+          - type: entity
+            entity: input_select.music_playlist
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: input_boolean.favorite_song
+          - type: button
+            tap_action:
+              action: toggle
+            entity: input_boolean.reload_playlist
+      - type: media-control
+        entity: media_player.vlc_telnet
+        view_layout:
+          position: sidebar
+      - square: false
+        columns: 1
+        type: grid
+        cards:
+          - type: entity
+            entity: input_datetime.odio_jaesaeng_sijagsigan
+          - type: entity
+            entity: input_datetime.odio_jaesaeng_jongryosigan
+        view_layout:
+          position: sidebar
