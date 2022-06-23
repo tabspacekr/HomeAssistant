@@ -1,0 +1,105 @@
+#ha configuration.yaml
+
+homeassistant:
+  allowlist_external_dirs:
+    - /media
+  media_dirs:
+    media: /config/www/media
+
+input_boolean:
+  favorite_song:
+    name: Favorite Song
+    icon: mdi:heart
+  music_time:
+    name: Music Time
+    icon: mdi:music
+  delete_song:
+    name: Delete Song
+    icon: mdi:delete
+  shuffle_music:
+    name: Shuffle Music
+    icon: mdi:shuffle-variant
+  reload_playlist:
+    name: Reload Playlist
+    icon: mdi:reload
+input_select:
+  music_playlist:
+    name: Music Playlist
+    options:
+      - Mp3
+      - My Favorite
+
+config/www/media 경로 사전에 생성해야 ha에러없이 재기동할수있음
+
+
+ssl해제 및 secret key 입력
+
+PLAYLIST mapping
+one_media_dirs_in_ha_conf = "music: /config/www/media"
+
+media_player.turn_off를 media_play_pause로 변경 (vlc는 지원하지 않음.)
+
+#deal with url 설정
+
+/local/media/mp3/ 로 경로 강제 지정 해야 함.
+
+media_file_name = "/local/media/mp3/" + file_name;
+
+추가필요한 작업 : 미디어브라우저에서 10MB 업로드 제한 해제 하는 법
+
+
+2022. 6. 22. 오후 8:03:28node: increase ordered song playing index
+function : (warn)
+"data is null"
+2022. 6. 22. 오후 8:03:28node: deal with url
+function : (error)
+"TypeError: Cannot read properties of undefined (reading 'replace')"
+
+이렇게 나온경우에는 셔플뮤직한번해주고재생하면됨
+
+#러브레이스버튼추가
+
+type: horizontal-stack
+cards:
+  - type: button
+    tap_action:
+      action: toggle
+    entity: input_boolean.music_time
+    show_name: false
+    icon: hass:music
+    show_state: true
+    icon_height: 50px
+  - type: button
+    tap_action:
+      action: toggle
+    entity: input_boolean.delete_song
+  - type: custom:button-card
+    tap_action:
+      action: call-service
+      service: media_player.media_stop
+      service_data:
+        entity_id: media_player.home_group
+    icon: hass:skip-forward
+    name: Next Song
+    size: 80px
+  - type: button
+    tap_action:
+      action: toggle
+    entity: input_boolean.shuffle_music
+
+
+type: horizontal-stack
+cards:
+  - type: entity
+    entity: input_select.music_playlist
+  - type: custom:button-card
+    tap_action:
+      action: toggle
+    entity: input_boolean.favorite_song
+    show_name: false
+    show_icon: true
+    size: 90px
+  - type: button
+    tap_action:
+      action: toggle
+    entity: input_boolean.reload_playlist
