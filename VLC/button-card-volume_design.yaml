@@ -1,0 +1,47 @@
+square: false
+columns: 3
+type: grid
+cards:
+  - show_name: true
+    show_icon: true
+    type: button
+    tap_action:
+      action: call-service
+      service: media_player.volume_mute
+      data:
+        is_volume_muted: false
+      target:
+        entity_id: media_player.vlc_telnet
+    entity: ''
+    name: 볼륨off
+    hold_action:
+      action: none
+    icon: mdi:volume-mute
+  - show_name: true
+    show_icon: true
+    type: button
+    tap_action:
+      action: call-service
+      service: media_player.volume_down
+      data: {}
+      target:
+        entity_id: media_player.vlc_telnet
+    entity: ''
+    name: 볼륨down
+    hold_action:
+      action: none
+    icon: mdi:volume-minus
+  - show_name: true
+    show_icon: true
+    type: button
+    tap_action:
+      action: call-service
+      service: media_player.volume_up
+      data: {}
+      target:
+        entity_id: media_player.vlc_telnet
+    entity: ''
+    name: 볼륨up
+    hold_action:
+      action: none
+    icon: mdi:volume-plus
