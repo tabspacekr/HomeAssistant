@@ -18,6 +18,7 @@ USER, PASS, HOST 부분 변경, AUTODISCOVERY_PREFIX 주석 해제
 HA에 rtsp 연동
 
 configuration.yaml에 아래 내용 추가 후 재기동
+- integration generic camera 로 설정가능
 
 camera:
   - platform: ffmpeg
