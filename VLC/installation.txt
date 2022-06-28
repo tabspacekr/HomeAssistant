@@ -30,7 +30,7 @@ input_select:
       - My Favorite
 
 config/www/media 경로 사전에 생성해야 ha에러없이 재기동할수있음
-
+- /media/쪽 호출은 sigkey로 가능할것으로 보이나, 편의를 위해 인증이 불필요한 /local로 호출하기 
 
 ssl해제 및 secret key 입력
 
