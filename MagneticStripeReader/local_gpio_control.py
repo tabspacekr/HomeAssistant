@@ -1,3 +1,4 @@
+# prerequirement : sudo pip3 install OrangePi.GPIO
 import OPi.GPIO as GPIO
 from time import sleep          # this lets us have a time delay
 
