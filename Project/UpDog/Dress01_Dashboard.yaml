@@ -2,6 +2,7 @@
     visible:
       - user: 93102ba9443443d89b1bfe1792427567
       - user: c130f9f91ec34620ae54957d3ad04b8f
+      - user: 2ad67fd79b9947788c1c13226b5c50c0
     title: dress1
     path: dress01
     icon: mdi:hanger
@@ -20,6 +21,7 @@
             entity: switch.dress_01_sw
             name: 일괄전등
             show_state: true
+            icon: mdi:ceiling-light-multiple
           - show_name: true
             show_icon: true
             type: button
@@ -28,6 +30,7 @@
             entity: switch.dress_01_sw_1
             show_state: true
             name: 전등1
+            icon: mdi:ceiling-light
           - show_name: true
             show_icon: true
             type: button
@@ -36,6 +39,7 @@
             entity: switch.dress_01_sw_2
             show_state: true
             name: 전등2
+            icon: mdi:ceiling-light
           - show_name: true
             show_icon: true
             type: button
@@ -44,7 +48,11 @@
             entity: switch.dress_01_sw_3
             show_state: true
             name: 전등3
-      - type: grid
+            icon: mdi:ceiling-light
+        title: 조명 제어
+      - square: false
+        columns: 4
+        type: grid
         cards:
           - show_name: true
             show_icon: true
@@ -61,8 +69,166 @@
             icon: mdi:air-conditioner
             name: 냉난방기
             show_state: true
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: switch.ms0242268ffb8f_push
+            name: 원격개방
+            icon: mdi:exit-run
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: call-service
+              service: input_select.select_option
+              data:
+                option: unlock
+              target:
+                entity_id: input_select.mr0242268ffb8f
+            entity: switch.ms0242268ffb8f_lock
+            name: 상시개방
+            icon: mdi:door-sliding-open
+        title: 기기 제어
+      - square: false
+        columns: 4
+        type: grid
+        cards:
+          - type: conditional
+            conditions:
+              - entity: input_select.mr0242268ffb8f
+                state: lock
+            card:
+              show_name: true
+              show_icon: true
+              type: button
+              tap_action:
+                action: none
+              entity: input_boolean.on
+              name: 카드출입
+              show_state: true
+              hold_action:
+                action: none
+              icon: mdi:credit-card-check-outline
+          - type: conditional
+            conditions:
+              - entity: input_select.mr0242268ffb8f
+                state: unlock
+            card:
+              show_name: true
+              show_icon: true
+              type: button
+              tap_action:
+                action: none
+              entity: input_boolean.on
+              name: 상시개방
+              show_state: true
+              hold_action:
+                action: none
+              icon: mdi:door-open
+          - type: conditional
+            conditions:
+              - entity: input_select.mr0242268ffb8f
+                state: lockdown
+            card:
+              show_name: true
+              show_icon: true
+              type: button
+              tap_action:
+                action: none
+              entity: input_boolean.on
+              name: 락다운
+              show_state: true
+              hold_action:
+                action: none
+              icon: mdi:door-closed-lock
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: call-service
+              service: input_select.select_option
+              data:
+                option: lock
+              target:
+                entity_id: input_select.mr0242268ffb8f
+            entity: ''
+            name: 카드출입
+            icon: mdi:credit-card-check-outline
+            hold_action:
+              action: none
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: call-service
+              service: input_select.select_option
+              data:
+                option: unlock
+              target:
+                entity_id: input_select.mr0242268ffb8f
+            entity: ''
+            name: 상시개방
+            icon: mdi:door-open
+            hold_action:
+              action: none
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: call-service
+              service: input_select.select_option
+              data:
+                option: lockdown
+              target:
+                entity_id: input_select.mr0242268ffb8f
+            entity: ''
+            name: 락다운
+            icon: mdi:door-closed-lock
+            hold_action:
+              action: none
+        title: 출입모드 제어
+      - type: entities
+        entities:
+          - entity: sensor.dress01_visitor_card
+            icon: mdi:face-man-shimmer
+          - entity: sensor.dress01_visitor_data
+          - entity: sensor.dress01_visitor_time
+            icon: mdi:clock-outline
+        state_color: true
+        title: 출입자 정보
+      - square: false
         columns: 2
-        square: false
+        type: grid
+        cards:
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: automation.doteusyab_sinweoljeom_culibtongje_on_taimeo
+            name: 시작타이머
+            show_state: true
+            icon: mdi:electric-switch-closed
+          - type: entity
+            entity: input_datetime.dress01_security_time_on
+            theme: Google Point Theme
+            name: 출입통제 시작시간
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: automation.doteusyab_sinweoljeom_culibtongje_off_taimeo
+            name: 종료타이머
+            show_state: true
+            icon: mdi:electric-switch
+          - type: entity
+            entity: input_datetime.dress01_security_time_off
+            theme: Google Point Theme
+            name: 출입통제 종료시간
+        title: 출입통제 타이머 (락다운 시 미동작)
       - type: history-graph
         entities:
           - entity: binary_sensor.dress_01_ms
@@ -83,6 +249,7 @@
       - type: logbook
         entities:
           - binary_sensor.dress_01_ms
+          - input_select.mr0242268ffb8f
         hours_to_show: 24
         view_layout:
           position: sidebar
@@ -120,6 +287,15 @@
             name: 습도
         columns: 2
         square: false
+        title: 온도 제어
       - type: thermostat
         entity: climate.dress01_ir
         name: 에어컨 제어
+      - show_name: true
+        show_icon: true
+        type: button
+        tap_action:
+          action: toggle
+        entity: automation.toteusyab_on
+        name: 조명 자동 ON
+        icon: mdi:home-lightbulb-outline
