@@ -88,7 +88,7 @@ while True:
                     # QR리더기로부터 수신한 정보를 api서버로 발송
                     try:
                         print("["+str(datetime.now())+"] Send QR Information Start")
-                        qr_url = "https://nokey.tabspace.kr/api/qr.php?qr="+qr_site+qr_code
+                        qr_url = "https://qr.tabspace.kr/qr.php?qr="+qr_site+qr_code
                         print(qr_url)
                         qr_send = requests.get(qr_url).json
                         print(qr_send)
