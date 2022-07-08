@@ -66,3 +66,6 @@ digital_inputs:
       name: gpio_motion_sensor
       device_class: motion 
 
+====
+
+pyotp 기반의 네트워크통신단절시에도 동작하는 모듈 
