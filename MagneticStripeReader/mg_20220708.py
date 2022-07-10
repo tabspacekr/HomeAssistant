@@ -4,7 +4,7 @@
 # 2022.07.08. ceo@tabspace.kr
 # MagTek MSR100 Mini Swipe Card Reader, Relay 필요
 # 사전에 pymysql, pyusb를 pip3로 설치 필요함
-# 카드중복인식이슈는 watchdog으로 대응
+# 카드중복인식이슈는 crontab에서 1/5초 단위로 설정한 watchdog으로 대응
 
 import usb.core
 import usb.util
