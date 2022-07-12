@@ -1,0 +1,42 @@
+blueprint:
+  name: '모션 감지 시 모바일 PUSH알림'
+  description: '모션 감지 시 지정된 모바일 단말기에 알림을 줍니다.'
+  domain: automation
+  input:
+    temp_sensor:
+      name: '모션 센서'
+      description: '감지할 모션 센서를 선택해주세요.'
+      selector:
+        entity:
+          domain: binary_sensor
+          device_class: motion
+    notification_title:
+      name: 'PUSH 메시지 제목'
+      description: '기본값: "[알림] 동작이 감지되었습니다."'
+      default: '[알림] 동작이 감지되었습니다.'
+    notification_message:
+      name: 'PUSH 메시지 내용'
+      description: '기본값: "무인매장에 동작을 감지하였습니다."'
+      default: '무인매장 동작을 감지하였습니다.'
+    notify_device:
+      name: 'PUSH 메시지 수신자'
+      description: 'Home Assistant 앱을 설치한 디바이스의 ID값을 입력해주세요.'
+      selector:
+        device:
+          integration: mobile_app
+trigger:
+  - platform: state
+    entity_id: !input "temp_sensor"
+    from: 'off'
+    to: 'on'
+condition: []
+variables:
+  notify_device: !input 'notify_device'
+  notification_title: !input 'notification_title'
+  notification_message: !input 'notification_message'
+action:
+- domain: mobile_app
+  type: notify
+  device_id: !input 'notify_device'
+  title: '{{ notification_title }}'
+  message: '{{ notification_message }}'
