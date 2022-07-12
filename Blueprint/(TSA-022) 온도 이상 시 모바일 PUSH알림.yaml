@@ -33,13 +33,12 @@ blueprint:
         device:
           integration: mobile_app
 trigger:
-  - platform: numeric_state
-    entity_id: !input "temp_sensor"
-    above: !input "trigger_temp"
+  - platform: state
+    entity_id: !input 'temp_sensor'
 condition:
   - condition: numeric_state
     entity_id: !input 'temp_sensor'
-    below: !input 'trigger_temp'
+    above: !input 'trigger_temp'
 variables:
   temp_sensor: !input 'temp_sensor'
   temperature: '{{ states(temp_sensor) }}'
