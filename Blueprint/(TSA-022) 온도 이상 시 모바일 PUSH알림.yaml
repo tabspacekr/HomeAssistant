@@ -1,0 +1,55 @@
+blueprint:
+  name: '온도 이상 시 모바일 PUSH알림'
+  description: '온도 이상 시 지정된 모바일 단말기에 알림을 줍니다.'
+  domain: automation
+  input:
+    temp_sensor:
+      name: '온도 센서'
+      description: '감지할 온도 센서를 선택해주세요.'
+      selector:
+        entity:
+          domain: sensor
+          device_class: temperature
+    trigger_temp:
+      name: '대상 온도'
+      description: '알람 설정할 온도를 선택해주세요.'
+      default: -5
+      selector:
+        number:
+          min: -30
+          max: 100
+    notification_title:
+      name: 'PUSH 메시지 제목'
+      description: '기본값: "[경고] 냉장고 온도가 높습니다."'
+      default: '[경고] 냉장고 온도가 높습니다.'
+    notification_message:
+      name: 'PUSH 메시지 내용'
+      description: '기본값: "냉장고 온도가 허용 범위를 초과하였습니다."'
+      default: 현재 온도 {{ states(temp_sensor) }}{{state_attr(temp_sensor, 'unit_of_measurement')  }}
+    notify_device:
+      name: 'PUSH 메시지 수신자'
+      description: 'Home Assistant 앱을 설치한 디바이스의 ID값을 입력해주세요.'
+      selector:
+        device:
+          integration: mobile_app
+trigger:
+  - platform: numeric_state
+    entity_id: !input "temp_sensor"
+    above: !input "trigger_temp"
+condition:
+  - condition: numeric_state
+    entity_id: !input 'temp_sensor'
+    below: !input 'trigger_temp'
+variables:
+  temp_sensor: !input 'temp_sensor'
+  temperature: '{{ states(temp_sensor) }}'
+  trigger_temp:  !input 'trigger_temp'
+  notify_device: !input 'notify_device'
+  notification_title: !input 'notification_title'
+  notification_message: !input 'notification_message'
+action:
+- domain: mobile_app
+  type: notify
+  device_id: !input 'notify_device'
+  title: '{{ notification_title }}'
+  message: '{{ notification_message }}'
