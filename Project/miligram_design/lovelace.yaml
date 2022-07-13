@@ -1,0 +1,225 @@
+kiosk_mode:
+  non_admin_settings:
+    kiosk: true
+    ignore_entity_settings: true
+title: 탭스페이스
+views:
+  - theme: Backend-selected
+    path: default_view
+    title: Home
+    type: sidebar
+    badges: []
+    cards:
+      - show_current: true
+        show_forecast: false
+        type: weather-forecast
+        entity: weather.taebseupeiseu
+        view_layout:
+          position: sidebar
+        theme: waves-dark
+      - type: media-control
+        entity: media_player.301
+        view_layout:
+          position: sidebar
+      - square: false
+        columns: 3
+        type: grid
+        cards:
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: call-service
+              service: media_player.volume_mute
+              data:
+                is_volume_muted: true
+              target:
+                entity_id: media_player.301
+            entity: ''
+            name: 볼륨off
+            hold_action:
+              action: none
+            icon: mdi:volume-mute
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: call-service
+              service: media_player.volume_down
+              data: {}
+              target:
+                entity_id: media_player.301
+            entity: ''
+            name: 볼륨down
+            hold_action:
+              action: none
+            icon: mdi:volume-minus
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: call-service
+              service: media_player.volume_up
+              data: {}
+              target:
+                entity_id: media_player.301
+            entity: ''
+            name: 볼륨up
+            hold_action:
+              action: none
+            icon: mdi:volume-plus
+        view_layout:
+          position: sidebar
+      - type: vertical-stack
+        cards:
+          - square: false
+            columns: 3
+            type: grid
+            cards:
+              - show_name: true
+                show_icon: true
+                type: button
+                tap_action:
+                  action: call-service
+                  service: media_player.play_media
+                  data:
+                    media_content_id: http://www.101smoothjazz.com/101-smoothjazz.m3u
+                    media_content_type: music
+                    enqueue: replace
+                  target:
+                    entity_id: media_player.301
+                entity: ''
+                name: 재즈 라디오
+                icon: mdi:radio
+                show_state: true
+                hold_action:
+                  action: none
+              - show_name: true
+                show_icon: true
+                type: button
+                tap_action:
+                  action: call-service
+                  service: media_player.play_media
+                  data:
+                    media_content_id: http://stream.mangoradio.de/
+                    media_content_type: music
+                    enqueue: replace
+                  target:
+                    entity_id: media_player.301
+                entity: ''
+                name: 망고 라디오
+                icon: mdi:radio
+                show_state: true
+                hold_action:
+                  action: none
+              - show_name: true
+                show_icon: true
+                type: button
+                tap_action:
+                  action: call-service
+                  service: media_player.play_media
+                  data:
+                    media_content_id: https://walmradio.com:8443/classic
+                    media_content_type: music
+                    enqueue: replace
+                  target:
+                    entity_id: media_player.301
+                entity: ''
+                name: 클래식 라디오
+                icon: mdi:radio
+                show_state: true
+                hold_action:
+                  action: none
+        view_layout:
+          position: sidebar
+      - square: false
+        columns: 4
+        type: grid
+        cards:
+          - hours_to_show: 4
+            graph: line
+            type: sensor
+            entity: sensor.onseubdosenseo_temperature
+            detail: 2
+            name: 온도
+          - hours_to_show: 4
+            graph: line
+            type: sensor
+            entity: sensor.onseubdosenseo_humidity
+            detail: 2
+            name: 습도
+          - hours_to_show: 4
+            graph: line
+            type: sensor
+            entity: sensor.mosyeonsenseo_illuminance_lux
+            detail: 2
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: binary_sensor.mosyeonsenseo_occupancy
+            show_state: true
+        view_layout:
+          position: main
+      - square: false
+        columns: 4
+        type: grid
+        cards:
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: climate.demo_heater
+            show_state: true
+            icon: mdi:fire
+            name: 난방
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: climate.demo_cooler
+            show_state: true
+            name: 냉방
+            icon: mdi:snowflake
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: humidifier.demo_dehumidifier
+            show_state: true
+            name: 제습
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: switch.gpio_4
+            show_state: true
+            icon: mdi:home-lightbulb-outline
+      - type: horizontal-stack
+        cards:
+          - type: thermostat
+            entity: climate.demo_heater
+            name: 난방기
+          - type: thermostat
+            entity: climate.demo_cooler
+            name: 냉방기
+          - type: light
+            entity: light.jomyeong
+            name: 디머 조명
+            icon: mdi:lightbulb-on
+      - type: markdown
+        content: |-
+          <b>조명조절</b>
+          조명 켜줘 / 조명 20퍼센트로 설정해줘 / 조명 어둡게 해 / 조명 밝게 해
+          <b>온도조절</b>
+          난방기 켜줘 / 난방 28도로 설정해줘 / 냉방기 켜줘 / 냉방 22도로 설정해줘
+          <b>음악재생</b>
+          재즈 켜 / 웰컴모드 켜
+        title: AI스피커 명령어 ("오케이 구글"로 호출 후 말하세요")
+        view_layout:
+          position: main
