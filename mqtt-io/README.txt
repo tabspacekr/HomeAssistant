@@ -1,7 +1,11 @@
 orange pi mqtt_io를 통한 home assistant integration
 
-orange pi gpio pip패키지가 debian 11(bullseye)에 기본내장된 python 3.9에서는 동작하지 않고, python 3.7에서만 pip패키지가 설치됨.
+orange pi gpio pip패키지(OrangePi.GPIO)가 debian 11(bullseye)에 기본내장된 python 3.9에서는 동작하지 않고, debian 10(buster) python 3.7에서만 pip패키지가 설치됨.
 따라서, 가상환경으로 python3.7로 동작하도록 수정하거나, debian 10(buster)로 다운그래이드하여 python3.7환경을 맞춰주어야 함.
+
+# if you don't do GPIO.cleanup() you don't free the pin and you will get wrnings
+# Use this example, it is ctrl+c friendly
+# https://github.com/Jeremie-C/OrangePi.GPIO/blob/master/example/blink_led.py
 
 apt install python3-dev
 apt install python3-setuptools
