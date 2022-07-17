@@ -1,0 +1,47 @@
+# 온도 교정
+- platform: template
+  sensors:
+    ia_cluster10_tp_ds18b20_temperature_correction:
+      friendly_name: Cluster10_강의실_온도보정
+      unit_of_measurement: °C
+      value_template: "{{ (states('sensor.ia_cluster10_tp_ds18b20_temperature') | float - 4 ) | round(2)  }}"
+    
+    ia_cluster10_tp1_ds18b20_temperature_correction:
+      friendly_name: Cluster10_강의실1_온도보정
+      unit_of_measurement: °C
+      value_template: "{{ (states('sensor.ia_cluster10_tp1_ds18b20_temperature') | float ) | round(2)  }}"
+    
+    ia_cluster7_left_t_ds18b20_temperature_correction:
+      friendly_name: Cluster7_강의실1_온도보정
+      unit_of_measurement: °C
+      value_template: "{{ (states('sensor.ia_cluster7_left_t_ds18b20_temperature') | float - 3 ) | round(2)  }}"
+
+    ia_cluster7_ce_tp_ds18b20_temperature_correction:
+      friendly_name: Cluster7_회의실_온도보정
+      unit_of_measurement: °C
+      value_template: "{{ (states('sensor.ia_cluster7_ce_tp_ds18b20_temperature') | float - 4 ) | round(2)  }}"
+    
+    ia_cluster7_right_tp_ds18b20_temperature_correction:
+      friendly_name: Cluster7_강의실2_온도보정
+      unit_of_measurement: °C
+      value_template: "{{ (states('sensor.ia_cluster7_right_tp_ds18b20_temperature') | float - 4 ) | round(2)  }}"
+    
+    ia_cluster8_tp_ds18b20_temperature_correction:
+      friendly_name: Cluster8_강의실_온도보정
+      unit_of_measurement: °C
+      value_template: "{{ (states('sensor.ia_cluster8_tp_ds18b20_temperature') | float - 3 ) | round(2)  }}"
+    
+    ia_cluster9_ju_tp_ds18b20_temperature_correction:
+      friendly_name: Cluster9_회의실_온도보정
+      unit_of_measurement: °C
+      value_template: "{{ (states('sensor.ia_cluster9_ju_tp_ds18b20_temperature') | float - 2 ) | round(2)  }}"
+    
+    ia_cluster9_of_tp_ds18b20_temperature_correction:
+      friendly_name: Cluster9_강의실_온도보정
+      unit_of_measurement: °C
+      value_template: "{{ (states('sensor.ia_cluster9_of_tp_ds18b20_temperature') | float - 4 ) | round(2)  }}"
+    
+    ia_cluster9_tp_ds18b20_temperature_correction:
+      friendly_name: Cluster9_사무실_온도보정
+      unit_of_measurement: °C
+      value_template: "{{ (states('sensor.ia_cluster9_tp_ds18b20_temperature') | float - 4 ) | round(2)  }}"
