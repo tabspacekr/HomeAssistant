@@ -1,0 +1,231 @@
+views:
+  - theme: Backend-selected
+    title: 출입기 제어
+    icon: ''
+    path: home
+    visible:
+      - user: c28ecdf21b8d461f8776b1a82e346691
+      - user: c3a7b8d73ac74506af6db35e54c87b3c
+    badges: []
+    cards:
+      - square: true
+        columns: 3
+        type: grid
+        cards:
+          - type: conditional
+            conditions:
+              - entity: input_select.msrmode
+                state: lock
+            card:
+              show_name: true
+              show_icon: true
+              type: button
+              tap_action:
+                action: none
+              entity: input_boolean.on
+              name: 카드출입
+              show_state: true
+              hold_action:
+                action: none
+              icon: mdi:credit-card-check-outline
+          - type: conditional
+            conditions:
+              - entity: input_select.msrmode
+                state: unlock
+            card:
+              show_name: true
+              show_icon: true
+              type: button
+              tap_action:
+                action: none
+              entity: input_boolean.on
+              name: 상시개방
+              show_state: true
+              hold_action:
+                action: none
+              icon: mdi:door-open
+          - type: conditional
+            conditions:
+              - entity: input_select.msrmode
+                state: lockdown
+            card:
+              show_name: true
+              show_icon: true
+              type: button
+              tap_action:
+                action: none
+              entity: input_boolean.on
+              name: 락다운
+              show_state: true
+              hold_action:
+                action: none
+              icon: mdi:door-closed-lock
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: call-service
+              service: switch.turn_on
+              data: {}
+              target:
+                entity_id: switch.msrlocal_push
+            entity: switch.msrlocal_push
+            name: 원격개방
+            icon: mdi:exit-run
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: call-service
+              service: input_select.select_option
+              data:
+                option: unlock
+              target:
+                entity_id:
+                  - input_select.msrmode
+            entity: switch.msrlocal_lock
+            name: 상시개방
+            icon: mdi:door-sliding-open
+        title: 출입기 제어
+      - square: true
+        columns: 3
+        type: grid
+        cards:
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: call-service
+              service: input_select.select_option
+              data:
+                option: lock
+              target:
+                entity_id: input_select.msrmode
+            entity: ''
+            name: 카드출입
+            icon: mdi:credit-card-check-outline
+            hold_action:
+              action: none
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: call-service
+              service: input_select.select_option
+              data:
+                option: unlock
+              target:
+                entity_id: input_select.msrmode
+            entity: ''
+            name: 상시개방
+            icon: mdi:door-open
+            hold_action:
+              action: none
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: call-service
+              service: input_select.select_option
+              data:
+                option: lockdown
+              target:
+                entity_id: input_select.msrmode
+            entity: ''
+            name: 락다운
+            icon: mdi:door-closed-lock
+            hold_action:
+              action: none
+        title: 출입모드 제어
+  - theme: Backend-selected
+    title: 출입자 정보
+    path: ''
+    badges: []
+    cards:
+      - type: entities
+        entities:
+          - entity: sensor.local_visitor_card
+            icon: mdi:face-man-shimmer
+          - entity: sensor.local_visitor_data
+          - entity: sensor.local_visitor_time
+            icon: mdi:clock-outline
+        state_color: true
+        title: 출입자 정보
+        view_layout:
+          position: sidebar
+      - type: logbook
+        entities:
+          - sensor.local_visitor_data
+        title: 출입자 로그
+        view_layout:
+          position: sidebar
+        hours_to_show: 8
+  - theme: Backend-selected
+    title: 타이머
+    path: timer
+    visible:
+      - user: c28ecdf21b8d461f8776b1a82e346691
+      - user: c3a7b8d73ac74506af6db35e54c87b3c
+    badges: []
+    cards:
+      - square: false
+        columns: 2
+        type: grid
+        cards:
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: automation.card_on_timer
+            name: 시작타이머
+            show_state: true
+            icon: mdi:electric-switch-closed
+          - type: entity
+            entity: input_datetime.localmsr_security_time_on
+            theme: Google Point Theme
+            name: 출입통제 시작시간
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: automation.card_off_timer
+            name: 종료타이머
+            show_state: true
+            icon: mdi:electric-switch
+          - type: entity
+            entity: input_datetime.localmsr_security_time_off
+            theme: Google Point Theme
+            name: 출입통제 종료시간
+        title: 출입통제 타이머 (락다운 시 미동작)
+        view_layout:
+          position: sidebar
+  - theme: Backend-selected
+    title: 관리
+    path: control
+    visible:
+      - user: c28ecdf21b8d461f8776b1a82e346691
+      - user: c3a7b8d73ac74506af6db35e54c87b3c
+    badges: []
+    cards:
+      - type: markdown
+        content: |-
+          시스템 재기동은 출입컨트롤러를 재부팅하는 기능으로, 
+          시스템사용까지 최대 5분이 걸릴 수 있습니다.
+
+          재부팅중이라도 내부의 퇴실(EXIT)버튼은 정상동작합니다.
+        title: 안내
+      - type: grid
+        cards:
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: script.reboot
+            name: 시스템 재시작
+      - type: entities
+        entities:
+          - entity: sensor.uptime
+          - entity: sensor.local_ip
