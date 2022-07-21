@@ -28,7 +28,8 @@ To Do List
   - 유선구성으로, 별도의 wifi router 적용
 - 리눅스 로그 정리 및 자동 재부팅 기능 적용
   - crontab 설정에서 reboot -f, 스케쥴링 재부팅
-
+- GPIO PIN을 통한 외부 Sonoff RE5V1C 드라이락 릴레이 없이 제어 가능하도록 처리
+- 스피커를 통한 음성안내가 외부설치환경에서는 잘들리지않아 상태LED 4개를 통한 안내보강
 설치 필요 패키지
 sudo apt install python3
 sudo apt install python3-pip
