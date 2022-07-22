@@ -1,0 +1,347 @@
+  - theme: Backend-selected
+    visible:
+      - user: 93102ba9443443d89b1bfe1792427567
+      - user: c130f9f91ec34620ae54957d3ad04b8f
+      - user: 2ad67fd79b9947788c1c13226b5c50c0
+    title: dress1new
+    path: dress01new
+    icon: mdi:hanger
+    type: sidebar
+    badges: []
+    cards:
+      - square: false
+        columns: 4
+        type: grid
+        cards:
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: switch.dress_01_sw
+            name: 일괄전등
+            show_state: true
+            icon: mdi:ceiling-light-multiple
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: switch.dress_01_sw_1
+            show_state: true
+            name: 전등1
+            icon: mdi:ceiling-light
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: switch.dress_01_sw_2
+            show_state: true
+            name: 전등2
+            icon: mdi:ceiling-light
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: switch.dress_01_sw_3
+            show_state: true
+            name: 전등3
+            icon: mdi:ceiling-light
+        title: 조명 제어
+      - square: false
+        columns: 4
+        type: grid
+        cards:
+          - show_name: true
+            show_icon: true
+            type: button
+            entity: binary_sensor.dress_01_ms
+            name: 동작감지
+            show_state: true
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: climate.dress01_ir
+            icon: mdi:air-conditioner
+            name: 냉난방기
+            show_state: true
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: switch.dress01new_push
+            name: 원격개방
+            icon: mdi:exit-run
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: call-service
+              service: input_select.select_option
+              data:
+                option: unlock
+              target:
+                entity_id: input_select.dress01new_msrmode
+            entity: switch.dress01new_lock
+            name: 상시개방
+            icon: mdi:door-sliding-open
+        title: 기기 제어
+      - square: false
+        columns: 4
+        type: grid
+        cards:
+          - type: conditional
+            conditions:
+              - entity: input_select.dress01new_msrmode
+                state: lock
+            card:
+              show_name: true
+              show_icon: true
+              type: button
+              tap_action:
+                action: none
+              entity: input_boolean.on
+              name: 카드출입
+              show_state: true
+              hold_action:
+                action: none
+              icon: mdi:credit-card-check-outline
+          - type: conditional
+            conditions:
+              - entity: input_select.dress01new_msrmode
+                state: unlock
+            card:
+              show_name: true
+              show_icon: true
+              type: button
+              tap_action:
+                action: none
+              entity: input_boolean.on
+              name: 상시개방
+              show_state: true
+              hold_action:
+                action: none
+              icon: mdi:door-open
+          - type: conditional
+            conditions:
+              - entity: input_select.dress01new_msrmode
+                state: lockdown
+            card:
+              show_name: true
+              show_icon: true
+              type: button
+              tap_action:
+                action: none
+              entity: input_boolean.on
+              name: 락다운
+              show_state: true
+              hold_action:
+                action: none
+              icon: mdi:door-closed-lock
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: call-service
+              service: input_select.select_option
+              data:
+                option: lock
+              target:
+                entity_id: input_select.dress01new_msrmode
+            entity: ''
+            name: 카드출입
+            icon: mdi:credit-card-check-outline
+            hold_action:
+              action: none
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: call-service
+              service: input_select.select_option
+              data:
+                option: unlock
+              target:
+                entity_id: input_select.dress01new_msrmode
+            entity: ''
+            name: 상시개방
+            icon: mdi:door-open
+            hold_action:
+              action: none
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: call-service
+              service: input_select.select_option
+              data:
+                option: lockdown
+              target:
+                entity_id: input_select.dress01new_msrmode
+            entity: ''
+            name: 락다운
+            icon: mdi:door-closed-lock
+            hold_action:
+              action: none
+        title: 출입모드 제어
+      - type: entities
+        entities:
+          - entity: sensor.dress01_visitor_card
+            icon: mdi:face-man-shimmer
+          - entity: sensor.dress01_visitor_data
+          - entity: sensor.dress01_visitor_time
+            icon: mdi:clock-outline
+        state_color: true
+        title: 출입자 정보
+      - type: history-graph
+        entities:
+          - entity: binary_sensor.dress_01_ms
+        hours_to_show: 24
+        refresh_interval: 0
+        title: 동작감지 로그
+        view_layout:
+          position: sidebar
+      - type: history-graph
+        entities:
+          - entity: climate.dress01_ir
+          - entity: sensor.dain_dress01_tp_ds18b20_temperature
+        hours_to_show: 24
+        refresh_interval: 0
+        view_layout:
+          position: sidebar
+        title: 온도 로그
+      - type: logbook
+        entities:
+          - binary_sensor.dress_01_ms
+          - input_select.dress01new_msrmode
+        hours_to_show: 24
+        view_layout:
+          position: sidebar
+        title: 시스템 로그
+      - chart_type: line
+        period: day
+        days_to_show: 14
+        type: statistics-graph
+        entities:
+          - sensor.dain_dress01_tp_dht11_temperature
+        stat_types:
+          - max
+          - sum
+          - mean
+          - min
+        title: 14일간 온도 로그
+        view_layout:
+          position: sidebar
+      - square: false
+        columns: 1
+        type: grid
+        cards:
+          - hours_to_show: 24
+            graph: line
+            type: sensor
+            entity: sensor.dain_dress01_tp_ds18b20_temperature
+            theme: Google Point Theme
+            detail: 1
+            name: 온도
+        title: 온도 제어
+      - type: thermostat
+        entity: climate.dress01_ir
+        name: 에어컨 제어
+      - square: false
+        columns: 2
+        type: grid
+        cards:
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: automation.toteusyab_sinweoljeomnew_culibtongje_on_taimeo
+            name: 시작타이머
+            show_state: true
+            icon: mdi:electric-switch-closed
+          - type: entity
+            entity: input_datetime.dress01new_security_time_on
+            theme: Google Point Theme
+            name: 출입통제 시작시간
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: automation.doteusyab_sinweoljeomnew_culibtongje_off_taimeo
+            name: 종료타이머
+            show_state: true
+            icon: mdi:electric-switch
+          - type: entity
+            entity: input_datetime.dress01new_security_time_off
+            theme: Google Point Theme
+            name: 출입통제 종료시간
+        title: 출입통제 타이머 (락다운 시 미동작)
+      - square: false
+        columns: 2
+        type: grid
+        cards:
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: automation.toteusyab_sinweoljeom_new_jomyeong_taimeo_on
+            name: 조명 켜짐 타이머
+            show_state: false
+            icon: mdi:home-lightbulb-outline
+          - type: entity
+            entity: input_datetime.dress01new_light_time_on
+            theme: Google Point Theme
+            name: 조명 켜짐 시간
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: automation.toteusyab_sinweoljeom_new_jomyeong_taimeo_off
+            name: 조명 꺼짐 타이머
+            show_state: true
+            icon: mdi:home-lightbulb
+          - type: entity
+            entity: input_datetime.dress01new_light_time_off
+            theme: Google Point Theme
+            name: 조명 꺼짐 시간
+        title: 조명 타이머
+      - square: false
+        columns: 2
+        type: grid
+        cards:
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: automation.toteusyab_sinweoljeom_new_eeokeon_taimeo_on
+            name: 에어컨 켜짐 타이머
+            show_state: true
+            icon: mdi:air-humidifier
+          - type: entity
+            entity: input_datetime.dress01new_ac_time_on
+            theme: Google Point Theme
+            name: 에어컨 켜짐 시간
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: automation.toteusyab_sinweoljeom_new_eeokeon_taimeo_off
+            name: 에어컨 꺼짐 타이머
+            show_state: true
+            icon: mdi:air-humidifier-off
+          - type: entity
+            entity: input_datetime.dress01new_ac_time_off
+            theme: Google Point Theme
+            name: 에어컨 꺼짐 시간
+        title: 에어컨 타이머
