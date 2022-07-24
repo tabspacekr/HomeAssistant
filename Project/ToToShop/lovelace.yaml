@@ -1,3 +1,13 @@
+kiosk_mode:
+  user_settings:
+    - users:
+        - dain
+        - vavas01
+        - updog2
+        - updog1
+      kiosk: true
+      ignore_entity_settings: true
+      ignore_mobile_settings: true
   - theme: Backend-selected
     visible:
       - user: 93102ba9443443d89b1bfe1792427567
@@ -47,7 +57,7 @@
               action: toggle
             entity: switch.dress_01_sw_3
             show_state: true
-            name: 전등3
+            name: 창고
             icon: mdi:ceiling-light
         title: 조명 제어
       - square: false
@@ -198,45 +208,6 @@
             icon: mdi:clock-outline
         state_color: true
         title: 출입자 정보
-      - type: history-graph
-        entities:
-          - entity: binary_sensor.dress_01_ms
-        hours_to_show: 24
-        refresh_interval: 0
-        title: 동작감지 로그
-        view_layout:
-          position: sidebar
-      - type: history-graph
-        entities:
-          - entity: climate.dress01_ir
-          - entity: sensor.dain_dress01_tp_ds18b20_temperature
-        hours_to_show: 24
-        refresh_interval: 0
-        view_layout:
-          position: sidebar
-        title: 온도 로그
-      - type: logbook
-        entities:
-          - binary_sensor.dress_01_ms
-          - input_select.dress01new_msrmode
-        hours_to_show: 24
-        view_layout:
-          position: sidebar
-        title: 시스템 로그
-      - chart_type: line
-        period: day
-        days_to_show: 14
-        type: statistics-graph
-        entities:
-          - sensor.dain_dress01_tp_dht11_temperature
-        stat_types:
-          - max
-          - sum
-          - mean
-          - min
-        title: 14일간 온도 로그
-        view_layout:
-          position: sidebar
       - square: false
         columns: 1
         type: grid
@@ -345,3 +316,47 @@
             theme: Google Point Theme
             name: 에어컨 꺼짐 시간
         title: 에어컨 타이머
+      - type: history-graph
+        entities:
+          - entity: binary_sensor.dress_01_ms
+        hours_to_show: 24
+        refresh_interval: 0
+        title: 동작감지 로그
+        view_layout:
+          position: sidebar
+      - type: history-graph
+        entities:
+          - entity: climate.dress01_ir
+          - entity: sensor.dain_dress01_tp_ds18b20_temperature
+        hours_to_show: 24
+        refresh_interval: 0
+        view_layout:
+          position: sidebar
+        title: 온도 로그
+      - chart_type: line
+        period: day
+        days_to_show: 14
+        type: statistics-graph
+        entities:
+          - sensor.dain_dress01_tp_ds18b20_temperature
+        stat_types:
+          - max
+          - sum
+          - mean
+          - min
+        title: 14일간 온도 로그
+        view_layout:
+          position: sidebar
+      - type: logbook
+        entities:
+          - binary_sensor.dress_01_ms
+          - input_select.dress01new_msrmode
+        hours_to_show: 24
+        view_layout:
+          position: sidebar
+        title: 시스템 로그
+custom_header:
+  hidden_tab_redirect: false
+  chevrons: false
+  shadow: false
+  disabled_mode: true
