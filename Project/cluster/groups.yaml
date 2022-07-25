@@ -1,0 +1,16 @@
+cluster8_class:
+  name: Cluster8_강의실
+  unique_id: cluster8_class
+  entities:
+    - climate.cluster8_gangyisil_mun_oreunjjog
+    - climate.cluster8_gangyisil_mun_oenjjog
+    - climate.cluster8_gangyisil_cangga_oreunjjog
+    - climate.cluster8_gangyisil_cangga_oenjjog
+cluster10_class:
+  name: Cluster10_강의실
+  unique_id: cluster10_class
+  entities:
+    - climate.cluster10_gangyisil_mun_oreunjjog
+    - climate.cluster10_gangyisil_mun_oenjjog
+    - climate.cluster10_gangyisil_cangga_oreunjjog
+    - climate.cluster10_gangyisil_cangga_oenjjog
