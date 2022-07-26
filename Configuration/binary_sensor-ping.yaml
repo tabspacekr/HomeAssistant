@@ -1,0 +1,4 @@
+- platform: ping
+  host: 10.100.175.96
+  name: "DND01"
+  scan_interval: 10
