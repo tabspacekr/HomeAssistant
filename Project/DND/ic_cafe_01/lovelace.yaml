@@ -1,0 +1,210 @@
+  - theme: Backend-selected
+    title: dnd01
+    path: dnd01
+    visible:
+      - user: e06cb3189f6146cbb7d7481d4178456e
+    type: sidebar
+    icon: mdi:coffee-maker-outline
+    badges: []
+    cards:
+      - square: false
+        columns: 4
+        type: grid
+        cards:
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: switch.dnd01_light
+            name: 일괄전등
+            show_state: true
+            icon: mdi:ceiling-light-multiple
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: switch.dnd01_light1
+            show_state: true
+            name: 전등1
+            icon: mdi:ceiling-light
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: switch.dnd01_light2
+            show_state: true
+            name: 전등2
+            icon: mdi:ceiling-light
+        title: 조명 제어
+      - square: false
+        columns: 4
+        type: grid
+        cards:
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: switch.dnd01_push
+            name: 원격개방
+            icon: mdi:exit-run
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: call-service
+              service: input_select.select_option
+              data:
+                option: unlock
+              target:
+                entity_id:
+                  - input_select.dnd01_msrmode
+            entity: switch.dnd01_lock
+            name: 상시개방
+            icon: mdi:door-sliding-open
+          - show_name: true
+            show_icon: true
+            type: button
+            entity: binary_sensor.dnd01
+            name: 온라인상태
+            show_state: true
+        title: 기기 제어
+      - square: false
+        columns: 4
+        type: grid
+        cards:
+          - type: conditional
+            conditions:
+              - entity: input_select.dnd01_msrmode
+                state: unlock
+            card:
+              show_name: true
+              show_icon: true
+              type: button
+              tap_action:
+                action: none
+              entity: input_boolean.on
+              name: 상시개방
+              show_state: true
+              hold_action:
+                action: none
+              icon: mdi:door-open
+          - type: conditional
+            conditions:
+              - entity: input_select.dnd01_msrmode
+                state: lockdown
+            card:
+              show_name: true
+              show_icon: true
+              type: button
+              tap_action:
+                action: none
+              entity: input_boolean.on
+              name: 락다운
+              show_state: true
+              hold_action:
+                action: none
+              icon: mdi:door-closed-lock
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: call-service
+              service: input_select.select_option
+              data:
+                option: unlock
+              target:
+                entity_id: input_select.dnd01_msrmode
+            entity: ''
+            name: 상시개방
+            icon: mdi:door-open
+            hold_action:
+              action: none
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: call-service
+              service: input_select.select_option
+              data:
+                option: lockdown
+              target:
+                entity_id: input_select.dnd01_msrmode
+            entity: ''
+            name: 락다운
+            icon: mdi:door-closed-lock
+            hold_action:
+              action: none
+        title: 출입모드 제어
+      - square: false
+        columns: 2
+        type: grid
+        cards:
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: automation.dnd01_culibtongje_on_taimeo
+            name: 시작타이머
+            show_state: true
+            icon: mdi:electric-switch-closed
+          - type: entity
+            entity: input_datetime.dnd01_security_time_on
+            theme: Google Point Theme
+            name: 출입통제 시작시간
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: automation.dnd01_culibtongje_off_taimeo
+            name: 종료타이머
+            show_state: true
+            icon: mdi:electric-switch
+          - type: entity
+            entity: input_datetime.dnd01_security_time_off
+            theme: Google Point Theme
+            name: 출입통제 종료시간
+        title: 출입통제 타이머
+      - square: false
+        columns: 2
+        type: grid
+        cards:
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: automation.dnd01_jomyeong_on_taimeo
+            name: 조명 켜짐 타이머
+            show_state: true
+            icon: mdi:home-lightbulb-outline
+          - type: entity
+            entity: input_datetime.dnd01_light_time_on
+            theme: Google Point Theme
+            name: 조명 켜짐 시간
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: automation.dnd01_jomyeong_off_taimeo
+            name: 조명 꺼짐 타이머
+            show_state: true
+            icon: mdi:home-lightbulb
+          - type: entity
+            entity: input_datetime.dnd01_light_time_off
+            theme: Google Point Theme
+            name: 조명 꺼짐 시간
+        title: 조명 타이머
+      - type: logbook
+        entities:
+          - input_select.dnd01_msrmode
+        hours_to_show: 24
+        view_layout:
+          position: sidebar
+        title: 시스템 로그
