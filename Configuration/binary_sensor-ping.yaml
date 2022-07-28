@@ -1,3 +1,4 @@
+# 공인ip입력이 불가능할경우 zerotier 내부ip기입
 - platform: ping
   host: 10.100.175.96
   name: "DND01"
