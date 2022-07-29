@@ -1,3 +1,13 @@
+서비스 자동시작만 없애는 경우
+sudo systemctl mask docker.service
+sudo systemctl mask docker.socket
+
+서비스 자동시작만 하는 경우
+sudo systemctl unmask docker.service
+sudo systemctl unmask docker.socket
+
+========================
+
 HA 서비스 종료 
 systemctl stop hassio-supervisor.service 
 systemctl stop hassio-apparmor.service 
