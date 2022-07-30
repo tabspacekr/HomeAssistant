@@ -20,6 +20,7 @@ DHT22센서는 MQTT PUBLISH MESSAGE를 tele/%topic%/SENSOR 에 JSON 형태로 �
 - console에서 [tempoffset 범위]로 설정. 범위는 -12.6도에서 +12.6도까지 가능
 - 예: -5도로 설정 시, TempOffset -5
 - 예2: +2.4도로 설정 시 TempOffset +5
+- 해당 오차범위를 넘어서는경우 정상적인 센서로 활용하기 어려우며, 40도이상 오동작센서는 HA센서정보를 추가하여 변경
 
 습도보정
 - humioffset -8
