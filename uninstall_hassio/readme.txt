@@ -1,3 +1,5 @@
+# case.1 : ha설치상태는 남겨둔채 docker 자동 시작만 해제하는 경우
+
 서비스 자동시작만 없애는 경우
 sudo systemctl mask docker.service
 sudo systemctl mask docker.socket
@@ -7,6 +9,7 @@ sudo systemctl unmask docker.service
 sudo systemctl unmask docker.socket
 
 ========================
+# case.2 : ha도커컨테이너 자체를 삭제하는 
 
 HA 서비스 종료 
 systemctl stop hassio-supervisor.service 
