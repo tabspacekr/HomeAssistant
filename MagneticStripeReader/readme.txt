@@ -10,6 +10,7 @@ To Do List
    -> 화재시에 출입문 강제개방을 위함
    -> mqtt-io로 gpio pin에 DHT22 센서추가하여 구현
 - evdev python module로 전환
+- mqtt.io가 mqtt broker와 단절된경우에 process kill하여 재실행하도록 정교화
 
 적용 완료 사항
 - 딜레이 이슈 보강
