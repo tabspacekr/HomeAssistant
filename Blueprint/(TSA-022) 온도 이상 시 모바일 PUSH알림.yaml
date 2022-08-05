@@ -1,3 +1,5 @@
+# sensor 도메인의 temperature 디바이스클래스를 지정하여, 설정한 온도 이상(above)일 경우 공식HA앱으로 PUSH메시지를 발송합니다.
+# 2022.07.12. ceo@tabspace.kr
 blueprint:
   name: '온도 이상 시 모바일 PUSH알림'
   description: '온도 이상 시 지정된 모바일 단말기에 알림을 줍니다.'
