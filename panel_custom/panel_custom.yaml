@@ -2,7 +2,7 @@
   sidebar_title: 서버제어
   sidebar_icon: mdi:cog-transfer
   js_url: /api/hassio/app/entrypoint.js
-  url_path: 'developer-tools/yaml'
+  url_path: 'developer-tools/yaml' # 개발자도구에서 서버재시작하도록 변경됨 
   embed_iframe: true
   require_admin: true
   config:
