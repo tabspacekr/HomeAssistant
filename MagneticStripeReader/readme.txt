@@ -10,8 +10,6 @@ To Do List
    -> 화재시에 출입문 강제개방을 위함
    -> mqtt-io로 gpio pin에 DHT22 센서추가하여 구현
 - evdev python module로 전환
-- mqtt.io가 mqtt broker와 단절된경우에 process kill하여 재실행하도록 정교화
-   -> https://mqtt-io.app/2.2.7/#/config/reference/mqtt/
 
 적용 완료 사항
 - 딜레이 이슈 보강
@@ -21,6 +19,9 @@ To Do List
 - GPIO PIN을 통한 외부 Sonoff RE5V1C 드라이락 릴레이 없이 제어 가능하도록 처리
 - 스피커를 통한 음성안내가 외부설치환경에서는 잘들리지않아 상태LED 4개를 통한 안내보강
 - 전등 및 climate domain에 사용이 가능한 타이머 기능 보강 (input_datetime 선언)
+- mqtt.io가 mqtt broker와 단절된경우에 process kill하여 재실행하도록 정교화
+   -> https://mqtt-io.app/2.2.7/#/config/reference/mqtt/
+   -> 현경로 mqtt_service_check.py 파일 참고
 - 기타 기능 보완
   - 인터넷 또는 WIFI가 단절되더라도 exit버튼으로 퇴실가능하도록 하드웨어적으로 설계 변경
   - orange pi자체 gpio제어 처리
