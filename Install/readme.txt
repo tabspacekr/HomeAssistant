@@ -27,3 +27,18 @@ ufw disable
 timedatectl set-timezone Asia/Seoul
 
 #connect http://ipaddress:8123
+
+
+===============================================
+
+강제종료 등의 이유로 homeassistant supervisor의 docker실행이 불가한경우
+/usr/share/hassio/ 경로를 유지한 상태로 docker의 컨테이너만 삭제 후, 위 설치 절차 진행
+
+docker stop 으로 home assistant와 유관된 모든 docker service stop
+이후
+docker system prune 
+명령어를 통해 초기화
+
+addon은 재설치를 해주어야하지만, 나머지 정보는 유지가 가능함.
+
+Ref: https://www.lainyzine.com/ko/article/docker-prune-usage-remove-unused-docker-objects/
