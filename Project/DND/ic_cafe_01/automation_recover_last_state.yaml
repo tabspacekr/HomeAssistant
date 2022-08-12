@@ -1,0 +1,28 @@
+alias: DND01 - 조명1 리커버리시 마지막 상태값 적용
+description: ''
+trigger:
+  - platform: state
+    entity_id:
+      - switch.dnd01new_light1
+    from: unavailable
+condition: []
+action:
+  - if:
+      - condition: state
+        entity_id: input_boolean.dnd01_light1_laststatus
+        state: 'off'
+    then:
+      - service: switch.turn_off
+        data: {}
+        target:
+          entity_id: switch.dnd01new_light1
+  - if:
+      - condition: state
+        entity_id: input_boolean.dnd01_light1_laststatus
+        state: 'on'
+    then:
+      - service: switch.turn_on
+        data: {}
+        target:
+          entity_id: switch.dnd01new_light1
+mode: single
