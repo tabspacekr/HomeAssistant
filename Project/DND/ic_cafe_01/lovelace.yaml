@@ -1,8 +1,11 @@
+
   - theme: Backend-selected
     title: dnd01
     path: dnd01
     visible:
       - user: e06cb3189f6146cbb7d7481d4178456e
+      - user: 1a945add6eef4fc18babada62563e283
+      - user: 22634ea1419a44cab3665eac58dad0b7
     type: sidebar
     icon: mdi:coffee-maker-outline
     badges: []
@@ -16,7 +19,7 @@
             type: button
             tap_action:
               action: toggle
-            entity: switch.dnd01_light
+            entity: switch.dnd01new_light
             name: 일괄전등
             show_state: true
             icon: mdi:ceiling-light-multiple
@@ -25,18 +28,18 @@
             type: button
             tap_action:
               action: toggle
-            entity: switch.dnd01_light1
+            entity: switch.dnd01new_light1
             show_state: true
-            name: 전등1
-            icon: mdi:ceiling-light
+            name: 간판
+            icon: mdi:sign-real-estate
           - show_name: true
             show_icon: true
             type: button
             tap_action:
               action: toggle
-            entity: switch.dnd01_light2
+            entity: switch.dnd01new_light2
             show_state: true
-            name: 전등2
+            name: 매장등
             icon: mdi:ceiling-light
         title: 조명 제어
       - square: false
@@ -151,7 +154,7 @@
             entity: automation.dnd01_culibtongje_on_taimeo
             name: 시작타이머
             show_state: true
-            icon: mdi:electric-switch-closed
+            icon: mdi:door-closed
           - type: entity
             entity: input_datetime.dnd01_security_time_on
             theme: Google Point Theme
@@ -164,7 +167,7 @@
             entity: automation.dnd01_culibtongje_off_taimeo
             name: 종료타이머
             show_state: true
-            icon: mdi:electric-switch
+            icon: mdi:door-open
           - type: entity
             entity: input_datetime.dnd01_security_time_off
             theme: Google Point Theme
@@ -180,31 +183,64 @@
             tap_action:
               action: toggle
             entity: automation.dnd01_jomyeong_on_taimeo
-            name: 조명 켜짐 타이머
+            name: 간판 켜짐 타이머
             show_state: true
-            icon: mdi:home-lightbulb-outline
+            icon: mdi:sign-direction
           - type: entity
             entity: input_datetime.dnd01_light_time_on
             theme: Google Point Theme
-            name: 조명 켜짐 시간
+            name: 간판 켜짐 시간
           - show_name: true
             show_icon: true
             type: button
             tap_action:
               action: toggle
             entity: automation.dnd01_jomyeong_off_taimeo
-            name: 조명 꺼짐 타이머
+            name: 간판 꺼짐 타이머
             show_state: true
-            icon: mdi:home-lightbulb
+            icon: mdi:sign-direction-remove
           - type: entity
             entity: input_datetime.dnd01_light_time_off
             theme: Google Point Theme
-            name: 조명 꺼짐 시간
-        title: 조명 타이머
+            name: 간판 꺼짐 시간
+        title: 조명1(간판) 타이머
+      - square: false
+        columns: 2
+        type: grid
+        cards:
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: automation.dnd01_jomyeong2_on_taimeo
+            name: 매장 조명 켜짐 타이머
+            show_state: true
+            icon: mdi:home-lightbulb-outline
+          - type: entity
+            entity: input_datetime.dnd01_light2_time_on
+            theme: Google Point Theme
+            name: 매장 조명 켜짐 시간
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: automation.dnd01_jomyeong2_off_taimeo
+            name: 매장 조명 꺼짐 타이머
+            show_state: true
+            icon: mdi:home-lightbulb
+          - type: entity
+            entity: input_datetime.dnd01_light2_time_off
+            theme: Google Point Theme
+            name: 매장 조명 꺼짐 시간
+        title: 조명2(매장) 타이머
       - type: logbook
         entities:
           - input_select.dnd01_msrmode
+          - switch.dnd01new_light1
+          - switch.dnd01new_light2
         hours_to_show: 24
         view_layout:
-          position: sidebar
+          position: main
         title: 시스템 로그
