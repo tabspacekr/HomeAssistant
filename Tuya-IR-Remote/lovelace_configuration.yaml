@@ -1,3 +1,4 @@
+# data에 {{ protocol }}, {{ bits }}, 0x{{ data }}, {{ room }} 정보를 포함하여 서비스 ir_raw script 호출
 cards:
   - cards:
       - action: service
