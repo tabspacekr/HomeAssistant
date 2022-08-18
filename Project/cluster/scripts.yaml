@@ -1,0 +1,141 @@
+# 인접위치에 설치된 IR리모콘허브가 신호간섭 현상이 있어, 전체ON/OFF과정을 IR신호혼선이 오지 않도록 딜레이1초 추가하여 스크립트 처리
+
+alias: cluster10_class_off
+sequence:
+  - service: climate.turn_off
+    data: {}
+    target:
+      entity_id: climate.cluster10_gangyisil_mun_oreunjjog
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  - service: climate.turn_off
+    data: {}
+    target:
+      entity_id: climate.cluster10_gangyisil_mun_oenjjog
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  - service: climate.turn_off
+    data: {}
+    target:
+      entity_id: climate.cluster10_gangyisil_cangga_oreunjjog
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  - service: climate.turn_off
+    data: {}
+    target:
+      entity_id: climate.cluster10_gangyisil_cangga_oenjjog
+mode: single
+
+alias: cluster10_class_on
+sequence:
+  - service: climate.turn_on
+    data: {}
+    target:
+      entity_id: climate.cluster10_gangyisil_mun_oreunjjog
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  - service: climate.turn_on
+    data: {}
+    target:
+      entity_id: climate.cluster10_gangyisil_mun_oenjjog
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  - service: climate.turn_on
+    data: {}
+    target:
+      entity_id: climate.cluster10_gangyisil_cangga_oreunjjog
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  - service: climate.turn_on
+    data: {}
+    target:
+      entity_id: climate.cluster10_gangyisil_cangga_oenjjog
+mode: single
+
+alias: cluster8_class_off
+sequence:
+  - service: climate.turn_off
+    data: {}
+    target:
+      entity_id: climate.cluster8_gangyisil_mun_oreunjjog
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  - service: climate.turn_off
+    data: {}
+    target:
+      entity_id: climate.cluster8_gangyisil_mun_oenjjog
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  - service: climate.turn_off
+    data: {}
+    target:
+      entity_id: climate.cluster8_gangyisil_cangga_oreunjjog
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  - service: climate.turn_off
+    data: {}
+    target:
+      entity_id: climate.cluster8_gangyisil_cangga_oenjjog
+mode: single
+
+alias: cluster8_class_on
+sequence:
+  - service: climate.turn_on
+    data: {}
+    target:
+      entity_id: climate.cluster8_gangyisil_mun_oreunjjog
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  - service: climate.turn_on
+    data: {}
+    target:
+      entity_id: climate.cluster8_gangyisil_mun_oenjjog
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  - service: climate.turn_on
+    data: {}
+    target:
+      entity_id: climate.cluster8_gangyisil_cangga_oreunjjog
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  - service: climate.turn_on
+    data: {}
+    target:
+      entity_id: climate.cluster8_gangyisil_cangga_oenjjog
+mode: single
