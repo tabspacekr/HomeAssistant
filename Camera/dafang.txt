@@ -6,6 +6,7 @@ https://github.com/EliasKotlyar/Xiaomi-Dafang-Hacks/blob/master/hacks/faq.md
 
 dafang mqtt 연동
 - https://github.com/EliasKotlyar/Xiaomi-Dafang-Hacks/blob/master/integration/homeassistant/homeassistant.md
+- autodiscover로 작동
 
 1. dafang ip에 ssh접속한 후 (기본비밀번호 root // ismart12)
 
@@ -18,7 +19,7 @@ USER, PASS, HOST 부분 변경, AUTODISCOVERY_PREFIX 주석 해제
 HA에 rtsp 연동
 
 configuration.yaml에 아래 내용 추가 후 재기동
-- integration generic camera 로 설정가능
+- 최신 ha에서는, integration - generic camera 로 설정가능
 
 camera:
   - platform: ffmpeg
