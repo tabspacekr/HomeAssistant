@@ -1,0 +1,2 @@
+rule2 ON ZBReceived#DAIN02_2G_SW#Endpoint DO var1 %value% ENDON ON ZBReceived#DAIN02_2G_SW#Power DO publish2 tele/DAIN02_ZB/DAIN02_2G_SW/Switch%var1%/Power %value% ENDON
+rule2 1
