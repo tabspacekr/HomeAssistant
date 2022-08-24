@@ -1,0 +1,26 @@
+# DAIN02 2구 스위치
+- platform: mqtt
+  unique_id: "DAIN02_SW1" 
+  name: "DAIN02_SW1" 
+  availability_topic: "tele/DAIN02_ZB/LWT" 
+  payload_available: "Online" 
+  payload_not_available: "Offline" 
+  state_topic: "tele/DAIN02_ZB/DAIN02_2G_SW/Switch1/Power" 
+  state_on: "1" 
+  state_off: "0" 
+  command_topic: "cmnd/DAIN02_ZB/ZbSend" 
+  payload_on: '{ "Device":"DAIN02_2G_SW", "Endpoint":"1", "send":{"Power":"On"} }'
+  payload_off: '{ "Device":"DAIN02_2G_SW", "Endpoint":"1", "send":{"Power":"Off"} }'
+
+- platform: mqtt
+  unique_id: "DAIN02_SW2" 
+  name: "DAIN02_SW2" 
+  availability_topic: "tele/DAIN02_ZB/LWT" 
+  payload_available: "Online" 
+  payload_not_available: "Offline" 
+  state_topic: "tele/DAIN02_ZB/DAIN02_2G_SW/Switch2/Power" 
+  state_on: "1" 
+  state_off: "0" 
+  command_topic: "cmnd/DAIN02_ZB/ZbSend" 
+  payload_on: '{ "Device":"DAIN02_2G_SW", "Endpoint":"2", "send":{"Power":"On"} }'
+  payload_off: '{ "Device":"DAIN02_2G_SW", "Endpoint":"2", "send":{"Power":"Off"} }'
