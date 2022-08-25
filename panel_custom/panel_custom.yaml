@@ -1,4 +1,4 @@
-- name: ha_server_con
+- name: ha_server_control
   sidebar_title: 서버제어
   sidebar_icon: mdi:cog-transfer
   js_url: /api/hassio/app/entrypoint.js
@@ -7,7 +7,7 @@
   require_admin: true
   config:
     ingress: core_configurator
-- name: ha_integ
+- name: ha_integegrations
   sidebar_title: 통합구성요소
   sidebar_icon: mdi:chip
   js_url: /api/hassio/app/entrypoint.js
@@ -16,7 +16,7 @@
   require_admin: true
   config:
     ingress: core_configurator
-- name: ha_auto
+- name: ha_automation
   sidebar_title: 자동화
   sidebar_icon: mdi:cog-outline
   js_url: /api/hassio/app/entrypoint.js
