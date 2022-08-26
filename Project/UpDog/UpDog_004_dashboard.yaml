@@ -1,0 +1,97 @@
+  - theme: Backend-selected
+    title: 광주 첨단점
+    path: Gan01
+    visible:
+      - user: 93102ba9443443d89b1bfe1792427567
+      - user: c130f9f91ec34620ae54957d3ad04b8f
+      - user: 3f9baf5f945f4c1880f53c60191c42bd
+      - user: 83f9c55e5ebe42f98a8511bf870544eb
+    type: sidebar
+    badges: []
+    cards:
+      - square: false
+        columns: 2
+        type: grid
+        cards:
+          - show_name: true
+            show_icon: true
+            type: button
+            entity: binary_sensor.dain01_ms
+            name: 동작 감지
+            show_state: true
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: climate.dain01_ir
+            icon: mdi:air-conditioner
+            name: 냉난방기
+            show_state: true
+      - square: false
+        columns: 1
+        type: grid
+        cards:
+          - hours_to_show: 24
+            graph: line
+            type: sensor
+            entity: sensor.dain01tmp_am2301_temperature
+            detail: 1
+            name: 온도
+      - type: thermostat
+        entity: climate.dain01_ir
+        name: 냉난방기
+      - type: history-graph
+        entities:
+          - entity: binary_sensor.dain01_ms
+        hours_to_show: 24
+        refresh_interval: 0
+        title: 동작감지 로그
+        view_layout:
+          position: sidebar
+      - type: logbook
+        entities:
+          - binary_sensor.dain01_ms
+        title: 출입 로그
+        view_layout:
+          position: sidebar
+      - type: history-graph
+        entities:
+          - entity: climate.dain01_ir
+          - entity: sensor.dain01tmp_am2301_temperature
+        hours_to_show: 24
+        refresh_interval: 0
+        view_layout:
+          position: sidebar
+        title: 온도 로그
+      - square: false
+        columns: 2
+        type: grid
+        cards:
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: automation.updog04_ac_time_on
+            name: 에어컨 켜짐 타이머
+            show_state: true
+            icon: mdi:air-humidifier
+          - type: entity
+            entity: input_datetime.updog04_ac_time_on
+            theme: Google Point Theme
+            name: 에어컨 켜짐 시간
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: automation.updog04_ac_time_off
+            name: 에어컨 꺼짐 타이머
+            show_state: true
+            icon: mdi:air-humidifier-off
+          - type: entity
+            entity: input_datetime.updog04_ac_time_off
+            theme: Google Point Theme
+            name: 에어컨 꺼짐 시간
+        title: 에어컨 타이머
