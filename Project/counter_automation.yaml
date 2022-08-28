@@ -1,0 +1,174 @@
+- id: '1661683607317'
+  alias: DRESS01NEW - Counter
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.dress_01_ms
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    data: {}
+    target:
+      entity_id: counter.dress01_visitor_count
+  mode: single
+- id: '1661683925804'
+  alias: DRESS01NEW - Counter Reset
+  description: ''
+  trigger:
+  - platform: time
+    at: 00:00:00
+  condition: []
+  action:
+  - service: counter.reset
+    data: {}
+    target:
+      entity_id: counter.dress01_visitor_count
+  mode: single
+- id: '1661684585405'
+  alias: UPDOG01 - Counter
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.updog_001_ms
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    data: {}
+    target:
+      entity_id: counter.updog01_visitor_count
+  mode: single
+- id: '1661684616505'
+  alias: UPDOG02 - Counter
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.updog_002_ms
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    data: {}
+    target:
+      entity_id: counter.updog02_visitor_count
+  mode: single
+- id: '1661684653056'
+  alias: UPDOG03 - Counter
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.dain02_ms
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    data: {}
+    target:
+      entity_id: counter.updog03_visitor_count
+  mode: single
+- id: '1661684678188'
+  alias: UPDOG04 - Counter
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.dain01_ms
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    data: {}
+    target:
+      entity_id: counter.updog04_visitor_count
+  mode: single
+- id: '1661684741624'
+  alias: VAVAS01 - Counter
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.vavas01_cctv_motion_2_2
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    data: {}
+    target:
+      entity_id: counter.vavas01_visitor_count
+  mode: single
+- id: '1661684779007'
+  alias: UPDOG01 - Counter Reset
+  description: ''
+  trigger:
+  - platform: time
+    at: 00:00:00
+  condition: []
+  action:
+  - service: counter.reset
+    data: {}
+    target:
+      entity_id: counter.updog01_visitor_count
+  mode: single
+- id: '1661684789022'
+  alias: UPDOG02 - Counter Reset
+  description: ''
+  trigger:
+  - platform: time
+    at: 00:00:00
+  condition: []
+  action:
+  - service: counter.reset
+    data: {}
+    target:
+      entity_id: counter.updog02_visitor_count
+  mode: single
+- id: '1661684801005'
+  alias: UPDOG03 - Counter Reset
+  description: ''
+  trigger:
+  - platform: time
+    at: 00:00:00
+  condition: []
+  action:
+  - service: counter.reset
+    data: {}
+    target:
+      entity_id: counter.updog03_visitor_count
+  mode: single
+- id: '1661684812254'
+  alias: UPDOG04 - Counter Reset
+  description: ''
+  trigger:
+  - platform: time
+    at: 00:00:00
+  condition: []
+  action:
+  - service: counter.reset
+    data: {}
+    target:
+      entity_id: counter.updog04_visitor_count
+  mode: single
+- id: '1661684831457'
+  alias: VAVAS01 - Counter Reset
+  description: ''
+  trigger:
+  - platform: time
+    at: 00:00:00
+  condition: []
+  action:
+  - service: counter.reset
+    data: {}
+    target:
+      entity_id: counter.vavas01_visitor_count
+  mode: single
