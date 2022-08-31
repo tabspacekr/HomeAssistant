@@ -1,3 +1,5 @@
+#helper로 counter추가 후 모션센서 트리거조건설정
+#출입구가 1개인 경우 동작감지가 입실/퇴실로 2회 발동염두
 - id: '1661683607317'
   alias: DRESS01NEW - Counter
   description: ''
