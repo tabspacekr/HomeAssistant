@@ -5,7 +5,7 @@ tap_action:
   service: homeassistant.reload_config_entry
   service_data: {}
   target:
-    entity_id: switch.ganjeobdeung_switch_1
+    entity_id: switch.ganjeobdeung_switch_1 #tuya에서 불러온 전등스위치를 reload시에, 전체 tuya integration을 reload
 name: 전등버튼 클라우드 재접속
 icon: mdi:reload
 hold_action:
