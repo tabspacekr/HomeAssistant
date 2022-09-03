@@ -1,4 +1,5 @@
 ESP8266칩 기반 Tuya 고퀄(헤이홈) 스마트 리모콘 허브(인증명 GKW-IR021) 펌웨어 백업
+- F/W HardReset 후 사용 
 
 tasmotizer의 backup기능이 정상적으로 동작하지 않아, esptool을 통한 백업 방식 사용
 
