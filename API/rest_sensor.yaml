@@ -1,12 +1,12 @@
 # configuration.yaml에
 # sensor: !include sensor.yaml이 되어 있다고 가정
 # 아래 내용을 sensor.yaml 에 추가하여 사용
+# true false type의 2진센서는 binary_sensor로 선언
 - platform: rest
   name: dain02_status
   resource: "https://sun.tabspace.kr/api/states/binary_sensor.status_sensor"
   headers:
     Authorization: "Bearer RESTKEY_INPUT"
     Content-Type: application/json
-  #value_template: "{{value_json['data']['state']}}"
-  value_template: "{{ value_json.state }}"
+  #value_template: "{{ value_json.state }}"
   scan_interval: 30
