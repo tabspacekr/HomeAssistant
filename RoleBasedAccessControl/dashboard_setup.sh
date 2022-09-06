@@ -1,4 +1,5 @@
 # https://community.home-assistant.io/t/admin-only-access-for-logbook-and-history-menus/187722/43
+# https://github.com/home-assistant/core/blob/c5afaa2e6a1af77a69a0151dc1b8d7f5e3dcf2da/homeassistant/components/frontend/__init__.py#L262
 
 docker exec -it homeassistant bash
 
