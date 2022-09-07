@@ -1,0 +1,21 @@
+template:
+  - sensor:
+      - name: "OUTSIDE_TEMPERATURE"
+        state: "{{ state_attr('weather.tabspace', 'temperature') }}"
+        device_class: temperature
+        unit_of_measurement: '°C'
+  
+      - name: "OUTSIDE_HUMIDITY"
+        state: "{{ state_attr('weather.tabspace', 'humidity') }}"
+        device_class: humidity
+        unit_of_measurement: '%'
+        
+      - name: "NEW_PM25"
+        state: "{{ states('sensor.pm25_random') }}"
+        device_class: pm25
+        unit_of_measurement: '㎍/㎥'
+        
+      - name: "NEW_PM10"
+        state: "{{ states('sensor.pm10_random') }}"
+        device_class: pm10
+        unit_of_measurement: '㎍/㎥'
