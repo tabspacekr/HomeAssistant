@@ -1,6 +1,6 @@
 # 관리자 권한이 아닌 일반 사용자에게 좌측 sidebar의 History, Map, Media, Logbook, Energy를 접근 권한이 없도록 하며, 또한 매뉴자체에서 숨김처리를 하기 위한 수정방법
 # docker환경의 경우, 해당 docker instance에 접근하여 처리하여야 하며, ha업데이트 시에 반영사항이 사라짐
-
+# todo : ha naver map 소스 참고하여 sed replace shell 적용
 # https://community.home-assistant.io/t/admin-only-access-for-logbook-and-history-menus/187722/43
 # https://github.com/home-assistant/core/blob/c5afaa2e6a1af77a69a0151dc1b8d7f5e3dcf2da/homeassistant/components/frontend/__init__.py#L262
 
