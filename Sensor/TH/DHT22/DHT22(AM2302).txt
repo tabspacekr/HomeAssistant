@@ -34,3 +34,4 @@ DHT22센서는 MQTT PUBLISH MESSAGE를 tele/%topic%/SENSOR 에 JSON 형태로 �
 저전력모드 진입 방지
 - sleep 0
 
+ToDo : hard reset을 해야 data를 보내는 이슈 수정필요
