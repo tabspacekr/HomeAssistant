@@ -1,0 +1,13 @@
+#REF : https://tasmota.github.io/docs/MQTT/#examples
+
+#OTA 주소 확인
+cmnd/tasmota/OtaUrl
+
+#OTA 주소 변경
+cmnd/tasmota/OtaUrl http://ota.tasmota.com/tasmota/release/tasmota.bin
+
+#OTA 주소 기본값으로 변경
+cmnd/tasmota/OtaUrl 1
+
+#OTA 주소에 있는 펌웨어로 업데이트
+cmnd/tasmota/Upgrade 1.
