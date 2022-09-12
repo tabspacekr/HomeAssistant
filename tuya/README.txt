@@ -29,6 +29,7 @@ https://developer.tuya.com/en/docs/cloud/user-management?id=K95ztzvgwnshy#title-
 
 #rtsp protocol
 # 트래픽단위로 과금됨
+# 보안등급이 적용되어 있음
 https://developer.tuya.com/en/docs/cloud/19b50885a2?id=Kag2d0i8bjfh3
 
 https://support.tuya.com/en/help/_detail/K9g77ypvvc20x
