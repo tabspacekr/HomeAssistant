@@ -17,3 +17,5 @@ sonoff re5v1c tasmota 적용 시 참고사항
 - inching mode 설정이 필요함. (tasmota console에서 inching설정)
 - 또는 automation에서 unlock 해제 시에 5초 뒤 다시 lock을 하는 형태로 구성
 - 일반적으로 사용 시, tasmota 내부가 아닌 ha에서 off to on state trigger 조건으로 잠금제어 설정
+
+wifi기반 tasmota적용을 최대한 하지 않기 위해 gpio를 통한 릴레이제어로 코드전환함
