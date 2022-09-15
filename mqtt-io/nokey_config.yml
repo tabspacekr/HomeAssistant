@@ -1,4 +1,4 @@
-# python3 -m mqtt_io config.yml
+# 아래 내용으로 config.yml 파일을 생성한 후, python3 -m mqtt_io config.yml 명령어로 mqtt_io 모듈 실행
 mqtt:
   host: mqtt.hostname.com
   port: 1883
@@ -10,9 +10,9 @@ mqtt:
 
 # GPIO
 gpio_modules:
-  # Use the Orange Pi built-in GPIO
+  # 오렌지파이의 GPIO포트를 활용
   - name: pi_gpio 
-    module: orangepi
+    module: orangepi # 오렌지파이를 사용하므로, 모듈을 orangepi로 설정. 정확한 모듈을 설정하지 않으면 핀번호가 달라 오동작하게됨
     board: zero
     mode: board
 
