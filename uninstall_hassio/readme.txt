@@ -9,7 +9,7 @@ sudo systemctl unmask docker.service
 sudo systemctl unmask docker.socket
 
 ========================
-# case.2 : ha도커컨테이너 자체를 삭제하는 
+# case.2 : ha도커컨테이너 자체를 삭제하는 경우
 
 HA 서비스 종료 
 systemctl stop hassio-supervisor.service 
