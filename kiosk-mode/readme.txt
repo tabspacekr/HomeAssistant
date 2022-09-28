@@ -1,4 +1,5 @@
 title: tabspace
 kiosk_mode:
-  hide_sidebar: true
+  non_admin_settings:
+    hide_sidebar: true
 views:
