@@ -8,7 +8,7 @@ template:
         device_class: pm25
         #unit_of_measurement: '㎍/㎥'
 
-      - name: "JW_Humidity"
+      - name: "PM10"
         state: "{{ trigger.json.pm10 }}"
         device_class: pm10
         #unit_of_measurement: '㎍/㎥'
