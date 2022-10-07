@@ -10,6 +10,7 @@ To Do List
    -> mqtt-io로 gpio pin에 DHT22 센서추가하여 구현
 - evdev python module로 전환
 - 오동작 및 인터넷접속이 단절되었을경우, 외부에서 강제개방이 가능한 택트 스위치 
+- 네트워크 단절 및 클라우드 오동작 후 리커버리시에 클라우드의 마지막 상태(lock, unlock, lockdown)를 적용하는 automation
 
 적용 완료 사항
 - 딜레이 이슈 보강
