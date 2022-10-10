@@ -6,3 +6,4 @@
 #TODO LIST
 - ON/OFF 로그로 보는 것이 아닌, 단일 상태값으로 로그북 표현
 - Sensor status change로 처리
+- 애견카페용 iot솔루션 아이디어검토
