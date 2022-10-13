@@ -1,25 +1,4 @@
-
-# Configure a default setup of Home Assistant (frontend, api, etc)
-default_config:
-
-# Text to speech
-tts:
-  - platform: google_translate
-    language: 'ko'
-    
-group: !include groups.yaml
-automation: !include automations.yaml
-script: !include scripts.yaml
-scene: !include scenes.yaml
-
-# Use MariaDB for Recording
-recorder:
-  db_url: mysql://homeassistant:tabspace@core-mariadb/homeassistant?charset=utf8mb4
-
-# 테마 적용
-frontend:
-  themes: !include themes.yaml
-
+# 외부온도 확인용
 sensor:
   - platform: template
     sensors:
@@ -63,9 +42,3 @@ input_number:
     min: 1
     max: 100
     step: 1
-
-http:
-  # 리버스프록시 환경을 사용하기 위함
-  use_x_forwarded_for: true
-  trusted_proxies:
-    - 10.200.0.0/16  # Add the IP address of the proxy server
