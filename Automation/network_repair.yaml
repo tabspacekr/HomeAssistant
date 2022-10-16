@@ -1,0 +1,43 @@
+alias: dain09_network_repair
+description: 클라우드 네트워크 문제 또는 출입통제기 로컬 네트워크 문제가 발생하였다가 복구되었을 경우 클라우드에 저장된 마지막 출입모드를 재적용
+trigger:
+  - platform: state
+    entity_id:
+      - switch.dain09_lock
+    from: unavailable
+    to: "off"
+  - platform: state
+    entity_id:
+      - switch.dain09_lock
+    from: unavailable
+    to: "on"
+condition: []
+action:
+  - if:
+      - condition: state
+        entity_id: input_select.dain09_msrmode
+        state: lock
+    then:
+      - service: switch.turn_off
+        data: {}
+        target:
+          entity_id: switch.dain09_lock
+  - if:
+      - condition: state
+        entity_id: input_select.dain09_msrmode
+        state: lockdown
+    then:
+      - service: switch.turn_off
+        data: {}
+        target:
+          entity_id: switch.dain09_lock
+  - if:
+      - condition: state
+        entity_id: input_select.dain09_msrmode
+        state: unlock
+    then:
+      - service: switch.turn_on
+        data: {}
+        target:
+          entity_id: switch.dain09_lock
+mode: single
