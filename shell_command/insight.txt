@@ -1,0 +1,14 @@
+HA UPDATE시 core파일 자동수정 실행전략
+
+도커 외부의
+/usr/share/hassio/homeassistant/
+경로는
+
+도커 내부의
+/config
+로 맵핑된다.
+
+따라서, 도커 외부의 해당 경로에 .sh파일을 넣고
+
+docker exec homeassistant sh -c “/config/test.sh”
+형태로 실행하게 되면 HA UPDATE시에도 source 적용이 가능하다.
