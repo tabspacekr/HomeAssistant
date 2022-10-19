@@ -1,0 +1,126 @@
+#케이웨더 센서    
+#강원영동 나들이 지수
+- platform: scrape
+  resource: https://www.kweather.co.kr/data/JISU/11D20000.xml
+  name: picnic_value #"나들이 지수"
+  select: "jnum"
+  index: 1
+  scan_interval: 10800
+  verify_ssl: False
+
+#강원영동 빨래 지수
+- platform: scrape
+  resource: https://www.kweather.co.kr/data/JISU/11D20000.xml
+  name: wash_value #"빨래 지수"
+  select: "jnum"
+  index: 2
+  scan_interval: 10800
+  verify_ssl: False
+
+#강원영동 세차 지수
+- platform: scrape
+  resource: https://www.kweather.co.kr/data/JISU/11D20000.xml
+  name: carwash_value #"세차 지수"
+  select: "jnum"
+  index: 3
+  scan_interval: 10800
+  verify_ssl: False
+
+#강원영동 난방 지수
+- platform: scrape
+  resource: https://www.kweather.co.kr/data/JISU/11D20000.xml
+  name: heating_value #"난방 지수"
+  select: "jnum"
+  index: 4
+  scan_interval: 10800
+  verify_ssl: False
+
+#강원영동 불조심 지수
+- platform: scrape
+  resource: https://www.kweather.co.kr/data/JISU/11D20000.xml
+  name: fire_value #"불조심 지수"
+  select: "jnum"
+  index: 5
+  scan_interval: 10800
+  verify_ssl: False
+
+#강원영동 운동 지수
+- platform: scrape
+  resource: https://www.kweather.co.kr/data/JISU/11D20000.xml
+  name: exercise_value #"운동 지수"
+  select: "jnum"
+  index: 6
+  scan_interval: 10800
+  verify_ssl: False
+
+#강원영동 감기 지수
+- platform: scrape
+  resource: https://www.kweather.co.kr/data/JISU/11D20000.xml
+  name: cold_value #"감기 지수"
+  select: "jnum"
+  index: 7
+  scan_interval: 10800
+  verify_ssl: False
+
+#강원영동 공해 지수
+- platform: scrape
+  resource: https://www.kweather.co.kr/data/JISU/11D20000.xml
+  name: pollution_value #"공해 지수"
+  select: "jnum"
+  index: 8
+  scan_interval: 10800
+  verify_ssl: False
+
+#강원영동 냉방 지수
+- platform: scrape
+  resource: https://www.kweather.co.kr/data/JISU/11D20000.xml
+  name: cooling_value #"냉방 지수"
+  select: "jnum"
+  index: 9
+  scan_interval: 10800
+  verify_ssl: False
+  
+#강원영동 불쾌 지수
+- platform: scrape
+  resource: https://www.kweather.co.kr/data/JISU/11D20000.xml
+  name: discomfort_value #"불쾌 지수"
+  select: "jnum"
+  index: 10
+  scan_interval: 10800
+  verify_ssl: False
+
+#강원영동 자외선 지수
+- platform: scrape
+  resource: https://www.kweather.co.kr/data/JISU/11D20000.xml
+  name: ultraviolet_value #"자외선 지수"
+  select: "jnum"
+  index: 11
+  scan_interval: 10800
+  verify_ssl: False
+
+#강원영동 모기 지수
+- platform: scrape
+  resource: https://www.kweather.co.kr/data/JISU/11D20000.xml
+  name: mosquito_value #"모기 지수"
+  select: "jnum"
+  index: 12
+  scan_interval: 10800
+  verify_ssl: False
+  
+#강원영동 부패 지수
+- platform: scrape
+  resource: https://www.kweather.co.kr/data/JISU/11D20000.xml
+  name: corruption_value #"부패 지수"
+  select: "jnum"
+  index: 13
+  scan_interval: 10800
+  verify_ssl: False
+
+#강원영동 골프 지수
+- platform: scrape
+  resource: https://www.kweather.co.kr/data/JISU/11D20000.xml
+  name: golf_value #"골프 지수"
+  select: "jnum"
+  index: 14
+  scan_interval: 10800
+  verify_ssl: False
