@@ -1,0 +1,75 @@
+alias: Turn_On_SAVE_STATE_and_OFF
+description: ''
+trigger:
+  - platform: device
+    type: turned_off
+    device_id: d749a5e10b53ed53ff0f1d4938afc7ee
+    entity_id: switch.ilgwalsodeung_1gu_l1
+    domain: switch
+condition: []
+action:
+  - service: scene.create
+    data:
+      scene_id: before_state
+      snapshot_entities:
+        - switch.jubang_oenjjog_3gu_l1
+        - switch.jubang_oenjjog_3gu_l2
+        - switch.jubang_oenjjog_3gu_l3
+        - switch.jubang_jungang_3gu_l1
+        - switch.jubang_jungang_3gu_l2
+        - switch.jubang_jungang_3gu_l3
+        - switch.jubang_oreunjjog_3gu_l1
+        - switch.jubang_oreunjjog_3gu_l2
+        - switch.jubang_oreunjjog_3gu_l3
+        - switch.setagsil_1gu_l1
+        - switch.anbang_deureseurum_1gu_l1
+        - switch.anbanghwajangsil_oreunjjog_2gu_l1
+        - switch.anbanghwajangsil_oreunjjog_2gu_l2
+        - switch.anbang_hwajangsil_3gu_l1
+        - switch.anbang_hwajangsil_3gu_l2
+        - switch.anbang_hwajangsil_3gu_l3
+        - switch.anbang_beranda_1gu_l1
+        - switch.bogdo_hwajangsil_3gu_l1
+        - switch.bogdo_hwajangsil_3gu_l2
+        - switch.bogdo_hwajangsil_3gu_l3
+        - switch.bogdo_2gu_l1
+        - switch.bogdo_2gu_l2
+        - switch.bojojubang3gu_l1
+        - switch.bojojubang3gu_l2
+        - switch.bojojubang3gu_l3
+        - switch.bojo_jubang_beranda_1gu_l1
+        - switch.jageunbang1_1gu_l1
+        - switch.jageunbang2_1gu_l1
+  - service: switch.turn_off
+    data: {}
+    target:
+      entity_id:
+        - switch.jubang_oenjjog_3gu_l1
+        - switch.jubang_oenjjog_3gu_l2
+        - switch.jubang_oenjjog_3gu_l3
+        - switch.jubang_jungang_3gu_l1
+        - switch.jubang_jungang_3gu_l2
+        - switch.jubang_jungang_3gu_l3
+        - switch.jubang_oreunjjog_3gu_l1
+        - switch.jubang_oreunjjog_3gu_l2
+        - switch.jubang_oreunjjog_3gu_l3
+        - switch.setagsil_1gu_l1
+        - switch.anbang_deureseurum_1gu_l1
+        - switch.anbanghwajangsil_oreunjjog_2gu_l1
+        - switch.anbanghwajangsil_oreunjjog_2gu_l2
+        - switch.anbang_hwajangsil_3gu_l1
+        - switch.anbang_hwajangsil_3gu_l2
+        - switch.anbang_hwajangsil_3gu_l3
+        - switch.anbang_beranda_1gu_l1
+        - switch.bogdo_hwajangsil_3gu_l1
+        - switch.bogdo_hwajangsil_3gu_l2
+        - switch.bogdo_hwajangsil_3gu_l3
+        - switch.bogdo_2gu_l1
+        - switch.bogdo_2gu_l2
+        - switch.bojojubang3gu_l1
+        - switch.bojojubang3gu_l2
+        - switch.bojojubang3gu_l3
+        - switch.bojo_jubang_beranda_1gu_l1
+        - switch.jageunbang1_1gu_l1
+        - switch.jageunbang2_1gu_l1
+mode: single
