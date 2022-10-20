@@ -1,0 +1,15 @@
+alias: Turn_Off_RECOVERY
+description: ''
+trigger:
+  - platform: device
+    type: turned_on
+    device_id: d749a5e10b53ed53ff0f1d4938afc7ee
+    entity_id: switch.ilgwalsodeung_1gu_l1
+    domain: switch
+condition: []
+action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.before_state
+    data: {}
+mode: single
