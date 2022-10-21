@@ -1,0 +1,502 @@
+views:
+  - theme: Backend-selected
+    title: KG
+    path: kg
+    type: sidebar
+    badges: []
+    cards:
+      - square: false
+        columns: 4
+        type: grid
+        cards:
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: switch.kglocal_ch1
+            show_state: true
+            name: 5500K 모듈
+            icon: mdi:lightbulb
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: switch.kglocal_ch2
+            show_state: true
+            name: 식물제어 모듈
+            icon: mdi:lightbulb-cfl
+          - type: conditional
+            conditions:
+              - entity: input_select.fan_mode
+                state: 'off'
+            card:
+              show_name: true
+              show_icon: true
+              type: button
+              tap_action:
+                action: call-service
+                service: input_select.select_next
+                data: {}
+                target:
+                  entity_id: input_select.fan_mode
+              entity: input_select.fan_mode
+              name: 'OFF'
+              show_state: true
+              hold_action:
+                action: none
+              icon: mdi:fan-off
+          - type: conditional
+            conditions:
+              - entity: input_select.fan_mode
+                state: low
+            card:
+              show_name: true
+              show_icon: true
+              type: button
+              tap_action:
+                action: call-service
+                service: input_select.select_next
+                data: {}
+                target:
+                  entity_id: input_select.fan_mode
+              entity: input_boolean.on
+              name: LOW
+              show_state: true
+              hold_action:
+                action: none
+              icon: mdi:fan-speed-1
+          - type: conditional
+            conditions:
+              - entity: input_select.fan_mode
+                state: middle
+            card:
+              show_name: true
+              show_icon: true
+              type: button
+              tap_action:
+                action: call-service
+                service: input_select.select_next
+                data: {}
+                target:
+                  entity_id: input_select.fan_mode
+              entity: input_boolean.on
+              name: MIDDLE
+              show_state: true
+              hold_action:
+                action: none
+              icon: mdi:fan-speed-2
+          - type: conditional
+            conditions:
+              - entity: input_select.fan_mode
+                state: high
+            card:
+              show_name: true
+              show_icon: true
+              type: button
+              tap_action:
+                action: call-service
+                service: input_select.select_next
+                data: {}
+                target:
+                  entity_id: input_select.fan_mode
+              entity: input_boolean.on
+              name: HIGH
+              show_state: true
+              hold_action:
+                action: none
+              icon: mdi:fan-speed-3
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: humidifier.kg_humidifier
+            icon: mdi:air-humidifier
+            show_state: true
+            name: 가습기
+        title: 환경 제어 컨트롤러
+      - square: false
+        columns: 5
+        type: grid
+        cards:
+          - type: conditional
+            conditions:
+              - entity: input_select.fan_mode
+                state: 'off'
+            card:
+              show_name: true
+              show_icon: true
+              type: button
+              tap_action:
+                action: none
+              entity: input_boolean.on
+              name: 'SET : OFF'
+              show_state: false
+              hold_action:
+                action: none
+              icon: mdi:fan-off
+              theme: Google Blue Theme
+          - type: conditional
+            conditions:
+              - entity: input_select.fan_mode
+                state: low
+            card:
+              show_name: true
+              show_icon: true
+              type: button
+              tap_action:
+                action: none
+              entity: input_boolean.on
+              name: 'SET : LOW'
+              show_state: false
+              hold_action:
+                action: none
+              icon: mdi:fan-speed-1
+              theme: Google Blue Theme
+          - type: conditional
+            conditions:
+              - entity: input_select.fan_mode
+                state: middle
+            card:
+              show_name: true
+              show_icon: true
+              type: button
+              tap_action:
+                action: none
+              entity: input_boolean.on
+              name: 'SET : MIDDLE'
+              show_state: false
+              hold_action:
+                action: none
+              icon: mdi:fan-speed-2
+              theme: Google Blue Theme
+          - type: conditional
+            conditions:
+              - entity: input_select.fan_mode
+                state: high
+            card:
+              show_name: true
+              show_icon: true
+              type: button
+              tap_action:
+                action: none
+              entity: input_boolean.on
+              name: 'SET : HIGH'
+              show_state: false
+              hold_action:
+                action: none
+              icon: mdi:fan-speed-3
+              theme: Google Blue Theme
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: call-service
+              service: input_select.select_option
+              data:
+                option: 'off'
+              target:
+                entity_id: input_select.fan_mode
+            entity: ''
+            name: FAN OFF
+            icon: mdi:fan-off
+            hold_action:
+              action: none
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: call-service
+              service: input_select.select_option
+              data:
+                option: low
+              target:
+                entity_id: input_select.fan_mode
+            entity: ''
+            name: FAN LOW
+            icon: mdi:fan-speed-1
+            hold_action:
+              action: none
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: call-service
+              service: input_select.select_option
+              data:
+                option: middle
+              target:
+                entity_id: input_select.fan_mode
+            entity: ''
+            name: FAN MIDDLE
+            icon: mdi:fan-speed-2
+            hold_action:
+              action: none
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: call-service
+              service: input_select.select_option
+              data:
+                option: high
+              target:
+                entity_id: input_select.fan_mode
+            entity: ''
+            name: FAN HIGH
+            icon: mdi:fan-speed-3
+            hold_action:
+              action: none
+        title: FAN 제어
+      - type: humidifier
+        entity: humidifier.kg_humidifier
+        name: 가습기
+      - square: false
+        columns: 2
+        type: grid
+        cards:
+          - hours_to_show: 8
+            graph: line
+            type: sensor
+            entity: sensor.outside_temperature
+            detail: 1
+            name: 온도
+          - hours_to_show: 8
+            graph: line
+            type: sensor
+            entity: sensor.outside_humidity
+            detail: 1
+            name: 습도
+        view_layout:
+          position: sidebar
+      - square: false
+        columns: 2
+        type: grid
+        cards:
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: automation.light1_timer_on
+            name: LIGHT1 ON
+            show_state: true
+            icon: mdi:lightbulb
+          - type: entity
+            entity: input_datetime.light1_timer_on
+            theme: Google Point Theme
+            name: LIGHT1 ON
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: automation.light1_timer_off
+            name: LIGHT1 OFF
+            show_state: true
+            icon: mdi:lightbulb-off-outline
+          - type: entity
+            entity: input_datetime.light1_timer_off
+            theme: Google Point Theme
+            name: LIGHT1 OFF
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: automation.light2_timer_on
+            name: LIGHT2 ON
+            show_state: true
+            icon: mdi:lightbulb-cfl
+          - type: entity
+            entity: input_datetime.light2_timer_on
+            theme: Google Point Theme
+            name: LIGHT2 ON
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: automation.light2_timer_off
+            name: LIGHT2 OFF
+            show_state: true
+            icon: mdi:lightbulb-cfl-off
+          - type: entity
+            entity: input_datetime.light2_timer_off
+            theme: Google Point Theme
+            name: LIGHT2 OFF
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: automation.fan_timer_on
+            name: FAN ON
+            show_state: true
+            icon: mdi:fan
+          - type: entity
+            entity: input_datetime.fan_timer_on
+            theme: Google Point Theme
+            name: FAN ON
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: automation.fan_timer_off
+            name: FAN OFF
+            show_state: true
+            icon: mdi:fan-off
+          - type: entity
+            entity: input_datetime.fan_timer_off
+            theme: Google Point Theme
+            name: FAN OFF
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: automation.humidity_timer_on
+            name: HUMIDIFIER ON
+            show_state: true
+            icon: mdi:air-humidifier
+          - type: entity
+            entity: input_datetime.humidity_timer_on
+            theme: Google Point Theme
+            name: HUMIDIFIER ON
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: automation.humidity_timer_off
+            name: HUMIDIFIER OFF
+            show_state: true
+            icon: mdi:air-humidifier-off
+          - type: entity
+            entity: input_datetime.humidity_timer_off
+            theme: Google Point Theme
+            name: HUMIDIFIER OFF
+        title: 타이머
+        view_layout:
+          position: sidebar
+  - theme: Backend-selected
+    title: 관리
+    path: control
+    visible:
+      - user: c28ecdf21b8d461f8776b1a82e346691
+      - user: c3a7b8d73ac74506af6db35e54c87b3c
+    badges: []
+    cards:
+      - type: markdown
+        content: |-
+          시스템 재기동은 출입컨트롤러를 재부팅하는 기능으로, 
+          시스템사용까지 최대 5분이 걸릴 수 있습니다.
+
+          재부팅중이라도 내부의 퇴실(EXIT)버튼은 정상동작합니다.
+        title: 안내
+      - type: grid
+        cards:
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: script.reboot
+            name: 시스템 재시작
+      - type: entities
+        entities:
+          - entity: sensor.uptime
+          - entity: sensor.local_ip
+      - square: true
+        columns: 3
+        type: grid
+        cards:
+          - type: conditional
+            conditions:
+              - entity: input_select.fan_mode
+                state: 'off'
+            card:
+              show_name: true
+              show_icon: true
+              type: button
+              tap_action:
+                action: none
+              entity: input_boolean.on
+              name: 'OFF'
+              show_state: true
+              hold_action:
+                action: none
+              icon: mdi:fan-off
+          - type: conditional
+            conditions:
+              - entity: input_select.fan_mode
+                state: low
+            card:
+              show_name: true
+              show_icon: true
+              type: button
+              tap_action:
+                action: none
+              entity: input_boolean.on
+              name: LOW
+              show_state: true
+              hold_action:
+                action: none
+              icon: mdi:fan-speed-1
+          - type: conditional
+            conditions:
+              - entity: input_select.fan_mode
+                state: middle
+            card:
+              show_name: true
+              show_icon: true
+              type: button
+              tap_action:
+                action: none
+              entity: input_boolean.on
+              name: LOW
+              show_state: true
+              hold_action:
+                action: none
+              icon: mdi:fan-speed-2
+          - type: conditional
+            conditions:
+              - entity: input_select.fan_mode
+                state: high
+            card:
+              show_name: true
+              show_icon: true
+              type: button
+              tap_action:
+                action: none
+              entity: input_boolean.on
+              name: HIGH
+              show_state: true
+              hold_action:
+                action: none
+              icon: mdi:fan-speed-3
+        title: FAN 제어
+      - show_name: true
+        show_icon: true
+        type: button
+        tap_action:
+          action: toggle
+        entity: humidifier.kg_humidifier
+        icon: mdi:water-plus
+        show_state: false
+        name: 가습기
+      - type: entities
+        entities:
+          - entity: sensor.outside_temperature
+          - entity: sensor.outside_humidity
+          - entity: switch.kglocal_ch1
+          - entity: switch.kglocal_ch2
+          - entity: switch.kglocal_ch3
+          - entity: switch.kglocal_ch4
+          - entity: switch.kglocal_ch5
+          - entity: switch.kglocal_ch6
+        view_layout:
+          position: sidebar
