@@ -1,3 +1,4 @@
+# HA의 webhook api를 활용한 dht22 온도/습도 정보 전송
 from pyA20.gpio import gpio
 from pyA20.gpio import port
 
@@ -16,14 +17,12 @@ instance = dht.DHT(pin=PIN2)
 
 while True:
     result = instance.read()
+    # value가 유효할때만 데이터 출력 및 webhook으로 전송
     if result.is_valid():
         print("Last valid input: " + str(datetime.datetime.now()))
         print("Temperature: {0:0.1f} C".format(result.temperature))
         print("Humidity: {0:0.1f} %".format(result.humidity))
-    #print(str(datetime.datetime.now()))
-    #print("T: {0:0.01f} C".format(result.temperature))
-    #print("H: {0:0.01f} %".format(result.humidity))
-        #print("waiting..")
+        # webhook으로 데이터 전송
         headers = {
           'Content-Type': 'application/json',
         }
