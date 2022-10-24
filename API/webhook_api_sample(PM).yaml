@@ -6,9 +6,9 @@ template:
       - name: "PM2.5"
         state: "{{ trigger.json.pm25 }}"
         device_class: pm25
-        #unit_of_measurement: '㎍/㎥'
+        #unit_of_measurement: '㎍/㎥' #device_class를 pm25로 설정시에 별도로 unit_of_measurement지정할 필요 없음
 
       - name: "PM10"
         state: "{{ trigger.json.pm10 }}"
         device_class: pm10
-        #unit_of_measurement: '㎍/㎥'
+        #unit_of_measurement: '㎍/㎥' #device_class를 pm10으로 설정시에 별도로 unit_of_measurement지정할 필요 없음
