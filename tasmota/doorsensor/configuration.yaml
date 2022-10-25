@@ -1,5 +1,5 @@
 # HA configuration.yaml에 binary_sensor를 mqtt format으로 추가
-# tasmota f/w 작업된 sonoff basic r2의 rx/gnd pin의 mqtt topic 작업 필요
+# tasmota f/w 작업된 sonoff basic r2의 rx/gnd pin의 mqtt topic 작업 필요 (dht센서와는 달리 상태값을 ha autodiscovery로 보내주지 않기 때문)
 binary_sensor:
   - platform: mqtt
     name: "contact sensor test"
