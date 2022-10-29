@@ -8,6 +8,7 @@ import datetime
 import requests
 
 # initialize GPIO
+# Orange Pi BCM Numbering : https://opi-gpio.readthedocs.io/en/latest/api-documentation.html
 PIN2 = port.PG7
 #PIN2 = port.PA6
 gpio.init()
