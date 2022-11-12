@@ -1,3 +1,6 @@
+#MQTT를 통한 firmware update
+#단, ESP8266과 같은 저용량메모리칩에서는 minimal version tasmota firmware를 ota로 설정해야 할 수 있음.
+
 #REF : https://tasmota.github.io/docs/MQTT/#examples
 
 #OTA 주소 확인
