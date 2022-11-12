@@ -13,4 +13,4 @@ HA와 외부시스템간의 연계처리를 위한 api 가이드 문서
 - 단, ha의 shell_command 적용을 위해 core restart가 필요
 - shell command 경로 지정시 ha재기동 없이 sh파일만 수정하여 관리가능
 
-OpenWeatherMap의 경우 API키 발행 후에 HA Integration에서 설정이 필요
+OpenWeatherMap의 경우 API키 발행 후에 HA Integration에서 설정이 필요.
