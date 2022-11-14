@@ -22,7 +22,7 @@ climate: !include climate.yaml
 #broadlink integration 후에 climate.yaml에 해당 코드 입력
 
 국내 유통되는 삼성/LG 모델 등에서 범용적으로 사용 가능합니다.
-로컬 구성이 아닌 클라우드기반으로 HA가 설치된 경우에는 동작하지 않습니다.
+로컬 구성이 아닌 클라우드기반으로 HA가 설치된 경우에는 포트포워딩 등의 별도 네트워크 설정을 하지 않는 이상 동작하지 않습니다.
 - 사유 : smartir integration 에서 broadlink local control 기능은 ip기반 동작만 지원하기때문(192.168.x.x)
         포트포워딩 등으로 80포트를 리다이렉션하는 방법이 있으나, 권장하지는 않습니다.
 - 대안 : mqtt기반의 tasmota irhvac 사용
