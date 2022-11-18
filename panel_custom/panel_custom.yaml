@@ -1,3 +1,4 @@
+# HA업데이트 이후에 서버제어, 통합구성요소, 자동화, Supervisor가 좌측 기본메뉴에서 삭제되고 설정 메뉴를 통해서만 접근가능한 부분을 다시 좌측 기본메뉴로 표시처리
 - name: ha_server_control
   sidebar_title: 서버제어
   sidebar_icon: mdi:cog-transfer
