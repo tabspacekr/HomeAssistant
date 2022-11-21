@@ -1,0 +1,331 @@
+  - title: 말랑놀이터 전주점
+    path: malang01
+    icon: mdi:greenhouse
+    subview: false
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - square: false
+            columns: 2
+            type: grid
+            cards:
+              - type: tile
+                entity: binary_sensor.malang01_ms
+                name: 동작감지
+              - type: tile
+                tap_action:
+                  action: toggle
+                entity: climate.malang_jeonju01_ir
+                icon: mdi:air-conditioner
+                name: 냉난방기
+                icon_tap_action:
+                  action: toggle
+              - type: tile
+                tap_action:
+                  action: toggle
+                entity: switch.malang01_push
+                name: 원격개방
+                icon: mdi:exit-run
+                icon_tap_action:
+                  action: toggle
+              - type: tile
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  data:
+                    option: unlock
+                  target:
+                    entity_id: input_select.malang01_msrmode
+                entity: switch.malang01_lock
+                name: 상시개방
+                icon: mdi:door-sliding-open
+                icon_tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  data:
+                    option: unlock
+                  target:
+                    entity_id: input_select.malang01_msrmode
+            title: 기기 제어
+          - square: false
+            columns: 1
+            type: grid
+            cards:
+              - type: conditional
+                conditions:
+                  - entity: input_select.malang01_msrmode
+                    state: lock
+                card:
+                  color: accent
+                  type: tile
+                  tap_action:
+                    action: none
+                  entity: input_boolean.on
+                  name: '현재 상태 : 카드 출입 모드'
+                  icon: mdi:credit-card-check-outline
+                  icon_tap_action:
+                    action: none
+              - type: conditional
+                conditions:
+                  - entity: input_select.malang01_msrmode
+                    state: unlock
+                card:
+                  color: accent
+                  type: tile
+                  tap_action:
+                    action: none
+                  entity: input_boolean.on
+                  name: '현재 상태 : 상시 개방 모드'
+                  icon: mdi:door-open
+                  icon_tap_action:
+                    action: none
+              - type: conditional
+                conditions:
+                  - entity: input_select.malang01_msrmode
+                    state: lockdown
+                card:
+                  color: accent
+                  type: tile
+                  tap_action:
+                    action: none
+                  entity: input_boolean.on
+                  name: '현재 상태 : 락다운 모드'
+                  icon: mdi:door-closed-lock
+                  icon_tap_action:
+                    action: none
+            title: 출입모드 제어
+          - square: false
+            columns: 3
+            type: grid
+            cards:
+              - type: tile
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  data:
+                    option: lock
+                  target:
+                    entity_id: input_select.malang01_msrmode
+                entity: switch.malang01_led_closed
+                icon: mdi:credit-card-check-outline
+                icon_tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  data:
+                    option: lock
+                  target:
+                    entity_id: input_select.malang01_msrmode
+                name: 잠금
+              - type: tile
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  data:
+                    option: unlock
+                  target:
+                    entity_id: input_select.malang01_msrmode
+                entity: switch.malang01_led_open
+                name: 개방
+                icon: mdi:door-open
+                icon_tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  data:
+                    option: unlock
+                  target:
+                    entity_id: input_select.malang01_msrmode
+              - type: tile
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  data:
+                    option: lockdown
+                  target:
+                    entity_id: input_select.malang01_msrmode
+                entity: switch.malang01_led_lockdown
+                icon: mdi:door-closed-lock
+                icon_tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  data:
+                    option: lockdown
+                  target:
+                    entity_id: input_select.malang01_msrmode
+                name: 폐쇄
+          - square: false
+            columns: 1
+            type: grid
+            cards:
+              - color: disabled
+                type: tile
+                entity: sensor.malang01_visitor_data
+                show_entity_picture: false
+                name: 방문자
+              - color: disabled
+                type: tile
+                entity: sensor.malang01_visitor_card
+                show_entity_picture: false
+                icon: mdi:face-man-shimmer
+                name: 방문자 카드번호 앞4자리
+              - color: disabled
+                type: tile
+                entity: sensor.malang01_visitor_time
+                show_entity_picture: false
+                icon: mdi:clock-outline
+                name: 방문시간
+            title: 출입자 정보
+      - type: vertical-stack
+        cards:
+          - square: false
+            columns: 2
+            type: grid
+            cards:
+              - type: tile
+                entity: sensor.malang_jeonju01_tp_temperature
+                show_entity_picture: false
+                icon: ''
+                name: 온도
+              - type: tile
+                entity: sensor.malang_jeonju01_tp_humidity
+                show_entity_picture: false
+                name: 습도
+            title: 온도 제어
+          - type: thermostat
+            entity: climate.malang_jeonju01_ir
+            name: 에어컨 제어
+          - type: history-graph
+            entities:
+              - entity: climate.malang_jeonju01_ir
+              - entity: sensor.malang_jeonju01_tp_temperature
+            hours_to_show: 24
+            refresh_interval: 0
+            view_layout:
+              position: sidebar
+            title: 온도 로그
+      - type: vertical-stack
+        cards:
+          - square: false
+            columns: 2
+            type: grid
+            cards:
+              - color: green
+                type: tile
+                tap_action:
+                  action: toggle
+                entity: automation.malang01_security_time_on
+                name: 출입통제 시작타이머
+                icon: mdi:electric-switch-closed
+              - type: tile
+                color: green
+                entity: input_datetime.malang01_security_time_on
+                name: 출입통제 시작시간
+              - type: tile
+                color: green
+                tap_action:
+                  action: toggle
+                entity: automation.malang01_security_time_off
+                name: 종료타이머
+                icon: mdi:electric-switch
+              - type: tile
+                color: green
+                entity: input_datetime.malang01_security_time_off
+                name: 출입통제 종료시간
+            title: 출입통제 타이머 (락다운 시 미동작)
+          - square: false
+            columns: 2
+            type: grid
+            cards:
+              - type: tile
+                color: amber
+                tap_action:
+                  action: toggle
+                entity: automation.malang01_ac_time_on
+                name: 에어컨 켜짐 타이머
+                icon: mdi:air-humidifier
+              - color: amber
+                type: tile
+                entity: input_datetime.malang01_ac_time_on
+                name: 에어컨 켜짐 시간
+              - type: tile
+                color: amber
+                tap_action:
+                  action: toggle
+                entity: automation.malang01_ac_time_off
+                name: 에어컨 꺼짐 타이머
+                icon: mdi:air-humidifier-off
+              - type: tile
+                color: amber
+                entity: input_datetime.malang01_ac_time_off
+                name: 에어컨 꺼짐 시간
+            title: 에어컨 타이머
+      - type: vertical-stack
+        cards:
+          - square: false
+            columns: 2
+            type: grid
+            cards:
+              - type: tile
+                entity: binary_sensor.malang01_msr
+                show_entity_picture: false
+                view_layout:
+                  position: sidebar
+                name: 출입통제기
+                icon: mdi:door-closed-lock
+              - type: tile
+                entity: binary_sensor.malang01_radio
+                show_entity_picture: false
+                view_layout:
+                  position: sidebar
+                name: 음악재생기
+                icon: mdi:music-box-outline
+            view_layout:
+              position: sidebar
+            title: 기기 연결 상태
+          - square: false
+            columns: 1
+            type: grid
+            cards:
+              - type: tile
+                entity: sensor.radio_now_text
+                show_entity_picture: true
+                view_layout:
+                  position: sidebar
+              - type: tile
+                entity: sensor.radio_next_text
+                show_entity_picture: true
+                view_layout:
+                  position: sidebar
+                tap_action:
+                  action: none
+                icon_tap_action:
+                  action: none
+            view_layout:
+              position: sidebar
+            title: 라디오 스테이션
+          - square: false
+            columns: 1
+            type: grid
+            cards:
+              - type: tile
+                entity: counter.malang01_visitor_count
+                show_entity_picture: false
+                view_layout:
+                  position: sidebar
+                name: 금일 매장 방문 현황
+            title: 동작 감지 현황
+          - type: history-graph
+            entities:
+              - entity: binary_sensor.malang01_ms
+            hours_to_show: 24
+            refresh_interval: 0
+            view_layout:
+              position: sidebar
+          - type: logbook
+            entities:
+              - binary_sensor.malang01_ms
+              - input_select.malang01_msrmode
+            hours_to_show: 24
+            view_layout:
+              position: sidebar
+            title: 시스템 로그
