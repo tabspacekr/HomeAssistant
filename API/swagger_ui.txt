@@ -1,0 +1,1 @@
+ha rest api를 swagger ui로 구성
