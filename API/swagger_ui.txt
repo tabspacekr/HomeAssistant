@@ -1,1 +1,4 @@
 ha rest api를 swagger ui로 구성
+
+- https://swagger.io/tools/swagger-ui/
+- https://developers.home-assistant.io/docs/api/rest/
