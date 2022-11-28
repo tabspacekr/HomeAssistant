@@ -1,0 +1,730 @@
+kiosk_mode:
+  non_admin_settings:
+    hide_search: true
+views:
+  - theme: Backend-selected
+    title: 모드 설정
+    path: home
+    icon: ''
+    visible:
+      - user: 608a895e5f624bcea0289ce4caaf6719
+      - user: d099558b377f4053ae5501311a35f4a7
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: tile
+            entity: sensor.date_time
+            name: 현재 시간
+            tap_action:
+              action: none
+            icon_tap_action:
+              action: none
+            icon: mdi:calendar-clock
+          - square: false
+            columns: 1
+            type: grid
+            cards:
+              - type: conditional
+                conditions:
+                  - entity: input_select.door_mode
+                    state: 자동
+                card:
+                  color: primary
+                  type: tile
+                  tap_action:
+                    action: call-service
+                    service: input_select.select_option
+                    data:
+                      option: lock
+                    target:
+                      entity_id: input_select.door_mode
+                  entity: input_boolean.door_mode_auto
+                  name: '현재 상태 : 자동 모드'
+                  icon: mdi:door-sliding
+                  icon_tap_action:
+                    action: call-service
+                    service: input_select.select_option
+                    data:
+                      option: lock
+                    target:
+                      entity_id: input_select.door_mode
+              - type: conditional
+                conditions:
+                  - entity: input_select.door_mode
+                    state: 열림
+                card:
+                  color: green
+                  type: tile
+                  tap_action:
+                    action: call-service
+                    service: input_select.select_option
+                    data:
+                      option: unlock
+                    target:
+                      entity_id: input_select.door_mode
+                  entity: input_boolean.door_mode_open
+                  name: '현재 상태 : 열림 모드'
+                  icon: mdi:door-sliding-open
+                  icon_tap_action:
+                    action: call-service
+                    service: input_select.select_option
+                    data:
+                      option: unlock
+                    target: {}
+              - type: conditional
+                conditions:
+                  - entity: input_select.door_mode
+                    state: 잠금
+                card:
+                  color: red
+                  type: tile
+                  tap_action:
+                    action: call-service
+                    service: input_select.select_option
+                    data:
+                      option: lockdown
+                    target:
+                      entity_id: input_select.door_mode
+                  entity: input_boolean.door_mode_lock
+                  name: '현재 상태 : 잠금 모드'
+                  icon: mdi:door-sliding-lock
+                  icon_tap_action:
+                    action: call-service
+                    service: input_select.select_option
+                    data:
+                      option: lockdown
+                    target:
+                      entity_id: input_select.door_mode
+              - type: conditional
+                conditions:
+                  - entity: input_select.door_mode
+                    state: 락다운
+                card:
+                  color: pink
+                  type: tile
+                  tap_action:
+                    action: call-service
+                    service: input_select.select_option
+                    data:
+                      option: 락다운
+                    target:
+                      entity_id: input_select.door_mode
+                  entity: input_boolean.door_mode_lockdown
+                  name: '현재 상태 : 락다운 모드'
+                  icon: mdi:shield-lock
+                  icon_tap_action:
+                    action: call-service
+                    service: input_select.select_option
+                    data:
+                      option: 락다운
+                    target:
+                      entity_id: input_select.door_mode
+            title: 출입 모드
+          - square: false
+            columns: 3
+            type: grid
+            cards:
+              - type: tile
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  data:
+                    option: 자동
+                  target:
+                    entity_id: input_select.door_mode
+                icon: mdi:door-sliding
+                icon_tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  data:
+                    option: 자동
+                  target:
+                    entity_id: input_select.door_mode
+                name: 자동
+                entity: input_boolean.door_mode_auto
+              - color: red
+                type: tile
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  data:
+                    option: 잠금
+                  target:
+                    entity_id: input_select.door_mode
+                entity: switch.asd_lock
+                icon: mdi:door-sliding-lock
+                icon_tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  data:
+                    option: 잠금
+                  target:
+                    entity_id: input_select.door_mode
+                name: 잠금
+              - color: pink
+                type: tile
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  data:
+                    option: 락다운
+                  target:
+                    entity_id: input_select.door_mode
+                entity: input_boolean.door_mode_lockdown
+                name: 락다운
+                icon: mdi:shield-lock
+                icon_tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  data:
+                    option: 락다운
+                  target:
+                    entity_id: input_select.door_mode
+              - color: green
+                type: tile
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  data:
+                    option: 열림
+                  target:
+                    entity_id: input_select.door_mode
+                entity: switch.asd_open
+                name: 열림
+                icon: mdi:door-sliding-open
+                icon_tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  data:
+                    option: 열림
+                  target:
+                    entity_id: input_select.door_mode
+              - type: tile
+                tap_action:
+                  action: call-service
+                  service: script.onetime_open
+                  data: {}
+                  target: {}
+                entity: script.onetime_open
+                name: 원격 열림
+                icon: mdi:exit-run
+                icon_tap_action:
+                  action: call-service
+                  service: script.onetime_open
+                  data: {}
+                  target: {}
+          - type: vertical-stack
+            cards:
+              - type: vertical-stack
+                cards:
+                  - square: false
+                    columns: 1
+                    type: grid
+                    cards:
+                      - type: conditional
+                        conditions:
+                          - entity: input_select.timer_mode
+                            state: 일괄
+                        card:
+                          color: green
+                          type: tile
+                          tap_action:
+                            action: navigate
+                            navigation_path: /lovelace/timer
+                          entity: input_boolean.on
+                          name: '현재 상태 : 일괄 설정'
+                          icon: mdi:calendar-week
+                          icon_tap_action:
+                            action: navigate
+                            navigation_path: /lovelace/timer
+                      - type: conditional
+                        conditions:
+                          - entity: input_select.timer_mode
+                            state: 일별
+                        card:
+                          color: cyan
+                          type: tile
+                          tap_action:
+                            action: navigate
+                            navigation_path: /lovelace/timer
+                          entity: input_boolean.on
+                          name: '현재 상태 : 요일 설정'
+                          icon: mdi:calendar-week-begin
+                          icon_tap_action:
+                            action: navigate
+                            navigation_path: /lovelace/timer
+                      - type: conditional
+                        conditions:
+                          - entity: input_select.timer_mode
+                            state: 셀프
+                        card:
+                          color: yellow
+                          type: tile
+                          tap_action:
+                            action: navigate
+                            navigation_path: /lovelace/timer
+                          entity: input_boolean.on
+                          name: '현재 상태 : 셀프 설정'
+                          icon: mdi:timer-edit
+                          icon_tap_action:
+                            action: navigate
+                            navigation_path: /lovelace/timer
+                    title: 타이머 모드
+  - theme: Backend-selected
+    title: 타이머 설정
+    path: timer
+    icon: ''
+    visible:
+      - user: 608a895e5f624bcea0289ce4caaf6719
+      - user: d099558b377f4053ae5501311a35f4a7
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: tile
+            entity: sensor.date_time
+            name: 현재 시간
+            tap_action:
+              action: none
+            icon_tap_action:
+              action: none
+            icon: mdi:calendar-clock
+          - type: vertical-stack
+            cards:
+              - square: false
+                columns: 1
+                type: grid
+                cards:
+                  - type: conditional
+                    conditions:
+                      - entity: input_select.timer_mode
+                        state: 일괄
+                    card:
+                      color: green
+                      type: tile
+                      tap_action:
+                        action: none
+                      entity: input_boolean.on
+                      name: '현재 상태 : 일괄 설정'
+                      icon: mdi:calendar-week
+                      icon_tap_action:
+                        action: none
+                  - type: conditional
+                    conditions:
+                      - entity: input_select.timer_mode
+                        state: 일별
+                    card:
+                      color: cyan
+                      type: tile
+                      tap_action:
+                        action: none
+                      entity: input_boolean.on
+                      name: '현재 상태 : 요일 설정'
+                      icon: mdi:calendar-week-begin
+                      icon_tap_action:
+                        action: none
+                  - type: conditional
+                    conditions:
+                      - entity: input_select.timer_mode
+                        state: 셀프
+                    card:
+                      color: yellow
+                      type: tile
+                      tap_action:
+                        action: call-service
+                        service: input_select.select_option
+                        data:
+                          option: 셀프
+                        target:
+                          entity_id: input_select.timer_mode
+                      entity: input_boolean.timer_self_on
+                      name: '현재 상태 : 셀프 설정'
+                      icon: mdi:timer-edit
+                      icon_tap_action:
+                        action: call-service
+                        service: input_select.select_option
+                        data:
+                          option: 셀프
+                        target:
+                          entity_id: input_select.timer_mode
+                title: 타이머 모드
+              - square: false
+                columns: 3
+                type: grid
+                cards:
+                  - color: green
+                    type: tile
+                    tap_action:
+                      action: call-service
+                      service: input_select.select_option
+                      data:
+                        option: 일괄
+                      target:
+                        entity_id:
+                          - input_select.timer_mode
+                    entity: input_boolean.timer_allday_on
+                    icon: mdi:calendar-week
+                    icon_tap_action:
+                      action: call-service
+                      service: input_select.select_option
+                      data:
+                        option: 일괄
+                      target:
+                        entity_id: input_select.timer_mode
+                    name: 일괄 설정
+                  - color: cyan
+                    type: tile
+                    tap_action:
+                      action: call-service
+                      service: input_select.select_option
+                      data:
+                        option: 일별
+                      target:
+                        entity_id:
+                          - input_select.timer_mode
+                    entity: input_boolean.timer_weekly_on
+                    name: 요일 설정
+                    icon: mdi:calendar-week-begin
+                    icon_tap_action:
+                      action: call-service
+                      service: input_select.select_option
+                      data:
+                        option: 일별
+                      target:
+                        entity_id: input_select.timer_mode
+                  - color: yellow
+                    type: tile
+                    tap_action:
+                      action: call-service
+                      service: input_select.select_option
+                      data:
+                        option: 셀프
+                      target:
+                        entity_id:
+                          - input_select.timer_mode
+                    entity: input_boolean.timer_self_on
+                    icon: mdi:timer-edit
+                    icon_tap_action:
+                      action: call-service
+                      service: input_select.select_option
+                      data:
+                        option: 셀프
+                      target:
+                        entity_id: input_select.timer_mode
+                    name: 셀프 설정
+          - type: conditional
+            conditions:
+              - entity: input_select.timer_mode
+                state: 일괄
+            card:
+              square: false
+              columns: 2
+              type: grid
+              cards:
+                - color: green
+                  type: tile
+                  tap_action:
+                    action: toggle
+                  entity: automation.allday_timer_on
+                  name: 일괄 시작 타이머
+                  icon: mdi:door-sliding-lock
+                - type: tile
+                  color: green
+                  entity: input_datetime.timer_on
+                  name: 일괄 잠금 시작 시간
+                - color: green
+                  type: tile
+                  tap_action:
+                    action: toggle
+                  entity: automation.allday_timer_off
+                  name: 일괄 종료 타이머
+                  icon: mdi:door-sliding
+                - type: tile
+                  color: green
+                  entity: input_datetime.timer_off
+                  name: 일괄 잠금 종료 시간
+              title: 일괄 타이머
+          - type: conditional
+            conditions:
+              - entity: input_select.timer_mode
+                state: 일별
+            card:
+              square: false
+              columns: 2
+              type: grid
+              cards:
+                - color: cyan
+                  type: tile
+                  tap_action:
+                    action: toggle
+                  entity: automation.timer_monday_on
+                  name: 월요일 시작 타이머
+                  icon: mdi:door-sliding-lock
+                - color: cyan
+                  type: tile
+                  entity: input_datetime.timer_monday_on
+                  name: 월요일 잠금 시작 시간
+                - color: cyan
+                  type: tile
+                  tap_action:
+                    action: toggle
+                  entity: automation.timer_monday_off
+                  name: 월요일 종료 타이머
+                  icon: mdi:door-sliding
+                - color: cyan
+                  type: tile
+                  entity: input_datetime.timer_monday_off
+                  name: 월요일 잠금 종료 시간
+                - color: light-green
+                  type: tile
+                  tap_action:
+                    action: toggle
+                  entity: automation.timer_tuesday_on
+                  name: 화요일 시작 타이머
+                  icon: mdi:door-sliding-lock
+                - color: light-green
+                  type: tile
+                  entity: input_datetime.timer_tuesday_on
+                  name: 화요일 잠금 시작 시간
+                - color: light-green
+                  type: tile
+                  tap_action:
+                    action: toggle
+                  entity: automation.timer_tuesday_off
+                  name: 화요일 종료 타이머
+                  icon: mdi:door-sliding
+                - color: light-green
+                  type: tile
+                  entity: input_datetime.timer_tuesday_off
+                  name: 화요일 잠금 종료 시간
+                - color: cyan
+                  type: tile
+                  tap_action:
+                    action: toggle
+                  entity: automation.timer_wednesday_on
+                  name: 수요일 시작 타이머
+                  icon: mdi:door-sliding-lock
+                - type: tile
+                  color: cyan
+                  entity: input_datetime.timer_wednesday_on
+                  name: 수요일 잠금 시작 시간
+                - color: cyan
+                  type: tile
+                  tap_action:
+                    action: toggle
+                  entity: automation.timer_wednesday_off
+                  name: 수요일 종료 타이머
+                  icon: mdi:door-sliding
+                - type: tile
+                  color: cyan
+                  entity: input_datetime.timer_wednesday_off
+                  name: 수요일 잠금 종료 시간
+                - color: light-green
+                  type: tile
+                  tap_action:
+                    action: toggle
+                  entity: automation.timer_thursday_on
+                  name: 목요일 시작 타이머
+                  icon: mdi:door-sliding-lock
+                - type: tile
+                  color: light-green
+                  entity: input_datetime.timer_thursday_on
+                  name: 목요일 잠금 시작 시간
+                - color: light-green
+                  type: tile
+                  tap_action:
+                    action: toggle
+                  entity: automation.timer_thursday_off
+                  name: 목요일 종료 타이머
+                  icon: mdi:door-sliding
+                - type: tile
+                  color: light-green
+                  entity: input_datetime.timer_thursday_off
+                  name: 목요일 잠금 종료 시간
+                - color: cyan
+                  type: tile
+                  tap_action:
+                    action: toggle
+                  entity: automation.timer_friday_on
+                  name: 금요일 시작 타이머
+                  icon: mdi:door-sliding-lock
+                - type: tile
+                  color: cyan
+                  entity: input_datetime.timer_friday_on
+                  name: 금요일 잠금 시작 시간
+                - color: cyan
+                  type: tile
+                  tap_action:
+                    action: toggle
+                  entity: automation.timer_friday_off
+                  name: 금요일 종료 타이머
+                  icon: mdi:door-sliding
+                - type: tile
+                  color: cyan
+                  entity: input_datetime.timer_friday_off
+                  name: 금요일 잠금 종료 시간
+                - color: light-green
+                  type: tile
+                  tap_action:
+                    action: toggle
+                  entity: automation.timer_saturday_on
+                  name: 토요일 시작 타이머
+                  icon: mdi:door-sliding-lock
+                - type: tile
+                  color: light-green
+                  entity: input_datetime.timer_saturday_on
+                  name: 토요일 잠금 시작 시간
+                - color: light-green
+                  type: tile
+                  tap_action:
+                    action: toggle
+                  entity: automation.timer_saturday_off
+                  name: 토요일 종료 타이머
+                  icon: mdi:door-sliding
+                - type: tile
+                  color: light-green
+                  entity: input_datetime.timer_saturday_off
+                  name: 토요일 잠금 종료 시간
+                - color: cyan
+                  type: tile
+                  tap_action:
+                    action: toggle
+                  entity: automation.timer_sunday_on
+                  name: 일요일 시작 타이머
+                  icon: mdi:door-sliding-lock
+                - type: tile
+                  color: cyan
+                  entity: input_datetime.timer_sunday_on
+                  name: 일요일 잠금 시작 시간
+                - color: cyan
+                  type: tile
+                  tap_action:
+                    action: toggle
+                  entity: automation.timer_sunday_off
+                  name: 일요일 종료 타이머
+                  icon: mdi:door-sliding
+                - type: tile
+                  color: cyan
+                  entity: input_datetime.timer_sunday_off
+                  name: 일요일 잠금 종료 시간
+              title: 요일 타이머
+          - type: conditional
+            conditions:
+              - entity: input_select.timer_mode
+                state: 셀프
+            card:
+              square: false
+              columns: 2
+              type: grid
+              cards:
+                - color: yellow
+                  type: tile
+                  entity: input_boolean.timer_self_on
+                  name: 셀프 타이머
+                  icon: mdi:timer-edit
+                  icon_tap_action:
+                    action: toggle
+                  tap_action:
+                    action: toggle
+                - color: yellow
+                  type: tile
+                  entity: schedule.timer_self
+                  name: 셀프 타이머 설정
+                  icon: mdi:clock-time-five
+                  icon_tap_action:
+                    action: more-info
+              title: 셀프 타이머
+  - theme: Backend-selected
+    title: 시스템 관리
+    path: system
+    icon: ''
+    visible:
+      - user: 608a895e5f624bcea0289ce4caaf6719
+      - user: d099558b377f4053ae5501311a35f4a7
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: tile
+            entity: sensor.date_time
+            name: 현재 시간
+            tap_action:
+              action: none
+            icon_tap_action:
+              action: none
+            icon: mdi:calendar-clock
+          - square: false
+            columns: 2
+            type: grid
+            cards:
+              - type: tile
+                entity: switch.asd_open
+                tap_action:
+                  action: none
+                icon_tap_action:
+                  action: none
+              - type: tile
+                entity: switch.asd_lock
+                tap_action:
+                  action: none
+                icon_tap_action:
+                  action: none
+            title: 릴레이 상태
+          - type: logbook
+            entities:
+              - switch.asd_lock
+              - switch.asd_open
+              - input_select.door_mode
+              - input_select.timer_mode
+            hours_to_show: 8
+          - type: tile
+            entity: script.purge_log
+            tap_action:
+              action: call-service
+              service: script.purge_log
+              data: {}
+              target: {}
+            icon_tap_action:
+              action: call-service
+              service: script.purge_log
+              data: {}
+              target: {}
+          - square: false
+            columns: 2
+            type: grid
+            cards:
+              - type: tile
+                entity: sensor.processor_use
+              - type: tile
+                entity: sensor.load_1m
+              - type: tile
+                entity: sensor.load_5m
+              - type: tile
+                entity: sensor.load_15m
+              - type: tile
+                entity: sensor.memory_use_percent
+              - type: tile
+                entity: sensor.memory_free
+              - type: tile
+                entity: sensor.disk_use_percent_config
+              - type: tile
+                entity: sensor.processor_temperature
+            title: 시스템 정보
+          - type: tile
+            entity: sensor.last_boot
+          - color: red
+            type: tile
+            entity: script.reboot
+            name: 시스템 재부팅
+            tap_action:
+              action: call-service
+              service: script.reboot
+              data: {}
+              target: {}
+            icon_tap_action:
+              action: call-service
+              service: script.reboot
+              data: {}
+              target: {}
+title: 자동문 제어기
