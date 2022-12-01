@@ -1,0 +1,28 @@
+코드확인결과 우려하였던것처럼 toggle형태였음.
+즉 완벽한 동작 보증을 위해서는 스마트플러그 등으로 poweroff한 후에 command입력을 해야함
+다만, 전원off 후 on상태로 갔을 시에, 마지막상태값이 저장되는 구조라면 처리불능일수도있음.
+
+ON/OFF
+16:42:36.450 MQT: tele/SOLBAM_IR/RESULT = {"IrReceived":{"Protocol":"NEC","Bits":32,"Data":"0x2FD00FF","DataLSB":"0x40BF00FF","Repeat":0}}
+16:42:38.103 MQT: tele/SOLBAM_IR/RESULT = {"IrReceived":{"Protocol":"NEC","Bits":32,"Data":"0x2FD00FF","DataLSB":"0x40BF00FF","Repeat":0}}
+
+IRSend {"Protocol":"NEC","Bits":32,"Data":"0x2FD00FF","DataLSB":"0x40BF00FF","Repeat":0}
+
+MODE변경
+16:42:57.813 MQT: tele/SOLBAM_IR/RESULT = {"IrReceived":{"Protocol":"NEC","Bits":32,"Data":"0x2FD40BF","DataLSB":"0x40BF02FD","Repeat":0}}
+16:43:05.629 MQT: tele/SOLBAM_IR/RESULT = {"IrReceived":{"Protocol":"NEC","Bits":32,"Data":"0x2FD40BF","DataLSB":"0x40BF02FD","Repeat":0}}
+
+IRSend {"Protocol":"NEC","Bits":32,"Data":"0x2FD40BF","DataLSB":"0x40BF02FD","Repeat":0}
+
+습도DOWN
+16:43:18.532 MQT: tele/SOLBAM_IR/RESULT = {"IrReceived":{"Protocol":"NEC","Bits":32,"Data":"0x2FDE01F","DataLSB":"0x40BF07F8","Repeat":0}}
+16:43:20.785 MQT: tele/SOLBAM_IR/RESULT = {"IrReceived":{"Protocol":"NEC","Bits":32,"Data":"0x2FDE01F","DataLSB":"0x40BF07F8","Repeat":0}}
+
+IRSend {"Protocol":"NEC","Bits":32,"Data":"0x2FDE01F","DataLSB":"0x40BF07F8","Repeat":0}
+
+습도UP
+16:43:23.084 MQT: tele/SOLBAM_IR/RESULT = {"IrReceived":{"Protocol":"NEC","Bits":32,"Data":"0x2FD609F","DataLSB":"0x40BF06F9","Repeat":0}}
+16:43:24.786 MQT: tele/SOLBAM_IR/RESULT = {"IrReceived":{"Protocol":"NEC","Bits":32,"Data":"0x2FD609F","DataLSB":"0x40BF06F9","Repeat":0}}
+
+IRSend {"Protocol":"NEC","Bits":32,"Data":"0x2FD609F","DataLSB":"0x40BF06F9","Repeat":0}
+
