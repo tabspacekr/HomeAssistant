@@ -1,4 +1,4 @@
-#debian11 bullseye install
+#debian11 bullseye home assistant supervisor install
 
 apt update && apt upgrade -y && apt autoremove -y
 
