@@ -1,4 +1,5 @@
 ha rest api를 swagger ui로 구성
+* token은 운영사이트별로 별도구성
 
 - https://swagger.io/tools/swagger-ui/
 - https://developers.home-assistant.io/docs/api/rest/
