@@ -1,0 +1,248 @@
+shinwoo_fcu_hot_18:
+  alias: SHINWOO_FCU_HOT_18
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/FCU/IRsend
+      payload: '{"Protocol":"KELON","Bits":48,"Data":"0x181000C0018113CC"}'
+  mode: single
+shinwoo_fcu_hot_20:
+  alias: SHINWOO_FCU_HOT_20
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/FCU/IRsend
+      payload: '{"Protocol":"KELON","Bits":48,"Data":"0x181000C0020113CC"}'
+  mode: single
+shinwoo_fcu_hot_22:
+  alias: SHINWOO_FCU_HOT_22
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/FCU/IRsend
+      payload: '{"Protocol":"KELON","Bits":48,"Data":"0x181000C0022113CC"}'
+  mode: single
+shinwoo_fcu_hot_24:
+  alias: SHINWOO_FCU_HOT_24
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/FCU/IRsend
+      payload: '{"Protocol":"KELON","Bits":48,"Data":"0x181000C0024113CC"}'
+  mode: single
+shinwoo_fcu_hot_26:
+  alias: SHINWOO_FCU_HOT_26
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/FCU/IRsend
+      payload: '{"Protocol":"KELON","Bits":48,"Data":"0x181000C0026113CC"}'
+  mode: single
+shinwoo_fcu_hot_28:
+  alias: SHINWOO_FCU_HOT_28
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/FCU/IRsend
+      payload: '{"Protocol":"KELON","Bits":48,"Data":"0x181000C0028113CC"}'
+  mode: single
+shinwoo_fcu_hot_30:
+  alias: SHINWOO_FCU_HOT_30
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/FCU/IRsend
+      payload: '{"Protocol":"KELON","Bits":48,"Data":"0x181000C0030113CC"}'
+  mode: single
+shinwoo_fcu_cold_16:
+  alias: SHINWOO_FCU_COLD_16
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/FCU/IRsend
+      payload: '{"Protocol":"KELON","Bits":48,"Data":"0x181000C0016111CC"}'
+  mode: single
+shinwoo_fcu_cold_18:
+  alias: SHINWOO_FCU_COLD_18
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/FCU/IRsend
+      payload: '{"Protocol":"KELON","Bits":48,"Data":"0x181000C0018111CC"}'
+  mode: single
+shinwoo_fcu_cold_20:
+  alias: SHINWOO_FCU_COLD_20
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/FCU/IRsend
+      payload: '{"Protocol":"KELON","Bits":48,"Data":"0x181000C0020111CC"}'
+  mode: single
+shinwoo_fcu_cold_22:
+  alias: SHINWOO_FCU_COLD_22
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/FCU/IRsend
+      payload: '{"Protocol":"KELON","Bits":48,"Data":"0x181000C0022111CC"}'
+  mode: single
+shinwoo_fcu_cold_24:
+  alias: SHINWOO_FCU_COLD_24
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/FCU/IRsend
+      payload: '{"Protocol":"KELON","Bits":48,"Data":"0x181000C0024111CC"}'
+  mode: single
+shinwoo_fcu_cold_26:
+  alias: SHINWOO_FCU_COLD_26
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/FCU/IRsend
+      payload: '{"Protocol":"KELON","Bits":48,"Data":"0x181000C0026111CC"}'
+  mode: single
+shinwoo_fcu_cold_28:
+  alias: SHINWOO_FCU_COLD_28
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/FCU/IRsend
+      payload: '{"Protocol":"KELON","Bits":48,"Data":"0x181000C0028111CC"}'
+  mode: single
+shinwoo_fcu_cold_30:
+  alias: SHINWOO_FCU_COLD_30
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/FCU/IRsend
+      payload: '{"Protocol":"KELON","Bits":48,"Data":"0x181000C0030111CC"}'
+  mode: single
+shinwoo_fcu_fan_16:
+  alias: SHINWOO_FCU_FAN_16
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/FCU/IRsend
+      payload: '{"Protocol":"KELON","Bits":48,"Data":"0x181000C0016117CC"}'
+  mode: single
+shinwoo_fcu_fan_18:
+  alias: SHINWOO_FCU_FAN_18
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/FCU/IRsend
+      payload: '{"Protocol":"KELON","Bits":48,"Data":"0x181000C0018117CC"}'
+  mode: single
+shinwoo_fcu_fan_20:
+  alias: SHINWOO_FCU_FAN_20
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/FCU/IRsend
+      payload: '{"Protocol":"KELON","Bits":48,"Data":"0x181000C0020117CC"}'
+  mode: single
+shinwoo_fcu_fan_22:
+  alias: SHINWOO_FCU_FAN_22
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/FCU/IRsend
+      payload: '{"Protocol":"KELON","Bits":48,"Data":"0x181000C0022117CC"}'
+  mode: single
+shinwoo_fcu_fan_24:
+  alias: SHINWOO_FCU_FAN_24
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/FCU/IRsend
+      payload: '{"Protocol":"KELON","Bits":48,"Data":"0x181000C0024117CC"}'
+  mode: single
+shinwoo_fcu_fan_26:
+  alias: SHINWOO_FCU_FAN_26
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/FCU/IRsend
+      payload: '{"Protocol":"KELON","Bits":48,"Data":"0x181000C0026117CC"}'
+  mode: single
+shinwoo_fcu_fan_28:
+  alias: SHINWOO_FCU_FAN_28
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/FCU/IRsend
+      payload: '{"Protocol":"KELON","Bits":48,"Data":"0x181000C0028117CC"}'
+  mode: single
+shinwoo_fcu_fan_30:
+  alias: SHINWOO_FCU_FAN_30
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/FCU/IRsend
+      payload: '{"Protocol":"KELON","Bits":48,"Data":"0x181000C0030117CC"}'
+  mode: single
+shinwoo_fcu_fan_off:
+  alias: SHINWOO_FCU_FAN_OFF
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/FCU/IRsend
+      payload: '{"Protocol":"KELON","Bits":48,"Data":"0x188000C0030117CC"}'
+  mode: single
+shinwoo_fcu_cold_off:
+  alias: SHINWOO_FCU_COLD_OFF
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/FCU/IRsend
+      payload: '{"Protocol":"KELON","Bits":48,"Data":"0x188000C0030111CC"}'
+  mode: single
+shinwoo_fcu_hot_off:
+  alias: SHINWOO_FCU_HOT_OFF
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/FCU/IRsend
+      payload: '{"Protocol":"KELON","Bits":48,"Data":"0x188000C0030113CC"}'
+  mode: single
+shinwoo_fcu_off:
+  alias: SHINWOO_FCU_OFF
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/FCU/IRsend
+      payload: '{"Protocol":"KELON","Bits":48,"Data":"0x188000C0030113CC"}'
+  mode: single
+shinwoo_fcu_hot_30_turbo:
+  alias: SHINWOO_FCU_HOT_30_TURBO
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/FCU/IRsend
+      payload: '{"Protocol":"KELON","Bits":48,"Data":"0x881000C0030113CC"}'
+  mode: single
+shinwoo_fcu_cold_16_turbo:
+  alias: SHINWOO_FCU_COLD_16_TURBO
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/FCU/IRsend
+      payload: '{"Protocol":"KELON","Bits":48,"Data":"0x881000C0016111CC"}'
+  mode: single
+shinwoo_fcu_fan_24_turbo:
+  alias: SHINWOO_FCU_FAN_24_TURBO
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/FCU/IRsend
+      payload: '{"Protocol":"KELON","Bits":48,"Data":"0x881000C0024117CC"}'
+  mode: single
+'1670334110015':
+  alias: SHINWOO_FCU_HOT_16
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/FCU/IRsend
+      payload: '{"Protocol":"KELON","Bits":48,"Data":"0x181000C0016113CC"}'
+  mode: single
