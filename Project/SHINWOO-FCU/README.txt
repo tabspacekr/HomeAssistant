@@ -1,1 +1,1 @@
-신우공조 FCU IR REMOTE CONTROL
+신우공조 FCU(Fan Coil Unit) IR REMOTE CONTROL
