@@ -1,0 +1,22 @@
+   vi /etc/ssh/sshd_config
+   vi /etc/gdm3/daemon.conf 
+   service ssh restart
+   
+   sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+   apt update && apt upgrade -y && apt autoremove -y
+   apt install -y software-properties-common apparmor-utils apt-transport-https ca-certificates curl dbus jq network-manager udisks2
+   sudo echo "systemd.unified_cgroup_hierarchy=false" > /etc/default/grub
+   sudo sed -i -e "1 s/$/ systemd.unified_cgroup_hierarchy=false/" /boot/cmdline.txt
+   reboot
+   
+   curl -fsSL get.docker.com | sh
+   apt install systemd-journal-remote
+   sudo apt --fix-broken install
+   wget https://github.com/home-assistant/os-agent/releases/download/1.4.1/os-agent_1.4.1_linux_x86_64.deb
+   dpkg -i os-agent_1.4.1_linux_x86_64.deb 
+   wget https://github.com/home-assistant/supervised-installer/releases/latest/download/homeassistant-supervised.deb
+   export PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin
+   sudo dpkg -i homeassistant-supervised.deb
+   
+   apt install htop
+   htop
