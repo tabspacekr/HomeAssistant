@@ -1,3 +1,5 @@
+   #x86amd64용 설치가이드
+   
    vi /etc/ssh/sshd_config
    vi /etc/gdm3/daemon.conf 
    service ssh restart
