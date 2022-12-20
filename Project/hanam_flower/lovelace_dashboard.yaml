@@ -1,0 +1,15 @@
+type: entities
+entities:
+  - entity: input_select.hanam_fcu_mode
+    name: 운전모드
+  - entity: input_select.hanam_fcu_hml
+    name: 바람세기
+  - entity: input_number.hanam_fcu_temperature
+    name: 설정온도
+  - entity: input_boolean.hanam_fcu_swing
+    name: 스윙모드
+  - entity: input_boolean.hanam_fcu_power
+    name: 전원
+title: 에어컨 제어
+show_header_toggle: false
+theme: Google Blue Theme
