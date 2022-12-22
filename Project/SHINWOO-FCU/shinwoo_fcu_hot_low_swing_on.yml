@@ -1,0 +1,369 @@
+shinwoo_fcu_hot_low_swing_on_5:
+  alias: shinwoo_fcu_hot_low_swing_on_5
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/{{ states('input_text.shinwoo_fcu_target') }}/IRsend
+      payload: 0,+8700-4465+580-545C-550C-1680C-1675+585eC-590+540fCfCgHgHjIdHdCgHeCdHfCgHdHeCgIjHgHdHeCeCeCi+515-575CdCdHeCdHdCeCiJeCdCfH-1685LiK-570HeCeCdHjHeCdHeCiJdHn+535-1705CdHdHdHeCjHdIfCgHeCdH-610+495lLdHdHgCgHfCjHfCdHgHeCeH-21085+8680-4460IiJeLfCfCeCjHgHfCgHgCdHdC-595K-1700C-555LdHgHfCeCdIgCeCgHiJeCeCeCdHeCeCdHdIdCeCdHeCeCeHfCmCdHjHdHdHdHeCeCdHeCdHdHeCfCdHdHeCdHeCiJgHfCdHdH-530NlCeHiJgC-1720KwHeCfHdHgHdCeC
+
+  mode: single
+shinwoo_fcu_hot_low_swing_on_6:
+  alias: shinwoo_fcu_hot_low_swing_on_6
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/{{ states('input_text.shinwoo_fcu_target') }}/IRsend
+      payload: 0,+8710-4450+600-530+595-545+580-1685G-1660C-550GdCiCiCiC-1675GdCdCjGiCjGjG-1680GiCdCjGjGiCkGdCdCjGjGjGf+585jG-575JjGjGfGjGfGfMfGlGkMfMjNf+565oMf+590f+615-520Gj+605r+610rGfPfP-1670SrP-540EvOoQ-525M-535PlQ-1645MvMjTrMvMv+620-510PkT-515MdCkMlGv+570lCjT-515M-21070+8720-4435GjGdN-1705GlGfMdClGiCkMlGjGjGfMlGjGfMlGlGfGfMjGkGlGfMfMfGfMjGjSrMjGjMfMvMjGfMfSw+560-1700GlS-505CjGfG-555NjGjGvMfMfMvMvPvMiCfMfPfTrTwGdCiClMvPjGjPvTwGfMlMjGv+570-1700GhGjMkMfQ-515M
+
+  mode: single
+shinwoo_fcu_hot_low_swing_on_7:
+  alias: shinwoo_fcu_hot_low_swing_on_7
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/{{ states('input_text.shinwoo_fcu_target') }}/IRsend
+      payload: 0,+8720-4445+600-530CdC-1660CeCdCdCeCeCeCeC-545+580dC-555+575eCdC-550G-1680GeCjGfGkGkG-1675GjGj+585f+610-505Cf+605-525Gf+590-540N-520+615-510+595-570+560sRsRfU-500+625-1650GlMfMfU-515UtN-515RsU-515MsRsU-515U-515U-515U-1645RsRsU-515RsU-515U-515U-1630+630-1650NvUtN-515+620-515U-515RsN-1630P-1670RsU-1640+620-1650RsU-1630+630vU-515U-21060+8705-4420PsN-515N-1650M-1670UyFsRlGe+625-1650GlMsRfGsRlGs+565-565+620-1690FkGsRsU-1645U-1650N-1650NtU-515MsG-535Cs+565xN-515RsUzCjGjMdCsR-535WsRe+630-1635CsR-535+625-515RsRsRsRjIsWsU-515Rs+565yRlYxRdWsRsRd+625tMlYk+630vRsW-535+620v+565yRfN-1650U-1650MfGkR-1670GpH-1645U-515PdR
+
+  mode: single
+shinwoo_fcu_hot_low_swing_on_8:
+  alias: shinwoo_fcu_hot_low_swing_on_8
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/{{ states('input_text.shinwoo_fcu_target') }}/IRsend
+      payload: 0,+8695-4470+600-530+595dC-1665C-1660C-545+580-535C-1680IfC-1675IkIdC-555I-550IkInInIl+585kInOnInM-570O-540+590k+610-520On+605-515Rh+615-510+565pRqRqRqRqRhOq+620xRqOg+630-1645IqP-635TdUqR-525CqWtOqWvRqRhWxRkUtOd+630tIq+625xOqRkIg+625xEhOhRqRjEqOlOqR-1655CkU-1650StIlWtIqR-21075+8720-4440IqYpOkOk+560pZxRkIlOlU-1635+625tOqEjRgCjEqRlOkIq+625xRqRqEqW-1645RqRjRqEqZxRpOi+525qRjEqRqRqRqOq+625-1645IgEhZtOjEd+630xRqEqRqRj+625vWxRqW-1645WxRuNxCqOhSvR-1655+635-1670OvZvWvRqRqZi+525-1670OqZ-1650OlIfImEkU-505CqW
+
+  mode: single
+shinwoo_fcu_hot_low_swing_on_9:
+  alias: shinwoo_fcu_hot_low_swing_on_9
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/{{ states('input_text.shinwoo_fcu_target') }}/IRsend
+      payload: 0,+8730-4470+580-530+600-550C-1660EgEfCfC-1680C-1685ChChCfC-545+585-535EhK-540K-555ChCgEfCj+590-1675+605-510EfCg+625-520+615-500EjK-575+560mOmKmU-515OjOmUy+620tOlUtU-1645+610-1635StUyUyOmOmUrOmUyUrUyUt+610yO-1650+630rUyZrUyUyUrU-1630+630-1645+610yUc+525mUy+610yUyU-1630+630-1650CpU-1650KgSt+610-1635E-640+490mO-21065+8700-4455OlSyU-1650CgQl+595jK-1670+610-1630S-1630Ep+610tOf+610tU-1655CmOmU-1650+610-1650+610tUyOg+630t+610y+595-1670+610yOmOmUy+595mOmOmUyUyUyOmUtOmUyO-1655EhQtUyUyUyOmOmUyOmUtOjKm+595lO-1670UyOmOmOmOl+595mO-1655Q-1670OmOjX-565OmO-525EjK-1670O-1670O-1655EpOpOjKpOmOmO
+
+  mode: single
+shinwoo_fcu_hot_low_swing_on_10:
+  alias: shinwoo_fcu_hot_low_swing_on_10
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/{{ states('input_text.shinwoo_fcu_target') }}/IRsend
+      payload: 0,+8690-4465+580-550C-530+600-1660FgF-525FeF-1680C-1665+595iCgFeF-545CdCiCeFeFjFgFeFeFeF-570+560-590+540-510+620gFeFeFeFeFeFeFeFeFeFeFeFeF-535FiCgFd+575eFeFqReFeFeFeFeFeFeFeFgFeFeFeFeFeFeFgFgFeKeFeFeFeFeFgFgFgFgFeFdCgFeFeF-21070A-4440FeFeFgFgFeFeFgFgFgFgFeFeFeFgFeFeFgFgFeFeFeFeFeFeFgFeFeFeFeFeFeFeFdCeFeFe+605hFdCgF-1715PeFeFdClCdCeFeFl+585dCdClYdCiCdCdW-520RzCd+615-515+615-1650CgFlOlRqOp+615z+610-515R-1630+630-1645+610-1650+610-1630WlOpO-1670OpOpO
+
+  mode: single
+shinwoo_fcu_hot_low_swing_on_11:
+  alias: shinwoo_fcu_hot_low_swing_on_11
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/{{ states('input_text.shinwoo_fcu_target') }}/IRsend
+      payload: 0,+8695-4445+600-530CdC-1660CeCd+595-550+580eC-1740+515eCeCdC-545Hg+585-1680HgHgHmLeCdCgHmLgH-555+605j+610-1650LkP-525Hk+590-540LkLgHgStS-535FtPg+560t+620-510Fe+625-1655SuStFtWjSt+570-565FtSuWjLt+570pKk+615qOxFtSkP-520LtStLmHmLkLgHdCdFgHgLeCkLkLkHmHkLmHdCdC-21070+8725-4440HgLkL-1665CmHkLtSmHmHeC-1675LgHkHgHmLgHgHmHeCdW-520HmHdFtSgLmHgHkHkLkLgHkLkLgHgHkHgHgHgHmHeCdY-505CgHgHnHkLkHgHgHkLnOrL-1675LkLg+575gHk+615jP-520SmH-1675LgHgHgHdYjSkHmV-570V-575Hk+570mCgH-1685HtLkL
+
+  mode: single
+shinwoo_fcu_hot_low_swing_on_12:
+  alias: shinwoo_fcu_hot_low_swing_on_12
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/{{ states('input_text.shinwoo_fcu_target') }}/IRsend
+      payload: 0,+8720-4450+600-530CdC-1680+580-1665CdCdC-1660ChChChCdCdCdChCdCdChChCdCdCdCeFdCdChCdCdCdCdCdCdCdCdCdCdCdCdCdChChCdCdCdCdCdCdCdCdCdCdCdCdChCdCdCdCdCdC-525ChChCdCdCdCdCdCdCgChCdCdChCdChC-535+595dC-21070+8695-4445CdCdChChCjKdChChChChCdCdCdKhCdCdChChCdCdCdCh+605iCdChCdCdCdCdCdCdC-550FdCdCdCdCdCdChChCdCdCdCdCdCdCdCdCdCdCdCdChC-510+620dCdCdCdCp+585hChCpFdKjCdCdCdChChCdCdChCdChCdCdC
+
+  mode: single
+shinwoo_fcu_hot_low_swing_on_13:
+  alias: shinwoo_fcu_hot_low_swing_on_13
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/{{ states('input_text.shinwoo_fcu_target') }}/IRsend
+      payload: 0,+8725-4470+580-530+600-550C-1665E-1660E-545+585fC-1680CkC-1685CgEdEfCdEkCiJfChEhEfCiJk+575kJf+610-520EgCiJiJiJi+590i+615-515J-540J-555CsQrNr+570mN-560ShE-1675CsPfNrPsPsQ-510PtMsPsPs+595-660+490rQ-1650CsPsPsQrPs+620xQ-1635EkJ-535YsPsPsP-640+490fC-1670N-505+630-1650P-535Y-1670JsPkMs+620rP-21070+8700-4440Es+620rQ-1650JwJsPiQ-1630EhEwN-1630EsPsPsQ-1645JiNoN-1650J-1670JsNrQ-1630+605hQd+620rQ-1650JsPsPsQxYsNrPsPsNrQrQrNrQr+620-1640P-1670PsPsQrPsPsNoPsQxQrQrQrQrQ-1655NrNrQrQoQrQrQ-1640+620-1630EsPsQrQrPsPsP-1670PiJ-1670NrPh+605sN-1610+650oPsP
+
+  mode: single
+shinwoo_fcu_hot_low_swing_on_14:
+  alias: shinwoo_fcu_hot_low_swing_on_14
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/{{ states('input_text.shinwoo_fcu_target') }}/IRsend
+      payload: 0,+8715-4445+600-530CdC-1660C-1665CdC-535+595eCeCeCeCdC-525CdCeCdCdCfHeCdCdCdCdCeCdCeCdCdCdCd+605dCdCdCdCdCdCdCdCdCeCeCdCdC-510+620dCgHdCdCdCdCdCdCdCeCgCdCdCdCdCdCeCeCdCgHdCdCdCdCeCeCeCdCeCdCeCdCdC-21070+8690bCdCdCeCeCdCdCeCeCeC-1680+580dCkLdCeCdCgHeCeCdCdCdCdCfCdCeC-550PdCdCdCdC-545+585qPdCqPdCdCdCqPeCeCqPdCdCdCdCdCqPqPqPdCdCqPeCdCqPdCdCdCdCeCeCrPdCqPdCdCkLeCeCeCrPfCdCeCdCdC
+
+  mode: single
+shinwoo_fcu_hot_low_swing_on_15:
+  alias: shinwoo_fcu_hot_low_swing_on_15
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/{{ states('input_text.shinwoo_fcu_target') }}/IRsend
+      payload: 0,+8730-4450+600-530CdC-1640+620-1660CdC-535+595gCgCgCgCdCdChCgCdCdCgCgC-550+580jKgCdCgCjKgCdChC-545+585dCdCdCjKdCjKdCdCjKdC-1680K-1665CdCjKlMjKdIdClKdCjKjKdCdCgCdCdC-555+575lMdCdCgCgCdCdCdCdClKdCgCdCdCgCgCjMgCdCdC-21070+8695-4445CdC-525CgCg+605jKjKgCgCgC-1675MuCjMlKgClKjKnKnKjMjKnKjKnKjKgCjMjK-515+615-540MpKlMjKl+610-520MlKl+560-570MzMnKnKlMz+590lMzMpC-520MzFxKjKj+610-510+570-565+590wMzMzKj+590lMdCjKg+625-1655KlMjKz+590z+590zMdInKl+590l+610-1650Kw+610uKnV-520Y-510I
+
+  mode: single
+shinwoo_fcu_hot_low_swing_on_16:
+  alias: shinwoo_fcu_hot_low_swing_on_16
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/{{ states('input_text.shinwoo_fcu_target') }}/IRsend
+      payload: 0,+8715-4445+600-550+580-530C-1660CgC-525CdEgCgCgCgCfC-510+620fCgCfC-545+585gCgCfCfCdEgC-1640JfCgCfCfCfCdEfCfC-535+595fC-540LfCdEfCfCgCgCfCdEfCfCkLfCfCfCfCfCfCfCgCdEfCfCfCd+575fC-1665CgCfCfCdEdEdEkE-1680LgCdEsEgCdEgC-555EkL-21075+8725-4425+590kLdEsLgCkLkLgC-1675EgCsEdEkLdQsEdLkLyLsEdEkLkLsLsEdEsEf+625hLp+615-520Lk+565t+630-520+615-515Xd+605hLkXk+615-520LsLsLdEkXk+610-520LkXpLkOd+610-515XpOpOkLy+615-515EdEk+610-515Xp+615iJ-1650EsEkEkEk+615-500+630-520Lp+565-1700EsEkXsEgCfZ-1650Ed+610-515L
+
+  mode: single
+shinwoo_fcu_hot_low_swing_on_17:
+  alias: shinwoo_fcu_hot_low_swing_on_17
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/{{ states('input_text.shinwoo_fcu_target') }}/IRsend
+      payload: 0,+8715-4445+600-530CdC-1665CeC-525CdC-1660CgCgCgC-550+575dC-535CeCdCdCgCgCdCdCgCgCgCdCgCdCdCdCdCdC-510+620dCdCdCdCj+595dCdCgMgCdCdCdCdCdCdCdCdChIdCdCdC-1715+545dCdCdCdCdCdC-1640LgCdCdCdCh+580dCdCgCjC-1680QeMgCdCgChIdC-21090+8700-4420CdCdCeMeCh+585dCeCgCrQgChQdCdCrQdCdCgCgChVdCgCgCrQdC-1670+590dCdCdChQdCfCdCdCdChQhQoQhQgCrQdChQhQhQoVoVhQhVhQhQoQhXgC-570+560oVhQhQhVoQrQ-1675VhQdCoQhV-540XoQrQhQrQeCgChQrVdChQ
+
+  mode: single
+shinwoo_fcu_hot_low_swing_on_18:
+  alias: shinwoo_fcu_hot_low_swing_on_18
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/{{ states('input_text.shinwoo_fcu_target') }}/IRsend
+      payload: 0,+8720-4445+600-530CdC-1660CeCdCdCeCe+605-1655CeCdCdCdCeCdCdCeCeCdC-550+580d+595hIdCeCeChI-545+585dC-510+620mNdCdJ-555IhIdCdCmNdC-1680IeCdCdCdCkLhIhIhIdChIhIkLhIeC-650+480o+575hIdCdCkL-1675LpIhIhIdChIhIdCeCeCpLeCeChIpIhIhI-21070+8700bCdCkIeCpIdChIeCeCeCpIdCdCdCeC-535ChI-1665CeCdChSwChIdCxCxChIdCdCdCdChIdChIdCkIhLhSwCxCxCdCdJhIdCdCdCdFkIdChIwJhIeCdChIhIhIhIhIpItIdCkIhIhIhIdCpIxCpLeCeCdCeCdCdC
+
+  mode: single
+shinwoo_fcu_hot_low_swing_on_19:
+  alias: shinwoo_fcu_hot_low_swing_on_19
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/{{ states('input_text.shinwoo_fcu_target') }}/IRsend
+      payload: 0,+8715-4445+600-530CdC-1660+605-1655CdCdC-1680+580hIeCeC-550IdCjIeCdCjIeC-1665CdCd+595eCjI-545+585eCeCdCdCdCjIdCjIdCdC-555+575jIjIjNdChIhIjIjIjIdCjIjIjNdC-510+620mNjIjI-1685IjIjIjI-535CdC-650+480sIkCjIdCmIqRmIdCeCjIdCdCmNeChIdCdC-21075+8695-4470IjIjIkChN-525CdChIeC-1640ReCjIdCjIkCjIjIeC-1675NjIjIeCdCmN-1675IeCdCdCjIjIdCjIjIjNdCdCjImI-540NhNhIoPjIjI-540LmN-540N-540NoImNtLm+560-570F-1650IjIoP-540+590m+560-565+610-520+560-1700+610-1635Cm+610-520NmNmIj+615-515+610gImNj+615-515NmIeCh+560-565+610-520+565
+
+  mode: single
+shinwoo_fcu_hot_low_swing_on_20:
+  alias: shinwoo_fcu_hot_low_swing_on_20
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/{{ states('input_text.shinwoo_fcu_target') }}/IRsend
+      payload: 0,+8715-4445+600-530CdC-1660CeCdCdC-1655C-1665CeCgCdC-550+580dCgCdCdCeCeCdCdCdCdCdCdChIeCdCdC-525CdCdCd+595dCdCdCdChIhIeCeChIdCdChIhIhIhI-545+585dChIdChIeCdC-535KdClMdChIeCeCdCdChIhIhIdCeCdClIlM-1680IdCeCdClM-21070+8700bChIdCeCgChIhIgCgCoMeCdChIhIoIdCdCoIoMdCdCdCdCnClMdCgCdChIhMdCdCdCdChIhIdChIdCeCeChIlMdCdChMdChIlMhIdChIh+590-1675MlIhInKhIhIlMoIoIhIdClMlIhMhIeChIlI-540ReClMoIlMhI
+
+  mode: single
+shinwoo_fcu_hot_low_swing_on_21:
+  alias: shinwoo_fcu_hot_low_swing_on_21
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/{{ states('input_text.shinwoo_fcu_target') }}/IRsend
+      payload: 0,+8715-4450+600-530CdC-1670+595-1665FdCdC-1660ChChChCdCdCdF-1685+580dCdChChCdCdChCdCdCdCdChCdCdCdCdCdCdCdCdCdCdCdCdChChCdC-550+585-545JdCkJkJkJdCdC-590+540kJdChCdCkJkLkLdCmN-1680JgCdCkJdCdCkJdChChCmJkJhCdChCdCdC-21070+8720-4440JdCdChChCdC-535FhChChChCdCdCdChCdCkJhChCkJdChCdCdCkJkNhCmJdCdCkJdCk+575dCkJkJkJkJkJhChCdCkLdCmJkLoLdCmLkJkJkJkJpLdCmLkJkJkJdC-1675JpJkJkJmJd+625-525JkJhCpJdCkJeLkJhCdCkJ
+
+  mode: single
+shinwoo_fcu_hot_low_swing_on_22:
+  alias: shinwoo_fcu_hot_low_swing_on_22
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/{{ states('input_text.shinwoo_fcu_target') }}/IRsend
+      payload: 0,+8720-4450+600-530Cd+595-1640+620-1660CdCdC-1665CiCiCiCdCdCdChCdC-535ChCiCjCdCdCiCdCdCdChCdCdCdCdCdCdCdCdCdC-545+580dCjC-1680LhCdCdCdCdCdCdCdCdCdCkL-510GdChCdCdCk+585dCkO-525Ch+605-1675LdEdCdCdCdCdChCdCmLdChCdChC-550LsL-21075A-4435LdCjCrLhCsLsLrLmLhChCkOsOkLmLkOdChCmOk+610-505Es+560-1700OkOsL-540+590mLdCz+590k+615n+570-565Oz+590zV-515+565s+575-555CzLsV-1650LmLz+590sOz+565x+590kOj+575sL-570+615nEz+590z+615n+590-1670+615-515+590zEz+590v+520z+590z+615-1650LmOk+590k+615n+590k+590v+520jErV-520Li+630nErOzEmQ-520Oz+590
+
+  mode: single
+shinwoo_fcu_hot_low_swing_on_23:
+  alias: shinwoo_fcu_hot_low_swing_on_23
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/{{ states('input_text.shinwoo_fcu_target') }}/IRsend
+      payload: 0,+8715-4450+595-530+600dE-1660EfEdEdEfEfEfEfEdEdEdEfEdEd+605-1655EfEdEdEfEfEdEdE-550+580hEdEdEdE-525E-510+620dEdEdEiJdEi+585-540NfEfEdEdEdEiNdEdEdEdEdEiJ-555+575dEfEiJiJdEdEiJ-535EfE-1665EdEdEdEdEiJdEfEsEsEdE-1685JpJ-1680JiJiJ-21120+8710-4440NiJiJtJfEdEiJfEuJfEuJrCiJiN-1675JiJiJuJuJiJiJyNuJrE-545NdEuNiQiJiJiJzJiJiJiJiJz+590oNiJuJuJiNiJiJz+590dCiNiJi+590oNiJi+610-520NfEiJiNzNzJiJiJuJfEiJiJzNzNzJzJuJfEuJiJyNdEfEiJiN
+
+  mode: single
+shinwoo_fcu_hot_low_swing_on_24:
+  alias: shinwoo_fcu_hot_low_swing_on_24
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/{{ states('input_text.shinwoo_fcu_target') }}/IRsend
+      payload: 0,+8690-4445+600-530CdC-1660CeCdCdCe+595eCeCeCdCdC-555+575eCdCdCeCeC-535CdCdCdCeCdCdCeCdCdCdCdCdC-550+580iCdCdCjKd+605-525CeCeCdCdCdCdCdCjKdCdCdCdCdCjK-1665CdCdCdCdCdCdCeCeCj+585-510+620jKiFdCdCeCjKdCeCeCdC-1675OdCjK-21080+8725-4420FdCdCeCeCjKpQ-1680OeCeCeCdC-545OwOvKwOjKvKvKdCwKwOwOeCjOwOeCjKjOwO-540OwOjKjKjKjL-515+615-520Ow+565-1695OeCwKwKgKjL-520OjL-520+610-520Z-520KxQ-520Ow+560-1700Ow+565-565ZyOgHwZ-500K-1695OrOw+560-570G-565+590wOd+630y+565-1700KjOjKvKvKwOrOwOwK
+
+  mode: single
+shinwoo_fcu_hot_low_swing_on_25:
+  alias: shinwoo_fcu_hot_low_swing_on_25
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/{{ states('input_text.shinwoo_fcu_target') }}/IRsend
+      payload: 0,+8720-4445+600-530CdC-1660CeCdCdCeC-1680+580eCeCdC-525CdCeCdCdCeCe+605hCdCeCdCeCdCdCeC-550GdCdCdCdCjGdC-535+595dCdC-510+620dCf+585-1665CjGdCdCdCdCdCdCdLdCjGdCjGeCdCdCjG-545OdCqGeCeCdCdCdCdCdCdCeCeCdC-1715QeCdCeCdCdC-21075+8695bCdCdCeCeCdCjGeCeCeCeCdCjGdCeCdCjGeCeCdCdCeCdCeCdIhCeCdCdCdCjGdCdCdCdCdCdCdCkCfGeCdCdCdCdCjGdCdCdCdCdCjGdCeCdCdCdCdCdCm+625-1670GeIhCmNjGkLdCdCeCeCdCeCpCdCeCdCdC
+
+  mode: single
+shinwoo_fcu_hot_low_swing_on_26:
+  alias: shinwoo_fcu_hot_low_swing_on_26
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/{{ states('input_text.shinwoo_fcu_target') }}/IRsend
+      payload: 0,+8715-4450+600-530CdC-1660CeCdC-535CeC-1640+620eC-1665CdCdC-550+580eCdCdCeCeCdCdCdCeCeCdCdCeCf+595dCdCdCdCdCdCdCdCdCdCdCeCeCdCdCdCdCdCdCdC-510HdCdCdCdCgHdCdCdCjKdCdCgHgHdCdCdCdCdCdCeCdCeCeCeCdCeCdCdC-21070+8690bLdCdCiCeCdCdCeCeCeCeCdCdCdCeCdCdCeCeCdCdCdCeCeCdCdCeCdCdCdCdCdC-585+540dCdCdCjPjKdCiL-1680KdCdCdCdCdCjKdCdCjKjKdC-545PiLdCjKjKj+575jKjKeCeCdCdCdCjKjKdCeCdCiCeCgHdCeCdCdC
+
+  mode: single
+shinwoo_fcu_hot_low_swing_on_27:
+  alias: shinwoo_fcu_hot_low_swing_on_27
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/{{ states('input_text.shinwoo_fcu_target') }}/IRsend
+      payload: 0,+8715-4445+600-530CdC-1660CeCdCdCeCeCeCeCdCdCdCeCdCdCeC-1665CdCdCeCeCeCdCdCeCdCdCdCdCdCdC-510+620dCdCdC-550+580dCeCeCdCdCdCdCdCd+595dCdCdCdCdCdCeCdCdCdCdCdCdCeCeCdCdCdCdCdCdCfCeCeCeCeCdCeCdCdC-21100+8705-4455CdCdCfCeC-535CdCeCeCeCfCdCdCdCeCdCdCeCeCdCoCeCeC-1680JdCdCfCdCdCdCdCdCdCdCdCdCdCdCdC-1640HeCdCdCdCdCdCdCdCdC-540+590dCdCdCeCdCdCdCdCdCdCeCeCdCdCdCdCdCdCeCeCeCeCfCdCeCdCoC
+
+  mode: single
+shinwoo_fcu_hot_low_swing_on_28:
+  alias: shinwoo_fcu_hot_low_swing_on_28
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/{{ states('input_text.shinwoo_fcu_target') }}/IRsend
+      payload: 0,+8710-4440+600-530CdC-1660CeCdCdCeCeCeCeCdCdCd+595eCdCdCeCeCdCdCdCdCdC-1680+580dFeCdCdC-525CdCdCdCdCdCdCdCdCdCeCeCdC-535FdCdCdCjCdCdCdCdCdCdC-1640+620d+605dCdCdCdCdCeCeFdCdCdCdMdCdCeCdCdCdCdCeCeC-510LdC-21070+8695bC-545+585dM-1655CeCdCdCeCeCeCeCdCdCdCeCdCdCeCeCdCdCdCdCdCeCdCeCjFdCdCdCdCdCdCdCqHdCdCdCeC-1665FdCdCdCdCdCdCdCdCnLdCdCdCeCdCdCdCdCdCdCtCeCdCdCdCdC-550HdCeCdCuHdCdCtCeCdCdC
+
+  mode: single
+shinwoo_fcu_hot_low_swing_on_29:
+  alias: shinwoo_fcu_hot_low_swing_on_29
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/{{ states('input_text.shinwoo_fcu_target') }}/IRsend
+      payload: 0,+8720-4465+580-530+600dE-1660E-1655EdEdEfEfEfEfEdEdEdEfEdEdEfEfEdEdEfEdEdEfEdEfEdEdEdEdEdEdEdEdEdEdEdEdEfEfEdEdEdEdEdEdEdEdEdEdEdEdEfEdEdEdEdEdEdEfEfEdEdEdEdEdEdEfEfEdEdEdEfEfEdEdE-21075+8695-4445EdEdEf+605gEdEdEfE-1680CfEfEdEdEdEfEdEdEfEfEdEdEf+595dEdEfEdEfEdEdEdEdE-550CdEdEdEdEdEdEdEfEfEdEdEdEdEdEdEdE-535MdEdEnCdEfEdEdEdEdEdEdEfEfEdEdEdEdEdMdEfEfMdEdEdEfEfEdEdE
+
+  mode: single
+shinwoo_fcu_hot_low_swing_on_30:
+  alias: shinwoo_fcu_hot_low_swing_on_30
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/{{ states('input_text.shinwoo_fcu_target') }}/IRsend
+      payload: 0,+8715-4445+600-530CdC-1660CeCdCdCeCeCeCeCdCd+595dCeCdC-535CeC-1665CdCdCdCdCdCgCeChCdCdCdCdCdCdCdCdCdCdCdCdCeCeCdCdCdCdCdCdC-550+580iJdCdCdCdCeCdCdCdCdCdCdCe+605-1640+620dCdCdCdCdCdCeCeCdCdChCgFeCdCdC-21095+8705-4450CdCdChChC-590+545iJeC-1685JeChCdCdC-555JhFdCdChFhCdCdCdCdCdCdCeCeCdCdCdCdK-525CdCdCiJiJiJiJiJeCeCdCiJdCdCr+585dCiVdCiJdCdCrVeCdCdCdCiJdCdChCeCdCdCiJdCgCiJeChFdCdCeCdCeCdCdC
+
+  mode: single
+shinwoo_fcu_hot_low_swing_on_31:
+  alias: shinwoo_fcu_hot_low_swing_on_31
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/{{ states('input_text.shinwoo_fcu_target') }}/IRsend
+      payload: 0,+8730-4450+600-530CdC-1665CeCdC-535C-1660CgCgCgCdCdCdCgCdCdCgCgCdCdCgCdCdCdCeCgCdCdCdCdCdCdC-525CdCdCdCdCdCgCgCdCdCdCdCdC-550+580dCdCdC-540+590dCdCgCi+575dCiJdCdCf+595gCgCdCdCdCdCdCfC-1680JdCgCdCgCdCgCdCdC-21075+8700-4445CdCdCgCgCdCdCgCgCgCeNdCdCdCgCdCdCgCgCdCdCgCdCdCdCgCgCdCdCdCdCdCdCdCdCdCdCdCdCgCgCdCdCdCdCdCdCdCdCdCdCdCdCgCdCdCdCdCdCfCgCgCdCdCdC-510+620dCdCeCdCgCdCgCdCgCdCdC
+
+  mode: single
+shinwoo_fcu_hot_low_swing_on_32:
+  alias: shinwoo_fcu_hot_low_swing_on_32
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/{{ states('input_text.shinwoo_fcu_target') }}/IRsend
+      payload: 0,+8715-4450+600-530C-535+595-1665C-1660CdFdChCgChCgCdCdCdChCdCdCgChCdCdC-525ChC-550+580dCgC-1680KeFdCdCdCdCeFdCd+605dCdCeFdChChCdCdCdCeCdCdMiCdCdCdCdCdChCdCdCdFdCdCdChCgCdCdCdCdCdCdChCgChCdCgCdC-1685KdCdC-21090+8705bCdCdCgC-1640+620dCdCgCgCqRhCdCdCdCgCdCdCgCgCdCdCdCgCdCdChChCdCdCdCdCdCdCdCdCdCdCdCeFhChCdCdCdCdCdCeFdCdCdCjKdCdChCdCdCdCj+575dCdFgChCdCdCjKeCdCdChChChCdChCdChCdCdC
+
+  mode: single
+shinwoo_fcu_hot_low_swing_on_33:
+  alias: shinwoo_fcu_hot_low_swing_on_33
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/{{ states('input_text.shinwoo_fcu_target') }}/IRsend
+      payload: 0,+8740-4445+600-530CdC-1660CeCdCdCeCeCeCeCdCdC-535CeCdCdCeCe+605-525CdCeCeCdCdCeCeCdCdCd+595dCdCdCdCdCdCdCdCdC-1665CeCdCdCdCdCdCdCfCdCdCdC-550+580dC-1685LdCdCkLdCdCdCeCeCdCdC-510+620dCdCdCeCkLdCjCeCdIeCdCdC-21075+8700bCdCdCeCeCdCdCjC-1680LjCeCdCdCdCeCdCkLjIeCdCdCrLeCdCdCeCeCdCdCdCdCdCdCdCdCdCdCdCdCjCeCdCdCdCdCdCdCdCdCdCdCdCdCeCdCdCdCdCdCdCeCeChCdCdCdCdCdCeCdCdCeCeCdCeCdCdC
+
+  mode: single
+shinwoo_fcu_hot_low_swing_on_34:
+  alias: shinwoo_fcu_hot_low_swing_on_34
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/{{ states('input_text.shinwoo_fcu_target') }}/IRsend
+      payload: 0,+8730-4450+600-530CdC-1665CeCdCdC-1660CfCfCfCdCdCdCfCdCdCfCfCdCdC-510+625dCeCdCfCfCdCdCdCdCdCdCdCdCdCdCdC-545+580fCfCdCdC-550JdCdCdCdCdCdCdCdCdCfCdC-525CdCdCdCdCfCfCkJdC-505+620dCdCdCfCfCdCfCfCdCfCdCdC-21075+8700bCdCkJ-1685JfCdCdCfCfCfCfCdCdCdCfCd+595k+585fCeRkJdC-515NkSfCkJfCfCdCd+605lCkJdCdCdCdCdCkJdCdCfCfCdCdCdC-555JdCdCdCkJkJdCdCdCfCdCdCkJdC-535RgNfUfCdCdCdCdCdCk+575eCfCdCfCfCdCfCdCdC
+
+  mode: single
+shinwoo_fcu_hot_low_swing_on_35:
+  alias: shinwoo_fcu_hot_low_swing_on_35
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/{{ states('input_text.shinwoo_fcu_target') }}/IRsend
+      payload: 0,+8720-4445+600-530C-525C-1660CfC-550+580dCfCfCfCfCdCdCdCfCdCdCfCfCdCdCfCdCfCdCfCfCdCdCdCdCdCdCdCdCdCdCdCdCfC-1665CdCdCdC-510+620dCdC-535+595dCdCdCdCdCfCdCdClCdCdCdC-1685+585fCdCdCdCdCdCdCiCdCiCfCfCdCiCdCdC-21070+8695bCdCdCfCfCdCdCfCfCfCfCdCdCdCfCdCdCfCfCgHdCfCeC-1680HdCrHfCdCdCdCdCdCdCdClCdCdCdCdCfCfCdCd+605eCdCgHlCdCdCdCdCdCdCfCdCdCdCdCdCdCfCn+575lCdCdCdCdCdCfCdCfCfCfCdCfClMdC
+
+  mode: single
+shinwoo_fcu_hot_low_swing_on_36:
+  alias: shinwoo_fcu_hot_low_swing_on_36
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/{{ states('input_text.shinwoo_fcu_target') }}/IRsend
+      payload: 0,+8715-4445+600-530CdC-1660CeCdCdC-1640+620eCeCeCdC-550+575-535CeCdCh+580eCeCdCdCdCeCeCdCeCeCdChKhKdCdCdCjCdCdCdChKdCeCeCdCdCdCdCdChKdC-510GhKj+595hKhKeCdCdCdChKdCdCeC-1680KdCdCdCdC-545+585lG-1665CeCeCeCeClGeCdChK-21075+8695bCdChKeCeCdCoKeCeC-1715+540eCdCdCdCeCdCdCeCeChKdCdCnKeChKeCnP-525CdChKdCdChKhIhKdChKdChKeCeClGdCdCoKdCoPdCdCdCoKdChKeCdCdChPdChKhKeCeCdCdCdClGdCdCnK-1650+615nKnKeCdCnPdCdC
+
+  mode: single
+shinwoo_fcu_hot_low_swing_on_37:
+  alias: shinwoo_fcu_hot_low_swing_on_37
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/{{ states('input_text.shinwoo_fcu_target') }}/IRsend
+      payload: 0,+8725-4450+600-530CdC-1665C-1660CdCdCfCfCfCfCdCdCdCfCdCdCeC-1680+580dCdC-1670+595fCfCdCeCfCdCdCdCdCdCdCdCdCdCdCdCdCgHfCdCdCdC-550HdCdCdCdCdCdCdCdCfCdCkHdC-535CdCkHfCfCdCdCdCdCdCdCfCdJlCdCdCgHfClJdC-21070+8695-4460HdCdCeCeCdCk+585eJeCeCeCdCkHdCeCdCdCfCfCdCdCfCfCfCdC-1640+620eJlJdCdCdCdCdCdCdCdCkHkHdCfCfC-545HkHdCdCdCdCkHkHsHkHkHdCfCdCsHlJdCdCkHfCfCdCdCdCdCkHdCgHdCkHdCdCqRfCdCdC
+
+  mode: single
+shinwoo_fcu_hot_low_swing_on_38:
+  alias: shinwoo_fcu_hot_low_swing_on_38
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/{{ states('input_text.shinwoo_fcu_target') }}/IRsend
+      payload: 0,+8720-4450+600-530CdC-1665CeCdCdC-1660C-1685+580fCfCdCdCdCfCdCdCfCfCdCdCdCdCdCfCfCfCdCdCdC-550HdCiHdCdCdCdCiHdCfCfCdCdC-545HdCdCdCdC-590+540iHdCdCdCfCdCdCdCdCdCdCfCeCdCdCdCdCdCdCfCfCdCiHdCfCfCdCiH-21070A-4420CiHdCfCf+595iHdC-1680HfCpHeCdCd+605-525CfC-510+620dCpHfCdCdCdCdCrCfCeOfClKiHdCdCiHiHdCdCiHiHdCdCfCfCiHdCdCjHiHdCdCjHdCi+585iHiHfCdCdCdCdCdCiHfCfCdCiHdCsTjUiUfCfCjUdCjUpHfCdCdC
+
+  mode: single
+shinwoo_fcu_hot_low_swing_on_39:
+  alias: shinwoo_fcu_hot_low_swing_on_39
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/{{ states('input_text.shinwoo_fcu_target') }}/IRsend
+      payload: 0,+8720-4445+600-530CdC-1665C-1660CdCdCfCeCfCfC-535CdCdCfCdCdCfCfCdCdCfCdCdCfCfCfCdCdCdCdCdCdCdCdCd+595dCdCdCfCfCdCdCdCdCdCdCdC-545+580dCdCdCdCfCdCdC-510+620dCgCdCeCfCdCdCdHdCdCdC-1680JdCfCdC-550JfCfCdCnJ-21080+8705-4450CdCdCfC-1670HdCdCfCeCfCfCdCnJnJfC-555+575dCfCfCnJnJ-1640LdCdCmJfCfCnJdCdCdCgHdCi+590iJiJi+585nWi+610-1635CmJnWiJdX-540JnWsJnJnJdCnXdTiWmWiWnWgCnJzVnJmJmWnJnWn+605-520JdCnJ-1685TnJfCnJiWmWfCnJiW
+
+  mode: single
+shinwoo_fcu_hot_low_swing_on_40:
+  alias: shinwoo_fcu_hot_low_swing_on_40
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/{{ states('input_text.shinwoo_fcu_target') }}/IRsend
+      payload: 0,+8715-4445+600-530CdC-1665C-1660CdC-535CfCeCfCfCdCdCdCfCdC-510+620fC-1640IdCdCdC-525CdCdCdCdC-1680+580dCdCdCgCdCdC-550MdCdCdChIfCfCdCnMnMdCnMdCdChIdCdCdCdCfCdCdCdCnMnMdCfCeCdCdCdCdCnMdClMnMfCdClMdCfCdCdC-21095+8655-4470CdC-545+585lMlSnMnMlMfClMlMnMrSdClMdCnMfCjInMnMnMnMnMnSnMrSlMnMnSrSdIkMn+610-520M-540+590rMnMrW-1675MlMnMrSvSrSnMrMr+615-515+565-565WrTzIhWlMnMvWrSrSrYzSfClMd+625uMnMrWrSrY-1650MrT-1655SnSlMrSeIkMnM
+
+  mode: single
+shinwoo_fcu_hot_low_swing_on_41:
+  alias: shinwoo_fcu_hot_low_swing_on_41
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/{{ states('input_text.shinwoo_fcu_target') }}/IRsend
+      payload: 0,+8725-4450+600-530CdC-1660CeCdCdCeCeC-1680+580eC-550+585-545G-540+590eCdCdCeCeChGjGeChGdCjIdCjGeChGhGhG-535+595hGjIhGdCjGmCjIeCfGdChGjIhGhIhIhGhIjIh+605dGhGfIhG-555GdCdChGhG-1665NeCjGhGhGhGhGhGeCeC-1675GhGfGdCfIjGhI-21070A-4440GhIh+610-1650IfGdNhU-1645GfGfIeChU-520IkLrGhU-515LrGrIhGkNfGjNjGkNkLjIe+630y+565-565+615yLkNkLkLk+615x+615y+615-510LkLeZwLkLkNmLj+615-510+615y+620y+615xUy+615y+620-510+615y+615-1630CkLkUy+615y+615y+615yU-1630Z-1635+620gPyUyLuXkL-525Zw+615vIrU-505ZwLkLr+560-560NjI
+
+  mode: single
+shinwoo_fcu_hot_low_swing_on_42:
+  alias: shinwoo_fcu_hot_low_swing_on_42
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/{{ states('input_text.shinwoo_fcu_target') }}/IRsend
+      payload: 0,+8720-4450+600-510+620-530C-1665C-1660CfCfChC-1720+540hChC-550+580fCfChCfCfC-1715J-1680LfC-545LkLhCkLfCfCkLhCoLfCfCfCo+585fCkLkPfC-535+595kLnLiJkLoLfCfCfCkLkLfCfCfCqRoP-1675LkPfCk+605-525LoPoPnLhCkLkLkLkLkTfT-1650LkL-555+575-1685LnLoPhCkXk+615-21065+8705-4420CoLoZvPnLkLk+610-1645PsLhCsLk+610-515Pj+590sL-570+590-515Z-1630CiJkLo+610-520EvLo+560-570LfCk+560-1700LoLkPoZdRoPj+590q+570-565+565-565+570-560Rj+610v+610-1635EuPj+590jZdE-515Pj+590j+590jEdZ-515+590q+590jRn+610j+590-515PjZ-515Zd+590j+590-1670+610vLoZ-520Pj+590jE-570+500-560+590nXk+610-520Z-1645ZvLoPnLkLkP
+
+  mode: single
+shinwoo_fcu_hot_low_swing_on_43:
+  alias: shinwoo_fcu_hot_low_swing_on_43
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/{{ states('input_text.shinwoo_fcu_target') }}/IRsend
+      payload: 0,+8720-4450+600-530CdC-1660CeCdCdC-1640+620eCeCeCdC-525CdCeCdCdCeCeCdCdC-1665CeCdCdCdCdCeCdCdC-550+580dCjKdCdCdCdCjKjKeCeCdCjKjKdCdCdCdCjKdCjKjKjK-1680KdCjKdCdCd+605-545KeCeCd+595jKdCdCjKdM-1655ClKjKeCl+585nKlKjKjQ-21095+8705-4430KjQ-540+590eCeCjQjKlKlK-1740+515lKdCnQnQ-1675Qn+610hKlKyQjKnVyKeCn+615xQnQuOyKn+615-520KdCjKuGk+520-570+555nVu+615-520MxVl+575-1685KnQjKuVuGxG-500+630xVuV-535OuVuQuZ-1650Qn+615-510+615kHuVuZx+615-1630CyG-510QuVuVu+615x+615kD-1670VlZ-520Z-1650ZpKu+625-1625CkJuV
+
+  mode: single
+shinwoo_fcu_hot_low_swing_on_44:
+  alias: shinwoo_fcu_hot_low_swing_on_44
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/{{ states('input_text.shinwoo_fcu_target') }}/IRsend
+      payload: 0,+8730-4460+585-550+580-530+600-1665G-1680E-545CdE-1660GkGiEiCfGfGfGkGfGdEkGkGfGdEdEj+590-1655GfGfG-535+595kGdCjCjCdCdEnGdCjCjCdEdEhGkGdCdCdEdEdEdEdEdEdCjCjE-555+575hGjLfGdEpQcDdEiEiEdEdEjCjCd+610-520EiCjCiEkGiEpEiEdE-540+615-21045+8725-4430EdEdCiE-1675EdEdCiEkGiEiEfGdR-515C-1685R-525Ej+620-1625GyCjCtUzUzE-1685EjLjLtLyEtLtCjLtUzLtU-510LtU-510UzLt+620-1630Gy+620-495GpR-510Lt+620zRz+620-510L-605+525tU-500+630zUzL-1670LtUsRz+620zRzLtU-1650+605-1650Lf+630zLjLtUzLtU-1630GtU-1635Gm+635-1645+560-565U-1635+630zRsC
+
+  mode: single
+shinwoo_fcu_hot_low_swing_on_45:
+  alias: shinwoo_fcu_hot_low_swing_on_45
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/{{ states('input_text.shinwoo_fcu_target') }}/IRsend
+      payload: 0,+8730-4450+600-545+585-550E-1680E-1675Ed+580-530ChE-1660ChEgId+590d+610-515+620-1650IdEfIhEhIjCjCgIfEgIdEdEdIgIdIfEdI-540+595dIqLqEd+615-520StE-525+625-1635CgIfM-510EdEqRqMtLqRdOxLdOnEqLh+560-570EdLqRqEqOnOpMwCdLqCqLqOnSnO-1630+630w+605k+630pEhLdSpMtEqS-21065+8680-4440+605qLqL-1670L-1670LqLqEhEhL-1670L-1670LqEqLqY-1695LqEdE-1670L-1670LqEqL-1670LqEhEqLqLqEkCqLqLqLqLuCdEqLqYzEdEdL-1670EhLdLqEqLqEqLqLqEdLqEj+605qLqL-1670LjCqLuCqLqEjC-1670+565-1700LqLqLjCj+605qLqLhEhEhL-1670L-1670LdL-1670LdEdE
+
+  mode: single
