@@ -1,15 +1,282 @@
-type: entities
-entities:
-  - entity: input_select.hanam_fcu_mode
-    name: 운전모드
-  - entity: input_select.hanam_fcu_hml
-    name: 바람세기
-  - entity: input_number.hanam_fcu_temperature
-    name: 설정온도
-  - entity: input_boolean.hanam_fcu_swing
-    name: 스윙모드
-  - entity: input_boolean.hanam_fcu_power
-    name: 전원
-title: 에어컨 제어
-show_header_toggle: false
-theme: Google Blue Theme
+kiosk_mode:
+  non_admin_settings:
+    hide_search: true
+title: DAIN INC
+  - theme: Backend-selected
+    title: 착한꽃집
+    path: dain08
+    visible:
+      - user: 93102ba9443443d89b1bfe1792427567
+      - user: 88d2c2e7361d461c80f1627e63378871
+    type: sidebar
+    badges: []
+    cards:
+      - type: entity
+        entity: counter.dain08_visitor_count
+        name: 금일 매장 방문현황
+        state_color: false
+        view_layout:
+          position: sidebar
+      - type: history-graph
+        entities:
+          - entity: binary_sensor.razer_motion_sensor_2
+          - entity: binary_sensor.dain_008_pir
+        hours_to_show: 24
+        refresh_interval: 0
+        title: 동작감지 로그
+        view_layout:
+          position: sidebar
+      - square: false
+        columns: 3
+        type: grid
+        cards:
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: switch.dain08_2g_sw1
+            name: 매장 전등
+            show_state: true
+            icon: mdi:ceiling-light-multiple
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: switch.tasmota
+            name: 간판 조명
+            icon: mdi:sign-text
+            show_state: true
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: input_boolean.hanam_fcu_power
+            show_state: true
+            name: 에어컨
+            icon: mdi:air-conditioner
+        title: 조명 제어
+      - square: false
+        columns: 4
+        type: grid
+        cards:
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: more-info
+            entity: binary_sensor.razer_motion_sensor_2
+            name: 입구 감지
+            show_state: true
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: more-info
+            entity: binary_sensor.dain_008_pir
+            name: 안쪽 감지
+            show_state: true
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: toggle
+            entity: switch.dain08_push
+            name: 원격개방
+            icon: mdi:exit-run
+            show_state: true
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: call-service
+              service: input_select.select_option
+              data:
+                option: unlock
+              target:
+                entity_id: input_select.dain08_msrmode
+            entity: switch.dain08_lock
+            name: 상시개방
+            icon: mdi:door-sliding-open
+            show_state: true
+        title: 기기 제어
+      - square: false
+        columns: 4
+        type: grid
+        cards:
+          - type: conditional
+            conditions:
+              - entity: input_select.dain08_msrmode
+                state: lock
+            card:
+              show_name: true
+              show_icon: true
+              type: button
+              tap_action:
+                action: none
+              entity: input_boolean.on
+              name: 카드출입
+              show_state: true
+              hold_action:
+                action: none
+              icon: mdi:credit-card-check-outline
+          - type: conditional
+            conditions:
+              - entity: input_select.dain08_msrmode
+                state: unlock
+            card:
+              show_name: true
+              show_icon: true
+              type: button
+              tap_action:
+                action: none
+              entity: input_boolean.on
+              name: 상시개방
+              show_state: true
+              hold_action:
+                action: none
+              icon: mdi:door-open
+          - type: conditional
+            conditions:
+              - entity: input_select.dain08_msrmode
+                state: lockdown
+            card:
+              show_name: true
+              show_icon: true
+              type: button
+              tap_action:
+                action: none
+              entity: input_boolean.on
+              name: 락다운
+              show_state: true
+              hold_action:
+                action: none
+              icon: mdi:door-closed-lock
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: call-service
+              service: input_select.select_option
+              data:
+                option: lock
+              target:
+                entity_id: input_select.dain08_msrmode
+            entity: ''
+            name: 카드출입
+            icon: mdi:credit-card-check-outline
+            hold_action:
+              action: none
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: call-service
+              service: input_select.select_option
+              data:
+                option: unlock
+              target:
+                entity_id: input_select.dain08_msrmode
+            entity: ''
+            name: 상시개방
+            icon: mdi:door-open
+            hold_action:
+              action: none
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: call-service
+              service: input_select.select_option
+              data:
+                option: lockdown
+              target:
+                entity_id: input_select.dain08_msrmode
+            entity: ''
+            name: 락다운
+            icon: mdi:door-closed-lock
+            hold_action:
+              action: none
+        title: 출입모드 제어
+      - type: entities
+        entities:
+          - entity: sensor.dain08_visitor_card
+            icon: mdi:face-man-shimmer
+            name: 방문자 카드번호 앞 4자리
+          - entity: sensor.dain08_visitor_data
+            name: 방문자 이름
+          - entity: sensor.dain08_visitor_time
+            icon: mdi:clock-outline
+            name: 방문 시간
+        state_color: true
+        title: 출입자 정보
+      - type: grid
+        cards:
+          - hours_to_show: 24
+            graph: line
+            type: sensor
+            entity: sensor.dain08_tp_si7021_temperature
+            theme: Google Point Theme
+            detail: 1
+            name: 매장 온도
+          - hours_to_show: 24
+            graph: line
+            type: sensor
+            entity: sensor.dain08_tp_si7021_humidity
+            theme: Google Point Theme
+            detail: 1
+            name: 매장 습도
+        columns: 2
+        square: false
+      - type: entities
+        entities:
+          - entity: input_select.hanam_fcu_mode
+            name: 운전모드
+          - entity: input_select.hanam_fcu_hml
+            name: 바람세기
+          - entity: input_number.hanam_fcu_temperature
+            name: 설정온도
+          - entity: input_boolean.hanam_fcu_swing
+            name: 스윙모드
+          - entity: input_boolean.hanam_fcu_power
+            name: 에어컨 전원
+        title: 에어컨 제어
+        show_header_toggle: false
+        theme: Google Blue Theme
+      - type: entities
+        entities:
+          - entity: automation.dain08_security_time_on
+          - entity: input_datetime.dain08_security_time_on
+          - entity: automation.dain08_security_time_off
+          - entity: input_datetime.dain08_security_time_off
+          - entity: automation.dain08_ac_time_on
+          - entity: input_datetime.dain08_ac_time_on
+          - entity: automation.dain08_ac_time_off
+          - entity: input_datetime.dain08_ac_time_off
+          - entity: automation.dain08_sign_time_on
+          - entity: input_datetime.dain08_sign_time_on
+          - entity: automation.dain08_sign_time_off
+          - entity: input_datetime.dain08_sign_time_off
+          - entity: automation.dain08_light_time_on
+          - entity: input_datetime.dain08_light_time_on
+          - entity: automation.dain08_light_time_off
+          - entity: input_datetime.dain08_light_time_off
+        title: 타이머 (활성화 시 동작)
+        show_header_toggle: false
+        state_color: true
+      - type: logbook
+        entities:
+          - input_select.dain08_msrmode
+          - sensor.dain08_visitor_time
+        hours_to_show: 24
+        view_layout:
+          position: sidebar
+        title: 시스템 로그
+
+custom_header:
+  hidden_tab_redirect: false
+  chevrons: false
+  shadow: false
+  disabled_mode: true
