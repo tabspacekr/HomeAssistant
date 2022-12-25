@@ -7,7 +7,7 @@ HA와 외부시스템간의 연계처리를 위한 api 가이드 문서
 
 아두이노 코드를 활용한 시리얼통신의 경우 webhook을 통한 데이터 전송이 HA 데이터 연계에 가장 쉬운 방법으로 권장
 - 단순한 센서데이터 (온도, 습도, 미세먼지농도, 조도 등)의 publish시에 간단하게 사용
-- 단 webhook의 경우 주소 노출시에 취약한 점이 발생
+- 단 webhook의 경우, token없이 url접근만으로 데이터를 변경 가능하기에 web hook url을 유추가 불가능하도록 랜덤하게 생성 권장. 주소 노출시에 취약한 점이 발생
 
 복잡한 로직의 경우 shell_command로 ha에서 호출 후 사전 작성된 python code를 사용하는 방식을 권장
 - 단, ha의 shell_command 적용을 위해 core restart가 필요
