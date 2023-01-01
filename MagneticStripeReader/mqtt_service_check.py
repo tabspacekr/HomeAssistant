@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # mqtt-io가 인터넷접속이 불안정하면 프로그램은 실행되어 있으나 mqtt통신을 하지 못하고 복구되지 않는 이슈가 있어, 해당 ha entity를 모니터링하여 unavailable상태가 되면 프로그램 재시동처리
+# mqtt-io 프로세스가 강제로 kill 된 경우, unavailable이 되지 않으므로 주의 필요
 # File name : mqtt_service_check.py
 # 2022.08.09. ceo@tabspace.kr
 # crontab에 아래 추가
