@@ -20,3 +20,5 @@ loglevel을 4debug를 1로 변경
 5060포트가 공개되어, 무차별대입접속이 들어오는 문제.
 SIP통신포트인 5060을 비정규포트로 변경 
 - https://techoverflow.net/2021/06/24/how-to-change-sip-port-in-freepbx/
+
+부득이하게 5060포트를 공개해야하는경우, firewalld on후 해외 ip를 차단하기위해 kr.zone을 whitelist로 
