@@ -35,3 +35,4 @@ DHT22센서는 MQTT PUBLISH MESSAGE를 tele/%topic%/SENSOR 에 JSON 형태로 �
 - sleep 0
 
 ToDo : hard reset을 해야 data를 보내는 이슈 수정필요
+-> 해당 이슈는 ESP8266칩셋 메모리문제로, ESP12F이상급 사용 시 해소됨
