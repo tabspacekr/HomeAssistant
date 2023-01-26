@@ -9,8 +9,8 @@ apt-get install -y software-properties-common apparmor-utils apt-transport-https
 curl -fsSL get.docker.com | sh
 
 #home assistant release 사이트에서 최신 버전을 확인
-wget https://github.com/home-assistant/os-agent/releases/download/1.2.2/os-agent_1.2.2_linux_x86_64.deb
-sudo dpkg -i os-agent_1.2.2_linux_x86_64.deb
+wget https://github.com/home-assistant/os-agent/releases/download/1.4.1/os-agent_1.4.1_linux_x86_64.deb
+sudo dpkg -i os-agent_1.4.1_linux_x86_64.deb 
 
 apt install udisks2
 
