@@ -38,9 +38,10 @@ Untagged: homeassistant/amd64-addon-mosquitto@sha256:5eaadc62c70a6d89fb33fd7db32
 
 ref: https://community.home-assistant.io/t/ha-supervised-cannot-uninstall-the-docker-script-installation/304250/2
 
-이후 재설치
+이후 HA 재설치
 
 
+도커 컨테이너 삭제 
 root@tabspace:~# docker ps
 CONTAINER ID   IMAGE                                                      COMMAND                  CREATED         STATUS         PORTS                                                                                                                          NAMES
 6a6473521927   zigbee2mqtt/zigbee2mqtt-amd64:1.23.0-1                     "/init"                  7 minutes ago   Up 7 minutes   0.0.0.0:8485->8485/tcp, :::8485->8485/tcp                                                                                      addon_45df7312_zigbee2mqtt
