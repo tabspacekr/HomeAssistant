@@ -16,3 +16,4 @@ HA와 외부시스템간의 연계처리를 위한 api 가이드 문서
 OpenWeatherMap의 경우 API키 발행 후에 HA Integration에서 설정이 필요.
 
 RestAPI는 swagger ui를 통해 테스트가 가능함
+- https://api-docs.tabspace.kr
