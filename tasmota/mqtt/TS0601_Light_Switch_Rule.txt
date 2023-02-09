@@ -1,0 +1,72 @@
+Apply on TS0601, TZE200_js3mgbjb, TZE200_7deq70b8, TZE200_2hf7x9n3
+ Using Sonoff Zigbee Bridge with Zigbee2Tasmota 
+
+# ZbSend Command
+1구 동작
+Turn on switch 1: 
+ ZbSend {"Device":"SW1","Send":"EF00!00/00550101000101"}
+ 18:38:32.083 RSL: SENSOR = {"ZbReceived":{"SW1":{"Device":"0x58C4","Name":"SW1","EF00/0101":1,"Endpoint":1,"LinkQuality":89}}}
+Turn off switch 1: 
+ ZbSend {"Device":"SW1","Send":"EF00!00/00560101000100"}
+ 18:38:42.600 RSL: SENSOR = {"ZbReceived":{"SW1":{"Device":"0x58C4","Name":"SW1","EF00/0101":0,"Endpoint":1,"LinkQuality":100}}}
+
+2구 동작
+Turn on switch 1: 
+ ZbSend {"Device":"SW2","Send":"EF00!00/00570101000101"}
+ 18:37:30.796 RSL: SENSOR = {"ZbReceived":{"SW2":{"Device":"0x14E4","Name":"SW2","EF00/0101":1,"Endpoint":1,"LinkQuality":92}}}
+Turn off switch 1: 
+ ZbSend {"Device":"SW2","Send":"EF00!00/00580101000100"}
+ 18:37:42.724 RSL: SENSOR = {"ZbReceived":{"SW2":{"Device":"0x14E4","Name":"SW2","EF00/0101":0,"Endpoint":1,"LinkQuality":94}}}
+
+Turn on switch 2: 
+ ZbSend {"Device":"SW2","Send":"EF00!00/00590201000101"}
+ 18:38:02.420 RSL: SENSOR = {"ZbReceived":{"SW2":{"Device":"0x14E4","Name":"SW2","EF00/0102":1,"Endpoint":1,"LinkQuality":89}}}
+Turn off switch 2: 
+ ZbSend {"Device":"SW2","Send":"EF00!00/00600201000100"}
+ 18:38:17.826 RSL: SENSOR = {"ZbReceived":{"SW2":{"Device":"0x14E4","Name":"SW2","EF00/0102":0,"Endpoint":1,"LinkQuality":94}}}
+
+
+3구 동작
+Turn on switch 1: 
+ ZbSend {"Device":"SW3","Send":"EF00!00/00610101000101"}
+//  18:35:10.186 RSL: SENSOR = {"ZbReceived":{"SW3":{"Device":"0x2DDC","Name":"SW3","EF00/0207":0,"Endpoint":1,"LinkQuality":94}}}
+18:35:10.274 RSL: SENSOR = {"ZbReceived":{"SW3":{"Device":"0x2DDC","Name":"SW3","EF00/0101":1,"Endpoint":1,"LinkQuality":94}}}
+Turn off switch 1: 
+ ZbSend {"Device":"SW3","Send":"EF00!00/00620101000100"}
+//  18:35:26.375 RSL: SENSOR = {"ZbReceived":{"SW3":{"Device":"0x2DDC","Name":"SW3","EF00/0207":0,"Endpoint":1,"LinkQuality":94}}}
+ 18:35:26.477 RSL: SENSOR = {"ZbReceived":{"SW3":{"Device":"0x2DDC","Name":"SW3","EF00/0101":0,"Endpoint":1,"LinkQuality":97}}}
+
+Turn on switch 2: 
+ ZbSend {"Device":"SW3","Send":"EF00!00/00630201000101"}
+ 18:34:10.369 RSL: SENSOR = {"ZbReceived":{"SW3":{"Device":"0x2DDC","Name":"SW3","EF00/0102":1,"Endpoint":1,"LinkQuality":84}}}
+Turn off switch 2: 
+ ZbSend {"Device":"SW3","Send":"EF00!00/00640201000100"}
+//  18:34:22.990 RSL: SENSOR = {"ZbReceived":{"SW3":{"Device":"0x2DDC","Name":"SW3","EF00/0208":0,"Endpoint":1,"LinkQuality":89}}}
+18:34:23.090 RSL: SENSOR = {"ZbReceived":{"SW3":{"Device":"0x2DDC","Name":"SW3","EF00/0102":0,"Endpoint":1,"LinkQuality":89}}}
+
+Turn on switch 3: 
+ ZbSend {"Device":"SW3","Send":"EF00!00/00650301000101"}
+ 18:36:28.129 RSL: SENSOR = {"ZbReceived":{"SW3":{"Device":"0x2DDC","Name":"SW3","EF00/0103":1,"Endpoint":1,"LinkQuality":94}}}
+//  18:33:48.095 RSL: SENSOR = {"ZbReceived":{"SW3":{"Device":"0x2DDC","Name":"SW3","EF00/0209":0,"Endpoint":1,"LinkQuality":94}}}
+Turn off switch 3: 
+ ZbSend {"Device":"SW3","Send":"EF00!00/00660301000100"}
+ 18:36:57.809 RSL: SENSOR = {"ZbReceived":{"SW3":{"Device":"0x2DDC","Name":"SW3","EF00/0103":0,"Endpoint":1,"LinkQuality":94}}}
+//  18:33:23.645 RSL: SENSOR = {"ZbReceived":{"SW3":{"Device":"0x2DDC","Name":"SW3","EF00/0209":0,"Endpoint":1,"LinkQuality":94}}}
+
+만약 4구의 경우
+
+switch4 on (ZbSend {"Device":"SW4","Send":"EF00!00/00550401000101"})
+switch4 off (ZbSend {"Device":"SW4","Send":"EF00!00/00550401000100"})
+
+시퀀스를 늘린다면
+
+switch4 on (ZbSend {"Device":"SW4","Send":"EF00!00/00670401000101"})
+switch4 off (ZbSend {"Device":"SW4","Send":"EF00!00/00680401000100"})
+
+# MQTT Publish Rule (on going..)
+rule2 ON ZBReceived#SW1#EF00/0101 DO publish2 tele/TSW-ZB011_2822FC/SW1/Power1 %value% ENDON
+      ON ZBReceived#SW2#EF00/0101 DO publish2 tele/TSW-ZB011_2822FC/SW2/Power1 %value% ENDON
+      ON ZBReceived#SW2#EF00/0102 DO publish2 tele/TSW-ZB011_2822FC/SW2/Power2 %value% ENDON
+      ON ZBReceived#SW3#EF00/0101 DO publish2 tele/TSW-ZB011_2822FC/SW3/Power1 %value% ENDON
+      ON ZBReceived#SW3#EF00/0102 DO publish2 tele/TSW-ZB011_2822FC/SW3/Power2 %value% ENDON
+      ON ZBReceived#SW3#EF00/0103 DO publish2 tele/TSW-ZB011_2822FC/SW3/Power3 %value% ENDON
