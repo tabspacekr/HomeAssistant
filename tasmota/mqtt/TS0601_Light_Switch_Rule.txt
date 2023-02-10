@@ -70,3 +70,7 @@ rule2 ON ZBReceived#SW1#EF00/0101 DO publish2 tele/TSW-ZB011_2822FC/SW1/Power1 %
       ON ZBReceived#SW3#EF00/0101 DO publish2 tele/TSW-ZB011_2822FC/SW3/Power1 %value% ENDON
       ON ZBReceived#SW3#EF00/0102 DO publish2 tele/TSW-ZB011_2822FC/SW3/Power2 %value% ENDON
       ON ZBReceived#SW3#EF00/0103 DO publish2 tele/TSW-ZB011_2822FC/SW3/Power3 %value% ENDON
+
+# MQTT Apply Rule
+rule2 ON ZBReceived#SW1#EF00/0101 DO publish2 tele/TSW-ZB011_2822FC/SW1/Power1 %value% ENDON ON ZBReceived#SW2#EF00/0101 DO publish2 tele/TSW-ZB011_2822FC/SW2/Power1 %value% ENDON ON ZBReceived#SW2#EF00/0102 DO publish2 tele/TSW-ZB011_2822FC/SW2/Power2 %value% ENDON ON ZBReceived#SW3#EF00/0101 DO publish2 tele/TSW-ZB011_2822FC/SW3/Power1 %value% ENDON ON ZBReceived#SW3#EF00/0102 DO publish2 tele/TSW-ZB011_2822FC/SW3/Power2 %value% ENDON ON ZBReceived#SW3#EF00/0103 DO publish2 tele/TSW-ZB011_2822FC/SW3/Power3 %value% ENDON
+rule2 1
