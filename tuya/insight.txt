@@ -14,4 +14,5 @@ https://support.tuya.com/en/help/_detail/K9q79msw3accz
 https://support.tuya.com/en/help/_detail/K9d1qg76wki07
 - How many devices can I add to your app? (2021-09-26 18:23:18)
 - Dear user, we are sorry for your inconvenience. My device list in the app supports up to 200 devices, and you can create up to 20 home, so adding together is 4000 devices. But the router has a bottleneck, and a router hangs about 10 (depending on the router performance)
-- 20개 홈에 200개 디바이스까지 가능하여, 최대4,000개 디바이스를 1개의 tuya계정에 연동이 가능 
+- 20개 홈에 200개 디바이스까지 가능하여, 최대4,000개 디바이스를 1개의 tuya계정에 연동이 가능
+- 단, 이 경우에는 라우터 장비에 병목현상이 발생할 수 있음
