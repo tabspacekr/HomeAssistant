@@ -1,0 +1,9 @@
+alias: CTLX_SECOM
+sequence:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/CTLX_SECOM/IRsend
+      payload: >-
+        0,+4060-3960+4085-3935+1635-505+680-550Ef+685h+710-535+1575-560+705-530+1580-555E-500GqIqGkIhJ-510GmNoIoGmN-540+645qEf+1605-585GfGqIm+700fG-580It+650qEoPqJf+655
+mode: single
+icon: mdi:lock-outline
